@@ -1,0 +1,31 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/images"
+public_folder: "/assets/images"
+
+collections:
+  - name: "config"
+    label: "Configuration du site"
+    files:
+      - file: "_data/site.yml"
+        label: "Informations générales"
+        name: "site_info"
+        fields:
+          - {label: "Titre du site", name: "title", widget: "string"}
+          - {label: "Tagline", name: "tagline", widget: "string"}
+          - {label: "Titre de la section héro", name: "hero_title", widget: "string"}
+          - {label: "Description héro", name: "hero_description", widget: "text"}
+          - {label: "Titre section contact", name: "contact_title", widget: "string"}
+          - {label: "Informations contact", name: "contact_info", widget: "text"}
+
+  - name: "services"
+    label: "Services"
+    folder: "_data/services"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Nom du service", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Ordre d'affichage", name: "order", widget: "number", default: 1}
