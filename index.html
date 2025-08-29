@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Démo Netlify CMS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Georgia, serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: #f8f9fa;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        
+        .hero {
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .hero h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .services {
+            background: #f8f9fa;
+            padding: 4rem 0;
+        }
+        
+        .services h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+        }
+        
+        .service-item {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .service-item h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .service-item p {
+            color: #7f8c8d;
+        }
+        
+        .contact {
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .contact h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+        
+        .admin-link {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #3498db;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+        
+        .admin-link:hover {
+            background: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <!-- Lien vers l'admin (pour la démo) -->
+    <a href="/admin" class="admin-link">✏️ Modifier le site</a>
+
+    <header>
+        <div class="container">
+            <h1 id="site-title">Mon Site Netlify</h1>
+            <p class="tagline" id="site-tagline">Exemple avec CMS éditable</p>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2 id="hero-title">Bienvenue sur mon site</h2>
+            <p id="hero-description">
+                Ce texte peut être modifié facilement via l'interface d'administration. 
+                Pas besoin de toucher au code !
+            </p>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <h2>Mes Services</h2>
+            <div id="services-container">
+                <!-- Les services seront chargés dynamiquement -->
+            </div>
+        </div>
+    </section>
+
+    <section class="contact">
+        <div class="container">
+            <h2 id="contact-title">Me contacter</h2>
+            <p id="contact-info">
+                Email : contact@monsite.com<br>
+                Téléphone : +33 X XX XX XX XX
+            </p>
+        </div>
+    </section>
+
+    <!-- Script pour charger le contenu -->
+    <script>
+        // Contenu par défaut (sera remplacé par le CMS)
+        const defaultContent = {
+            siteTitle: "Mon Site Netlify",
+            siteTagline: "Exemple avec CMS éditable",
+            heroTitle: "Bienvenue sur mon site",
+            heroDescription: "Ce texte peut être modifié facilement via l'interface d'administration. Pas besoin de toucher au code !",
+            services: [
+                {
+                    title: "Service 1",
+                    description: "Description du premier service que vous proposez."
+                },
+                {
+                    title: "Service 2", 
+                    description: "Description du second service, modifiable depuis l'admin."
+                }
+            ],
+            contactTitle: "Me contacter",
+            contactInfo: "Email : contact@monsite.com<br>Téléphone : +33 X XX XX XX XX"
+        };
+
+        // Affichage du contenu
+        document.getElementById('site-title').textContent = defaultContent.siteTitle;
+        document.getElementById('site-tagline').textContent = defaultContent.siteTagline;
+        document.getElementById('hero-title').textContent = defaultContent.heroTitle;
+        document.getElementById('hero-description').textContent = defaultContent.heroDescription;
+        document.getElementById('contact-title').textContent = defaultContent.contactTitle;
+        document.getElementById('contact-info').innerHTML = defaultContent.contactInfo;
+
+        // Affichage des services
+        const servicesContainer = document.getElementById('services-container');
+        defaultContent.services.forEach(service => {
+            const serviceDiv = document.createElement('div');
+            serviceDiv.className = 'service-item';
+            serviceDiv.innerHTML = `
+                <h3>${service.title}</h3>
+                <p>${service.description}</p>
+            `;
+            servicesContainer.appendChild(serviceDiv);
+        });
+    </script>
+</body>
+</html>
