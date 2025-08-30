@@ -55,31 +55,25 @@
         }
         
         .social-icons a {
-            color: #b0413e;
+            color: #1a1a1a;
             font-size: 1.4rem;
             transition: all 0.3s ease;
-            opacity: 0.8;
+            opacity: 0.7;
         }
         
         .social-icons a:hover {
             opacity: 1;
+            color: #b0413e;
             transform: translateY(-3px);
-            filter: drop-shadow(0 4px 8px rgba(176, 65, 62, 0.3));
         }
         
         .brand {
             text-align: center;
             flex: 2;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-        }
-        
-        .brand-text {
-            display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
         }
         
         .brand h1 {
@@ -98,24 +92,6 @@
             font-weight: 500;
         }
         
-        .logo-bird {
-            width: 40px;
-            height: 40px;
-            fill: #b0413e;
-            transform: rotate(-15deg);
-            animation: fly 4s ease-in-out infinite;
-            transition: fill 0.3s ease;
-        }
-        
-        .logo-bird:hover {
-            fill: #d4756f;
-        }
-        
-        @keyframes fly {
-            0%, 100% { transform: rotate(-15deg) translateY(0); }
-            50% { transform: rotate(-10deg) translateY(-8px); }
-        }
-        
         /* Navigation container */
         .nav-container {
             flex: 1;
@@ -127,7 +103,7 @@
         nav ul {
             display: flex;
             list-style: none;
-            gap: 20px;
+            gap: 25px;
         }
         
         nav a {
@@ -623,8 +599,7 @@
             }
             
             .brand {
-                flex-direction: row;
-                gap: 10px;
+                flex-direction: column;
             }
             
             .brand h1 {
@@ -633,11 +608,6 @@
             
             .tagline {
                 font-size: 1rem;
-            }
-            
-            .logo-bird {
-                width: 32px;
-                height: 32px;
             }
             
             nav ul {
@@ -717,40 +687,8 @@
                 </div>
                 
                 <div class="brand">
-                    <svg class="logo-bird" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Forme principale de l'oiseau basée sur votre image -->
-                        <g>
-                            <!-- Corps/ventre de l'oiseau -->
-                            <path d="M15 45 Q25 40, 35 45 Q45 50, 50 60 Q52 70, 48 80 Q45 90, 40 95 Q35 100, 25 95 Q15 90, 12 80 Q10 70, 12 60 Q13 50, 15 45 Z" fill="currentColor"/>
-                            
-                            <!-- Cou et tête -->
-                            <path d="M48 80 Q55 75, 65 70 Q75 65, 82 60 Q88 55, 90 48 Q92 40, 88 35 Q85 30, 80 32 Q75 35, 72 40 Q70 45, 72 50 Q75 55, 80 58" fill="currentColor"/>
-                            
-                            <!-- Bec pointu -->
-                            <path d="M88 35 L95 25 Q98 22, 96 18 Q94 15, 90 18 L82 28 Q85 30, 88 35 Z" fill="currentColor"/>
-                            
-                            <!-- Œil -->
-                            <circle cx="82" cy="40" r="2.5" fill="white"/>
-                            <circle cx="83" cy="40" r="1.2" fill="black"/>
-                            
-                            <!-- Ailes (plusieurs courbes pour l'effet plume) -->
-                            <path d="M35 45 Q25 35, 20 30 Q15 25, 12 30 Q10 35, 15 40 Q25 45, 35 48" fill="currentColor"/>
-                            <path d="M30 50 Q20 40, 15 35 Q10 30, 8 35 Q7 40, 12 45 Q20 50, 30 52" fill="currentColor"/>
-                            <path d="M25 55 Q15 45, 10 40 Q5 35, 4 40 Q4 45, 9 50 Q15 55, 25 57" fill="currentColor"/>
-                            
-                            <!-- Queue longue et pointue -->
-                            <path d="M12 80 Q8 85, 5 95 Q2 105, 8 110 Q12 108, 15 100 Q18 90, 15 85 Q14 82, 12 80" fill="currentColor"/>
-                            <path d="M8 85 Q4 90, 2 100 Q0 110, 5 115 Q8 113, 10 105 Q12 95, 10 90 Q9 87, 8 85" fill="currentColor"/>
-                            
-                            <!-- Patte simple -->
-                            <line x1="40" y1="95" x2="38" y2="105" stroke="currentColor" stroke-width="1.5"/>
-                            <line x1="42" y1="95" x2="40" y2="105" stroke="currentColor" stroke-width="1.5"/>
-                        </g>
-                    </svg>
-                    <div class="brand-text">
-                        <h1>SOPHIE BIJJANI</h1>
-                        <div class="tagline">Inspire ༅ Exprime</div>
-                    </div>
+                    <h1>SOPHIE BIJJANI</h1>
+                    <div class="tagline">Inspire ༅ Exprime</div>
                 </div>
                 
                 <div class="nav-container">
