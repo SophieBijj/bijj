@@ -42,17 +42,18 @@
         
         .header-content {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
             padding: 1.2rem 0;
-            gap: 40px;
+            gap: 15px;
         }
         
         .brand {
-            text-align: left;
+            text-align: center;
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
+            align-items: center;
+            order: 2;
         }
         
         .brand h1 {
@@ -74,16 +75,15 @@
         
         /* Navigation container */
         .nav-container {
+            order: 1;
             display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            gap: 8px;
+            align-items: center;
+            gap: 25px;
         }
         
         .social-icons {
             display: flex;
             gap: 15px;
-            justify-content: flex-end;
         }
         
         .social-icons a {
@@ -101,10 +101,6 @@
             color: #b0413e;
             background: rgba(176, 65, 62, 0.1);
             transform: translateY(-2px);
-        }
-        
-        .left-spacer {
-            display: none;
         }
         
         /* Navigation */
@@ -740,14 +736,26 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <div class="left-spacer"></div>
-                
-                <div class="brand">
-                    <h1>SOPHIE BIJJANI</h1>
-                    <div class="tagline">Inspire ༅ Exprime</div>
-                </div>
-                
                 <div class="nav-container">
+                    <nav>
+                        <ul>
+                            <li><a href="#" onclick="showPage('accueil')" class="active">Accueil</a></li>
+                            <li class="dropdown">
+                                <a href="#" onclick="showPage('services')">Services</a>
+                                <div class="dropdown-content">
+                                    <a href="#" onclick="showPage('ateliers')">Ateliers de groupe</a>
+                                    <a href="#" onclick="showPage('individuel')">Accompagnement individuel</a>
+                                    <a href="#" onclick="showPage('spectacles')">Spectacles</a>
+                                    <a href="#" onclick="showPage('animation')">Animation & MC</a>
+                                </div>
+                            </li>
+                            <li><a href="#" onclick="showPage('musique')">Musique</a></li>
+                            <li><a href="#" onclick="showPage('apropos')">À propos</a></li>
+                            <li><a href="#" onclick="showPage('evenements')">Événements</a></li>
+                            <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+                        </ul>
+                    </nav>
+                    
                     <div class="social-icons">
                         <a href="https://www.instagram.com/sophiebijj" target="_blank" title="Instagram">
                             <i class="fab fa-instagram"></i>
@@ -762,24 +770,11 @@
                             <i class="fab fa-deezer"></i>
                         </a>
                     </div>
-                    <nav>
-                    <ul>
-                        <li><a href="#" onclick="showPage('accueil')" class="active">Accueil</a></li>
-                        <li class="dropdown">
-                            <a href="#" onclick="showPage('services')">Services</a>
-                            <div class="dropdown-content">
-                                <a href="#" onclick="showPage('ateliers')">Ateliers de groupe</a>
-                                <a href="#" onclick="showPage('individuel')">Accompagnement individuel</a>
-                                <a href="#" onclick="showPage('spectacles')">Spectacles</a>
-                                <a href="#" onclick="showPage('animation')">Animation & MC</a>
-                            </div>
-                        </li>
-                        <li><a href="#" onclick="showPage('musique')">Musique</a></li>
-                        <li><a href="#" onclick="showPage('apropos')">À propos</a></li>
-                        <li><a href="#" onclick="showPage('evenements')">Événements</a></li>
-                        <li><a href="#" onclick="showPage('contact')">Contact</a></li>
-                    </ul>
-                </nav>
+                </div>
+                
+                <div class="brand">
+                    <h1>SOPHIE BIJJANI</h1>
+                    <div class="tagline">Inspire ༅ Exprime</div>
                 </div>
             </div>
         </div>
