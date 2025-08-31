@@ -48,6 +48,29 @@
             gap: 15px;
         }
         
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            order: 1;
+        }
+        
+        .social-icons a {
+            color: #1a1a1a;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            opacity: 0.6;
+            padding: 6px;
+            border-radius: 50%;
+            background: rgba(176, 65, 62, 0.05);
+        }
+        
+        .social-icons a:hover {
+            opacity: 1;
+            color: #b0413e;
+            background: rgba(176, 65, 62, 0.1);
+            transform: translateY(-2px);
+        }
+        
         .brand {
             text-align: center;
             display: flex;
@@ -77,32 +100,41 @@
         
         /* Navigation container */
         .nav-container {
-            order: 1;
+            order: 3;
             display: flex;
             align-items: center;
             gap: 25px;
         }
         
-        .social-icons {
-            display: flex;
-            gap: 15px;
-        }
-        
-        .social-icons a {
-            color: #1a1a1a;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            opacity: 0.6;
-            padding: 6px;
-            border-radius: 50%;
-            background: rgba(176, 65, 62, 0.05);
-        }
-        
-        .social-icons a:hover {
-            opacity: 1;
-            color: #b0413e;
-            background: rgba(176, 65, 62, 0.1);
-            transform: translateY(-2px);
+        /* Desktop: regrouper nav et social */
+        @media (min-width: 769px) {
+            .header-content {
+                flex-direction: column;
+            }
+            
+            .social-icons {
+                order: 1;
+            }
+            
+            .brand {
+                order: 2;
+            }
+            
+            .nav-container {
+                order: 1;
+                margin-bottom: -40px;
+                margin-left: auto;
+                position: relative;
+                z-index: 10;
+            }
+            
+            .social-icons {
+                margin-left: auto;
+                margin-right: 25px;
+                margin-bottom: -15px;
+                position: relative;
+                z-index: 10;
+            }
         }
         
         /* Navigation */
@@ -604,25 +636,15 @@
                 text-align: center;
             }
             
-            .nav-container {
-                order: 1;
-                flex-direction: column;
-                gap: 15px;
-            }
-            
             .social-icons {
+                order: 1;
                 justify-content: center;
                 gap: 20px;
-                order: 1;
             }
             
             .social-icons a {
                 font-size: 1.3rem;
                 padding: 10px;
-            }
-            
-            nav {
-                order: 3;
             }
             
             .brand {
@@ -638,6 +660,12 @@
                 font-size: 1.2rem;
                 letter-spacing: 2px;
                 word-spacing: 6px;
+            }
+            
+            .nav-container {
+                order: 3;
+                flex-direction: column;
+                gap: 0;
             }
             
             nav ul {
@@ -743,46 +771,44 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <div class="nav-container">
-                    <div class="social-icons">
-                        <a href="https://www.instagram.com/sophiebijj" target="_blank" title="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://www.youtube.com/c/SophieBijjani" target="_blank" title="YouTube">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                        <a href="https://open.spotify.com/artist/2gWI0fgWg1LXt6S2y0LZMu/" target="_blank" title="Spotify">
-                            <i class="fab fa-spotify"></i>
-                        </a>
-                        <a href="https://www.deezer.com/en/artist/14124551" target="_blank" title="Deezer">
-                            <i class="fab fa-deezer"></i>
-                        </a>
-                    </div>
-                    
-                    <nav>
-                        <ul>
-                            <li><a href="#" onclick="showPage('accueil')" class="active">Accueil</a></li>
-                            <li class="dropdown">
-                                <a href="#" onclick="showPage('services')">Services</a>
-                                <div class="dropdown-content">
-                                    <a href="#" onclick="showPage('ateliers')">Ateliers de groupe</a>
-                                    <a href="#" onclick="showPage('individuel')">Accompagnement individuel</a>
-                                    <a href="#" onclick="showPage('spectacles')">Spectacles</a>
-                                    <a href="#" onclick="showPage('animation')">Animation & MC</a>
-                                </div>
-                            </li>
-                            <li><a href="#" onclick="showPage('musique')">Musique</a></li>
-                            <li><a href="#" onclick="showPage('apropos')">À propos</a></li>
-                            <li><a href="#" onclick="showPage('evenements')">Événements</a></li>
-                            <li><a href="#" onclick="showPage('contact')">Contact</a></li>
-                        </ul>
-                    </nav>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/sophiebijj" target="_blank" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.youtube.com/c/SophieBijjani" target="_blank" title="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://open.spotify.com/artist/2gWI0fgWg1LXt6S2y0LZMu/" target="_blank" title="Spotify">
+                        <i class="fab fa-spotify"></i>
+                    </a>
+                    <a href="https://www.deezer.com/en/artist/14124551" target="_blank" title="Deezer">
+                        <i class="fab fa-deezer"></i>
+                    </a>
                 </div>
                 
                 <div class="brand">
                     <h1>SOPHIE BIJJANI</h1>
                     <div class="tagline">Inspire ༅ Exprime</div>
                 </div>
+                
+                <nav class="nav-container">
+                    <ul>
+                        <li><a href="#" onclick="showPage('accueil')" class="active">Accueil</a></li>
+                        <li class="dropdown">
+                            <a href="#" onclick="showPage('services')">Services</a>
+                            <div class="dropdown-content">
+                                <a href="#" onclick="showPage('ateliers')">Ateliers de groupe</a>
+                                <a href="#" onclick="showPage('individuel')">Accompagnement individuel</a>
+                                <a href="#" onclick="showPage('spectacles')">Spectacles</a>
+                                <a href="#" onclick="showPage('animation')">Animation & MC</a>
+                            </div>
+                        </li>
+                        <li><a href="#" onclick="showPage('musique')">Musique</a></li>
+                        <li><a href="#" onclick="showPage('apropos')">À propos</a></li>
+                        <li><a href="#" onclick="showPage('evenements')">Événements</a></li>
+                        <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </header>
