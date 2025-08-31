@@ -598,22 +598,31 @@
         /* Responsive */
         @media (max-width: 768px) {
             .header-content {
-                grid-template-columns: 1fr;
+                flex-direction: column;
                 gap: 20px;
                 padding: 1.5rem 0;
                 text-align: center;
             }
             
+            .nav-container {
+                order: 3;
+                flex-direction: column-reverse;
+                gap: 15px;
+            }
+            
             .social-icons {
-                order: 1;
-                justify-self: center;
+                justify-content: center;
                 gap: 20px;
-                margin-bottom: 10px;
+                order: 2;
             }
             
             .social-icons a {
                 font-size: 1.3rem;
                 padding: 10px;
+            }
+            
+            nav {
+                order: 1;
             }
             
             .brand {
@@ -627,18 +636,14 @@
             
             .tagline {
                 font-size: 1.2rem;
-            }
-            
-            .nav-container {
-                order: 3;
-                justify-self: center;
+                letter-spacing: 2px;
+                word-spacing: 6px;
             }
             
             nav ul {
                 flex-wrap: wrap;
                 justify-content: center;
                 gap: 15px;
-                margin-top: 10px;
             }
             
             nav a {
@@ -739,6 +744,21 @@
         <div class="container">
             <div class="header-content">
                 <div class="nav-container">
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/sophiebijj" target="_blank" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.youtube.com/c/SophieBijjani" target="_blank" title="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://open.spotify.com/artist/2gWI0fgWg1LXt6S2y0LZMu/" target="_blank" title="Spotify">
+                            <i class="fab fa-spotify"></i>
+                        </a>
+                        <a href="https://www.deezer.com/en/artist/14124551" target="_blank" title="Deezer">
+                            <i class="fab fa-deezer"></i>
+                        </a>
+                    </div>
+                    
                     <nav>
                         <ul>
                             <li><a href="#" onclick="showPage('accueil')" class="active">Accueil</a></li>
@@ -757,21 +777,6 @@
                             <li><a href="#" onclick="showPage('contact')">Contact</a></li>
                         </ul>
                     </nav>
-                    
-                    <div class="social-icons">
-                        <a href="https://www.instagram.com/sophiebijj" target="_blank" title="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://www.youtube.com/c/SophieBijjani" target="_blank" title="YouTube">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                        <a href="https://open.spotify.com/artist/2gWI0fgWg1LXt6S2y0LZMu/" target="_blank" title="Spotify">
-                            <i class="fab fa-spotify"></i>
-                        </a>
-                        <a href="https://www.deezer.com/en/artist/14124551" target="_blank" title="Deezer">
-                            <i class="fab fa-deezer"></i>
-                        </a>
-                    </div>
                 </div>
                 
                 <div class="brand">
