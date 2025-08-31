@@ -42,116 +42,76 @@
         
         .header-content {
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
-            padding: 1.2rem 0;
-            gap: 15px;
+            padding: 1rem 0;
+            position: relative;
         }
         
         .social-icons {
             display: flex;
-            gap: 15px;
-            order: 1;
+            gap: 20px;
+            flex: 1;
         }
         
         .social-icons a {
             color: #1a1a1a;
-            font-size: 1.1rem;
+            font-size: 1.4rem;
             transition: all 0.3s ease;
-            opacity: 0.6;
-            padding: 6px;
-            border-radius: 50%;
-            background: rgba(176, 65, 62, 0.05);
+            opacity: 0.7;
         }
         
         .social-icons a:hover {
             opacity: 1;
             color: #b0413e;
-            background: rgba(176, 65, 62, 0.1);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
         }
         
         .brand {
             text-align: center;
+            flex: 2;
             display: flex;
             flex-direction: column;
             align-items: center;
-            order: 2;
+            justify-content: center;
         }
         
         .brand h1 {
             font-family: 'Outfit', sans-serif;
-            font-size: 1.8rem;
+            font-size: 2.2rem;
             color: #1a1a1a;
-            margin-bottom: 0.1rem;
+            margin-bottom: 0.2rem;
             font-weight: 600;
             letter-spacing: 1px;
         }
         
         .tagline {
             font-family: 'Caveat', cursive;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             color: #b0413e;
             font-weight: 500;
-            line-height: 1.2;
-            letter-spacing: 3px;
-            word-spacing: 8px;
         }
         
         /* Navigation container */
         .nav-container {
-            order: 3;
+            flex: 1;
             display: flex;
-            align-items: center;
-            gap: 25px;
-        }
-        
-        /* Desktop: regrouper nav et social */
-        @media (min-width: 769px) {
-            .header-content {
-                flex-direction: column;
-            }
-            
-            .social-icons {
-                order: 1;
-            }
-            
-            .brand {
-                order: 2;
-            }
-            
-            .nav-container {
-                order: 1;
-                margin-bottom: -40px;
-                margin-left: auto;
-                position: relative;
-                z-index: 10;
-            }
-            
-            .social-icons {
-                margin-left: auto;
-                margin-right: 25px;
-                margin-bottom: -15px;
-                position: relative;
-                z-index: 10;
-            }
+            justify-content: flex-end;
         }
         
         /* Navigation */
         nav ul {
             display: flex;
             list-style: none;
-            gap: 15px;
-            align-items: center;
+            gap: 25px;
         }
         
         nav a {
             text-decoration: none;
             color: #1a1a1a;
             font-weight: 400;
-            font-size: 0.9rem;
-            padding: 8px 12px;
-            border-radius: 20px;
+            padding: 10px 15px;
+            border-radius: 25px;
             transition: all 0.3s ease;
             background: transparent;
             white-space: nowrap;
@@ -160,7 +120,7 @@
         nav a:hover, nav a.active {
             background: #b0413e;
             color: white;
-            transform: translateY(-1px);
+            transform: translateY(-2px);
         }
         
         /* Dropdown */
@@ -211,8 +171,8 @@
         
         /* Main content */
         main {
-            margin-top: 140px;
-            min-height: calc(100vh - 140px);
+            margin-top: 120px;
+            min-height: calc(100vh - 120px);
         }
         
         .page {
@@ -632,40 +592,22 @@
             .header-content {
                 flex-direction: column;
                 gap: 20px;
-                padding: 1.5rem 0;
-                text-align: center;
             }
             
-            .social-icons {
-                order: 1;
-                justify-content: center;
-                gap: 20px;
-            }
-            
-            .social-icons a {
-                font-size: 1.3rem;
-                padding: 10px;
+            .social-icons, .nav-container {
+                flex: none;
             }
             
             .brand {
-                order: 2;
+                flex-direction: column;
             }
             
             .brand h1 {
-                font-size: 1.8rem;
-                margin-bottom: 0.3rem;
+                font-size: 1.6rem;
             }
             
             .tagline {
-                font-size: 1.2rem;
-                letter-spacing: 2px;
-                word-spacing: 6px;
-            }
-            
-            .nav-container {
-                order: 3;
-                flex-direction: column;
-                gap: 0;
+                font-size: 1rem;
             }
             
             nav ul {
@@ -674,18 +616,8 @@
                 gap: 15px;
             }
             
-            nav a {
-                font-size: 0.9rem;
-                padding: 8px 14px;
-            }
-            
-            main {
-                margin-top: 180px;
-            }
-            
             .hero {
-                padding: 40px 20px;
-                margin-top: 20px;
+                padding: 60px 20px;
             }
             
             .hero h2 {
@@ -706,38 +638,6 @@
             
             .section h2 {
                 font-size: 2.2rem;
-            }
-        }
-        
-        @media (max-width: 1024px) and (min-width: 769px) {
-            .header-content {
-                gap: 15px;
-            }
-            
-            .social-icons {
-                gap: 12px;
-            }
-            
-            .social-icons a {
-                font-size: 1.1rem;
-                padding: 6px;
-            }
-            
-            .brand h1 {
-                font-size: 1.6rem;
-            }
-            
-            .tagline {
-                font-size: 1.1rem;
-            }
-            
-            nav ul {
-                gap: 12px;
-            }
-            
-            nav a {
-                font-size: 0.85rem;
-                padding: 6px 10px;
             }
         }
         
@@ -791,7 +691,8 @@
                     <div class="tagline">Inspire ༅ Exprime</div>
                 </div>
                 
-                <nav class="nav-container">
+                <div class="nav-container">
+                    <nav>
                     <ul>
                         <li><a href="#" onclick="showPage('accueil')" class="active">Accueil</a></li>
                         <li class="dropdown">
@@ -951,354 +852,3 @@
                         </ul>
                         
                         <div class="testimonial">
-                            <em>"L'atelier [Bases musicales...] m'a aidée à comprendre comment improviser vocalement et comment les impros peuvent être structurées, le tout dans une atmosphère accueillante, amicale et sans pression."</em>
-                            <strong>- Amélie C.</strong>
-                        </div>
-                    </div>
-
-                    <div class="service-card">
-                        <h3>Corps Sonores</h3>
-                        <p><strong>Exploration du lien somatique de la voix et du corps comme instrument.</strong></p>
-                        <p><strong>Mon objectif :</strong> Faire de la place au subtil qui nous habite, écouter ce que le corps raconte et utiliser notre voix pour l'exprimer.</p>
-                        <ul>
-                            <li>Durée : 2h</li>
-                            <li>6 à 15 participants</li>
-                            <li>Tous niveaux</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ACCOMPAGNEMENT INDIVIDUEL -->
-            <div id="individuel" class="page">
-                <div class="section">
-                    <h2>Accompagnement individuel</h2>
-                    <div class="bio-content">
-                        <p>C'est un espace privilégié pour explorer votre relation à ce que vous voulez amplifier dans le monde par votre voix.</p>
-                        <p>Ensemble, nous cherchons la cohérence entre voix, corps et cœur, pour que votre message passe clairement et avec aisance - pour exprimer la vérité de votre être.</p>
-                        
-                        <h3>Ce que je peux vous accompagner à explorer :</h3>
-                        <ul>
-                            <li>Exploration somatique liée à la voix</li>
-                            <li>Technique vocale adaptée à vos besoins</li>
-                            <li>Composition et création musicale</li>
-                            <li>Recherche des mots justes pour vos créations</li>
-                            <li>Clarté de la voix dans une approche corps-cœur-esprit</li>
-                            <li>Travail sur l'alignement intérieur pour une expression authentique</li>
-                        </ul>
-                        
-                        <h3>Informations pratiques :</h3>
-                        <ul>
-                            <li>Durée : 1h00</li>
-                            <li>Format : En personne ou en ligne</li>
-                            <li>Public : Tous niveaux - particulièrement adapté aux personnes sensibles cherchant une écoute profonde et une vision holistique</li>
-                        </ul>
-                        
-                        <p><em>Un espace sécuritaire où votre authenticité peut s'épanouir à travers le pouvoir transformateur de la voix.</em></p>
-                        
-                        <div class="testimonial">
-                            <em>"Notre session m'a fait prendre conscience de l'importance de la détente dans le travail de la voix, et m'a fait résonner des zones que je n'avais pas l'habitude de sentir. Sophie m'a aidée à conscientiser des espaces de résonance nouveaux chez moi. C'est une très bonne pédagogue."</em>
-                            <strong>- Patricia</strong>
-                        </div>
-
-                        <div class="testimonial">
-                            <em>"Plusieurs mois après l'atelier d'improvisation vocale, l'expérience vit encore en moi et transforme ma manière de me connecter avec les autres en musique. Merci Sophie pour ta façon naturelle et généreuse de partager la musique."</em>
-                            <strong>- Grace</strong>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- SPECTACLES -->
-            <div id="spectacles" class="page">
-                <div class="section">
-                    <h2>Spectacles</h2>
-                    
-                    <div class="service-card">
-                        <h3>Mosaïque Mainstream</h3>
-                        <p>Une fresque musicale aux milles reflets: Sophie vous interprète des chansons qui ont traversé frontières et générations pour se révéler à vous sous un autre jour.</p>
-                        <p>Un hommage aux chansons qui nous habitent, qui nous accompagnent dans nos joies et nos doutes. Un cercle où Dalida et Metallica se côtoient intimement...</p>
-                        
-                        <h4>Format :</h4>
-                        <ul>
-                            <li>Solo (piano/guitare/voix/looper)</li>
-                            <li>Durée : 1h20</li>
-                            <li>Tout public</li>
-                            <li>Ambiance café-concert et concert maison</li>
-                        </ul>
-                        
-                        <h4>Répertoire éclectique :</h4>
-                        <p>Rise (Yaima), Les gens qui doutent (Anne Sylvestre), Paroles Paroles (Dalida), Where is the Love (Black Eyed Peas), Nothing Else Matters (Metallica), Emmenez-moi (Charles Aznavour), et bien d'autres...</p>
-                    </div>
-
-                    <div class="service-card">
-                        <h3>À la carte : Jukebox Humain</h3>
-                        <p><strong>Vous programmez, Sophie joue ! Un concert sur mesure où le public compose sa playlist en direct.</strong></p>
-                        
-                        <h4>Format :</h4>
-                        <ul>
-                            <li>Solo (piano/guitare/voix/looper)</li>
-                            <li>Durée : 1h20</li>
-                            <li>Tout public</li>
-                            <li>Ambiance animation et concert maison</li>
-                        </ul>
-                    </div>
-
-                    <div class="service-card">
-                        <h3>Rouge Somptueux : Compositions</h3>
-                        <p>Plongée intime et poétique dans les compositions de Sophie Bijjani. Des chansons qui cherchent le point de bascule, le levier d'empuissement.</p>
-                        
-                        <h4>Format :</h4>
-                        <ul>
-                            <li>Solo (piano/guitare/voix/looper)</li>
-                            <li>Durée : 1h00</li>
-                            <li>Tout public</li>
-                            <li>Concert maison et intime</li>
-                        </ul>
-                        
-                        <h4>Répertoire :</h4>
-                        <p>Feu d'grand vent, Rouge somptueux, Sésame ouvre-toi, Freedom, Pour être honnête avec toi, Valse d'Ève, et plus...</p>
-                    </div>
-
-                    <div class="service-card">
-                        <h3>Chœur ouvert : Chants de reliance</h3>
-                        <p>Chansons glanées au fil de mes voyages et des ouvertures de cœur. Paroles fournies pour le public.</p>
-                        
-                        <h4>Format :</h4>
-                        <ul>
-                            <li>Guitare/voix</li>
-                            <li>Durée : 1h15</li>
-                            <li>Tout public</li>
-                            <li>Cercles de chants - Festivals - Wellness Gatherings</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ANIMATION & MC -->
-            <div id="animation" class="page">
-                <div class="section">
-                    <h2>Animation & MC</h2>
-                    <div class="bio-content">
-                        <p>J'anime vos événements avec clarté, compassion et humour, créant une atmosphère chaleureuse et engageante.</p>
-                        
-                        <h3>Services d'animation :</h3>
-                        <ul>
-                            <li>Maître de cérémonie pour événements</li>
-                            <li>Animation de galas et soirées</li>
-                            <li>Chorale impromptue</li>
-                            <li>Sérénade impromptue</li>
-                        </ul>
-                        
-                        <div class="testimonial">
-                            <em>"Sophie, tu rends les informations pratiques excitantes à écouter. Je me levais à chaque jour du festival en joie d'entendre ton 'Point Info!' Tu offres un cadre clair avec compassion et humour."</em>
-                            <strong>- Témoignage d'un festival</strong>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- MUSIQUE -->
-            <div id="musique" class="page">
-                <div class="section">
-                    <h2>Ma Musique</h2>
-                    <div class="bio-content">
-                        <p>Découvrez mes créations musicales, mes compositions originales et mes reprises revisitées. Chaque chanson est un voyage, une exploration des émotions humaines universelles.</p>
-                        
-                        <div class="music-platforms">
-                            <a href="https://open.spotify.com/artist/2gWI0fgWg1LXt6S2y0LZMu/" target="_blank" class="platform-link">
-                                <i class="fab fa-spotify"></i> Spotify
-                            </a>
-                            <a href="https://www.youtube.com/c/SophieBijjani" target="_blank" class="platform-link">
-                                <i class="fab fa-youtube"></i> YouTube
-                            </a>
-                            <a href="https://www.deezer.com/en/artist/14124551" target="_blank" class="platform-link">
-                                <i class="fab fa-deezer"></i> Deezer
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="video-grid">
-                        <div class="video-item">
-                            <iframe src="https://www.youtube.com/embed/phUMrUfYd2c" frameborder="0" allowfullscreen></iframe>
-                            <div class="video-info">
-                                <h3>Composition originale</h3>
-                                <p>Un aperçu de mon univers créatif</p>
-                            </div>
-                        </div>
-                        <div class="video-item">
-                            <iframe src="https://www.youtube.com/embed/RRzKRhQC1TA" frameborder="0" allowfullscreen></iframe>
-                            <div class="video-info">
-                                <h3>Reprise revisitée</h3>
-                                <p>Comment je transforme les classiques</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- À PROPOS -->
-            <div id="apropos" class="page">
-                <div class="section">
-                    <h2>À propos</h2>
-                    <div class="bio-content">
-                        <p>Mi-fée, mi-femme mystique, Sophie vous entraîne dans une odyssée où la musique n'est pas seulement un art, mais un espace de rencontre, un chemin vers soi où les émotions catalysent des transformations profondes et expansives.</p>
-                        
-                        <p>Puisant dans l'expérience humaine, elle révèle, à travers son art, la magie cachée dans chaque instant. Elle est formée en techniques professionnelles de musique et chanson, avec une spécialisation en chant jazz et a suivi une formation intensive en Circlesong. Depuis 2020, elle est engagée dans la pratique du Contact Improvisation et danse depuis plus de 25 ans.</p>
-                        
-                        <h3>Formation et expertise</h3>
-                        <ul>
-                            <li>Techniques professionnelles de musique et chanson</li>
-                            <li>Spécialisation en chant jazz</li>
-                            <li>Formation intensive en Circlesong</li>
-                            <li>Pratique du Contact Improvisation depuis 2020</li>
-                            <li>Plus de 25 ans d'expérience en danse</li>
-                        </ul>
-                        
-                        <h3>Ma philosophie</h3>
-                        <p>Les événements de Bijj sont un point de rencontre pour les esprits créatifs et les âmes en quête de justesse, un laboratoire où l'expression devient un outil de croissance et où les liens authentiques encouragent l'expression de soi.</p>
-                        
-                        <p>Bijj ouvre des espaces d'exploration, d'affirmation et de transformation. À travers l'improvisation, la musique, le mouvement, l'écriture et des expériences immersives, ce projet unique éveille à la fois authenticité et jeu, pour un voyage intérieur à la fois simple et profond.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ÉVÉNEMENTS -->
-            <div id="evenements" class="page">
-                <div class="section">
-                    <h2>Événements à venir</h2>
-                    <div class="bio-content">
-                        <p>Restez connectés pour découvrir mes prochains ateliers, concerts et événements spéciaux. Chaque rencontre est une occasion unique d'explorer ensemble la magie de la voix et du mouvement.</p>
-                        
-                        <h3>Types d'événements</h3>
-                        <ul>
-                            <li>Ateliers d'improvisation vocale</li>
-                            <li>Concerts intimistes</li>
-                            <li>Cercles de chants</li>
-                            <li>Performances collaboratives</li>
-                            <li>Retraites créatives</li>
-                        </ul>
-                        
-                        <p><em>Pour être informé en primeur de mes événements, inscrivez-vous à ma newsletter "Inspirations Vocales".</em></p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CONTACT -->
-            <div id="contact" class="page">
-                <div class="section">
-                    <h2>Contactez-moi</h2>
-                    <div class="contact-form">
-                        <form onsubmit="handleContact(event)">
-                            <div class="form-group">
-                                <label for="name">Nom</label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="subject">Sujet</label>
-                                <input type="text" id="subject" name="subject" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Message</label>
-                                <textarea id="message" name="message" required></textarea>
-                            </div>
-                            <button type="submit" class="submit-btn">Envoyer le message</button>
-                        </form>
-                    </div>
-                    
-                    <div class="bio-content" style="margin-top: 40px; text-align: center;">
-                        <h3>Autres moyens de me joindre</h3>
-                        <p><strong>Email :</strong> bijj.inspire@gmail.com</p>
-                        <p><strong>Site web :</strong> www.bijj.ca</p>
-                        
-                        <div style="margin-top: 30px;">
-                            <a href="https://www.instagram.com/sophiebijj" target="_blank" style="margin: 0 15px; color: #b0413e; font-size: 1.5rem;">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="https://www.youtube.com/c/SophieBijjani" target="_blank" style="margin: 0 15px; color: #b0413e; font-size: 1.5rem;">
-                                <i class="fab fa-youtube"></i>
-                            </a>
-                            <a href="https://open.spotify.com/artist/2gWI0fgWg1LXt6S2y0LZMu/" target="_blank" style="margin: 0 15px; color: #b0413e; font-size: 1.5rem;">
-                                <i class="fab fa-spotify"></i>
-                            </a>
-                            <a href="https://www.deezer.com/en/artist/14124551" target="_blank" style="margin: 0 15px; color: #b0413e; font-size: 1.5rem;">
-                                <i class="fab fa-deezer"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <script>
-        function showPage(pageId) {
-            // Hide all pages
-            const pages = document.querySelectorAll('.page');
-            pages.forEach(page => page.classList.remove('active'));
-            
-            // Show selected page
-            document.getElementById(pageId).classList.add('active');
-            
-            // Update navigation
-            const navLinks = document.querySelectorAll('nav a');
-            navLinks.forEach(link => link.classList.remove('active'));
-            
-            // Find and activate the correct nav link
-            const activeLink = document.querySelector(`nav a[onclick="showPage('${pageId}')"]`);
-            if (activeLink) {
-                activeLink.classList.add('active');
-            }
-            
-            // Scroll to top
-            window.scrollTo(0, 0);
-        }
-
-        function handleNewsletter(event) {
-            event.preventDefault();
-            const email = event.target.querySelector('input[type="email"]').value;
-            alert(`Merci ! Votre inscription à la newsletter avec l'email ${email} a été prise en compte.`);
-            event.target.reset();
-        }
-
-        function handleContact(event) {
-            event.preventDefault();
-            const name = event.target.name.value;
-            const email = event.target.email.value;
-            const subject = event.target.subject.value;
-            const message = event.target.message.value;
-            
-            // Create mailto link
-            const mailtoLink = `mailto:bijj.inspire@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Nom: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
-            window.location.href = mailtoLink;
-            
-            alert('Votre client email va s\'ouvrir avec le message pré-rempli. Merci !');
-        }
-
-        // Add smooth scrolling and enhanced interactions
-        document.addEventListener('DOMContentLoaded', function() {
-            // Add scroll effect to header
-            let lastScrollTop = 0;
-            const header = document.querySelector('header');
-            
-            window.addEventListener('scroll', function() {
-                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                
-                if (scrollTop > lastScrollTop && scrollTop > 100) {
-                    header.style.transform = 'translateY(-100%)';
-                } else {
-                    header.style.transform = 'translateY(0)';
-                }
-                lastScrollTop = scrollTop;
-            });
-            
-            // Add transition to header
-            header.style.transition = 'transform 0.3s ease-in-out';
-        });
-    </script>
-</body>
-</html>
