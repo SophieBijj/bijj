@@ -109,29 +109,30 @@
         /* Desktop: regrouper nav et social */
         @media (min-width: 769px) {
             .header-content {
-                flex-direction: column;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                gap: 0;
             }
             
             .social-icons {
-                order: 1;
-                margin-left: auto;
-                margin-right: 25px;
-                margin-bottom: -15px;
-                position: relative;
-                z-index: 1;
+                order: 3;
+                position: absolute;
+                right: 0;
+                top: -10px;
             }
             
             .brand {
                 order: 2;
-                z-index: 1;
+                margin: 0;
             }
             
             .nav-container {
-                order: 1;
-                margin-bottom: -40px;
-                margin-left: auto;
-                position: relative;
-                z-index: 10;
+                order: 3;
+                position: absolute;
+                right: 0;
+                top: 20px;
             }
         }
         
