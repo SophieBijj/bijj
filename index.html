@@ -824,6 +824,11 @@
             .section h2 {
                 font-size: 2.2rem;
             }
+            
+            /* Responsive pour la section Animation + Quote */
+            .animation-quote-section {
+                grid-template-columns: 1fr !important;
+            }
         }
         
         @media (max-width: 1024px) and (min-width: 769px) {
@@ -1006,6 +1011,10 @@
                                 <li>Rouge Somptueux</li>
                             </ul>
                         </div>
+                    </div>
+
+                    <!-- Section avec Animation + Quote côte à côte -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 35px; margin: 35px 0 50px;">
                         <div class="service-card" onclick="showPage('animation')">
                             <h3>Animation</h3>
                             <p>J'anime vos événements avec clarté, compassion et humour.</p>
@@ -1016,12 +1025,11 @@
                                 <li>Chorale impromptue</li>
                             </ul>
                         </div>
-                    </div>
-
-                    <!-- Témoignage Animation à côté -->
-                    <div class="testimonial" style="max-width: 600px; margin: 0 auto 40px;">
-                        <em>"Sophie Bijjani sang for Rush Creek Lodge through this past summer, and she was both a joy to listen to, and a joy to work with. She is professional, punctual, and to top it all off, an amazing musician and singer to boot. Anyone who hires her in the capacity of musician, or any other position will not regret their decision."</em>
-                        <strong>- Rush Creek Lodge, Yosemite</strong>
+                        
+                        <div class="testimonial" style="margin: 0; height: fit-content;">
+                            <em>"Sophie Bijjani sang for Rush Creek Lodge through this past summer, and she was both a joy to listen to, and a joy to work with. She is professional, punctual, and to top it all off, an amazing musician and singer to boot. Anyone who hires her in the capacity of musician, or any other position will not regret their decision."</em>
+                            <strong>- Rush Creek Lodge, Yosemite</strong>
+                        </div>
                     </div>
 
                     <!-- Contact form pour les services -->
