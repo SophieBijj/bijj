@@ -231,77 +231,62 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
-        /* Hero section avec photo */
+        /* Hero section avec photo en background */
         .hero {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-            padding: 60px 40px;
-            background: linear-gradient(135deg, rgba(176, 65, 62, 0.08) 0%, rgba(212, 117, 111, 0.08) 100%);
+            position: relative;
+            height: 70vh;
+            min-height: 500px;
+            background-image: url('PhotoLanding.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             border-radius: 20px;
             margin-bottom: 60px;
-            position: relative;
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .hero:before {
             content: '';
             position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, rgba(176, 65, 62, 0.1) 0%, transparent 70%);
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(176, 65, 62, 0.3);
+            z-index: 1;
         }
         
         .hero-content {
-            flex: 1;
             position: relative;
-            z-index: 1;
+            z-index: 2;
+            text-align: center;
+            color: white;
+            max-width: 800px;
+            padding: 40px;
         }
         
         .hero-image {
-            flex: 0 0 280px;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .hero-image img {
-            width: 100%;
-            height: 350px;
-            object-fit: cover;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(176, 65, 62, 0.2);
-        }
-        
-        .hero-symbol {
-            position: absolute;
-            top: -15px;
-            right: -15px;
-            font-size: 3rem;
-            color: rgba(176, 65, 62, 0.3);
-            font-family: serif;
+            display: none;
         }
         
         .hero h2 {
             font-family: 'Outfit', sans-serif;
-            font-size: 3.2rem;
-            color: #1a1a1a;
+            font-size: 3.5rem;
+            color: white;
             margin-bottom: 1.5rem;
-            font-weight: 500;
+            font-weight: 600;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
         
         .hero p {
-            font-size: 1.3rem;
-            color: #555;
+            font-size: 1.4rem;
+            color: white;
             line-height: 1.7;
             margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
         }
         
         /* Video grid */
@@ -357,18 +342,6 @@
             margin: 50px 0;
         }
         
-        .service-card {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 35px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-            transition: all 0.4s ease;
-            border: 1px solid rgba(224, 214, 207, 0.4);
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-        }
-        
         .service-card:before {
             content: '';
             position: absolute;
@@ -388,21 +361,6 @@
         
         .service-card:hover:before {
             transform: scaleX(1);
-        }
-        
-        .service-symbol {
-            position: absolute;
-            top: 20px;
-            right: 25px;
-            font-size: 2.5rem;
-            color: rgba(176, 65, 62, 0.2);
-            font-family: serif;
-            transition: all 0.3s ease;
-        }
-        
-        .service-card:hover .service-symbol {
-            color: rgba(176, 65, 62, 0.4);
-            transform: scale(1.1);
         }
         
         .service-card h3 {
@@ -491,23 +449,25 @@
         }
         
         .newsletter:before {
-            content: '༄';
+            content: '';
             position: absolute;
-            top: 20px;
-            left: 30px;
-            font-size: 3rem;
-            opacity: 0.2;
-            font-family: serif;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
         }
         
         .newsletter:after {
-            content: '༅';
+            content: '';
             position: absolute;
-            bottom: 20px;
-            right: 30px;
-            font-size: 3rem;
-            opacity: 0.2;
-            font-family: serif;
+            bottom: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+            animation: rotate 25s linear infinite reverse;
         }
         
         .newsletter h3 {
@@ -919,7 +879,7 @@
                     </a>
                 </div>
                 
-                <div class="brand">
+                <div class="brand" onclick="showPage('accueil')" style="cursor: pointer;">
                     <h1>SOPHIE BIJJANI</h1>
                     <div class="tagline">Inspire ༅ Exprime</div>
                 </div>
@@ -980,17 +940,14 @@
                 
                 <div class="services-grid">
                     <div class="service-card" onclick="showPage('ateliers')">
-                        <div class="service-symbol">༄</div>
                         <h3>Circlesong & Co-impro</h3>
                         <p>Des ateliers de groupe pour découvrir ou affiner les pratiques de l'improvisation vocale en groupe, incluant une approche somatique.</p>
                     </div>
                     <div class="service-card" onclick="showPage('individuel')">
-                        <div class="service-symbol">༅</div>
                         <h3>Accompagnement individuel</h3>
                         <p>Un espace privilégié pour explorer votre voix dans une approche corps-cœur-esprit, libérer des blocages et raffiner votre perception.</p>
                     </div>
                     <div class="service-card" onclick="showPage('spectacles')">
-                        <div class="service-symbol">༄</div>
                         <h3>Spectacles</h3>
                         <p>Des performances intimistes où les chansons se révèlent sous un autre jour, créant des moments de connexion authentique.</p>
                     </div>
@@ -1023,7 +980,6 @@
                     <h2>Mes Services</h2>
                     <div class="services-grid">
                         <div class="service-card" onclick="showPage('ateliers')">
-                            <div class="service-symbol">༄</div>
                             <h3>Ateliers de groupe</h3>
                             <p>J'ouvre des espaces de jeu créatifs pour explorer l'improvisation vocale, la circlesong et le mouvement.</p>
                             <ul>
@@ -1034,7 +990,6 @@
                             </ul>
                         </div>
                         <div class="service-card" onclick="showPage('individuel')">
-                            <div class="service-symbol">༅</div>
                             <h3>Accompagnement individuel</h3>
                             <p>Un espace privilégié pour explorer votre relation à ce que vous voulez amplifier dans le monde par votre voix.</p>
                             <ul>
@@ -1044,7 +999,6 @@
                             </ul>
                         </div>
                         <div class="service-card" onclick="showPage('spectacles')">
-                            <div class="service-symbol">༄</div>
                             <h3>Spectacles</h3>
                             <p>Des performances qui transcendent le cadre traditionnel pour devenir de véritables voyages sensoriels.</p>
                             <ul>
@@ -1054,7 +1008,6 @@
                             </ul>
                         </div>
                         <div class="service-card" onclick="showPage('animation')">
-                            <div class="service-symbol">༅</div>
                             <h3>Animation & MC</h3>
                             <p>J'anime vos événements avec clarté, compassion et humour.</p>
                             <ul>
@@ -1106,7 +1059,6 @@
                     </div>
                     
                     <div class="service-card">
-                        <div class="service-symbol">༄</div>
                         <h3>Flow Musical</h3>
                         <p><strong>Expérience de musique vocale et corporelle improvisée ouverte à tous.</strong></p>
                         <p><strong>Mon objectif :</strong> Offrir un cadre propice à la connexion de groupe à travers le jeu musical improvisé, intégrant voix et mouvement pour une exploration complète.</p>
@@ -1119,7 +1071,6 @@
                     </div>
 
                     <div class="service-card">
-                        <div class="service-symbol">༅</div>
                         <h3>Circlesong 101</h3>
                         <p><strong>Plongée dans l'univers de la Circlesong pour en comprendre les fondements.</strong></p>
                         <p><strong>Mon objectif :</strong> Apprendre les bases de la circlesong pour pouvoir créer ses propres circlesongs en improvisant. Développer l'écoute collective et la création spontanée.</p>
@@ -1132,7 +1083,6 @@
                     </div>
 
                     <div class="service-card">
-                        <div class="service-symbol">༄</div>
                         <h3>Bases Musicales en Impro Vocale</h3>
                         <p><strong>Par où commencer pour improviser vocalement ? Cet atelier offre les bases pour s'y repérer.</strong></p>
                         <p><strong>Mon objectif :</strong> Transmettre un sens du rythme, de l'harmonie et des rôles dans une improvisation vocale. Développer la confiance créative et l'autonomie musicale.</p>
@@ -1155,7 +1105,6 @@
                     </div>
 
                     <div class="service-card">
-                        <div class="service-symbol">༅</div>
                         <h3>Corps Sonores</h3>
                         <p><strong>Exploration du lien somatique de la voix et du corps comme instrument.</strong></p>
                         <p><strong>Mon objectif :</strong> Faire de la place au subtil qui nous habite, écouter ce que le corps raconte et utiliser notre voix pour l'exprimer. Intégration corps-voix-émotion dans une approche sensitive.</p>
