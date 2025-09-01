@@ -231,10 +231,12 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
-        /* Hero section */
+        /* Hero section avec photo */
         .hero {
-            text-align: center;
-            padding: 80px 40px;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            padding: 60px 40px;
             background: linear-gradient(135deg, rgba(176, 65, 62, 0.08) 0%, rgba(212, 117, 111, 0.08) 100%);
             border-radius: 20px;
             margin-bottom: 60px;
@@ -258,24 +260,48 @@
             50% { transform: translateY(-20px) rotate(180deg); }
         }
         
+        .hero-content {
+            flex: 1;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-image {
+            flex: 0 0 280px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(176, 65, 62, 0.2);
+        }
+        
+        .hero-symbol {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            font-size: 3rem;
+            color: rgba(176, 65, 62, 0.3);
+            font-family: serif;
+        }
+        
         .hero h2 {
             font-family: 'Outfit', sans-serif;
             font-size: 3.2rem;
             color: #1a1a1a;
             margin-bottom: 1.5rem;
             font-weight: 500;
-            position: relative;
-            z-index: 1;
         }
         
         .hero p {
             font-size: 1.3rem;
             color: #555;
-            max-width: 700px;
-            margin: 0 auto 2rem;
             line-height: 1.7;
-            position: relative;
-            z-index: 1;
+            margin-bottom: 2rem;
         }
         
         /* Video grid */
@@ -323,7 +349,7 @@
             font-size: 1rem;
         }
         
-        /* Services grid */
+        /* Services grid - clickable cards */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -340,6 +366,7 @@
             border: 1px solid rgba(224, 214, 207, 0.4);
             position: relative;
             overflow: hidden;
+            cursor: pointer;
         }
         
         .service-card:before {
@@ -361,6 +388,21 @@
         
         .service-card:hover:before {
             transform: scaleX(1);
+        }
+        
+        .service-symbol {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 2.5rem;
+            color: rgba(176, 65, 62, 0.2);
+            font-family: serif;
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover .service-symbol {
+            color: rgba(176, 65, 62, 0.4);
+            transform: scale(1.1);
         }
         
         .service-card h3 {
@@ -449,19 +491,23 @@
         }
         
         .newsletter:before {
-            content: '';
+            content: '༄';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            animation: rotate 20s linear infinite;
+            top: 20px;
+            left: 30px;
+            font-size: 3rem;
+            opacity: 0.2;
+            font-family: serif;
         }
         
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        .newsletter:after {
+            content: '༅';
+            position: absolute;
+            bottom: 20px;
+            right: 30px;
+            font-size: 3rem;
+            opacity: 0.2;
+            font-family: serif;
         }
         
         .newsletter h3 {
@@ -538,7 +584,8 @@
         }
         
         .form-group input,
-        .form-group textarea {
+        .form-group textarea,
+        .form-group select {
             width: 100%;
             padding: 15px;
             border: 2px solid rgba(224, 214, 207, 0.6);
@@ -549,7 +596,8 @@
         }
         
         .form-group input:focus,
-        .form-group textarea:focus {
+        .form-group textarea:focus,
+        .form-group select:focus {
             outline: none;
             border-color: #b0413e;
             box-shadow: 0 0 0 3px rgba(176, 65, 62, 0.1);
@@ -628,8 +676,122 @@
             color: #444;
         }
         
+        /* Music section */
+        .music-platforms {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .platform-link {
+            display: inline-block;
+            padding: 12px 25px;
+            background: linear-gradient(135deg, #b0413e, #d4756f);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .platform-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(176, 65, 62, 0.3);
+        }
+        
+        .spotify-section {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 20px;
+            margin: 40px 0;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+        
+        .spotify-embed {
+            margin: 30px 0;
+        }
+        
+        /* Artist photo section */
+        .artist-intro {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 20px;
+            margin: 50px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+            border: 1px solid rgba(224, 214, 207, 0.4);
+        }
+        
+        .artist-photo {
+            flex: 0 0 200px;
+        }
+        
+        .artist-photo img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 15px 35px rgba(176, 65, 62, 0.2);
+        }
+        
+        .artist-text {
+            flex: 1;
+        }
+        
+        .artist-text h3 {
+            color: #b0413e;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        
+        .artist-text p {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        /* Footer */
+        footer {
+            background: rgba(176, 65, 62, 0.9);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 60px;
+            font-size: 0.9rem;
+        }
+        
         /* Responsive */
         @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 40px 20px;
+            }
+            
+            .hero-image {
+                order: -1;
+                flex: none;
+                width: 250px;
+            }
+            
+            .hero-image img {
+                height: 300px;
+            }
+            
+            .artist-intro {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .artist-photo {
+                flex: none;
+            }
+            
             .header-content {
                 flex-direction: column;
                 gap: 20px;
@@ -684,11 +846,6 @@
                 margin-top: 180px;
             }
             
-            .hero {
-                padding: 40px 20px;
-                margin-top: 20px;
-            }
-            
             .hero h2 {
                 font-size: 2.2rem;
             }
@@ -740,31 +897,6 @@
                 font-size: 0.85rem;
                 padding: 6px 10px;
             }
-        }
-        
-        /* Music page specific styles */
-        .music-platforms {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 30px;
-            flex-wrap: wrap;
-        }
-        
-        .platform-link {
-            display: inline-block;
-            padding: 12px 25px;
-            background: linear-gradient(135deg, #b0413e, #d4756f);
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        
-        .platform-link:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(176, 65, 62, 0.3);
         }
     </style>
 </head>
@@ -819,8 +951,14 @@
             <!-- ACCUEIL -->
             <div id="accueil" class="page active">
                 <div class="hero">
-                    <h2>Bienvenue dans mon univers créatif</h2>
-                    <p>Musicienne, pédagogue et créatrice d'espaces sacrés, j'accompagne les voix qui cherchent à s'épanouir. Explorons ensemble la magie qui naît quand corps, cœur et expression s'alignent.</p>
+                    <div class="hero-content">
+                        <h2>Bienvenue dans mon univers créatif</h2>
+                        <p>Musicienne, pédagogue et créatrice d'espaces d'expression, j'accompagne les voix qui cherchent à s'épanouir. Explorons ensemble la magie qui naît quand corps, cœur et expression s'alignent.</p>
+                    </div>
+                    <div class="hero-image">
+                        <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Sophie Bijjani">
+                        <div class="hero-symbol">༄</div>
+                    </div>
                 </div>
                 
                 <div class="video-grid">
@@ -841,17 +979,20 @@
                 </div>
                 
                 <div class="services-grid">
-                    <div class="service-card">
-                        <h3>🎵 Ateliers de groupe</h3>
-                        <p>Explorez l'improvisation vocale, la circlesong et le mouvement dans un cadre bienveillant.</p>
+                    <div class="service-card" onclick="showPage('ateliers')">
+                        <div class="service-symbol">༄</div>
+                        <h3>Circlesong & Co-impro</h3>
+                        <p>Des ateliers de groupe pour découvrir ou affiner les pratiques de l'improvisation vocale en groupe, incluant une approche somatique.</p>
                     </div>
-                    <div class="service-card">
-                        <h3>🎤 Accompagnement individuel</h3>
-                        <p>Un espace privilégié pour explorer votre voix dans une approche corps-cœur-esprit.</p>
+                    <div class="service-card" onclick="showPage('individuel')">
+                        <div class="service-symbol">༅</div>
+                        <h3>Accompagnement individuel</h3>
+                        <p>Un espace privilégié pour explorer votre voix dans une approche corps-cœur-esprit, libérer des blocages et raffiner votre perception.</p>
                     </div>
-                    <div class="service-card">
-                        <h3>🎭 Spectacles</h3>
-                        <p>Des performances intimistes qui transforment les classiques en voyages sensoriels.</p>
+                    <div class="service-card" onclick="showPage('spectacles')">
+                        <div class="service-symbol">༄</div>
+                        <h3>Spectacles</h3>
+                        <p>Des performances intimistes où les chansons se révèlent sous un autre jour, créant des moments de connexion authentique.</p>
                     </div>
                 </div>
                 
@@ -863,6 +1004,17 @@
                         <button type="submit">S'inscrire</button>
                     </form>
                 </div>
+
+                <!-- Photo de Sophie en bas de page d'accueil -->
+                <div class="artist-intro">
+                    <div class="artist-photo">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616c669-bf50?ixlib=rb-4.0.3&auto=format&fit=crop&w=250&q=80" alt="Sophie Bijjani">
+                    </div>
+                    <div class="artist-text">
+                        <h3>Sophie Bijjani</h3>
+                        <p>Mi-fée, mi-femme mystique, je vous entraîne dans une odyssée où la musique devient un espace de rencontre, un chemin vers soi où les émotions catalysent des transformations profondes et expansives.</p>
+                    </div>
+                </div>
             </div>
 
             <!-- SERVICES -->
@@ -870,7 +1022,8 @@
                 <div class="section">
                     <h2>Mes Services</h2>
                     <div class="services-grid">
-                        <div class="service-card">
+                        <div class="service-card" onclick="showPage('ateliers')">
+                            <div class="service-symbol">༄</div>
                             <h3>Ateliers de groupe</h3>
                             <p>J'ouvre des espaces de jeu créatifs pour explorer l'improvisation vocale, la circlesong et le mouvement.</p>
                             <ul>
@@ -880,16 +1033,18 @@
                                 <li>Corps sonores</li>
                             </ul>
                         </div>
-                        <div class="service-card">
+                        <div class="service-card" onclick="showPage('individuel')">
+                            <div class="service-symbol">༅</div>
                             <h3>Accompagnement individuel</h3>
                             <p>Un espace privilégié pour explorer votre relation à ce que vous voulez amplifier dans le monde par votre voix.</p>
                             <ul>
-                                <li>Durée : 1h00</li>
                                 <li>En personne ou en ligne</li>
                                 <li>Tous niveaux</li>
+                                <li>Approche holistique</li>
                             </ul>
                         </div>
-                        <div class="service-card">
+                        <div class="service-card" onclick="showPage('spectacles')">
+                            <div class="service-symbol">༄</div>
                             <h3>Spectacles</h3>
                             <p>Des performances qui transcendent le cadre traditionnel pour devenir de véritables voyages sensoriels.</p>
                             <ul>
@@ -898,7 +1053,8 @@
                                 <li>Rouge Somptueux</li>
                             </ul>
                         </div>
-                        <div class="service-card">
+                        <div class="service-card" onclick="showPage('animation')">
+                            <div class="service-symbol">༅</div>
                             <h3>Animation & MC</h3>
                             <p>J'anime vos événements avec clarté, compassion et humour.</p>
                             <ul>
@@ -907,6 +1063,36 @@
                                 <li>Chorale impromptue</li>
                             </ul>
                         </div>
+                    </div>
+
+                    <!-- Contact form pour les services -->
+                    <div class="contact-form" style="margin-top: 50px;">
+                        <h3 style="text-align: center; margin-bottom: 25px; color: #b0413e;">Contactez-moi pour trouver la formule adaptée à votre événement</h3>
+                        <form onsubmit="handleServiceContact(event)">
+                            <div class="form-group">
+                                <label for="service-name">Nom</label>
+                                <input type="text" id="service-name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="service-email">Email</label>
+                                <input type="email" id="service-email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="service-type">Service souhaité</label>
+                                <select id="service-type" name="service" required>
+                                    <option value="">Sélectionnez un service</option>
+                                    <option value="ateliers">Ateliers de groupe</option>
+                                    <option value="individuel">Accompagnement individuel</option>
+                                    <option value="spectacles">Spectacles</option>
+                                    <option value="animation">Animation & MC</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="service-message">Message</label>
+                                <textarea id="service-message" name="message" placeholder="Décrivez-moi votre projet, vos besoins, la date envisagée..." required></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">Envoyer la demande</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -920,52 +1106,95 @@
                     </div>
                     
                     <div class="service-card">
+                        <div class="service-symbol">༄</div>
                         <h3>Flow Musical</h3>
                         <p><strong>Expérience de musique vocale et corporelle improvisée ouverte à tous.</strong></p>
-                        <p><strong>Mon objectif :</strong> Offrir un cadre propice à la connexion de groupe à travers le jeu musical improvisé.</p>
+                        <p><strong>Mon objectif :</strong> Offrir un cadre propice à la connexion de groupe à travers le jeu musical improvisé, intégrant voix et mouvement pour une exploration complète.</p>
                         <ul>
                             <li>Durée : 1h30</li>
                             <li>10 à 30 participants</li>
                             <li>Tous niveaux</li>
+                            <li>Exploration vocale et corporelle</li>
                         </ul>
                     </div>
 
                     <div class="service-card">
+                        <div class="service-symbol">༅</div>
                         <h3>Circlesong 101</h3>
                         <p><strong>Plongée dans l'univers de la Circlesong pour en comprendre les fondements.</strong></p>
-                        <p><strong>Mon objectif :</strong> Apprendre les bases de la circlesong pour pouvoir créer ses propres circlesongs en improvisant.</p>
+                        <p><strong>Mon objectif :</strong> Apprendre les bases de la circlesong pour pouvoir créer ses propres circlesongs en improvisant. Développer l'écoute collective et la création spontanée.</p>
                         <ul>
                             <li>4 modules de 3 heures</li>
                             <li>6 à 12 participants</li>
                             <li>Niveau intermédiaire</li>
+                            <li>Technique d'improvisation structurée</li>
                         </ul>
                     </div>
 
                     <div class="service-card">
+                        <div class="service-symbol">༄</div>
                         <h3>Bases Musicales en Impro Vocale</h3>
                         <p><strong>Par où commencer pour improviser vocalement ? Cet atelier offre les bases pour s'y repérer.</strong></p>
-                        <p><strong>Mon objectif :</strong> Transmettre un sens du rythme, de l'harmonie et des rôles dans une improvisation vocale.</p>
+                        <p><strong>Mon objectif :</strong> Transmettre un sens du rythme, de l'harmonie et des rôles dans une improvisation vocale. Développer la confiance créative et l'autonomie musicale.</p>
                         <ul>
                             <li>Durée : 3h</li>
                             <li>6 à 15 participants</li>
                             <li>Débutants</li>
+                            <li>Fondamentaux musicaux</li>
                         </ul>
                         
                         <div class="testimonial">
                             <em>"L'atelier [Bases musicales...] m'a aidée à comprendre comment improviser vocalement et comment les impros peuvent être structurées, le tout dans une atmosphère accueillante, amicale et sans pression."</em>
                             <strong>- Amélie C.</strong>
                         </div>
+
+                        <div class="testimonial">
+                            <em>"Plusieurs mois après l'atelier d'improvisation vocale, l'expérience vit encore en moi et transforme ma manière de me connecter avec les autres en musique. Merci Sophie pour ta façon naturelle et généreuse de partager la musique."</em>
+                            <strong>- Grace</strong>
+                        </div>
                     </div>
 
                     <div class="service-card">
+                        <div class="service-symbol">༅</div>
                         <h3>Corps Sonores</h3>
                         <p><strong>Exploration du lien somatique de la voix et du corps comme instrument.</strong></p>
-                        <p><strong>Mon objectif :</strong> Faire de la place au subtil qui nous habite, écouter ce que le corps raconte et utiliser notre voix pour l'exprimer.</p>
+                        <p><strong>Mon objectif :</strong> Faire de la place au subtil qui nous habite, écouter ce que le corps raconte et utiliser notre voix pour l'exprimer. Intégration corps-voix-émotion dans une approche sensitive.</p>
                         <ul>
                             <li>Durée : 2h</li>
                             <li>6 à 15 participants</li>
                             <li>Tous niveaux</li>
+                            <li>Approche somatique</li>
                         </ul>
+                    </div>
+
+                    <!-- Contact form pour ateliers -->
+                    <div class="contact-form" style="margin-top: 50px;">
+                        <h3 style="text-align: center; margin-bottom: 25px; color: #b0413e;">S'inscrire à un atelier</h3>
+                        <form onsubmit="handleWorkshopContact(event)">
+                            <div class="form-group">
+                                <label for="workshop-name">Nom</label>
+                                <input type="text" id="workshop-name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="workshop-email">Email</label>
+                                <input type="email" id="workshop-email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="workshop-type">Atelier souhaité</label>
+                                <select id="workshop-type" name="workshop" required>
+                                    <option value="">Sélectionnez un atelier</option>
+                                    <option value="flow">Flow Musical</option>
+                                    <option value="circlesong">Circlesong 101</option>
+                                    <option value="bases">Bases Musicales en Impro Vocale</option>
+                                    <option value="corps">Corps Sonores</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="workshop-message">Message</label>
+                                <textarea id="workshop-message" name="message" placeholder="Votre niveau, vos attentes, questions..." required></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">S'inscrire</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -975,8 +1204,8 @@
                 <div class="section">
                     <h2>Accompagnement individuel</h2>
                     <div class="bio-content">
-                        <p>C'est un espace privilégié pour explorer votre relation à ce que vous voulez amplifier dans le monde par votre voix.</p>
-                        <p>Ensemble, nous cherchons la cohérence entre voix, corps et cœur, pour que votre message passe clairement et avec aisance - pour exprimer la vérité de votre être.</p>
+                        <p>C'est un espace privilégié pour explorer votre relation à ce que vous voulez amplifier dans le monde par votre voix. Pour les personnes sensibles qui veulent raffiner leur perception de leur démarche, de leur travail, de leur voix.</p>
+                        <p>Ensemble, nous cherchons la cohérence entre voix, corps et cœur, pour que votre message passe clairement et avec aisance - pour exprimer la vérité de votre être. Souvent, un travail psycho-somatique-énergétique s'enclenche car la voix est bien plus qu'une simple mécanique.</p>
                         
                         <h3>Ce que je peux vous accompagner à explorer :</h3>
                         <ul>
@@ -986,13 +1215,14 @@
                             <li>Recherche des mots justes pour vos créations</li>
                             <li>Clarté de la voix dans une approche corps-cœur-esprit</li>
                             <li>Travail sur l'alignement intérieur pour une expression authentique</li>
+                            <li>Libération de blocages énergétiques</li>
                         </ul>
                         
                         <h3>Informations pratiques :</h3>
                         <ul>
-                            <li>Durée : 1h00</li>
-                            <li>Format : En personne ou en ligne</li>
-                            <li>Public : Tous niveaux - particulièrement adapté aux personnes sensibles cherchant une écoute profonde et une vision holistique</li>
+                            <li>En personne ou en ligne</li>
+                            <li>Tous niveaux - particulièrement adapté aux personnes sensibles</li>
+                            <li>Écoute profonde et vision holistique</li>
                         </ul>
                         
                         <p><em>Un espace sécuritaire où votre authenticité peut s'épanouir à travers le pouvoir transformateur de la voix.</em></p>
@@ -1001,11 +1231,35 @@
                             <em>"Notre session m'a fait prendre conscience de l'importance de la détente dans le travail de la voix, et m'a fait résonner des zones que je n'avais pas l'habitude de sentir. Sophie m'a aidée à conscientiser des espaces de résonance nouveaux chez moi. C'est une très bonne pédagogue."</em>
                             <strong>- Patricia</strong>
                         </div>
+                    </div>
 
-                        <div class="testimonial">
-                            <em>"Plusieurs mois après l'atelier d'improvisation vocale, l'expérience vit encore en moi et transforme ma manière de me connecter avec les autres en musique. Merci Sophie pour ta façon naturelle et généreuse de partager la musique."</em>
-                            <strong>- Grace</strong>
-                        </div>
+                    <!-- Contact form pour accompagnement individuel -->
+                    <div class="contact-form" style="margin-top: 50px;">
+                        <h3 style="text-align: center; margin-bottom: 25px; color: #b0413e;">Réserver une session individuelle</h3>
+                        <form onsubmit="handleIndividualContact(event)">
+                            <div class="form-group">
+                                <label for="individual-name">Nom</label>
+                                <input type="text" id="individual-name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="individual-email">Email</label>
+                                <input type="email" id="individual-email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="individual-format">Format souhaité</label>
+                                <select id="individual-format" name="format">
+                                    <option value="">Sélectionnez un format</option>
+                                    <option value="en-personne">En personne</option>
+                                    <option value="en-ligne">En ligne</option>
+                                    <option value="indifferent">Peu importe</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="individual-message">Message</label>
+                                <textarea id="individual-message" name="message" placeholder="Parlez-moi de ce que vous aimeriez explorer, vos objectifs, votre parcours..." required></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">Demander une session</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -1016,62 +1270,81 @@
                     <h2>Spectacles</h2>
                     
                     <div class="service-card">
+                        <div class="service-symbol">༄</div>
                         <h3>Mosaïque Mainstream</h3>
-                        <p>Une fresque musicale aux milles reflets: Sophie vous interprète des chansons qui ont traversé frontières et générations pour se révéler à vous sous un autre jour.</p>
-                        <p>Un hommage aux chansons qui nous habitent, qui nous accompagnent dans nos joies et nos doutes. Un cercle où Dalida et Metallica se côtoient intimement...</p>
-                        
-                        <h4>Format :</h4>
+                        <p>Une fresque musicale aux mille reflets : des chansons qui ont traversé frontières et générations se révèlent sous un autre jour. Un hommage aux mélodies qui nous habitent, de Dalida à Metallica, dans un cercle intime où chaque chanson devient une conversation.</p>
                         <ul>
-                            <li>Solo (piano/guitare/voix/looper)</li>
-                            <li>Durée : 1h20</li>
-                            <li>Tout public</li>
-                            <li>Ambiance café-concert et concert maison</li>
+                            <li>Format solo intimiste</li>
+                            <li>Ambiance café-concert</li>
+                            <li>Répertoire éclectique multilingue</li>
                         </ul>
-                        
-                        <h4>Répertoire éclectique :</h4>
-                        <p>Rise (Yaima), Les gens qui doutent (Anne Sylvestre), Paroles Paroles (Dalida), Where is the Love (Black Eyed Peas), Nothing Else Matters (Metallica), Emmenez-moi (Charles Aznavour), et bien d'autres...</p>
                     </div>
 
                     <div class="service-card">
+                        <div class="service-symbol">༅</div>
                         <h3>À la carte : Jukebox Humain</h3>
-                        <p><strong>Vous programmez, Sophie joue ! Un concert sur mesure où le public compose sa playlist en direct.</strong></p>
-                        
-                        <h4>Format :</h4>
+                        <p>Vous programmez, Sophie joue ! Un concert sur mesure où le public compose sa playlist en direct. Une expérience interactive unique où vos chansons préférées prennent vie dans l'instant présent.</p>
                         <ul>
-                            <li>Solo (piano/guitare/voix/looper)</li>
-                            <li>Durée : 1h20</li>
-                            <li>Tout public</li>
-                            <li>Ambiance animation et concert maison</li>
+                            <li>Concert interactif</li>
+                            <li>Playlist composée en direct</li>
+                            <li>Animation participative</li>
                         </ul>
                     </div>
 
                     <div class="service-card">
+                        <div class="service-symbol">༄</div>
                         <h3>Rouge Somptueux : Compositions</h3>
-                        <p>Plongée intime et poétique dans les compositions de Sophie Bijjani. Des chansons qui cherchent le point de bascule, le levier d'empuissement.</p>
-                        
-                        <h4>Format :</h4>
+                        <p>Plongée intime et poétique dans mes compositions originales. Des chansons qui cherchent le point de bascule, le levier d'empuissancement, explorant les nuances de l'expérience humaine.</p>
                         <ul>
-                            <li>Solo (piano/guitare/voix/looper)</li>
-                            <li>Durée : 1h00</li>
-                            <li>Tout public</li>
-                            <li>Concert maison et intime</li>
+                            <li>Créations originales</li>
+                            <li>Univers poétique personnel</li>
+                            <li>Concert intime</li>
                         </ul>
-                        
-                        <h4>Répertoire :</h4>
-                        <p>Feu d'grand vent, Rouge somptueux, Sésame ouvre-toi, Freedom, Pour être honnête avec toi, Valse d'Ève, et plus...</p>
                     </div>
 
                     <div class="service-card">
+                        <div class="service-symbol">༅</div>
                         <h3>Chœur ouvert : Chants de reliance</h3>
-                        <p>Chansons glanées au fil de mes voyages et des ouvertures de cœur. Paroles fournies pour le public.</p>
-                        
-                        <h4>Format :</h4>
+                        <p>Chansons glanées au fil de mes voyages et des ouvertures de cœur. Un moment de connexion collective où les voix se joignent pour créer une harmonie partagée.</p>
                         <ul>
-                            <li>Guitare/voix</li>
-                            <li>Durée : 1h15</li>
-                            <li>Tout public</li>
-                            <li>Cercles de chants - Festivals - Wellness Gatherings</li>
+                            <li>Expérience participative</li>
+                            <li>Chants de différentes traditions</li>
+                            <li>Cercles de chants</li>
                         </ul>
+                    </div>
+
+                    <!-- Contact form pour spectacles -->
+                    <div class="contact-form" style="margin-top: 50px;">
+                        <h3 style="text-align: center; margin-bottom: 25px; color: #b0413e;">Programmer un spectacle</h3>
+                        <form onsubmit="handleShowContact(event)">
+                            <div class="form-group">
+                                <label for="show-name">Nom</label>
+                                <input type="text" id="show-name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="show-email">Email</label>
+                                <input type="email" id="show-email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="show-type">Spectacle souhaité</label>
+                                <select id="show-type" name="show">
+                                    <option value="">Sélectionnez un spectacle</option>
+                                    <option value="mosaique">Mosaïque Mainstream</option>
+                                    <option value="jukebox">À la carte : Jukebox Humain</option>
+                                    <option value="rouge">Rouge Somptueux : Compositions</option>
+                                    <option value="choeur">Chœur ouvert : Chants de reliance</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="show-date">Date souhaitée</label>
+                                <input type="date" id="show-date" name="date">
+                            </div>
+                            <div class="form-group">
+                                <label for="show-message">Message</label>
+                                <textarea id="show-message" name="message" placeholder="Décrivez votre lieu, l'événement, le public attendu, vos besoins..." required></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">Demander un devis</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -1081,12 +1354,14 @@
                 <div class="section">
                     <h2>Animation & MC</h2>
                     <div class="bio-content">
-                        <p>J'anime vos événements avec clarté, compassion et humour, créant une atmosphère chaleureuse et engageante.</p>
+                        <h3>Maître de cérémonie / Porte-parole</h3>
+                        <p>Besoin de quelqu'un pour animer un gala, un événement ? Je suis là pour ça. J'anime vos événements avec clarté, compassion et humour, créant une atmosphère chaleureuse et engageante.</p>
                         
                         <h3>Services d'animation :</h3>
                         <ul>
-                            <li>Maître de cérémonie pour événements</li>
-                            <li>Animation de galas et soirées</li>
+                            <li>Maître de cérémonie</li>
+                            <li>Animation de galas</li>
+                            <li>Porte-parole de festivals</li>
                             <li>Chorale impromptue</li>
                             <li>Sérénade impromptue</li>
                         </ul>
@@ -1096,6 +1371,41 @@
                             <strong>- Témoignage d'un festival</strong>
                         </div>
                     </div>
+
+                    <!-- Contact form pour animation -->
+                    <div class="contact-form" style="margin-top: 50px;">
+                        <h3 style="text-align: center; margin-bottom: 25px; color: #b0413e;">Demander mes services d'animation</h3>
+                        <form onsubmit="handleAnimationContact(event)">
+                            <div class="form-group">
+                                <label for="animation-name">Nom</label>
+                                <input type="text" id="animation-name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="animation-email">Email</label>
+                                <input type="email" id="animation-email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="animation-type">Type d'événement</label>
+                                <select id="animation-type" name="event_type">
+                                    <option value="">Sélectionnez le type d'événement</option>
+                                    <option value="gala">Gala</option>
+                                    <option value="festival">Festival</option>
+                                    <option value="conference">Conférence</option>
+                                    <option value="mariage">Mariage</option>
+                                    <option value="autre">Autre</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="animation-date">Date de l'événement</label>
+                                <input type="date" id="animation-date" name="date">
+                            </div>
+                            <div class="form-group">
+                                <label for="animation-message">Message</label>
+                                <textarea id="animation-message" name="message" placeholder="Décrivez votre événement, le rôle souhaité, l'ambiance recherchée..." required></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">Demander un devis</button>
+                        </form>
+                    </div>
                 </div>
             </div>
 
@@ -1103,8 +1413,11 @@
             <div id="musique" class="page">
                 <div class="section">
                     <h2>Ma Musique</h2>
-                    <div class="bio-content">
-                        <p>Découvrez mes créations musicales, mes compositions originales et mes reprises revisitées. Chaque chanson est un voyage, une exploration des émotions humaines universelles.</p>
+                    
+                    <!-- Section Spotify mise en avant -->
+                    <div class="spotify-section">
+                        <h3 style="color: #b0413e; font-size: 1.8rem; margin-bottom: 25px; text-align: center;">Découvrez mes créations</h3>
+                        <p style="text-align: center; font-size: 1.2rem; color: #555; margin-bottom: 40px;">Chaque chanson est un voyage, une exploration des émotions humaines universelles.</p>
                         
                         <div class="music-platforms">
                             <a href="https://open.spotify.com/artist/2gWI0fgWg1LXt6S2y0LZMu/" target="_blank" class="platform-link">
@@ -1116,6 +1429,16 @@
                             <a href="https://www.deezer.com/en/artist/14124551" target="_blank" class="platform-link">
                                 <i class="fab fa-deezer"></i> Deezer
                             </a>
+                        </div>
+
+                        <div class="spotify-embed">
+                            <h4 style="color: #b0413e; margin-bottom: 20px;">Écoutez "Chasser l'ennui"</h4>
+                            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/18GSIOJV6kfNBN4AeUnYJd?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                        </div>
+
+                        <div class="spotify-embed">
+                            <h4 style="color: #b0413e; margin: 30px 0 20px;">Album "Feu d'grand vent"</h4>
+                            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/7a0fS2k5bagVzAGGyLxVNf?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                         </div>
                     </div>
                     
@@ -1143,9 +1466,16 @@
                 <div class="section">
                     <h2>À propos</h2>
                     <div class="bio-content">
-                        <p>Mi-fée, mi-femme mystique, Sophie vous entraîne dans une odyssée où la musique n'est pas seulement un art, mais un espace de rencontre, un chemin vers soi où les émotions catalysent des transformations profondes et expansives.</p>
-                        
-                        <p>Puisant dans l'expérience humaine, elle révèle, à travers son art, la magie cachée dans chaque instant. Elle est formée en techniques professionnelles de musique et chanson, avec une spécialisation en chant jazz et a suivi une formation intensive en Circlesong. Depuis 2020, elle est engagée dans la pratique du Contact Improvisation et danse depuis plus de 25 ans.</p>
+                        <div style="display: flex; align-items: flex-start; gap: 40px; margin-bottom: 40px;">
+                            <div style="flex: 0 0 250px;">
+                                <img src="https://images.unsplash.com/photo-1494790108755-2616c669-bf50?ixlib=rb-4.0.3&auto=format&fit=crop&w=250&q=80" alt="Sophie Bijjani" style="width: 100%; height: 300px; object-fit: cover; border-radius: 20px; box-shadow: 0 15px 35px rgba(176, 65, 62, 0.2);">
+                            </div>
+                            <div style="flex: 1;">
+                                <p>Mi-fée, mi-femme mystique, Sophie vous entraîne dans une odyssée où la musique n'est pas seulement un art, mais un espace de rencontre, un chemin vers soi où les émotions catalysent des transformations profondes et expansives.</p>
+                                
+                                <p>Puisant dans l'expérience humaine, elle révèle, à travers son art, la magie cachée dans chaque instant. Elle est formée en techniques professionnelles de musique et chanson, avec une spécialisation en chant jazz et a suivi une formation intensive en Circlesong. Depuis 2020, elle est engagée dans la pratique du Contact Improvisation et danse depuis plus de 25 ans.</p>
+                            </div>
+                        </div>
                         
                         <h3>Formation et expertise</h3>
                         <ul>
@@ -1157,9 +1487,9 @@
                         </ul>
                         
                         <h3>Ma philosophie</h3>
-                        <p>Les événements de Bijj sont un point de rencontre pour les esprits créatifs et les âmes en quête de justesse, un laboratoire où l'expression devient un outil de croissance et où les liens authentiques encouragent l'expression de soi.</p>
+                        <p>Mes événements sont un point de rencontre pour les esprits créatifs et les âmes en quête de justesse, un laboratoire où l'expression devient un outil de croissance et où les liens authentiques encouragent l'expression de soi.</p>
                         
-                        <p>Bijj ouvre des espaces d'exploration, d'affirmation et de transformation. À travers l'improvisation, la musique, le mouvement, l'écriture et des expériences immersives, ce projet unique éveille à la fois authenticité et jeu, pour un voyage intérieur à la fois simple et profond.</p>
+                        <p>J'ouvre des espaces d'exploration, d'affirmation et de transformation. À travers l'improvisation, la musique, le mouvement, l'écriture et des expériences immersives, ce projet unique éveille à la fois authenticité et jeu, pour un voyage intérieur à la fois simple et profond.</p>
                     </div>
                 </div>
             </div>
@@ -1181,6 +1511,44 @@
                         </ul>
                         
                         <p><em>Pour être informé en primeur de mes événements, inscrivez-vous à ma newsletter "Inspirations Vocales".</em></p>
+                    </div>
+
+                    <!-- Contact form pour événements -->
+                    <div class="contact-form" style="margin-top: 50px;">
+                        <h3 style="text-align: center; margin-bottom: 25px; color: #b0413e;">M'inviter à votre événement</h3>
+                        <form onsubmit="handleEventContact(event)">
+                            <div class="form-group">
+                                <label for="event-name">Nom de l'organisateur</label>
+                                <input type="text" id="event-name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="event-email">Email</label>
+                                <input type="email" id="event-email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="event-organization">Organisation</label>
+                                <input type="text" id="event-organization" name="organization" placeholder="Nom de votre organisation/festival/lieu">
+                            </div>
+                            <div class="form-group">
+                                <label for="event-date">Date souhaitée</label>
+                                <input type="date" id="event-date" name="date">
+                            </div>
+                            <div class="form-group">
+                                <label for="event-message">Décrivez votre projet</label>
+                                <textarea id="event-message" name="message" placeholder="Type d'événement, public visé, lieu, durée, budget approximatif..." required></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">Envoyer la proposition</button>
+                        </form>
+                    </div>
+
+                    <!-- Newsletter sur la page événements -->
+                    <div class="newsletter" style="margin-top: 50px;">
+                        <h3>Ne ratez aucun événement</h3>
+                        <p>Soyez les premiers informés de mes prochains ateliers, concerts et créations musicales.</p>
+                        <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+                            <input type="email" placeholder="Votre email" required>
+                            <button type="submit">Suivre mes événements</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -1213,7 +1581,6 @@
                     
                     <div class="bio-content" style="margin-top: 40px; text-align: center;">
                         <h3>Autres moyens de me joindre</h3>
-                        <p><strong>Email :</strong> bijj.inspire@gmail.com</p>
                         <p><strong>Site web :</strong> www.bijj.ca</p>
                         
                         <div style="margin-top: 30px;">
@@ -1235,6 +1602,12 @@
             </div>
         </div>
     </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 Sophie Bijjani - Inspire ༅ Exprime | Site créé avec ❤️</p>
+        </div>
+    </footer>
 
     <script>
         function showPage(pageId) {
@@ -1262,7 +1635,12 @@
         function handleNewsletter(event) {
             event.preventDefault();
             const email = event.target.querySelector('input[type="email"]').value;
-            alert(`Merci ! Votre inscription à la newsletter avec l'email ${email} a été prise en compte.`);
+            
+            // Create mailto link for newsletter
+            const mailtoLink = `mailto:bijj.inspire@gmail.com?subject=Inscription Newsletter - Inspirations Vocales&body=Bonjour Sophie,%0A%0AJe souhaite m'inscrire à votre newsletter "Inspirations Vocales".%0A%0AEmail: ${email}%0A%0AMerci !`;
+            window.location.href = mailtoLink;
+            
+            alert(`Merci ! Votre inscription à la newsletter sera traitée sous peu.`);
             event.target.reset();
         }
 
@@ -1278,6 +1656,99 @@
             window.location.href = mailtoLink;
             
             alert('Votre client email va s\'ouvrir avec le message pré-rempli. Merci !');
+        }
+
+        function handleServiceContact(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const service = formData.get('service');
+            const message = formData.get('message');
+            
+            const mailtoLink = `mailto:bijj.inspire@gmail.com?subject=Demande de service: ${service}&body=${encodeURIComponent(`Nom: ${name}\nEmail: ${email}\nService: ${service}\n\nMessage:\n${message}`)}`;
+            window.location.href = mailtoLink;
+            
+            alert('Votre demande va être envoyée. Merci !');
+            event.target.reset();
+        }
+
+        function handleWorkshopContact(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const workshop = formData.get('workshop');
+            const message = formData.get('message');
+            
+            const mailtoLink = `mailto:bijj.inspire@gmail.com?subject=Inscription atelier: ${workshop}&body=${encodeURIComponent(`Nom: ${name}\nEmail: ${email}\nAtelier: ${workshop}\n\nMessage:\n${message}`)}`;
+            window.location.href = mailtoLink;
+            
+            alert('Votre inscription va être envoyée. Merci !');
+            event.target.reset();
+        }
+
+        function handleIndividualContact(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const format = formData.get('format');
+            const message = formData.get('message');
+            
+            const mailtoLink = `mailto:bijj.inspire@gmail.com?subject=Demande session individuelle&body=${encodeURIComponent(`Nom: ${name}\nEmail: ${email}\nFormat: ${format}\n\nMessage:\n${message}`)}`;
+            window.location.href = mailtoLink;
+            
+            alert('Votre demande va être envoyée. Merci !');
+            event.target.reset();
+        }
+
+        function handleShowContact(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const show = formData.get('show');
+            const date = formData.get('date');
+            const message = formData.get('message');
+            
+            const mailtoLink = `mailto:bijj.inspire@gmail.com?subject=Demande spectacle: ${show}&body=${encodeURIComponent(`Nom: ${name}\nEmail: ${email}\nSpectacle: ${show}\nDate: ${date}\n\nMessage:\n${message}`)}`;
+            window.location.href = mailtoLink;
+            
+            alert('Votre demande va être envoyée. Merci !');
+            event.target.reset();
+        }
+
+        function handleAnimationContact(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const eventType = formData.get('event_type');
+            const date = formData.get('date');
+            const message = formData.get('message');
+            
+            const mailtoLink = `mailto:bijj.inspire@gmail.com?subject=Demande animation: ${eventType}&body=${encodeURIComponent(`Nom: ${name}\nEmail: ${email}\nType d'événement: ${eventType}\nDate: ${date}\n\nMessage:\n${message}`)}`;
+            window.location.href = mailtoLink;
+            
+            alert('Votre demande va être envoyée. Merci !');
+            event.target.reset();
+        }
+
+        function handleEventContact(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const organization = formData.get('organization');
+            const date = formData.get('date');
+            const message = formData.get('message');
+            
+            const mailtoLink = `mailto:bijj.inspire@gmail.com?subject=Invitation événement&body=${encodeURIComponent(`Nom: ${name}\nEmail: ${email}\nOrganisation: ${organization}\nDate: ${date}\n\nMessage:\n${message}`)}`;
+            window.location.href = mailtoLink;
+            
+            alert('Votre proposition va être envoyée. Merci !');
+            event.target.reset();
         }
 
         // Add smooth scrolling and enhanced interactions
