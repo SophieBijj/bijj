@@ -340,39 +340,6 @@
             gap: 35px;
             margin: 50px 0;
         }
-        /* Services grid - clickable cards */
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 35px;
-    margin: 50px 0;
-}
-
-        .services-grid .service-card {
-    cursor: pointer;
-}
-.service-card {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 35px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-    transition: all 0.4s ease;
-    border: 1px solid rgba(224, 214, 207, 0.4);
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;  /* ← VOICI LA LIGNE IMPORTANTE */
-}
-
-.service-card:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(135deg, #f8d347, #ffd93d);
-    transform: scaleX(0);
-    transition: transform 0.4s ease;
         
         .service-card:before {
             content: '';
@@ -950,7 +917,7 @@
                 <div class="hero">
                     <div class="hero-content">
                         <h2>Bienvenue !</h2>
-                        <p>Musicienne, animatrice et pédagogue, j'accompagne les voix qui cherchent à s'épanouir dans un alignement corps, cœur et expression. </p>
+                        <p>Musicienne, pédagogue et créatrice d'espaces d'expression, j'accompagne les voix qui cherchent à s'épanouir. Explorons ensemble la magie qui naît quand corps, cœur et expression s'alignent.</p>
                     </div>
                     <div class="hero-image">
                         <img src="PhotoLanding.jpg" alt="Sophie Bijjani">
