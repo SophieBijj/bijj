@@ -1,1 +1,10 @@
-
+json{
+  "site": {
+    "titre": "SOPHIE BIJJANI",
+    "tagline": "Inspire ༅ Exprime"
+  },
+  "accueil": {
+    "hero": {
+      "titre": "Bienvenue dans mon univers créatif",
+      "description": "Musicienne, animatrice et pédadogue, j'accompagne les voix qui cherchent à s'épanouir."
+    }
