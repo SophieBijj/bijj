@@ -977,145 +977,48 @@
                 </div>
             </div>
 
-<!-- SERVICES -->
-<div id="services" class="page">
-    <div class="section">
-        <h2>Mes Services</h2>
-        
-        <!-- Services en ligne -->
-        <div class="services-grid">
-            <div class="service-card" onclick="showPage('spectacles')">
-                <h3>Spectacle</h3>
-                <p>En musique et en conte, Sophie nous fait voyager, que ça soit avec du matériel original ou des reprises, c'est une expérience à vivre.</p>
-                <ul>
-                    <li>Spectacles de reprise</li>
-                    <li>Créations originales</li>
-                    <li>Spectacles interactifs</li>
-                </ul>
-            </div>
-            
-            <div class="service-card" onclick="showPage('Animation')">
-                <h3>Animation</h3>
-                <p>Que ce soit pour animer un atelier ou un gala au complet, je suis là pour servir votre objectif!</p>
-                <ul>
-                    <li>Ateliers de groupe</li>
-                    <li>Évènements festifs</li>
-                    <li>Discours d'ouverture</li>
-                </ul>
-            </div>
-            
-            <div class="service-card" onclick="showPage('individuel')">
-                <h3>Accompagnement individuel</h3>
-                <p>Un espace privilégié pour explorer votre relation à ce que vous voulez amplifier dans le monde par votre voix.</p>
-                <ul>
-                    <li>En personne ou en ligne</li>
-                    <li>Tous niveaux</li>
-                    <li>Approche holistique</li>
-                </ul>
-            </div>
-        </div>
-        
-        <!-- Citations côte à côte -->
-        <div class="testimonials-container">
-            <div class="testimonial">
-                <em>"Sophie Bijjani sang for Rush Creek Lodge through this past summer, and she was both a joy to listen to, and a joy to work with. She is professional, punctual, and to top it all off, an amazing musician and singer to boot. Anyone who hires her in the capacity of musician, or any other position will not regret their decision."</em>
-                <strong>- Rush Creek Lodge, Yosemite</strong>
-            </div>
-            
-            <div class="testimonial">
-                <em>"Je me sens inspiré par l'assertivité de Sophie et sa capacité à tenir le gouvernail avec cœur quel que soit le stress du moment."</em>
-                <strong>- Participant au Festival du Cercle Enchanté</strong>
-            </div>
-        </div>
-    </div>
-</div>
+            <!-- SERVICES -->
+            <div id="services" class="page">
+                <div class="section">
+                    <h2>Mes Services</h2>
+                    <div class="services-grid">
+                        <div class="service-card" onclick="showPage('spectacles')">
+                            <h3>Spectacle</h3>
+                            <p>En musique et en conte, Sophie nous fait voyager, que ça soit avec du matériel original ou des reprises, c'est une expérience à vivre. </p>
+                            <ul>
+                                <li>Spectacles de reprise</li>
+                                <li>Créations originales </li>
+                                <li>Spectacles interactifs</li>
+                            </ul>
+                        </div>
+                        <div class="service-card" onclick="showPage('Animation')">
+                            <h3>Animation</h3>
+                            <p>Que ce soit pour animer un atelier ou un gala au complet, je suis là pour servir votre objectif!</p>
+                            <ul>
+                                <li>Ateliers de groupe</li>
+                                <li>Évènements festifs</li>
+                                <li>Discours d'ouverture</li>
+                            </ul>
+                        </div>
+                        <div class="service-card" onclick="showPage('individuel')">
+                            <h3>Accompagnement individuel</h3>
+                            <p>Un espace privilégié pour explorer votre relation à ce que vous voulez amplifier dans le monde par votre voix.</p>
+                            <ul>
+                                <li>En personne ou en ligne</li>
+                                <li>Tous niveaux</li>
+                                <li>Approche holistique</li>
+                            </ul>
 
-<style>
-/* Services en ligne */
-.services-grid {
-    display: flex;
-    justify-content: space-between;
-    gap: 2rem;
-    margin-bottom: 3rem;
-}
+                    </div>
 
-.service-card {
-    flex: 1;
-    background: #f9f9f9;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+                    <!-- Section avec Animation + Quote côte à côte -->
+                        
+                        <div class="testimonial" style="margin: 0; height: fit-content;">
+                            <em>"Sophie Bijjani sang for Rush Creek Lodge through this past summer, and she was both a joy to listen to, and a joy to work with. She is professional, punctual, and to top it all off, an amazing musician and singer to boot. Anyone who hires her in the capacity of musician, or any other position will not regret their decision."</em>
+                            <strong>- Rush Creek Lodge, Yosemite</strong>
+                        </div>
+                    </div>
 
-.service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-}
-
-.service-card h3 {
-    color: #2c5530;
-    margin-bottom: 1rem;
-    font-size: 1.4rem;
-}
-
-.service-card p {
-    margin-bottom: 1rem;
-    line-height: 1.6;
-}
-
-.service-card ul {
-    list-style-type: disc;
-    padding-left: 1.2rem;
-}
-
-.service-card li {
-    padding: 0.3rem 0;
-}
-
-/* Citations côte à côte */
-.testimonials-container {
-    display: flex;
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.testimonial {
-    flex: 1;
-    background: #fff;
-    padding: 1.5rem;
-    border-left: 4px solid #2c5530;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.testimonial em {
-    display: block;
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-    line-height: 1.5;
-    color: #444;
-}
-
-.testimonial strong {
-    color: #2c5530;
-    font-size: 0.9rem;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .services-grid {
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-    
-    .testimonials-container {
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-}
-</style>
                     <!-- Contact form pour les services -->
                     <div class="contact-form" style="margin-top: 50px;">
                         <h3 style="text-align: center; margin-bottom: 25px; color: #343a40;">Contactez-moi pour trouver la formule adaptée à votre besoin</h3>
