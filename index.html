@@ -188,19 +188,6 @@
             font-family: 'Crimson Text', Georgia, serif;
         }
 
-        .exprime-text .letter {
-            display: inline-block;
-            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        /* Animation des lettres qui apparaissent de manière éclatée */
-        .exprime-text .letter-1 { transition-delay: 0.1s; }
-        .exprime-text .letter-2 { transition-delay: 0.3s; }
-        .exprime-text .letter-3 { transition-delay: 0.05s; }
-        .exprime-text .letter-4 { transition-delay: 0.4s; }
-        .exprime-text .letter-5 { transition-delay: 0.15s; }
-        .exprime-text .letter-6 { transition-delay: 0.2s; }
-
         .exprime-text .i-hidden {
             opacity: 0;
         }
@@ -529,33 +516,38 @@
             color: #2d3748;
         }
 
-        /* CTA buttons - style minimaliste avec bordure jaune et texte outlined */
+        /* CTA buttons - bouton rond style PLAY avec triangle */
         .cta-primary {
-            background: transparent;
-            color: #f6ad55;
-            padding: 16px 32px;
-            border: 2px solid #f6ad55;
-            border-radius: 6px;
-            font-size: 18px;
-            font-weight: 600;
+            background: #f6ad55;
+            color: #2d3748;
+            width: 80px;
+            height: 80px;
+            border: 3px solid #f6ad55;
+            border-radius: 50%;
             text-decoration: none;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             cursor: pointer;
             transition: all 0.3s ease;
-            font-family: 'Crimson Text', Georgia, serif;
-            -webkit-text-stroke: 1px rgba(45, 55, 72, 0.2);
-            text-stroke: 1px rgba(45, 55, 72, 0.2);
-            text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+            position: relative;
         }
 
         .cta-primary:hover {
-            background: #f6ad55;
-            color: #2d3748;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(237, 137, 54, 0.3);
-            -webkit-text-stroke: none;
-            text-stroke: none;
-            text-shadow: none;
+            background: transparent;
+            color: #f6ad55;
+            transform: translateY(-3px) scale(1.1);
+        }
+
+        /* Triangle Play Icon */
+        .cta-primary::before {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 20px solid currentColor;
+            border-top: 12px solid transparent;
+            border-bottom: 12px solid transparent;
+            margin-left: 4px; /* Décalage pour centrer visuellement */
         }
 
         /* Final CTA */
@@ -699,9 +691,7 @@
         <section class="hero">
             <div class="hero-content">
                 <div class="inspire-text">Insp<span class="i-transition">i</span>re</div>
-                <div class="exprime-text">
-                    <span class="letter letter-1">e</span><span class="letter letter-2">x</span><span class="letter letter-3">p</span><span class="letter letter-4">r</span><span class="letter letter-5 i-hidden">i</span><span class="letter letter-6">me</span>
-                </div>
+                <div class="exprime-text">expr<span class="i-hidden">i</span>me</div>
             </div>
         </section>
 
@@ -710,7 +700,6 @@
             <div class="container">
                 <h1>Donnez voix à votre inspiration,<br>donnez vie à votre projet.</h1>
                 <p>Créatrice d'expériences vocales, maître de cérémonie et artiste collaborative. J'apporte authenticité et magie à vos événements et créations musicales.</p>
-                <a href="#contact" class="cta-primary">Parlons de votre vision</a>
             </div>
         </section>
 
@@ -839,8 +828,8 @@
         <section class="final-cta" id="contact">
             <div class="container">
                 <h2>Créons quelque chose d'extraordinaire ensemble</h2>
-                <p>Que vous ayez une vision claire ou simplement une étincelle d'idée, parlons-en. Chaque grand projet commence par une conversation.</p>
-                <a href="mailto:bijj.inspire@gmail.com?subject=Parlons de mon projet&body=Bonjour Sophie,%0A%0AJ'aimerais discuter d'un projet avec vous..." class="cta-primary">Démarrons la conversation</a>
+                <p>Que vous ayez une vision claire ou simplement une étincelle d'idée, parlons-en. Chaque grand projet commence par une conversation. Alors, on joue ?</p>
+                <a href="mailto:bijj.inspire@gmail.com?subject=Parlons de mon projet&body=Bonjour Sophie,%0A%0AJ'aimerais discuter d'un projet avec vous..." class="cta-primary"></a>
             </div>
         </section>
 
@@ -912,7 +901,6 @@
                 <div style="text-align: center; margin-top: 60px;">
                     <h3 style="font-size: 28px; margin-bottom: 20px; color: #2d3748;">Travaillons ensemble</h3>
                     <p style="font-size: 18px; color: #718096; margin-bottom: 40px;">Besoin d'une interprète pour votre projet musical ?</p>
-                    <a href="#contact" class="cta-primary">Discutons de votre projet</a>
                 </div>
             </div>
         </section>
@@ -921,8 +909,8 @@
         <section class="final-cta">
             <div class="container">
                 <h2>Donnons vie à vos idées musicales</h2>
-                <p>Concert, enregistrement, création sur mesure... Explorons ensemble comment ma voix peut servir votre projet.</p>
-                <a href="mailto:bijj.inspire@gmail.com?subject=Projet musical&body=Bonjour Sophie,%0A%0AJ'ai un projet musical et j'aimerais en discuter avec vous..." class="cta-primary">Créons ensemble</a>
+                <p>Concert, enregistrement, création sur mesure... Explorons ensemble comment ma voix peut servir votre projet. Alors, on joue ?</p>
+                <a href="mailto:bijj.inspire@gmail.com?subject=Projet musical&body=Bonjour Sophie,%0A%0AJ'ai un projet musical et j'aimerais en discuter avec vous..." class="cta-primary"></a>
             </div>
         </section>
     </div>
