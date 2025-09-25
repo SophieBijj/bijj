@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -29,7 +28,7 @@
             padding: 0 40px;
         }
 
-        /* Header avec menu comme Ollivere */
+        /* Header avec menu */
         .header {
             position: fixed;
             top: 0;
@@ -72,6 +71,13 @@
             color: #4a5568;
         }
 
+        /* Header droite avec menu et sociaux */
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
         /* Menu */
         .nav {
             display: flex;
@@ -99,7 +105,26 @@
             font-weight: 600;
         }
 
-        /* Hero avec inspire → exprime animation */
+        /* Icons sociaux */
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .social-icons a {
+            color: #a0aec0;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            color: #f6ad55;
+            transform: translateY(-2px);
+        }
+
+        /* Hero avec animation inspire → exprime */
         .hero {
             height: 100vh;
             display: flex;
@@ -108,7 +133,7 @@
             text-align: center;
             position: relative;
             background: #fafafa;
-            cursor: none;
+            cursor: default;
         }
 
         .hero-content {
@@ -124,7 +149,7 @@
             text-stroke: 2px #4a5568;
             line-height: 1;
             user-select: none;
-            transition: all 0.6s ease;
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             font-family: 'Crimson Text', Georgia, serif;
         }
 
@@ -132,7 +157,7 @@
             color: #4a5568;
             -webkit-text-stroke: none;
             text-stroke: none;
-            transition: all 0.6s ease;
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
         .exprime-text {
@@ -149,36 +174,71 @@
             line-height: 1;
             opacity: 0;
             transform: translateY(20px);
-            transition: all 0.6s ease;
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             user-select: none;
             pointer-events: none;
             font-family: 'Crimson Text', Georgia, serif;
         }
+
+        .exprime-text span {
+            display: inline-block;
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        /* Animation des lettres qui apparaissent de manière éclatée */
+        .exprime-text .letter-1 { transition-delay: 0.1s; }
+        .exprime-text .letter-2 { transition-delay: 0.3s; }
+        .exprime-text .letter-3 { transition-delay: 0.05s; }
+        .exprime-text .letter-4 { transition-delay: 0.4s; }
+        .exprime-text .letter-5 { transition-delay: 0.15s; }
+        .exprime-text .letter-6 { transition-delay: 0.2s; }
 
         .exprime-text .i-hidden {
             opacity: 0;
         }
 
         /* Animation triggers */
-        .hero-content:hover .inspire-text,
-        .hero-content.scrolled .inspire-text {
+        .hero-content.show-exprime .inspire-text {
             color: #2d3748;
             -webkit-text-stroke: none;
             text-stroke: none;
         }
 
-        .hero-content:hover .inspire-text .i-transition,
-        .hero-content.scrolled .inspire-text .i-transition {
+        .hero-content.show-exprime .inspire-text .i-transition {
             color: #f6ad55;
             text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
             -webkit-text-stroke: 1px rgba(45, 55, 72, 0.3);
             text-stroke: 1px rgba(45, 55, 72, 0.3);
         }
 
-        .hero-content:hover .exprime-text,
-        .hero-content.scrolled .exprime-text {
+        .hero-content.show-exprime .exprime-text {
             opacity: 1;
             transform: translateY(0);
+        }
+
+        /* Section "Je donne vie à vos projets..." */
+        .hero-intro {
+            padding: 80px 0;
+            text-align: center;
+            background: #f7fafc;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .hero-intro h1 {
+            font-size: 48px;
+            font-weight: 400;
+            margin-bottom: 30px;
+            color: #2d3748;
+            line-height: 1.2;
+        }
+
+        .hero-intro p {
+            font-size: 20px;
+            color: #718096;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* Content sections */
@@ -389,9 +449,10 @@
 
         .platform-link {
             padding: 8px 16px;
-            background: #f6ad55;
-            color: #2d3748;
+            background: transparent;
+            color: #f6ad55;
             text-decoration: none;
+            border: 2px solid #f6ad55;
             border-radius: 4px;
             font-size: 14px;
             font-weight: 600;
@@ -399,7 +460,8 @@
         }
 
         .platform-link:hover {
-            background: #ed8936;
+            background: #f6ad55;
+            color: #2d3748;
             transform: translateY(-2px);
         }
 
@@ -442,27 +504,29 @@
         }
 
         .newsletter-form button {
-            background: #2d3748;
-            color: white;
-            border: none;
+            background: transparent;
+            color: #f6ad55;
+            border: 2px solid #f6ad55;
             padding: 12px 24px;
             border-radius: 6px;
             font-size: 16px;
             cursor: pointer;
             font-family: 'Crimson Text', Georgia, serif;
             white-space: nowrap;
+            transition: all 0.3s ease;
         }
 
         .newsletter-form button:hover {
-            background: #1a202c;
-        }
-
-        /* CTA buttons */
-        .cta-primary {
             background: #f6ad55;
             color: #2d3748;
+        }
+
+        /* CTA buttons - style minimaliste avec bordure jaune */
+        .cta-primary {
+            background: transparent;
+            color: #f6ad55;
             padding: 16px 32px;
-            border: none;
+            border: 2px solid #f6ad55;
             border-radius: 6px;
             font-size: 18px;
             font-weight: 600;
@@ -474,7 +538,8 @@
         }
 
         .cta-primary:hover {
-            background: #ed8936;
+            background: #f6ad55;
+            color: #2d3748;
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(237, 137, 54, 0.3);
         }
@@ -531,6 +596,10 @@
                 gap: 20px;
             }
 
+            .header-right {
+                gap: 20px;
+            }
+
             .nav {
                 gap: 20px;
             }
@@ -541,6 +610,10 @@
 
             .exprime-text {
                 top: 20px;
+            }
+
+            .hero-intro h1 {
+                font-size: 36px;
             }
 
             .container {
@@ -571,16 +644,21 @@
     </style>
 </head>
 <body>
-    <!-- Header avec menu -->
+    <!-- Header avec menu et sociaux -->
     <header class="header">
         <a href="#" class="logo" onclick="showPage('home')">
             Soph<span class="i-bold">i</span>e B<span class="i-bold">i</span><span class="j-gold">j</span><span class="i-bold">j</span>an<span class="i-bold">i</span>
         </a>
-        <nav class="nav">
-            <a href="#" onclick="showPage('home')" class="active">Accueil</a>
-            <a href="#" onclick="showPage('musique')">Musique</a>
-            <a href="#contact">Contact</a>
-        </nav>
+        <div class="header-right">
+            <nav class="nav">
+                <a href="#" onclick="showPage('musique')">Musique</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/sophiebijj/" target="_blank" title="Instagram">📷</a>
+                <a href="mailto:bijj.inspire@gmail.com" title="Email">✉️</a>
+            </div>
+        </div>
     </header>
 
     <!-- Page Home -->
@@ -589,155 +667,144 @@
         <section class="hero">
             <div class="hero-content">
                 <div class="inspire-text">Insp<span class="i-transition">i</span>re</div>
-                <div class="exprime-text">expr<span class="i-hidden">i</span>me</div>
+                <div class="exprime-text">
+                    <span class="letter-1">e</span><span class="letter-2">x</span><span class="letter-3">p</span><span class="letter-4">r</span><span class="i-hidden letter-5">i</span><span class="letter-6">me</span>
+                </div>
             </div>
         </section>
 
-
-
-    <!-- Page Home -->
-    <div id="home" class="page active">
-        <!-- Hero avec animation -->
-        <section class="hero">
+        <!-- Section "Je donne vie à vos projets..." -->
+        <section class="hero-intro">
             <div class="container">
-                <div class="hero-animation">
-                    <div class="signature-container">
-                        <span class="inspire-text">Inspire</span>
-                        <span class="separator">༅</span>
-                        <span class="exprime-text">exprime</span>
+                <h1>Je donne vie à vos projets<br>à travers la voix et l'art</h1>
+                <p>Créatrice d'expériences vocales, maître de cérémonie et artiste collaborative. J'apporte authenticité et magie à vos événements et créations musicales.</p>
+                <a href="#contact" class="cta-primary">Parlons de votre vision</a>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">Comment je transforme vos projets</h2>
+                <p class="section-subtitle">Chaque collaboration est unique. Voici comment j'apporte ma créativité à vos idées.</p>
+                
+                <div class="services-grid">
+                    <div class="service-item">
+                        <h3 class="service-title">Interprétation vocale</h3>
+                        <p class="service-description">Je donne une âme à vos chansons, qu'elles soient des créations originales, des reprises revisitées ou des commandes sur mesure. De l'intime au spectaculaire.</p>
+                    </div>
+                    
+                    <div class="service-item">
+                        <h3 class="service-title">Animation d'événements</h3>
+                        <p class="service-description">Maître de cérémonie, animatrice de galas, créatrice de moments spontanés. Je fluidifie et enchante vos événements avec authenticité et humour.</p>
+                    </div>
+                    
+                    <div class="service-item">
+                        <h3 class="service-title">Création collaborative</h3>
+                        <p class="service-description">Ateliers, résidences artistiques, projets immersifs. Co-construisons ensemble des expériences qui transforment et rassemblent.</p>
+                    </div>
+                    
+                    <div class="service-item">
+                        <h3 class="service-title">Direction artistique</h3>
+                        <p class="service-description">De la conception à la scène, j'accompagne vos projets créatifs avec une vision holistique alliant voix, mouvement et arts visuels.</p>
                     </div>
                 </div>
-                <div class="hero-content">
-                    <h1>Je donne vie à vos projets<br>à travers la voix et l'art</h1>
-                    <p>Créatrice d'expériences vocales, maître de cérémonie et artiste collaborative. J'apporte authenticité et magie à vos événements et créations musicales.</p>
-                    <a href="#contact" class="cta-primary">Parlons de votre vision</a>
+            </div>
+        </section>
+
+        <!-- Process -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">Ma démarche créative</h2>
+                <p class="section-subtitle">Quel que soit le projet, je suis toujours la même approche simple et efficace...</p>
+                
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h3 class="step-title">Écoute</h3>
+                        <p class="step-description">Je découvre votre univers, vos besoins et votre vision. Chaque projet a sa propre âme.</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h3 class="step-title">Exploration</h3>
+                        <p class="step-description">Nous explorons ensemble les possibilités créatives qui serviront votre message.</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h3 class="step-title">Création</h3>
+                        <p class="step-description">Je donne vie à notre vision partagée avec authenticité et excellence technique.</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <h3 class="step-title">Magie</h3>
+                        <p class="step-description">L'expérience prend vie et crée l'impact recherché auprès de votre audience.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-    <!-- Services -->
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">Comment je transforme vos projets</h2>
-            <p class="section-subtitle">Chaque collaboration est unique. Voici comment j'apporte ma créativité à vos idées.</p>
-            
-            <div class="services-grid">
-                <div class="service-item">
-                    <h3 class="service-title">Interprétation vocale</h3>
-                    <p class="service-description">Je donne une âme à vos chansons, qu'elles soient des créations originales, des reprises revisitées ou des commandes sur mesure. De l'intime au spectaculaire.</p>
-                </div>
+        <!-- Testimonials -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">Ce qu'ils disent de nos collaborations</h2>
                 
-                <div class="service-item">
-                    <h3 class="service-title">Animation d'événements</h3>
-                    <p class="service-description">Maître de cérémonie, animatrice de galas, créatrice de moments spontanés. Je fluidifie et enchante vos événements avec authenticité et humour.</p>
-                </div>
-                
-                <div class="service-item">
-                    <h3 class="service-title">Création collaborative</h3>
-                    <p class="service-description">Ateliers, résidences artistiques, projets immersifs. Co-construisons ensemble des expériences qui transforment et rassemblent.</p>
-                </div>
-                
-                <div class="service-item">
-                    <h3 class="service-title">Direction artistique</h3>
-                    <p class="service-description">De la conception à la scène, j'accompagne vos projets créatifs avec une vision holistique alliant voix, mouvement et arts visuels.</p>
+                <div class="testimonials">
+                    <div class="testimonial">
+                        <p class="testimonial-text">"Sophie rend ma vie facile. C'est une de ces personnes rares à qui je peux confier un brief et me détendre, car je sais qu'elle va créer quelque chose de fantastique."</p>
+                        <p class="testimonial-author">Marie-Claire Dubois</p>
+                        <p class="testimonial-title">Directrice artistique, Festival Les Voix du Cœur</p>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <p class="testimonial-text">"Travailler avec Sophie fut un plaisir - elle est une vraie professionnelle qui dépasse toujours les attentes et apporte cette touche magique qui fait toute la différence."</p>
+                        <p class="testimonial-author">Jean-Paul Martin</p>
+                        <p class="testimonial-title">Organisateur d'événements corporatifs</p>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <p class="testimonial-text">"Sophie a cette capacité exceptionnelle de comprendre et d'intégrer la vision du client pour lui donner vie dans sa création. Notre gala de charité a été transformé grâce à sa présence."</p>
+                        <p class="testimonial-author">Catherine Rousseau</p>
+                        <p class="testimonial-title">Fondatrice, Association Cœur Ouvert</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Process -->
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">Ma démarche créative</h2>
-            <p class="section-subtitle">Quel que soit le projet, je suis toujours la même approche simple et efficace...</p>
-            
-            <div class="process-steps">
-                <div class="process-step">
-                    <div class="step-number">1</div>
-                    <h3 class="step-title">Écoute</h3>
-                    <p class="step-description">Je découvre votre univers, vos besoins et votre vision. Chaque projet a sa propre âme.</p>
-                </div>
+        <!-- Portfolio -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">Quelques projets récents</h2>
                 
-                <div class="process-step">
-                    <div class="step-number">2</div>
-                    <h3 class="step-title">Exploration</h3>
-                    <p class="step-description">Nous explorons ensemble les possibilités créatives qui serviront votre message.</p>
-                </div>
-                
-                <div class="process-step">
-                    <div class="step-number">3</div>
-                    <h3 class="step-title">Création</h3>
-                    <p class="step-description">Je donne vie à notre vision partagée avec authenticité et excellence technique.</p>
-                </div>
-                
-                <div class="process-step">
-                    <div class="step-number">4</div>
-                    <h3 class="step-title">Magie</h3>
-                    <p class="step-description">L'expérience prend vie et crée l'impact recherché auprès de votre audience.</p>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item">
+                        <p class="portfolio-meta">Animation • Maîtrise de cérémonie • Chorale impromptue</p>
+                        <h3 class="portfolio-title">Festival FrancoFête - Nelson, BC</h3>
+                        <p class="portfolio-description">Animation principale du festival francophone avec création de moments participatifs spontanés. Une chorale impromptue a rassemblé plus de 100 festivaliers dans un moment de communion inoubliable.</p>
+                        <a href="#" class="portfolio-link">Voir les moments forts →</a>
+                    </div>
+                    
+                    <div class="portfolio-item">
+                        <p class="portfolio-meta">Interprétation • Reprises intimistes • Concert acoustique</p>
+                        <h3 class="portfolio-title">Mosaïque Mainstream</h3>
+                        <p class="portfolio-description">Concert intimiste où Dalida rencontre Metallica dans un voyage acoustique multilingue. Des classiques revisités qui révèlent leurs secrets les plus tendres dans un café-concert à guichets fermés.</p>
+                        <a href="#" class="portfolio-link">Écouter les extraits →</a>
+                    </div>
+                    
+                    <div class="portfolio-item">
+                        <p class="portfolio-meta">Création collaborative • Atelier résidentiel • Circlesong</p>
+                        <h3 class="portfolio-title">Résidence Créative - Centre Colibri</h3>
+                        <p class="portfolio-description">Direction artistique d'une résidence de 5 jours mêlant improvisation vocale, mouvement et arts visuels. 20 participants ont co-créé un spectacle unique célébrant la diversité des expressions créatives.</p>
+                        <a href="#" class="portfolio-link">Découvrir l'expérience →</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">Ce qu'ils disent de nos collaborations</h2>
-            
-            <div class="testimonials">
-                <div class="testimonial">
-                    <p class="testimonial-text">"Sophie rend ma vie facile. C'est une de ces personnes rares à qui je peux confier un brief et me détendre, car je sais qu'elle va créer quelque chose de fantastique."</p>
-                    <p class="testimonial-author">Marie-Claire Dubois</p>
-                    <p class="testimonial-title">Directrice artistique, Festival Les Voix du Cœur</p>
-                </div>
-                
-                <div class="testimonial">
-                    <p class="testimonial-text">"Travailler avec Sophie fut un plaisir - elle est une vraie professionnelle qui dépasse toujours les attentes et apporte cette touche magique qui fait toute la différence."</p>
-                    <p class="testimonial-author">Jean-Paul Martin</p>
-                    <p class="testimonial-title">Organisateur d'événements corporatifs</p>
-                </div>
-                
-                <div class="testimonial">
-                    <p class="testimonial-text">"Sophie a cette capacité exceptionnelle de comprendre et d'intégrer la vision du client pour lui donner vie dans sa création. Notre gala de charité a été transformé grâce à sa présence."</p>
-                    <p class="testimonial-author">Catherine Rousseau</p>
-                    <p class="testimonial-title">Fondatrice, Association Cœur Ouvert</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio -->
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">Quelques projets récents</h2>
-            
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <p class="portfolio-meta">Animation • Maîtrise de cérémonie • Chorale impromptue</p>
-                    <h3 class="portfolio-title">Festival FrancoFête - Nelson, BC</h3>
-                    <p class="portfolio-description">Animation principale du festival francophone avec création de moments participatifs spontanés. Une chorale impromptue a rassemblé plus de 100 festivaliers dans un moment de communion inoubliable.</p>
-                    <a href="#" class="portfolio-link">Voir les moments forts →</a>
-                </div>
-                
-                <div class="portfolio-item">
-                    <p class="portfolio-meta">Interprétation • Reprises intimistes • Concert acoustique</p>
-                    <h3 class="portfolio-title">Mosaïque Mainstream</h3>
-                    <p class="portfolio-description">Concert intimiste où Dalida rencontre Metallica dans un voyage acoustique multilingue. Des classiques revisités qui révèlent leurs secrets les plus tendres dans un café-concert à guichets fermés.</p>
-                    <a href="#" class="portfolio-link">Écouter les extraits →</a>
-                </div>
-                
-                <div class="portfolio-item">
-                    <p class="portfolio-meta">Création collaborative • Atelier résidentiel • Circlesong</p>
-                    <h3 class="portfolio-title">Résidence Créative - Centre Colibri</h3>
-                    <p class="portfolio-description">Direction artistique d'une résidence de 5 jours mêlant improvisation vocale, mouvement et arts visuels. 20 participants ont co-créé un spectacle unique célébrant la diversité des expressions créatives.</p>
-                    <a href="#" class="portfolio-link">Découvrir l'expérience →</a>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
         <!-- Newsletter -->
-        <section class="section">
+        <section class="content-section">
             <div class="container">
                 <div class="newsletter">
                     <h3>Inspirations Vocales</h3>
@@ -762,7 +829,7 @@
 
     <!-- Page Musique -->
     <div id="musique" class="page">
-        <section class="music-section">
+        <section class="content-section" style="padding-top: 120px;">
             <div class="container">
                 <h2 class="section-title">Mon univers musical</h2>
                 <p class="section-subtitle">Compositions originales, reprises revisitées et créations collaboratives qui touchent l'âme</p>
@@ -813,8 +880,17 @@
                 <div style="text-align: center; margin-top: 60px;">
                     <h3 style="font-size: 28px; margin-bottom: 20px; color: #2d3748;">Travaillons ensemble</h3>
                     <p style="font-size: 18px; color: #718096; margin-bottom: 40px;">Besoin d'une interprète pour votre projet musical ?</p>
-                    <a href="#contact" class="cta-primary">Discutons de votre vision</a>
+                    <a href="#contact" class="cta-primary">Discutons de votre projet</a>
                 </div>
+            </div>
+        </section>
+
+        <!-- Final CTA Musique -->
+        <section class="final-cta">
+            <div class="container">
+                <h2>Donnons vie à vos idées musicales</h2>
+                <p>Concert, enregistrement, création sur mesure... Explorons ensemble comment ma voix peut servir votre projet.</p>
+                <a href="mailto:bijj.inspire@gmail.com?subject=Projet musical&body=Bonjour Sophie,%0A%0AJ'ai un projet musical et j'aimerais en discuter avec vous..." class="cta-primary">Créons ensemble</a>
             </div>
         </section>
     </div>
@@ -822,56 +898,105 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>© 2024 Sophie Bijjani - Inspire ༅ Exprime</p>
+            <p>&copy; 2024 Sophie Bijjani. Tous droits réservés. Créée avec passion pour inspirer et exprimer.</p>
         </div>
     </footer>
 
     <script>
+        // Variables globales
+        let animationTimer;
+        let hasMovedOnHero = false;
+
+        // Détection de mouvement sur le hero
+        function initHeroAnimation() {
+            const heroContent = document.querySelector('.hero-content');
+            const heroSection = document.querySelector('.hero');
+            
+            if (!heroContent || !heroSection) return;
+
+            // Timer pour déclencher l'animation après 1 seconde si pas de mouvement
+            function startTimer() {
+                clearTimeout(animationTimer);
+                animationTimer = setTimeout(() => {
+                    if (!hasMovedOnHero) {
+                        heroContent.classList.add('show-exprime');
+                    }
+                }, 1000);
+            }
+
+            // Détection de mouvement sur la section hero
+            heroSection.addEventListener('mousemove', (e) => {
+                if (!hasMovedOnHero) {
+                    hasMovedOnHero = true;
+                    clearTimeout(animationTimer);
+                    heroContent.classList.add('show-exprime');
+                }
+            });
+
+            // Démarrer le timer au chargement de la page
+            startTimer();
+
+            // Animation au scroll aussi
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                
+                if (scrolled > 50) {
+                    heroContent.classList.add('show-exprime');
+                }
+
+                // Parallax léger
+                if (heroContent) {
+                    heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
+                }
+            });
+        }
+
         // Navigation entre pages
         function showPage(pageId) {
-            // Masquer toutes les pages
-            const pages = document.querySelectorAll('.page');
-            pages.forEach(page => page.classList.remove('active'));
+            // Cacher toutes les pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
             
-            // Afficher la page sélectionnée
+            // Montrer la page demandée
             document.getElementById(pageId).classList.add('active');
             
-            // Mettre à jour la navigation
-            const navLinks = document.querySelectorAll('.nav a');
-            navLinks.forEach(link => link.classList.remove('active'));
-            
-            // Activer le lien correspondant
-            const activeLink = document.querySelector(`nav a[onclick*="${pageId}"]`);
-            if (activeLink) {
-                activeLink.classList.add('active');
-            }
+            // Mettre à jour le menu actif
+            document.querySelectorAll('.nav a').forEach(link => {
+                link.classList.remove('active');
+            });
             
             // Scroll vers le haut
             window.scrollTo(0, 0);
+
+            // Réinitialiser l'animation hero si on retourne à l'accueil
+            if (pageId === 'home') {
+                hasMovedOnHero = false;
+                const heroContent = document.querySelector('.hero-content');
+                if (heroContent) {
+                    heroContent.classList.remove('show-exprime');
+                }
+                setTimeout(initHeroAnimation, 100);
+            }
         }
 
-        // Animation scroll simple pour le hero
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const parallax = document.querySelectorAll('.hero h1');
-            
-            parallax.forEach(element => {
-                const speed = scrolled * -0.1;
-                element.style.transform = `translateY(${speed}px)`;
-            });
+        // Gestion du formulaire newsletter
+        document.addEventListener('DOMContentLoaded', function() {
+            const newsletterForm = document.querySelector('.newsletter-form');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const email = this.querySelector('input[type="email"]').value;
+                    alert('Merci pour votre inscription ! Vous recevrez bientôt mes inspirations vocales à ' + email);
+                    this.reset();
+                });
+            }
+
+            // Initialiser l'animation hero
+            initHeroAnimation();
         });
 
-        // Newsletter form
-        document.querySelector('.newsletter-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const email = e.target.querySelector('input').value;
-            const mailtoLink = `mailto:bijj.inspire@gmail.com?subject=Inscription Newsletter - Inspirations Vocales&body=Bonjour Sophie,%0A%0AJe souhaite m'inscrire à votre newsletter "Inspirations Vocales".%0A%0AEmail: ${email}%0A%0AMerci !`;
-            window.location.href = mailtoLink;
-            e.target.reset();
-            alert('Votre inscription va être envoyée. Merci !');
-        });
-
-        // Smooth scroll pour les ancres
+        // Smooth scroll pour les liens d'ancrage
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -882,6 +1007,31 @@
                         block: 'start'
                     });
                 }
+            });
+        });
+
+        // Animation d'entrée pour les éléments au scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observer les sections pour les animations
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(30px)';
+                section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(section);
             });
         });
     </script>
