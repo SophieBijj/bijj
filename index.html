@@ -619,92 +619,7 @@
         </div>
     </section>
 
-    <section class="test-section">
-        <div class="test-content">
-            <h2>Scrollez vers le haut</h2>
-            <p>Cette section permet de tester l'apparition de la bordure du header quand vous scrollez. Remontez en haut pour voir la bordure disparaître ! ✨</p>
-        </div>
-    </section>
-
-    <script>
-        let hasActivated = false;
-
-        function activateAnimation() {
-            if (!hasActivated) {
-                hasActivated = true;
-                document.querySelector('.hero-content').classList.add('active');
-            }
-        }
-
-        window.addEventListener('DOMContentLoaded', () => {
-            activateAnimation();
-        });
-
-        const heroContent = document.querySelector('.hero-content');
-        
-        heroContent.addEventListener('click', () => {
-            heroContent.classList.remove('active');
-            setTimeout(() => {
-                heroContent.classList.add('active');
-            }, 50);
-        });
-
-        const header = document.querySelector('.header');
-
-        window.addEventListener('scroll', () => {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            
-            if (scrollTop > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        const logoSpans = document.querySelectorAll('.logo span');
-        const logo = document.querySelector('.logo');
-
-        logo.addEventListener('mouseenter', () => {
-            logoSpans.forEach((span, index) => {
-                setTimeout(() => {
-                    span.style.animation = 'wave 0.6s ease-in-out';
-                }, index * 50);
-            });
-        });
-
-        logo.addEventListener('mouseleave', () => {
-            logoSpans.forEach((span) => {
-                span.style.animation = '';
-            });
-        });
-
-        // Menu overlay
-        const menuButton = document.querySelector('.menu-button');
-        const menuOverlay = document.getElementById('menuOverlay');
-        const menuClose = document.getElementById('menuClose');
-
-        menuButton.addEventListener('click', () => {
-            menuOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
-
-        menuClose.addEventListener('click', () => {
-            menuOverlay.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        });
-
-        // Fermer le menu quand on clique sur un lien
-        const menuLinks = document.querySelectorAll('.menu-nav a');
-        menuLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                menuOverlay.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            });
-        });
-    </script>
-</body>
-</html>
-
+   
         <!-- Section "Je donne vie à vos projets..." -->
         <section class="hero-intro">
             <div class="container">
@@ -1041,6 +956,86 @@
                 section.style.transform = 'translateY(30px)';
                 section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
                 observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+    <script>
+        let hasActivated = false;
+
+        function activateAnimation() {
+            if (!hasActivated) {
+                hasActivated = true;
+                document.querySelector('.hero-content').classList.add('active');
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            activateAnimation();
+        });
+
+        const heroContent = document.querySelector('.hero-content');
+        
+        heroContent.addEventListener('click', () => {
+            heroContent.classList.remove('active');
+            setTimeout(() => {
+                heroContent.classList.add('active');
+            }, 50);
+        });
+
+        const header = document.querySelector('.header');
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        const logoSpans = document.querySelectorAll('.logo span');
+        const logo = document.querySelector('.logo');
+
+        logo.addEventListener('mouseenter', () => {
+            logoSpans.forEach((span, index) => {
+                setTimeout(() => {
+                    span.style.animation = 'wave 0.6s ease-in-out';
+                }, index * 50);
+            });
+        });
+
+        logo.addEventListener('mouseleave', () => {
+            logoSpans.forEach((span) => {
+                span.style.animation = '';
+            });
+        });
+
+        // Menu overlay
+        const menuButton = document.querySelector('.menu-button');
+        const menuOverlay = document.getElementById('menuOverlay');
+        const menuClose = document.getElementById('menuClose');
+
+        menuButton.addEventListener('click', () => {
+            menuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        menuClose.addEventListener('click', () => {
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Fermer le menu quand on clique sur un lien
+        const menuLinks = document.querySelectorAll('.menu-nav a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuOverlay.classList.remove('active');
+                document.body.style.overflow = 'auto';
             });
         });
     </script>
