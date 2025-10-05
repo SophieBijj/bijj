@@ -132,83 +132,348 @@
             background: rgba(246, 173, 85, 0.1);
         }
 
-        /* Hero avec animation inspire → exprime */
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sophie Bijjani - Créatrice d'expériences vocales</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Crimson Text', Georgia, serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: #fafafa;
+            font-size: 18px;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 30px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(250, 250, 250, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(226, 232, 240, 0.3);
+        }
+
+        .logo {
+            font-size: 18px;
+            font-weight: 300;
+            color: #4a5568;
+            text-decoration: none;
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: pointer;
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .logo:hover {
+            transform: translateX(8px);
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .logo .j-gold {
+            color: #f6ad55;
+            font-weight: 700;
+        }
+
+        .logo .i-bold {
+            font-weight: 700;
+            color: #4a5568;
+        }
+
+        .nav {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav a {
+            color: #718096;
+            text-decoration: none;
+            font-size: 16px;
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: pointer;
+            font-family: 'Crimson Text', Georgia, serif;
+        }
+
+        .nav a:hover {
+            color: #4a5568;
+            transform: translateX(5px);
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .nav a.active {
+            color: #4a5568;
+            font-weight: 600;
+        }
+
+        /* Hero Section avec Photo */
         .hero {
             height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
             position: relative;
             background: #fafafa;
-            cursor: default;
+            padding: 0 40px;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .hero-text {
+            position: relative;
         }
 
         .hero-content {
             position: relative;
-            transition: all 0.6s ease;
+            cursor: none;
+        }
+
+        /* Structure avec deux lignes */
+        .text-line {
+            font-size: 100px;
+            font-weight: 400;
+            line-height: 1.2;
+            font-family: 'Crimson Text', Georgia, serif;
+            user-select: none;
         }
 
         .inspire-text {
-            font-size: 120px;
-            font-weight: 400;
-            color: transparent;
-            -webkit-text-stroke: 2px #4a5568;
-            text-stroke: 2px #4a5568;
-            line-height: 1;
-            user-select: none;
-            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            font-family: 'Crimson Text', Georgia, serif;
+            color: #4a5568;
+            -webkit-text-fill-color: #4a5568;
         }
 
-        .inspire-text .i-transition {
-            color: #4a5568;
-            -webkit-text-stroke: none;
-            text-stroke: none;
-            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        /* Le i de inspire - outline jaune au début */
+        .inspire-text .i-static {
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+            -webkit-text-stroke: 2px #f6ad55;
+            text-stroke: 2px #f6ad55;
+            transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s;
+        }
+
+        /* Quand animation : le i devient outline gris */
+        .hero-content.show-exprime .inspire-text .i-static {
+            -webkit-text-stroke: 2px #4a5568;
+            text-stroke: 2px #4a5568;
+        }
+
+        /* Le i jaune qui glisse - ENLEVÉ */
+        .i-sliding {
+            display: none;
+        }
+
+        /* Splash enlevé */
+        .splash-container {
+            display: none;
         }
 
         .exprime-text {
-            position: absolute;
-            top: 30px;
-            left: 0;
-            right: 0;
-            font-size: 120px;
-            font-weight: 400;
-            color: #f6ad55;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
-            -webkit-text-stroke: 1px rgba(45, 55, 72, 0.3);
-            text-stroke: 1px rgba(45, 55, 72, 0.3);
-            line-height: 1;
+            color: #4a5568;
+            -webkit-text-fill-color: #4a5568;
             opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            user-select: none;
-            pointer-events: none;
-            font-family: 'Crimson Text', Georgia, serif;
+            transition: opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s;
+            margin-top: 10px;
+            padding-left: 20px;
         }
 
         .exprime-text .i-hidden {
-            opacity: 0;
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+            -webkit-text-stroke: 2px #4a5568;
+            text-stroke: 2px #4a5568;
         }
 
-        /* Animation triggers */
-        .hero-content.show-exprime .inspire-text {
-            color: #2d3748;
-            -webkit-text-stroke: none;
-            text-stroke: none;
-        }
-
-        .hero-content.show-exprime .inspire-text .i-transition {
+        .hero-content.show-exprime .exprime-text .i-hidden {
             color: #f6ad55;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
-            -webkit-text-stroke: 1px rgba(45, 55, 72, 0.3);
-            text-stroke: 1px rgba(45, 55, 72, 0.3);
+            -webkit-text-fill-color: #f6ad55;
+            -webkit-text-stroke: 0;
+            text-stroke: 0;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.15);
         }
 
         .hero-content.show-exprime .exprime-text {
             opacity: 1;
-            transform: translateY(0);
+        }
+
+        /* Photo Section */
+        .hero-photo {
+            position: relative;
+        }
+
+        .hero-photo img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            object-fit: cover;
+            max-height: 600px;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .text-line {
+                font-size: 70px;
+            }
+
+            .i-sliding {
+                left: 167px;
+                font-size: 70px;
+            }
+
+            .hero-content.show-exprime .i-sliding {
+                transform: translateY(86px) translateX(14px);
+            }
+
+            .hero-photo img {
+                max-height: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 20px;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .nav {
+                gap: 20px;
+            }
+
+            .text-line {
+                font-size: 50px;
+            }
+
+            .i-sliding {
+                left: 119px;
+                font-size: 50px;
+            }
+
+            .hero-content.show-exprime .i-sliding {
+                transform: translateY(62px) translateX(10px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <a href="#" class="logo">
+            Soph<span class="i-bold">i</span>e B<span class="i-bold">i</span><span class="j-gold">j</span><span class="i-bold">j</span>an<span class="i-bold">i</span>
+        </a>
+        <nav class="nav">
+            <a href="#" class="active">Accueil</a>
+            <a href="#">Musique</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Landing avec Photo -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-text">
+                <div class="hero-content">
+                    <div class="text-line inspire-text">Insp<span class="i-static">i</span>re</div>
+                    <div class="splash-container">
+                        <div class="droplet"></div>
+                        <div class="droplet"></div>
+                        <div class="droplet"></div>
+                        <div class="droplet"></div>
+                        <div class="droplet"></div>
+                        <div class="droplet"></div>
+                    </div>
+                    <div class="i-sliding">i</div>
+                    <div class="text-line exprime-text">expr<span class="i-hidden">i</span>me</div>
+                </div>
+            </div>
+            <div class="hero-photo">
+                <img src="PhotoLanding.jpg" alt="Sophie Bijjani">
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Variables pour contrôler l'animation
+        let hasMovedOnHero = false;
+        let animationTimer = null;
+
+        function initHeroAnimation() {
+            const heroContent = document.querySelector('.hero-content');
+            if (!heroContent) return;
+
+            // Timer pour déclencher l'animation après 4 secondes
+            function startTimer() {
+                animationTimer = setTimeout(() => {
+                    if (!hasMovedOnHero) {
+                        heroContent.classList.add('show-exprime');
+                    }
+                }, 4000);
+            }
+
+            // Au hover, déclencher immédiatement
+            heroContent.addEventListener('mouseenter', () => {
+                if (!hasMovedOnHero) {
+                    hasMovedOnHero = true;
+                    clearTimeout(animationTimer);
+                    heroContent.classList.add('show-exprime');
+                }
+            });
+
+            // Démarrer le timer au chargement
+            startTimer();
+
+            // Animation au scroll aussi
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                
+                if (scrolled > 50) {
+                    heroContent.classList.add('show-exprime');
+                }
+
+                // Parallax léger
+                if (heroContent) {
+                    heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
+                }
+            });
+        }
+
+        // Initialiser l'animation au chargement
+        document.addEventListener('DOMContentLoaded', initHeroAnimation);
+    </script>
+</body>
+</html>
         }
 
         /* Section "Je donne vie à vos projets..." */
