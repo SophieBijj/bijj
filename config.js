@@ -186,6 +186,6 @@ const SITE_CONFIG = {
 
     // FOOTER
     footer: {
-        copyright: "2024 Sophie Bijjani. Tous droits réservés."
+        copyright: "2025 Sophie Bijjani. Inspire ༅ Exprime -  Tous droits réservés."
     }
 };
