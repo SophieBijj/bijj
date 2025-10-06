@@ -1,5 +1,4 @@
-<script>
-        // ===== CONFIGURATION ÉDITABLE =====
+ // ===== CONFIGURATION ÉDITABLE =====
         const SITE_CONFIG = {
             // Informations générales
             nom: "Sophie Bijjani",
@@ -150,4 +149,4 @@
                 document.querySelector('.header').classList.toggle('scrolled', scrollTop > 50);
             });
         });
-    </script>
+
