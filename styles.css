@@ -276,7 +276,7 @@ body {
     justify-content: center;
     position: relative;
     background: linear-gradient(135deg, #fafafa 0%, #f7fafc 100%);
-    padding: 100px 20px 50px;
+    padding: 120px 20px 60px;
 }
 
 .hero-content {
@@ -971,3 +971,428 @@ body {
 }
 
 .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: #e2e8f0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #f6ad55;
+}
+
+.footer-social {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.footer-social a {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: transparent;
+    border: 2px solid #e2e8f0;
+    color: #e2e8f0;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-social a:hover {
+    border-color: #f6ad55;
+    color: #f6ad55;
+    transform: translateY(-3px);
+}
+
+/* ===== RESPONSIVE - STYLE OLLIVERE.CO ===== */
+@media (max-width: 768px) {
+    /* Header plus compact */
+    .header {
+        padding: 20px 24px;
+    }
+    
+    .logo {
+        font-size: 20px;
+        letter-spacing: 1px;
+    }
+    
+    .menu-button {
+        font-size: 20px;
+    }
+    
+    .menu-letter {
+        height: 26px;
+    }
+    
+    .menu-letter-content span {
+        height: 26px;
+        line-height: 26px;
+    }
+    
+    .menu-button:hover .letter-1 .menu-letter-content { transform: translateY(-26px); }
+    .menu-button:hover .letter-2 .menu-letter-content { transform: translateY(-26px); }
+    .menu-button:hover .letter-3 .menu-letter-content { transform: translateY(-26px); }
+    .menu-button:hover .letter-4 .menu-letter-content { transform: translateY(-26px); }
+    .menu-button:hover .letter-5 .menu-letter-content { transform: translateY(-26px); }
+    .menu-button:hover .letter-6 .menu-letter-content { transform: translateY(-26px); }
+    
+    /* Hero épuré comme ollivere.co */
+    .hero {
+        min-height: 85vh;
+        padding: 100px 24px 40px;
+    }
+    
+    .animation-wrapper {
+        height: auto;
+        min-height: 200px;
+    }
+    
+    /* Titres plus petits et élégants */
+    .line-inspire {
+        font-size: 48px;
+        line-height: 1.1;
+    }
+    
+    .line-exprime {
+        font-size: 48px;
+        margin-left: 20px;
+        margin-top: 5px;
+    }
+    
+    .line-inspire .i-inspire {
+        -webkit-text-stroke: 1.5px #4a5568;
+    }
+    
+    .letter.i-exprime {
+        -webkit-text-stroke: 1.5px #f6ad55;
+    }
+    
+    /* Hero intro plus compact */
+    .hero-intro {
+        padding: 60px 24px;
+    }
+    
+    .hero-intro h1 {
+        font-size: 28px;
+        margin-bottom: 20px;
+        line-height: 1.4;
+    }
+    
+    .hero-intro p {
+        font-size: 18px;
+        line-height: 1.6;
+    }
+    
+    /* Container avec padding réduit */
+    .container {
+        padding: 0 24px;
+    }
+    
+    /* Sections plus compactes */
+    .content-section {
+        padding: 50px 0;
+    }
+    
+    /* What I Do section */
+    .what-i-do {
+        padding: 60px 24px;
+    }
+    
+    .what-i-do h2 {
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+    
+    .what-i-do-list li {
+        font-size: 18px;
+        margin-bottom: 24px;
+        padding-left: 32px;
+    }
+    
+    .what-i-do-list li::before {
+        font-size: 22px;
+    }
+    
+    .morphing-shape {
+        display: none;
+    }
+    
+    /* Testimonials en colonne */
+    .testimonials-diagonal {
+        padding: 60px 24px;
+    }
+    
+    .testimonials-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .testimonial-left,
+    .testimonial-right {
+        justify-self: center;
+        max-width: 100%;
+        margin-top: 0;
+    }
+    
+    .testimonial {
+        padding: 30px;
+    }
+    
+    .testimonial::before {
+        font-size: 60px;
+        top: -5px;
+        left: 15px;
+    }
+    
+    .testimonial-text {
+        font-size: 16px;
+    }
+    
+    .testimonial-photo {
+        order: -1;
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+    
+    .testimonial-photo img {
+        width: 200px;
+        height: 200px;
+    }
+    
+    /* Final CTA */
+    .final-cta {
+        padding: 60px 24px;
+    }
+    
+    .final-cta h2 {
+        font-size: 32px;
+        margin-bottom: 16px;
+    }
+    
+    .final-cta p {
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+    
+    .cta-primary {
+        padding: 16px 36px;
+        font-size: 16px;
+    }
+    
+    /* Newsletter */
+    .newsletter {
+        padding: 40px 24px;
+        margin: 50px 0;
+    }
+    
+    .newsletter h3 {
+        font-size: 24px;
+        margin-bottom: 12px;
+    }
+    
+    .newsletter p {
+        font-size: 16px;
+        margin-bottom: 24px;
+    }
+    
+    .newsletter-form {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .newsletter-form input,
+    .newsletter-form button {
+        width: 100%;
+        padding: 14px 20px;
+    }
+    
+    /* Artist section */
+    .artist-section {
+        padding: 60px 24px;
+    }
+    
+    .artist-photo img {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .artist-content h3 {
+        font-size: 28px;
+        margin-bottom: 16px;
+    }
+    
+    .artist-content p {
+        font-size: 18px;
+    }
+    
+    /* Services page */
+    .section-title {
+        font-size: 32px;
+        margin-bottom: 16px;
+    }
+    
+    .services-intro {
+        font-size: 18px;
+        margin-bottom: 50px;
+    }
+    
+    .service-block {
+        padding: 40px 24px;
+        margin-bottom: 30px;
+    }
+    
+    .service-block h3 {
+        font-size: 26px;
+        margin-bottom: 20px;
+    }
+    
+    .service-block p {
+        font-size: 16px;
+    }
+    
+    .service-block li {
+        font-size: 16px;
+        padding-left: 28px;
+    }
+    
+    .spectacle-item {
+        padding: 24px;
+    }
+    
+    .spectacle-item h4 {
+        font-size: 20px;
+    }
+    
+    .spectacle-item p {
+        font-size: 15px;
+    }
+    
+    /* Music page */
+    .music-hero {
+        padding: 60px 24px 40px;
+    }
+    
+    .music-hero h1 {
+        font-size: 36px;
+    }
+    
+    .spotify-section {
+        padding: 40px 24px;
+        margin: 30px 0;
+    }
+    
+    .spotify-section h3 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+    
+    .video-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin: 40px 0;
+    }
+    
+    .video-item iframe {
+        height: 220px;
+    }
+    
+    .video-info {
+        padding: 20px;
+    }
+    
+    .video-info h3 {
+        font-size: 20px;
+    }
+    
+    .video-info p {
+        font-size: 15px;
+    }
+    
+    .platform-links {
+        flex-direction: column;
+        gap: 12px;
+        margin: 40px 0;
+    }
+    
+    .platform-link {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 24px;
+    }
+    
+    /* Menu overlay */
+    .menu-close {
+        top: 20px;
+        right: 24px;
+        font-size: 32px;
+    }
+    
+    .menu-nav a {
+        font-size: 36px;
+        padding-right: 50px;
+    }
+    
+    .menu-nav a::after {
+        font-size: 28px;
+    }
+    
+    /* Footer */
+    .footer {
+        padding: 50px 24px 30px;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: 16px;
+    }
+    
+    .footer p {
+        font-size: 14px;
+    }
+    
+    /* Page padding */
+    .page {
+        padding-top: 80px;
+    }
+}
+
+/* Petits écrans supplémentaires */
+@media (max-width: 480px) {
+    .line-inspire {
+        font-size: 42px;
+    }
+    
+    .line-exprime {
+        font-size: 42px;
+        margin-left: 16px;
+    }
+    
+    .hero-intro h1 {
+        font-size: 24px;
+    }
+    
+    .hero-intro p {
+        font-size: 16px;
+    }
+    
+    .what-i-do h2,
+    .final-cta h2,
+    .section-title {
+        font-size: 28px;
+    }
+    
+    .menu-nav a {
+        font-size: 32px;
+    }
+}
