@@ -1,9 +1,14 @@
 // ===== SCRIPT PRINCIPAL DU SITE =====
 // Ce fichier charge le contenu depuis config.js
 
+// Variables pour l'animation de scroll hijacking
+let animationTriggered = false;
+let animationComplete = false;
+
 document.addEventListener('DOMContentLoaded', () => {
     initSite();
     initAnimations();
+    initScrollHijacking();
 });
 
 function initSite() {
@@ -22,12 +27,12 @@ function initSite() {
                 return `<span class="letter">${lettre}</span>`;
             }).join('')}
         </div>
-        <div class="line-exprime">
+        <div class="line-exprime" id="exprimeContainer">
             ${mot2.split('').map((lettre, i) => {
                 if (lettre.toLowerCase() === 'i') {
-                    return `<span class="letter i-exprime">${lettre}</span>`;
+                    return `<span class="letter i-exprime" data-letter="${lettre}">${lettre}</span>`;
                 }
-                return `<span class="letter">${lettre}</span>`;
+                return `<span class="letter" data-letter="${lettre}">${lettre}</span>`;
             }).join('')}
         </div>
     `;
@@ -244,6 +249,75 @@ function initAnimations() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         document.querySelector('.header').classList.toggle('scrolled', scrollTop > 50);
     });
+}
+
+// ===== NOUVELLE FONCTION: SCROLL HIJACKING =====
+function initScrollHijacking() {
+    const exprimeContainer = document.getElementById('exprimeContainer');
+    const letterSpans = exprimeContainer.querySelectorAll('.letter');
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+    let currentIndex = 0;
+    let scrollAttempts = 0;
+
+    function typeNextLetter() {
+        if (currentIndex < letterSpans.length) {
+            letterSpans[currentIndex].classList.add('visible');
+            currentIndex++;
+            setTimeout(typeNextLetter, 150);
+        } else {
+            // Animation terminée
+            setTimeout(() => {
+                animationComplete = true;
+                document.body.style.overflow = 'auto';
+            }, 300);
+        }
+    }
+
+    function startAnimation() {
+        animationTriggered = true;
+        document.body.style.overflow = 'hidden';
+        if (scrollIndicator) {
+            scrollIndicator.style.opacity = '0';
+        }
+        
+        setTimeout(() => {
+            typeNextLetter();
+        }, 500);
+    }
+
+    function handleScroll(e) {
+        const currentScroll = window.scrollY;
+
+        if (!animationTriggered && currentScroll > 30) {
+            scrollAttempts++;
+            if (scrollAttempts >= 1) {
+                e.preventDefault();
+                window.scrollTo(0, 0);
+                startAnimation();
+            }
+            return false;
+        }
+
+        if (animationTriggered && !animationComplete) {
+            e.preventDefault();
+            window.scrollTo(0, 0);
+            return false;
+        }
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: false });
+
+    window.addEventListener('wheel', (e) => {
+        if (animationTriggered && !animationComplete) {
+            e.preventDefault();
+        }
+    }, { passive: false });
+
+    window.addEventListener('touchmove', (e) => {
+        if (animationTriggered && !animationComplete) {
+            e.preventDefault();
+        }
+    }, { passive: false });
 }
 
 function showPage(pageId) {
