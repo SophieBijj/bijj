@@ -441,7 +441,7 @@ body {
 }
 
 .what-i-do-content {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
     position: relative;
     z-index: 2;
@@ -457,12 +457,14 @@ body {
 .what-i-do-list {
     list-style: none;
     padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 60px;
 }
 
 .what-i-do-list li {
-    font-size: 24px;
+    font-size: 22px;
     color: #4a5568;
-    margin-bottom: 30px;
     padding-left: 40px;
     position: relative;
     line-height: 1.6;
@@ -491,6 +493,7 @@ body {
     left: 0;
     color: #f6ad55;
     font-size: 28px;
+    top: -2px;
 }
 
 /* ===== MORPHING SHAPE ===== */
@@ -1049,23 +1052,23 @@ body {
     
     /* Hero épuré comme ollivere.co */
     .hero {
-        min-height: 85vh;
+        min-height: 100vh;
         padding: 100px 24px 40px;
     }
     
     .animation-wrapper {
         height: auto;
-        min-height: 200px;
+        min-height: 280px;
     }
     
     /* Titres plus petits et élégants */
     .line-inspire {
-        font-size: 48px;
+        font-size: 64px;
         line-height: 1.1;
     }
     
     .line-exprime {
-        font-size: 48px;
+        font-size: 64px;
         margin-left: 20px;
         margin-top: 5px;
     }
@@ -1104,7 +1107,7 @@ body {
         padding: 50px 0;
     }
     
-    /* What I Do section */
+    /* What I Do section - 1 colonne sur mobile */
     .what-i-do {
         padding: 60px 24px;
     }
@@ -1114,9 +1117,13 @@ body {
         margin-bottom: 40px;
     }
     
+    .what-i-do-list {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
     .what-i-do-list li {
         font-size: 18px;
-        margin-bottom: 24px;
         padding-left: 32px;
     }
     
@@ -1347,18 +1354,19 @@ body {
         font-size: 28px;
     }
     
-    /* Footer */
+    /* Footer horizontal */
     .footer {
         padding: 50px 24px 30px;
     }
     
     .footer-links {
-        flex-direction: column;
-        gap: 16px;
+        flex-direction: row;
+        gap: 20px;
+        font-size: 14px;
     }
     
     .footer p {
-        font-size: 14px;
+        font-size: 13px;
     }
     
     /* Page padding */
@@ -1370,11 +1378,11 @@ body {
 /* Petits écrans supplémentaires */
 @media (max-width: 480px) {
     .line-inspire {
-        font-size: 42px;
+        font-size: 56px;
     }
     
     .line-exprime {
-        font-size: 42px;
+        font-size: 56px;
         margin-left: 16px;
     }
     
@@ -1394,5 +1402,10 @@ body {
     
     .menu-nav a {
         font-size: 32px;
+    }
+    
+    .footer-links {
+        flex-wrap: wrap;
+        gap: 12px 16px;
     }
 }
