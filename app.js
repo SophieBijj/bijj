@@ -15,7 +15,12 @@ function initSite() {
     heroAnim.innerHTML = `
         <div class="line-inspire">
             ${mot1.split('').map((lettre, i) => {
-                if (lettre.toLowerCase() === 'i') {
+                // Premier I majuscule (index 0) = plein
+                // Deuxième i minuscule (index 3) = outline
+                if (i === 0 && lettre.toUpperCase() === 'I') {
+                    return `<span class="letter">${lettre}</span>`;
+                }
+                if (i === 3 && lettre.toLowerCase() === 'i') {
                     return `<span class="i-inspire">${lettre}</span>`;
                 }
                 return `<span class="letter">${lettre}</span>`;
