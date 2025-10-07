@@ -1,16 +1,4 @@
-@keyframes fadeInFromCenter {
-    0% { opacity: 0; transform: scale(0.7); }
-    100% { opacity: 1; transform: scale(1); }
-}
-
-/* Animations pour INSPIRE - toutes les lettres y compris le i outline */
-.line-inspire .letter:nth-child(1) {
-    animation: fadeInFromCenter 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    animation-delay: 1.4s;
-}
-
-.line-inspire .letter:nth-child(2) {
-    animation: fadeInFromCenter 0.6s/* ===== STYLES DU SITE SOPHIE BIJJANI ===== */
+/* ===== STYLES DU SITE SOPHIE BIJJANI ===== */
 
 * {
     margin: 0;
@@ -306,7 +294,6 @@ body {
     align-items: center;
 }
 
-/* Scroll indicator */
 .scroll-indicator {
     display: none;
 }
@@ -322,18 +309,15 @@ body {
 .line-inspire .letter {
     display: inline-block;
     opacity: 0;
-}
-
-.line-inspire .letter {
-    display: inline-block;
-    opacity: 0;
     color: #4a5568;
 }
 
-.line-inspire .letter.i-inspire {
-    color: transparent !important;
-    -webkit-text-fill-color: transparent !important;
-    -webkit-text-stroke: 2px #4a5568 !important;
+.line-inspire .i-inspire {
+    display: inline-block;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 2px #4a5568;
+    opacity: 0;
 }
 
 @keyframes fadeInFromCenter {
@@ -341,9 +325,20 @@ body {
     100% { opacity: 1; transform: scale(1); }
 }
 
-.line-inspire .letter:nth-child(1) {
+.line-inspire .i-inspire {
+    animation: fadeInFromCenter 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.line-inspire .letter:nth-child(4),
+.line-inspire .letter:nth-child(6) {
     animation: fadeInFromCenter 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    animation-delay: 1.4s;
+    animation-delay: 0.8s;
+}
+
+.line-inspire .letter:nth-child(3),
+.line-inspire .letter:nth-child(7) {
+    animation: fadeInFromCenter 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation-delay: 1s;
 }
 
 .line-inspire .letter:nth-child(2) {
@@ -351,36 +346,9 @@ body {
     animation-delay: 1.2s;
 }
 
-.line-inspire .letter:nth-child(3) {
+.line-inspire .letter:nth-child(1) {
     animation: fadeInFromCenter 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    animation-delay: 1s;
-}
-
-.line-inspire .letter:nth-child(5),
-.line-inspire .letter:nth-child(6) {
-    animation: fadeInFromCenter 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    animation-delay: 0.8s;
-}
-
-.line-inspire .letter:nth-child(7) {
-    animation: fadeInFromCenter 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    animation-delay: 0.6s;
-}
-
-.line-exprime {
-    font-size: 110px;
-    font-weight: 400;
-    line-height: 1.2;
-    font-family: 'Crimson Text', Georgia, serif;
-    font-style: italic;
-    margin-left: 40px;
-    margin-top: 10px;
-}
-
-.line-inspire .letter {
-    display: inline-block;
-    opacity: 0;
-    color: #4a5568;
+    animation-delay: 1.4s;
 }
 
 .line-exprime {
