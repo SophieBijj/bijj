@@ -15,13 +15,9 @@ function initSite() {
     heroAnim.innerHTML = `
         <div class="line-inspire">
             ${mot1.split('').map((lettre, i) => {
-                // Premier I majuscule (index 0) = plein
-                if (i === 0 && lettre.toUpperCase() === 'I') {
-                    return `<span class="letter">${lettre}</span>`;
-                }
-                // Deuxième i minuscule (index 3) = outline
-                if (i === 3 && lettre.toLowerCase() === 'i') {
-                    return `<span class="letter i-inspire">${lettre}</span>`;
+                // Index 4 = le 2e "i" de "Inspire" qui doit être outline
+                if (i === 4 && lettre.toLowerCase() === 'i') {
+                    return `<span class="i-inspire">${lettre}</span>`;
                 }
                 return `<span class="letter">${lettre}</span>`;
             }).join('')}
@@ -244,21 +240,9 @@ function initAnimations() {
         logoSpans.forEach(span => span.style.animation = '');
     });
 
-    // Scroll animation pour "exprime"
-    const lineExprime = document.querySelector('.line-exprime');
-    let hasAnimated = false;
-
     window.addEventListener('scroll', () => {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
-        // Header scroll effect
         document.querySelector('.header').classList.toggle('scrolled', scrollTop > 50);
-        
-        // Exprime apparait au scroll
-        if (!hasAnimated && scrollTop > 100) {
-            lineExprime.classList.add('visible');
-            hasAnimated = true;
-        }
     });
 }
 
