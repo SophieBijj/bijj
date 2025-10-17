@@ -1,13 +1,14 @@
 // ===== SCRIPT PRINCIPAL DU SITE =====
 // Ce fichier charge le contenu depuis config.js
 
-// Variables pour l'animation
+// Variables pour l'animation de scroll hijacking
+let animationTriggered = false;
 let animationComplete = false;
 
 document.addEventListener('DOMContentLoaded', () => {
     initSite();
     initAnimations();
-    initScrollControl();
+    initScrollHijacking();
 });
 
 function initSite() {
@@ -245,17 +246,71 @@ function initAnimations() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         document.querySelector('.header').classList.toggle('scrolled', scrollTop > 50);
     });
-
-    // Démarrer l'animation "exprime" après 2 secondes
-    setTimeout(() => {
-        startExprimeAnimation();
-    }, 2000);
 }
 
-function startExprimeAnimation() {
+// ===== SCROLL HIJACKING AVEC ANIMATION =====
+function initScrollHijacking() {
     const exprimeContainer = document.getElementById('exprimeContainer');
     const letterSpans = exprimeContainer.querySelectorAll('.letter');
+    const scrollIndicator = document.querySelector('.scroll-indicator');
     let currentIndex = 0;
+
+    // Attendre que l'animation "inspire" soit terminée (environ 2 secondes)
+    setTimeout(() => {
+        // Maintenant on peut écouter le scroll
+        setupScrollListener();
+    }, 2000);
+
+    function setupScrollListener() {
+        let scrollAttempts = 0;
+
+        function handleScroll(e) {
+            if (!animationTriggered) {
+                scrollAttempts++;
+                if (scrollAttempts >= 1) {
+                    e.preventDefault();
+                    startAnimation();
+                }
+                return false;
+            }
+
+            if (animationTriggered && !animationComplete) {
+                e.preventDefault();
+                window.scrollTo(0, 0);
+                return false;
+            }
+        }
+
+        window.addEventListener('scroll', handleScroll, { passive: false });
+        window.addEventListener('wheel', (e) => {
+            if (animationTriggered && !animationComplete) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+
+        window.addEventListener('touchmove', (e) => {
+            if (animationTriggered && !animationComplete) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+    }
+
+    function startAnimation() {
+        if (animationTriggered) return;
+        
+        animationTriggered = true;
+        document.body.style.overflow = 'hidden';
+        
+        if (scrollIndicator) {
+            scrollIndicator.style.opacity = '0';
+        }
+        
+        window.scrollTo(0, 0);
+        
+        setTimeout(() => {
+            typeNextLetter();
+        }, 300);
+    }
 
     function typeNextLetter() {
         if (currentIndex < letterSpans.length) {
@@ -267,28 +322,8 @@ function startExprimeAnimation() {
             setTimeout(() => {
                 animationComplete = true;
                 document.body.style.overflow = 'auto';
-            }, 300);
+            }, 500);
         }
-    }
-
-    typeNextLetter();
-}
-
-function initScrollControl() {
-    // Bloquer le scroll jusqu'à ce que l'animation soit terminée
-    document.body.style.overflow = 'hidden';
-
-    // Empêcher le scroll pendant l'animation
-    window.addEventListener('wheel', preventScrollDuringAnimation, { passive: false });
-    window.addEventListener('touchmove', preventScrollDuringAnimation, { passive: false });
-    window.addEventListener('keydown', preventScrollDuringAnimation);
-}
-
-function preventScrollDuringAnimation(e) {
-    if (!animationComplete) {
-        e.preventDefault();
-        e.stopPropagation();
-        return false;
     }
 }
 
