@@ -253,21 +253,30 @@ function initScrollHijacking() {
     const exprimeContainer = document.getElementById('exprimeContainer');
     const letterSpans = exprimeContainer.querySelectorAll('.letter');
     let currentIndex = 0;
+    let autoTriggerTimeout;
 
     // Bloquer le scroll dès le chargement
     document.body.style.overflow = 'hidden';
 
-    // Attendre que l'animation "inspire" soit terminée (environ 1 seconde)
+    // Attendre que l'animation "inspire" soit terminée (environ 0.9 seconde maintenant)
     setTimeout(() => {
         // Maintenant on peut écouter le scroll
         setupScrollListener();
-    }, 1000);
+        
+        // Auto-trigger après 2 secondes si pas de scroll
+        autoTriggerTimeout = setTimeout(() => {
+            if (!animationTriggered) {
+                startAnimation();
+            }
+        }, 2000);
+    }, 900);
 
     function setupScrollListener() {
         function handleWheelOrTouch(e) {
             if (!animationTriggered) {
                 // Empêcher le scroll mais déclencher l'animation immédiatement
                 e.preventDefault();
+                clearTimeout(autoTriggerTimeout);
                 startAnimation();
             } else if (animationTriggered && !animationComplete) {
                 // Pendant l'animation, on bloque le scroll
@@ -283,6 +292,7 @@ function initScrollHijacking() {
             if (!animationComplete && [32, 33, 34, 35, 36, 37, 38, 39, 40].includes(e.keyCode)) {
                 e.preventDefault();
                 if (!animationTriggered) {
+                    clearTimeout(autoTriggerTimeout);
                     startAnimation();
                 }
             }
@@ -302,7 +312,7 @@ function initScrollHijacking() {
         if (currentIndex < letterSpans.length) {
             letterSpans[currentIndex].classList.add('visible');
             currentIndex++;
-            setTimeout(typeNextLetter, 75);
+            setTimeout(typeNextLetter, 50);
         } else {
             // Animation terminée - débloquer le scroll et montrer la ligne du header
             setTimeout(() => {
@@ -310,7 +320,7 @@ function initScrollHijacking() {
                 document.body.style.overflow = 'auto';
                 // Faire apparaître la ligne du header
                 document.querySelector('.header').classList.add('animation-complete');
-            }, 250);
+            }, 200);
         }
     }
 }
