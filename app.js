@@ -253,48 +253,61 @@ function initScrollHijacking() {
     const exprimeContainer = document.getElementById('exprimeContainer');
     const letterSpans = exprimeContainer.querySelectorAll('.letter');
     let currentIndex = 0;
-    let autoTriggerTimeout;
 
     // Bloquer le scroll dès le chargement
     document.body.style.overflow = 'hidden';
 
-    // Attendre que l'animation "inspire" soit terminée (environ 0.9 seconde maintenant)
+    // Attendre que l'animation "inspire" soit presque terminée (0.6 seconde)
+    // pour que "exprime" commence juste quand "Inspire" finit
     setTimeout(() => {
-        // Maintenant on peut écouter le scroll
-        setupScrollListener();
-        
-        // Auto-trigger après 2 secondes si pas de scroll
-        autoTriggerTimeout = setTimeout(() => {
-            if (!animationTriggered) {
-                startAnimation();
-            }
-        }, 2000);
-    }, 900);
+        startAnimation();
+    }, 600);
 
-    function setupScrollListener() {
+    function setupScrollBlocker() {
         function handleWheelOrTouch(e) {
-            if (!animationTriggered) {
-                // Empêcher le scroll mais déclencher l'animation immédiatement
-                e.preventDefault();
-                clearTimeout(autoTriggerTimeout);
-                startAnimation();
-            } else if (animationTriggered && !animationComplete) {
+            if (animationTriggered && !animationComplete) {
                 // Pendant l'animation, on bloque le scroll
                 e.preventDefault();
             }
         }
 
-        // Écouter tous les types de scroll
+        // Écouter tous les types de scroll pour bloquer pendant l'animation
         window.addEventListener('wheel', handleWheelOrTouch, { passive: false });
         window.addEventListener('touchmove', handleWheelOrTouch, { passive: false });
         window.addEventListener('keydown', (e) => {
-            // Bloquer les touches de défilement (flèches, espace, page up/down)
+            // Bloquer les touches de défilement pendant l'animation
             if (!animationComplete && [32, 33, 34, 35, 36, 37, 38, 39, 40].includes(e.keyCode)) {
                 e.preventDefault();
-                if (!animationTriggered) {
-                    clearTimeout(autoTriggerTimeout);
-                    startAnimation();
-                }
+            }
+        }, { passive: false });
+    }
+
+    function startAnimation() {
+        if (animationTriggered) return;
+        
+        animationTriggered = true;
+        setupScrollBlocker();
+        
+        // Démarrer l'animation immédiatement sans délai
+        typeNextLetter();
+    }
+
+    function typeNextLetter() {
+        if (currentIndex < letterSpans.length) {
+            letterSpans[currentIndex].classList.add('visible');
+            currentIndex++;
+            setTimeout(typeNextLetter, 50);
+        } else {
+            // Animation terminée - débloquer le scroll et montrer la ligne du header
+            setTimeout(() => {
+                animationComplete = true;
+                document.body.style.overflow = 'auto';
+                // Faire apparaître la ligne du header
+                document.querySelector('.header').classList.add('animation-complete');
+            }, 200);
+        }
+    }
+}}
             }
         }, { passive: false });
     }
