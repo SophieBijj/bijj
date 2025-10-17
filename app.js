@@ -304,10 +304,12 @@ function initScrollHijacking() {
             currentIndex++;
             setTimeout(typeNextLetter, 75);
         } else {
-            // Animation terminée - débloquer le scroll
+            // Animation terminée - débloquer le scroll et montrer la ligne du header
             setTimeout(() => {
                 animationComplete = true;
                 document.body.style.overflow = 'auto';
+                // Faire apparaître la ligne du header
+                document.querySelector('.header').classList.add('animation-complete');
             }, 250);
         }
     }
