@@ -248,7 +248,7 @@ function initAnimations() {
     });
 }
 
-// ===== SCROLL HIJACKING AVEC ANIMATION =====
+// ===== ANIMATION AUTOMATIQUE =====
 function initScrollHijacking() {
     const exprimeContainer = document.getElementById('exprimeContainer');
     const letterSpans = exprimeContainer.querySelectorAll('.letter');
@@ -257,25 +257,21 @@ function initScrollHijacking() {
     // Bloquer le scroll dès le chargement
     document.body.style.overflow = 'hidden';
 
-    // Attendre que l'animation "inspire" soit presque terminée (0.6 seconde)
-    // pour que "exprime" commence juste quand "Inspire" finit
+    // Attendre 0.6 seconde puis démarrer "exprime"
     setTimeout(() => {
         startAnimation();
     }, 600);
 
     function setupScrollBlocker() {
         function handleWheelOrTouch(e) {
-            if (animationTriggered && !animationComplete) {
-                // Pendant l'animation, on bloque le scroll
+            if (!animationComplete) {
                 e.preventDefault();
             }
         }
 
-        // Écouter tous les types de scroll pour bloquer pendant l'animation
         window.addEventListener('wheel', handleWheelOrTouch, { passive: false });
         window.addEventListener('touchmove', handleWheelOrTouch, { passive: false });
         window.addEventListener('keydown', (e) => {
-            // Bloquer les touches de défilement pendant l'animation
             if (!animationComplete && [32, 33, 34, 35, 36, 37, 38, 39, 40].includes(e.keyCode)) {
                 e.preventDefault();
             }
@@ -288,7 +284,6 @@ function initScrollHijacking() {
         animationTriggered = true;
         setupScrollBlocker();
         
-        // Démarrer l'animation immédiatement sans délai
         typeNextLetter();
     }
 
@@ -298,40 +293,9 @@ function initScrollHijacking() {
             currentIndex++;
             setTimeout(typeNextLetter, 50);
         } else {
-            // Animation terminée - débloquer le scroll et montrer la ligne du header
             setTimeout(() => {
                 animationComplete = true;
                 document.body.style.overflow = 'auto';
-                // Faire apparaître la ligne du header
-                document.querySelector('.header').classList.add('animation-complete');
-            }, 200);
-        }
-    }
-}}
-            }
-        }, { passive: false });
-    }
-
-    function startAnimation() {
-        if (animationTriggered) return;
-        
-        animationTriggered = true;
-        
-        // Démarrer l'animation immédiatement - réponse visuelle instantanée
-        typeNextLetter();
-    }
-
-    function typeNextLetter() {
-        if (currentIndex < letterSpans.length) {
-            letterSpans[currentIndex].classList.add('visible');
-            currentIndex++;
-            setTimeout(typeNextLetter, 50);
-        } else {
-            // Animation terminée - débloquer le scroll et montrer la ligne du header
-            setTimeout(() => {
-                animationComplete = true;
-                document.body.style.overflow = 'auto';
-                // Faire apparaître la ligne du header
                 document.querySelector('.header').classList.add('animation-complete');
             }, 200);
         }
@@ -348,7 +312,6 @@ function showPage(pageId) {
 function openMenu() {
     const menuOverlay = document.getElementById('menuOverlay');
     menuOverlay.style.display = 'flex';
-    // Petit délai pour que la transition fonctionne
     setTimeout(() => {
         menuOverlay.classList.add('active');
     }, 10);
@@ -358,7 +321,6 @@ function openMenu() {
 function closeMenu() {
     const menuOverlay = document.getElementById('menuOverlay');
     menuOverlay.classList.remove('active');
-    // Attendre la fin de la transition avant de cacher
     setTimeout(() => {
         menuOverlay.style.display = 'none';
     }, 600);
