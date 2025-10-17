@@ -366,29 +366,29 @@ body {
 }
 
 .line-inspire .i-inspire {
-    animation: fadeInFromCenter 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation: fadeInFromCenter 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .line-inspire .letter:nth-child(4),
 .line-inspire .letter:nth-child(6) {
-    animation: fadeInFromCenter 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    animation-delay: 0.8s;
+    animation: fadeInFromCenter 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation-delay: 0.4s;
 }
 
 .line-inspire .letter:nth-child(3),
 .line-inspire .letter:nth-child(7) {
-    animation: fadeInFromCenter 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    animation-delay: 1s;
+    animation: fadeInFromCenter 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation-delay: 0.5s;
 }
 
 .line-inspire .letter:nth-child(2) {
-    animation: fadeInFromCenter 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    animation-delay: 1.2s;
+    animation: fadeInFromCenter 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation-delay: 0.6s;
 }
 
 .line-inspire .letter:nth-child(1) {
-    animation: fadeInFromCenter 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    animation-delay: 1.4s;
+    animation: fadeInFromCenter 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation-delay: 0.7s;
 }
 
 /* ===== EXPRIME - Commence invisible, animation au scroll ===== */
