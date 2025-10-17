@@ -321,11 +321,21 @@ function showPage(pageId) {
 }
 
 function openMenu() {
-    document.getElementById('menuOverlay').classList.add('active');
+    const menuOverlay = document.getElementById('menuOverlay');
+    menuOverlay.style.display = 'flex';
+    // Petit délai pour que la transition fonctionne
+    setTimeout(() => {
+        menuOverlay.classList.add('active');
+    }, 10);
     document.body.style.overflow = 'hidden';
 }
 
 function closeMenu() {
-    document.getElementById('menuOverlay').classList.remove('active');
+    const menuOverlay = document.getElementById('menuOverlay');
+    menuOverlay.classList.remove('active');
+    // Attendre la fin de la transition avant de cacher
+    setTimeout(() => {
+        menuOverlay.style.display = 'none';
+    }, 600);
     document.body.style.overflow = 'auto';
 }
