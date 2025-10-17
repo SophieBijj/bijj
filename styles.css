@@ -12,6 +12,7 @@ body {
     color: #2d3748;
     background: #fafafa;
     overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 /* ===== HEADER ===== */
