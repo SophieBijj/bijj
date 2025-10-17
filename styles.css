@@ -581,7 +581,7 @@ body {
 .testimonials-diagonal {
     padding: 120px 40px;
     background-image: url('PhotoQuote.jpg');
-    background-size: cover;
+    background-size: 110%;
     background-position: center;
     position: relative;
     min-height: 600px;
@@ -594,7 +594,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(247, 250, 252, 0.88);
+    background: rgba(247, 250, 252, 0.75);
     z-index: 1;
 }
 
