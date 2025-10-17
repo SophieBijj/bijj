@@ -252,47 +252,39 @@ function initAnimations() {
 function initScrollHijacking() {
     const exprimeContainer = document.getElementById('exprimeContainer');
     const letterSpans = exprimeContainer.querySelectorAll('.letter');
-    const scrollIndicator = document.querySelector('.scroll-indicator');
     let currentIndex = 0;
 
-    // Attendre que l'animation "inspire" soit terminée (environ 1 seconde maintenant)
+    // Bloquer le scroll dès le chargement
+    document.body.style.overflow = 'hidden';
+
+    // Attendre que l'animation "inspire" soit terminée (environ 1 seconde)
     setTimeout(() => {
         // Maintenant on peut écouter le scroll
         setupScrollListener();
     }, 1000);
 
     function setupScrollListener() {
-        function handleScroll(e) {
+        function handleWheelOrTouch(e) {
             if (!animationTriggered) {
-                // Dès qu'on détecte un scroll, on démarre immédiatement
-                startAnimation();
-                return;
-            }
-
-            if (animationTriggered && !animationComplete) {
+                // Empêcher le scroll mais déclencher l'animation immédiatement
                 e.preventDefault();
-                window.scrollTo(0, 0);
-                return false;
+                startAnimation();
+            } else if (animationTriggered && !animationComplete) {
+                // Pendant l'animation, on bloque le scroll
+                e.preventDefault();
             }
         }
 
-        window.addEventListener('scroll', handleScroll, { passive: false });
-        window.addEventListener('wheel', (e) => {
-            if (!animationTriggered) {
-                // Déclencher immédiatement au premier mouvement de scroll
+        // Écouter tous les types de scroll
+        window.addEventListener('wheel', handleWheelOrTouch, { passive: false });
+        window.addEventListener('touchmove', handleWheelOrTouch, { passive: false });
+        window.addEventListener('keydown', (e) => {
+            // Bloquer les touches de défilement (flèches, espace, page up/down)
+            if (!animationComplete && [32, 33, 34, 35, 36, 37, 38, 39, 40].includes(e.keyCode)) {
                 e.preventDefault();
-                startAnimation();
-            } else if (animationTriggered && !animationComplete) {
-                e.preventDefault();
-            }
-        }, { passive: false });
-
-        window.addEventListener('touchmove', (e) => {
-            if (!animationTriggered) {
-                e.preventDefault();
-                startAnimation();
-            } else if (animationTriggered && !animationComplete) {
-                e.preventDefault();
+                if (!animationTriggered) {
+                    startAnimation();
+                }
             }
         }, { passive: false });
     }
@@ -301,21 +293,8 @@ function initScrollHijacking() {
         if (animationTriggered) return;
         
         animationTriggered = true;
-        document.body.style.overflow = 'hidden';
         
-        // Capturer la position actuelle AVANT de remonter
-        const currentScroll = window.scrollY;
-        
-        if (scrollIndicator) {
-            scrollIndicator.style.opacity = '0';
-        }
-        
-        // Remonter en douceur seulement si on a scrollé
-        if (currentScroll > 0) {
-            window.scrollTo({ top: 0, behavior: 'instant' });
-        }
-        
-        // Démarrer l'animation immédiatement
+        // Démarrer l'animation immédiatement - réponse visuelle instantanée
         typeNextLetter();
     }
 
@@ -325,7 +304,7 @@ function initScrollHijacking() {
             currentIndex++;
             setTimeout(typeNextLetter, 75);
         } else {
-            // Animation terminée
+            // Animation terminée - débloquer le scroll
             setTimeout(() => {
                 animationComplete = true;
                 document.body.style.overflow = 'auto';
