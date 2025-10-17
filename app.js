@@ -255,23 +255,18 @@ function initScrollHijacking() {
     const scrollIndicator = document.querySelector('.scroll-indicator');
     let currentIndex = 0;
 
-    // Attendre que l'animation "inspire" soit terminée (environ 2 secondes)
+    // Attendre que l'animation "inspire" soit terminée (environ 1 seconde maintenant)
     setTimeout(() => {
         // Maintenant on peut écouter le scroll
         setupScrollListener();
-    }, 2000);
+    }, 1000);
 
     function setupScrollListener() {
-        let scrollAttempts = 0;
-
         function handleScroll(e) {
             if (!animationTriggered) {
-                scrollAttempts++;
-                if (scrollAttempts >= 1) {
-                    e.preventDefault();
-                    startAnimation();
-                }
-                return false;
+                // Dès qu'on détecte un scroll, on démarre immédiatement
+                startAnimation();
+                return;
             }
 
             if (animationTriggered && !animationComplete) {
@@ -283,13 +278,20 @@ function initScrollHijacking() {
 
         window.addEventListener('scroll', handleScroll, { passive: false });
         window.addEventListener('wheel', (e) => {
-            if (animationTriggered && !animationComplete) {
+            if (!animationTriggered) {
+                // Déclencher immédiatement au premier mouvement de scroll
+                e.preventDefault();
+                startAnimation();
+            } else if (animationTriggered && !animationComplete) {
                 e.preventDefault();
             }
         }, { passive: false });
 
         window.addEventListener('touchmove', (e) => {
-            if (animationTriggered && !animationComplete) {
+            if (!animationTriggered) {
+                e.preventDefault();
+                startAnimation();
+            } else if (animationTriggered && !animationComplete) {
                 e.preventDefault();
             }
         }, { passive: false });
@@ -301,28 +303,33 @@ function initScrollHijacking() {
         animationTriggered = true;
         document.body.style.overflow = 'hidden';
         
+        // Capturer la position actuelle AVANT de remonter
+        const currentScroll = window.scrollY;
+        
         if (scrollIndicator) {
             scrollIndicator.style.opacity = '0';
         }
         
-        window.scrollTo(0, 0);
+        // Remonter en douceur seulement si on a scrollé
+        if (currentScroll > 0) {
+            window.scrollTo({ top: 0, behavior: 'instant' });
+        }
         
-        setTimeout(() => {
-            typeNextLetter();
-        }, 300);
+        // Démarrer l'animation immédiatement
+        typeNextLetter();
     }
 
     function typeNextLetter() {
         if (currentIndex < letterSpans.length) {
             letterSpans[currentIndex].classList.add('visible');
             currentIndex++;
-            setTimeout(typeNextLetter, 150);
+            setTimeout(typeNextLetter, 75);
         } else {
             // Animation terminée
             setTimeout(() => {
                 animationComplete = true;
                 document.body.style.overflow = 'auto';
-            }, 500);
+            }, 250);
         }
     }
 }
