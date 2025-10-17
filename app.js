@@ -1,14 +1,13 @@
 // ===== SCRIPT PRINCIPAL DU SITE =====
 // Ce fichier charge le contenu depuis config.js
 
-// Variables pour l'animation de scroll hijacking
-let animationTriggered = false;
+// Variables pour l'animation
 let animationComplete = false;
 
 document.addEventListener('DOMContentLoaded', () => {
     initSite();
     initAnimations();
-    initScrollHijacking();
+    initScrollControl();
 });
 
 function initSite() {
@@ -54,9 +53,6 @@ function initSite() {
             <p class="testimonial-text">"${SITE_CONFIG.temoignages[0].texte}"</p>
             <p class="testimonial-author">${SITE_CONFIG.temoignages[0].auteur}</p>
             <p class="testimonial-title">${SITE_CONFIG.temoignages[0].titre}</p>
-        </div>
-        <div class="testimonial-photo">
-            <img src="${SITE_CONFIG.photos.quote}" alt="Sophie Bijjani">
         </div>
         <div class="testimonial testimonial-right">
             <p class="testimonial-text">"${SITE_CONFIG.temoignages[1].texte}"</p>
@@ -228,8 +224,7 @@ function initSite() {
 }
 
 function initAnimations() {
-    document.querySelector('.hero-content').classList.add('active');
-
+    // Logo wave animation
     const logoSpans = document.querySelectorAll('.logo span');
     const logo = document.querySelector('.logo');
 
@@ -245,19 +240,22 @@ function initAnimations() {
         logoSpans.forEach(span => span.style.animation = '');
     });
 
+    // Header scroll effect
     window.addEventListener('scroll', () => {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         document.querySelector('.header').classList.toggle('scrolled', scrollTop > 50);
     });
+
+    // Démarrer l'animation "exprime" après 2 secondes
+    setTimeout(() => {
+        startExprimeAnimation();
+    }, 2000);
 }
 
-// ===== NOUVELLE FONCTION: SCROLL HIJACKING =====
-function initScrollHijacking() {
+function startExprimeAnimation() {
     const exprimeContainer = document.getElementById('exprimeContainer');
     const letterSpans = exprimeContainer.querySelectorAll('.letter');
-    const scrollIndicator = document.querySelector('.scroll-indicator');
     let currentIndex = 0;
-    let scrollAttempts = 0;
 
     function typeNextLetter() {
         if (currentIndex < letterSpans.length) {
@@ -273,51 +271,25 @@ function initScrollHijacking() {
         }
     }
 
-    function startAnimation() {
-        animationTriggered = true;
-        document.body.style.overflow = 'hidden';
-        if (scrollIndicator) {
-            scrollIndicator.style.opacity = '0';
-        }
-        
-        setTimeout(() => {
-            typeNextLetter();
-        }, 500);
+    typeNextLetter();
+}
+
+function initScrollControl() {
+    // Bloquer le scroll jusqu'à ce que l'animation soit terminée
+    document.body.style.overflow = 'hidden';
+
+    // Empêcher le scroll pendant l'animation
+    window.addEventListener('wheel', preventScrollDuringAnimation, { passive: false });
+    window.addEventListener('touchmove', preventScrollDuringAnimation, { passive: false });
+    window.addEventListener('keydown', preventScrollDuringAnimation);
+}
+
+function preventScrollDuringAnimation(e) {
+    if (!animationComplete) {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
     }
-
-    function handleScroll(e) {
-        const currentScroll = window.scrollY;
-
-        if (!animationTriggered && currentScroll > 30) {
-            scrollAttempts++;
-            if (scrollAttempts >= 1) {
-                e.preventDefault();
-                window.scrollTo(0, 0);
-                startAnimation();
-            }
-            return false;
-        }
-
-        if (animationTriggered && !animationComplete) {
-            e.preventDefault();
-            window.scrollTo(0, 0);
-            return false;
-        }
-    }
-
-    window.addEventListener('scroll', handleScroll, { passive: false });
-
-    window.addEventListener('wheel', (e) => {
-        if (animationTriggered && !animationComplete) {
-            e.preventDefault();
-        }
-    }, { passive: false });
-
-    window.addEventListener('touchmove', (e) => {
-        if (animationTriggered && !animationComplete) {
-            e.preventDefault();
-        }
-    }, { passive: false });
 }
 
 function showPage(pageId) {
