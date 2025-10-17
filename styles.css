@@ -301,7 +301,7 @@ body {
     bottom: 40px;
     left: 50%;
     transform: translateX(-50%);
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     gap: 10px;
@@ -411,7 +411,6 @@ body {
 }
 
 .line-exprime .letter.visible {
-    opacity: 1;
     animation: typeIn 0.3s ease forwards;
 }
 
