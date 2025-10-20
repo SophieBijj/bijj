@@ -4,13 +4,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
 
 :root {
-    --rose-pale: #f9dce8;
-    --rose-doux: #f4b8d0;
-    --rose-vif: #e991b3;
-    --rose-profond: #d66a92;
-    --gris-texte: #3a3042;
-    --gris-clair: #f5f1f3;
+    --gris-anthracite: #2d2d3a;
+    --gris-moyen: #4a4a5e;
+    --gris-clair: #f5f5f7;
+    --rose-subtil: #e8dfe0;
+    --rose-poudre: #d4c4c6;
+    --or: #c9a55c;
+    --or-clair: #ddb876;
     --blanc: #ffffff;
+    --texte: #2d2d3a;
 }
 
 * {
@@ -22,8 +24,8 @@
 body {
     font-family: 'Source Serif 4', Georgia, serif;
     line-height: 1.6;
-    color: var(--gris-texte);
-    background: var(--gris-clair);
+    color: var(--texte);
+    background: var(--blanc);
     overflow-x: hidden;
     overflow-y: hidden;
 }
@@ -56,7 +58,7 @@ body {
 .logo {
     font-size: 28px;
     font-weight: 300;
-    color: var(--gris-texte);
+    color: var(--texte);
     text-decoration: none;
     cursor: pointer;
     font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -77,20 +79,20 @@ body {
 }
 
 .logo .j-gold {
-    color: var(--rose-vif);
+    color: var(--or);
     font-weight: 700;
 }
 
 .logo .i-bold {
     font-weight: 700;
-    color: var(--gris-texte);
+    color: var(--texte);
 }
 
 /* ===== MENU BUTTON ===== */
 .menu-button {
     font-family: 'Source Serif 4', Georgia, serif;
     font-size: 28px;
-    color: var(--gris-texte);
+    color: var(--texte);
     cursor: pointer;
     display: inline-flex;
     gap: 0;
@@ -132,7 +134,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--gris-texte);
+    background: var(--gris-anthracite);
     z-index: 2000;
     display: none;
     flex-direction: column;
@@ -167,7 +169,7 @@ body {
 
 .menu-close:hover {
     transform: rotate(90deg);
-    color: var(--rose-vif);
+    color: var(--or);
 }
 
 .menu-content {
@@ -221,7 +223,7 @@ body {
 }
 
 .menu-nav a:hover {
-    color: var(--rose-vif);
+    color: var(--or);
 }
 
 .menu-nav a:hover::after {
@@ -266,8 +268,8 @@ body {
 }
 
 .menu-social a:hover {
-    border-color: var(--rose-vif);
-    color: var(--rose-vif);
+    border-color: var(--or);
+    color: var(--or);
     transform: translateY(-3px);
 }
 
@@ -295,7 +297,7 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
-    background: linear-gradient(135deg, var(--gris-clair) 0%, var(--rose-pale) 100%);
+    background: linear-gradient(135deg, var(--blanc) 0%, var(--rose-subtil) 100%);
     padding: 100px 20px 50px;
 }
 
@@ -361,20 +363,20 @@ body {
     font-weight: 400;
     line-height: 1.2;
     font-family: 'Source Serif 4', Georgia, serif;
-    color: var(--gris-texte);
+    color: var(--texte);
 }
 
 .line-inspire .letter {
     display: inline-block;
     opacity: 0;
-    color: var(--gris-texte);
+    color: var(--texte);
 }
 
 .line-inspire .i-inspire {
     display: inline-block;
     color: transparent;
     -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 2px var(--gris-texte);
+    -webkit-text-stroke: 2px var(--texte);
     opacity: 0;
 }
 
@@ -425,7 +427,7 @@ body {
     display: inline-block;
     position: relative;
     opacity: 0;
-    color: var(--gris-texte);
+    color: var(--texte);
 }
 
 .line-exprime .letter.visible {
@@ -435,7 +437,7 @@ body {
 .line-exprime .letter.i-exprime {
     color: transparent;
     -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 2px var(--rose-vif);
+    -webkit-text-stroke: 2px var(--or);
 }
 
 @keyframes typeIn {
@@ -462,7 +464,7 @@ body {
 
 .section-title {
     font-size: 42px;
-    color: var(--gris-texte);
+    color: var(--texte);
     margin-bottom: 20px;
     text-align: center;
 }
@@ -482,7 +484,7 @@ body {
 
 .hero-intro h1 {
     font-size: 48px;
-    color: var(--gris-texte);
+    color: var(--texte);
     margin-bottom: 30px;
     line-height: 1.3;
 }
@@ -497,7 +499,7 @@ body {
 /* ===== WHAT I DO ===== */
 .what-i-do {
     padding: 100px 40px;
-    background: var(--rose-pale);
+    background: var(--gris-clair);
     position: relative;
     overflow: hidden;
 }
@@ -511,7 +513,7 @@ body {
 
 .what-i-do h2 {
     font-size: 42px;
-    color: var(--gris-texte);
+    color: var(--texte);
     margin-bottom: 60px;
     text-align: center;
 }
@@ -526,7 +528,7 @@ body {
 
 .what-i-do-list li {
     font-size: 22px;
-    color: var(--gris-texte);
+    color: var(--texte);
     padding-left: 40px;
     position: relative;
     line-height: 1.6;
@@ -553,7 +555,7 @@ body {
     content: '༅';
     position: absolute;
     left: 0;
-    color: var(--rose-vif);
+    color: var(--or);
     font-size: 28px;
     top: -2px;
 }
@@ -575,7 +577,7 @@ body {
 }
 
 .morphing-path {
-    fill: var(--rose-doux);
+    fill: var(--rose-poudre);
     animation: morph 8s ease-in-out infinite;
 }
 
@@ -641,7 +643,7 @@ body {
     padding: 40px;
     background: rgba(255, 255, 255, 0.95);
     border-radius: 12px;
-    border-left: 4px solid var(--rose-vif);
+    border-left: 4px solid var(--or);
     box-shadow: 0 10px 30px rgba(0,0,0,0.12);
     position: relative;
     backdrop-filter: blur(10px);
@@ -653,13 +655,13 @@ body {
     top: -10px;
     left: 20px;
     font-size: 80px;
-    color: rgba(233, 145, 179, 0.15);
+    color: rgba(201, 165, 92, 0.15);
     font-family: 'Source Serif 4', Georgia, serif;
 }
 
 .testimonial-text {
     font-size: 18px;
-    color: var(--gris-texte);
+    color: var(--texte);
     margin-bottom: 20px;
     font-style: italic;
     line-height: 1.7;
@@ -669,7 +671,7 @@ body {
 
 .testimonial-author {
     font-weight: 600;
-    color: var(--gris-texte);
+    color: var(--texte);
     margin-bottom: 5px;
     font-style: normal;
 }
@@ -696,7 +698,7 @@ body {
 .final-cta {
     padding: 100px 40px;
     text-align: center;
-    background: linear-gradient(135deg, var(--rose-profond) 0%, var(--rose-vif) 100%);
+    background: linear-gradient(135deg, var(--gris-anthracite) 0%, var(--gris-moyen) 100%);
     color: white;
 }
 
@@ -715,8 +717,8 @@ body {
 .cta-primary {
     display: inline-block;
     padding: 18px 40px;
-    background: var(--blanc);
-    color: var(--rose-profond);
+    background: var(--or);
+    color: var(--blanc);
     text-decoration: none;
     border-radius: 50px;
     font-weight: 600;
@@ -725,15 +727,15 @@ body {
 }
 
 .cta-primary:hover {
-    background: var(--rose-pale);
+    background: var(--or-clair);
     transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(201, 165, 92, 0.3);
 }
 
 /* ===== NEWSLETTER ===== */
 .newsletter {
     padding: 60px;
-    background: var(--rose-pale);
+    background: var(--rose-subtil);
     border-radius: 12px;
     text-align: center;
     margin: 80px 0;
@@ -741,7 +743,7 @@ body {
 
 .newsletter h3 {
     font-size: 32px;
-    color: var(--gris-texte);
+    color: var(--texte);
     margin-bottom: 15px;
 }
 
@@ -768,7 +770,7 @@ body {
 
 .newsletter-form button {
     padding: 15px 35px;
-    background: var(--rose-vif);
+    background: var(--or);
     color: white;
     border: none;
     border-radius: 50px;
@@ -780,7 +782,7 @@ body {
 }
 
 .newsletter-form button:hover {
-    background: var(--rose-profond);
+    background: var(--or-clair);
 }
 
 /* ===== ARTIST SECTION ===== */
@@ -832,13 +834,13 @@ body {
 
 .artist-content h3 {
     font-size: 36px;
-    color: var(--rose-profond);
+    color: var(--gris-moyen);
     margin-bottom: 20px;
 }
 
 .artist-content p {
     font-size: 20px;
-    color: var(--gris-texte);
+    color: var(--texte);
     line-height: 1.8;
 }
 
@@ -862,7 +864,7 @@ body {
 
 .service-block h3 {
     font-size: 32px;
-    color: var(--gris-texte);
+    color: var(--texte);
     margin-bottom: 30px;
 }
 
@@ -881,7 +883,19 @@ body {
 
 .service-block li {
     font-size: 18px;
-    color: var(--gris-texte);
+    color: var(--texte);
+    padding: 10px 0;
+    padding-left: 30px;
+    position: relative;
+}
+
+.service-block li::before {
+    content: '༅';
+    position: absolute;
+    left: 0;
+    color: var(--or);
+    font-size: 20px;
+}(--gris-texte);
     padding: 10px 0;
     padding-left: 30px;
     position: relative;
@@ -923,7 +937,7 @@ body {
 .pdf-download {
     display: inline-block;
     padding: 15px 30px;
-    background: var(--rose-vif);
+    background: var(--or);
     color: white;
     text-decoration: none;
     border-radius: 50px;
@@ -933,9 +947,9 @@ body {
 }
 
 .pdf-download:hover {
-    background: var(--rose-profond);
+    background: var(--or-clair);
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(233, 145, 179, 0.3);
+    box-shadow: 0 10px 20px rgba(201, 165, 92, 0.3);
 }
 
 /* ===== MUSIC PAGE ===== */
@@ -946,7 +960,7 @@ body {
 
 .music-hero h1 {
     font-size: 48px;
-    color: var(--gris-texte);
+    color: var(--texte);
     margin-bottom: 20px;
 }
 
@@ -961,7 +975,7 @@ body {
 
 .spotify-section h3 {
     font-size: 28px;
-    color: var(--gris-texte);
+    color: var(--texte);
     margin-bottom: 30px;
 }
 
@@ -995,7 +1009,7 @@ body {
 
 .video-info h3 {
     font-size: 22px;
-    color: var(--gris-texte);
+    color: var(--texte);
     margin-bottom: 10px;
 }
 
@@ -1016,7 +1030,7 @@ body {
     align-items: center;
     gap: 10px;
     padding: 15px 30px;
-    background: var(--rose-vif);
+    background: var(--gris-anthracite);
     color: white;
     text-decoration: none;
     border-radius: 50px;
@@ -1025,7 +1039,7 @@ body {
 }
 
 .platform-link:hover {
-    background: var(--rose-profond);
+    background: var(--gris-moyen);
     transform: translateY(-3px);
 }
 
@@ -1037,7 +1051,7 @@ body {
 .youtube-cta a {
     display: inline-block;
     padding: 15px 35px;
-    background: var(--rose-vif);
+    background: var(--or);
     color: white;
     text-decoration: none;
     border-radius: 50px;
@@ -1046,7 +1060,7 @@ body {
 }
 
 .youtube-cta a:hover {
-    background: var(--rose-profond);
+    background: var(--or-clair);
     transform: translateY(-3px);
 }
 
@@ -1054,7 +1068,7 @@ body {
 .footer {
     padding: 60px 40px 40px;
     text-align: center;
-    background: var(--gris-texte);
+    background: var(--gris-anthracite);
     color: #e2e8f0;
 }
 
@@ -1073,7 +1087,7 @@ body {
 }
 
 .footer-links a:hover {
-    color: var(--rose-vif);
+    color: var(--or);
 }
 
 .footer-social {
@@ -1098,8 +1112,8 @@ body {
 }
 
 .footer-social a:hover {
-    border-color: var(--rose-vif);
-    color: var(--rose-vif);
+    border-color: var(--or);
+    color: var(--or);
     transform: translateY(-3px);
 }
 
@@ -1161,11 +1175,11 @@ body {
     }
     
     .line-inspire .i-inspire {
-        -webkit-text-stroke: 1.5px var(--gris-texte);
+        -webkit-text-stroke: 1.5px var(--texte);
     }
     
     .letter.i-exprime {
-        -webkit-text-stroke: 1.5px var(--rose-vif);
+        -webkit-text-stroke: 1.5px var(--or);
     }
     
     /* Hero intro plus compact */
