@@ -6,7 +6,6 @@
 :root {
     --gris-anthracite: #2d2d3a;
     --rose-froid: #b85c7a;
-    --or-cuivre: #c9935a;
     --gris-perle: #ececec;
     --blanc: #ffffff;
     --texte: #2d2d3a;
@@ -76,7 +75,7 @@ body {
 }
 
 .logo .j-gold {
-    color: var(--or-cuivre);
+    color: var(--rose-froid);
     font-weight: 700;
 }
 
@@ -1177,7 +1176,7 @@ body {
     }
     
     .letter.i-exprime {
-        -webkit-text-stroke: 1.5px var(--or);
+        -webkit-text-stroke: 1.5px var(--rose-froid);
     }
     
     /* Hero intro plus compact */
