@@ -165,7 +165,7 @@ body {
 
 .menu-close:hover {
     transform: rotate(90deg);
-    color: var(--or-cuivre);
+    color: var(--rose-froid);
 }
 
 .menu-content {
@@ -205,6 +205,10 @@ body {
     position: relative;
     display: inline-block;
     padding-right: 60px;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 .menu-nav a::after {
@@ -216,10 +220,11 @@ body {
     font-size: 36px;
     opacity: 0;
     transition: opacity 0.3s ease, transform 0.3s ease;
+    color: var(--rose-froid);
 }
 
 .menu-nav a:hover {
-    color: var(--or-cuivre);
+    color: var(--rose-froid);
 }
 
 .menu-nav a:hover::after {
@@ -264,8 +269,8 @@ body {
 }
 
 .menu-social a:hover {
-    border-color: var(--or-cuivre);
-    color: var(--or-cuivre);
+    border-color: var(--rose-froid);
+    color: var(--rose-froid);
     transform: translateY(-3px);
 }
 
@@ -707,26 +712,29 @@ body {
 .final-cta p {
     font-size: 20px;
     margin-bottom: 40px;
-    opacity: 0.9;
+    opacity: 0.95;
+    color: white;
 }
 
 .cta-primary {
     display: inline-block;
     padding: 18px 40px;
-    background: var(--or-cuivre);
-    color: var(--blanc);
+    background: var(--blanc);
+    color: var(--rose-froid);
     text-decoration: none;
     border-radius: 50px;
     font-weight: 600;
     font-size: 18px;
     transition: all 0.3s ease;
+    border: 2px solid var(--blanc);
 }
 
 .cta-primary:hover {
-    background: var(--blanc);
-    color: var(--rose-froid);
+    background: var(--rose-froid);
+    color: var(--blanc);
+    border-color: var(--blanc);
     transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(201, 147, 90, 0.3);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
 }
 
 /* ===== NEWSLETTER ===== */
@@ -779,7 +787,7 @@ body {
 }
 
 .newsletter-form button:hover {
-    background: var(--or-cuivre);
+    background: var(--gris-anthracite);
 }
 
 /* ===== ARTIST SECTION ===== */
@@ -934,7 +942,7 @@ body {
 .pdf-download {
     display: inline-block;
     padding: 15px 30px;
-    background: var(--or-cuivre);
+    background: var(--rose-froid);
     color: white;
     text-decoration: none;
     border-radius: 50px;
@@ -944,9 +952,9 @@ body {
 }
 
 .pdf-download:hover {
-    background: var(--rose-froid);
+    background: var(--gris-anthracite);
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(201, 147, 90, 0.3);
+    box-shadow: 0 10px 20px rgba(184, 92, 122, 0.3);
 }
 
 /* ===== MUSIC PAGE ===== */
@@ -1048,7 +1056,7 @@ body {
 .youtube-cta a {
     display: inline-block;
     padding: 15px 35px;
-    background: var(--or-cuivre);
+    background: var(--rose-froid);
     color: white;
     text-decoration: none;
     border-radius: 50px;
@@ -1057,7 +1065,7 @@ body {
 }
 
 .youtube-cta a:hover {
-    background: var(--rose-froid);
+    background: var(--gris-anthracite);
     transform: translateY(-3px);
 }
 
@@ -1084,7 +1092,7 @@ body {
 }
 
 .footer-links a:hover {
-    color: var(--or-cuivre);
+    color: var(--rose-froid);
 }
 
 .footer-social {
@@ -1109,8 +1117,8 @@ body {
 }
 
 .footer-social a:hover {
-    border-color: var(--or-cuivre);
-    color: var(--or-cuivre);
+    border-color: var(--rose-froid);
+    color: var(--rose-froid);
     transform: translateY(-3px);
 }
 
