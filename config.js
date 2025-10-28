@@ -175,7 +175,7 @@ const SITE_CONFIG = {
 
     // Newsletter (intégrée au footer)
     newsletter: {
-        titre: "Zone de risque!",
+        titre: "DANGER",
         description: "Tu pourrais faire partie des premières personnes que j’informe des nouvelles initiatives qui germent de mon côté, et ce, jusqu’à trois fois par année. C’est risqué! "
     },
 
