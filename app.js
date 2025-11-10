@@ -372,6 +372,9 @@ function initFooter() {
     document.getElementById('newsletterDescription').textContent = SITE_CONFIG.newsletter.description;
     document.getElementById('footerCredit').textContent = SITE_CONFIG.footer.credit;
     document.getElementById('footerCopyright').textContent = SITE_CONFIG.footer.copyright;
+
+    // Gestion du formulaire newsletter
+    initNewsletterForm();
     
     // Icônes SVG
     const socialIcons = {
@@ -438,3 +441,29 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// ===== NEWSLETTER FORM =====
+function initNewsletterForm() {
+    const form = document.querySelector('form[name="newsletter"]');
+    const successMessage = document.getElementById('newsletterSuccess');
+    const noteMessage = document.getElementById('newsletterNote');
+
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            // Netlify gère la soumission, on ajoute juste un feedback visuel
+            const submitButton = form.querySelector('button[type="submit"]');
+            if (submitButton) {
+                submitButton.textContent = 'Envoi...';
+                submitButton.disabled = true;
+            }
+        });
+
+        // Afficher le message de succès si on revient de la page de confirmation
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('success') === 'true') {
+            if (noteMessage) noteMessage.style.display = 'none';
+            if (successMessage) successMessage.style.display = 'block';
+            form.style.display = 'none';
+        }
+    }
+}

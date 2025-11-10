@@ -93,11 +93,16 @@
         <div class="newsletter-footer">
             <h3 id="newsletterTitre"></h3>
             <p id="newsletterDescription"></p>
-            <form class="newsletter-form" onsubmit="return false;">
-                <input type="email" placeholder="Votre adresse email" required>
+            <form class="newsletter-form" name="newsletter" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="newsletter">
+                <p style="display: none;">
+                    <label>Don't fill this out if you're human: <input name="bot-field"></label>
+                </p>
+                <input type="email" name="email" placeholder="Votre adresse email" required>
                 <button type="submit">S'abonner</button>
             </form>
-            <p class="newsletter-note">📌</p>
+            <p class="newsletter-note" id="newsletterNote">📌</p>
+            <p class="newsletter-success" id="newsletterSuccess" style="display: none;">✅ Merci! Vous êtes inscrit(e) à la newsletter.</p>
         </div>
         
         <div class="footer-content">
