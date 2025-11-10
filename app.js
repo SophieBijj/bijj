@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initMusique();
     initCTACollaboration();
     initTestimonials();
+    initPartners();
     initMenu();
     initFooter();
     initScrollBehavior();
@@ -364,6 +365,34 @@ function closeMenu() {
         overlay.style.display = 'none';
         document.body.style.overflow = '';
     }, 600);
+}
+
+// ===== PARTNERS =====
+function initPartners() {
+    if (!SITE_CONFIG.partenaires) return;
+
+    // Titre
+    document.getElementById('partnersTitre').textContent = SITE_CONFIG.partenaires.titre;
+
+    // Logos
+    const partnersContainer = document.getElementById('partnersLogos');
+    SITE_CONFIG.partenaires.logos.forEach(partner => {
+        const logoDiv = document.createElement('div');
+        logoDiv.className = 'partner-logo';
+
+        if (partner.lien) {
+            const link = document.createElement('a');
+            link.href = partner.lien;
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+            link.innerHTML = `<img src="${partner.image}" alt="${partner.nom}">`;
+            logoDiv.appendChild(link);
+        } else {
+            logoDiv.innerHTML = `<img src="${partner.image}" alt="${partner.nom}">`;
+        }
+
+        partnersContainer.appendChild(logoDiv);
+    });
 }
 
 // ===== FOOTER =====

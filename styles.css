@@ -929,6 +929,89 @@ body {
     color: #e2e8f0;
 }
 
+/* ===== PARTNERS SECTION ===== */
+.partners-section {
+    background: white;
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.partners-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.partners-bird {
+    margin-bottom: 20px;
+    animation: floatBird 3s ease-in-out infinite;
+}
+
+.bird-icon {
+    width: 40px;
+    height: 40px;
+    opacity: 0.7;
+    filter: grayscale(100%);
+    transition: all 0.3s ease;
+}
+
+.bird-icon:hover {
+    opacity: 1;
+    filter: grayscale(0%);
+    transform: scale(1.2);
+}
+
+@keyframes floatBird {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.partners-section h3 {
+    font-size: 24px;
+    color: var(--texte);
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+
+.partners-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.partner-logo {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.partner-logo img {
+    max-width: 180px;
+    max-height: 80px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: grayscale(20%);
+    transition: filter 0.3s ease;
+}
+
+.partner-logo:hover {
+    transform: translateY(-5px);
+}
+
+.partner-logo:hover img {
+    filter: grayscale(0%);
+}
+
 .newsletter-footer {
     padding: 80px 40px 60px;
     text-align: center;
@@ -1249,10 +1332,28 @@ body {
         font-size: 17px;
     }
     
+    .partners-section {
+        padding: 40px 24px;
+    }
+
+    .partners-section h3 {
+        font-size: 20px;
+        margin-bottom: 24px;
+    }
+
+    .partners-logos {
+        gap: 24px;
+    }
+
+    .partner-logo img {
+        max-width: 140px;
+        max-height: 60px;
+    }
+
     .newsletter-footer {
         padding: 60px 24px 40px;
     }
-    
+
     .newsletter-footer h3 {
         font-size: 26px;
         margin-bottom: 14px;
