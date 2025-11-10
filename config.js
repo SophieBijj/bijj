@@ -118,9 +118,8 @@ const SITE_CONFIG = {
                 }
             ],
             temoignage: {
-                texte: "Je me sens inspiré par l'assertivité de Sophie et sa capacité à tenir le gouvernail avec cœur quel que soit le stress du moment.",
-                auteur: "Pierre",
-                titre: "Participant au Festival du Cercle Enchanté"
+                texte: "Notre session m'a fait prendre conscience de l'importance de la détente dans le travail de la voix, et m'a fait résonner des zones que je n'avais pas l'habitude de sentir. Sophie m'a aidée à conscientiser des espaces de résonance nouveaux chez moi. C'est une très bonne pédagogue.",
+                auteur: "Patricia"
             }
         }
     ],
