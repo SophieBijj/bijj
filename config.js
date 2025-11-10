@@ -176,7 +176,24 @@ const SITE_CONFIG = {
     // Newsletter (intégrée au footer)
     newsletter: {
         titre: "DANGER",
-        description: "Tu pourrais faire partie des premières personnes que j’informe des nouvelles initiatives qui germent de mon côté, et ce, jusqu’à trois fois par année. C’est risqué! "
+        description: "Tu pourrais faire partie des premières personnes que j'informe des nouvelles initiatives qui germent de mon côté, et ce, jusqu'à trois fois par année. C'est risqué! "
+    },
+
+    // Partenaires
+    partenaires: {
+        titre: "Partenaires",
+        logos: [
+            {
+                nom: "Culture Outaouais",
+                image: "logos/culture-outaouais-logo.png",
+                lien: ""
+            },
+            {
+                nom: "LOJIQ",
+                image: "logos/lojiq-logo.png",
+                lien: ""
+            }
+        ]
     },
 
     // Liens
