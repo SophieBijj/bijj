@@ -841,7 +841,7 @@ body {
     padding: 120px 40px;
     background-image: url('PhotoQuote.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: 30% 20%;
     position: relative;
     min-height: 600px;
 }
