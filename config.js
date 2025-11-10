@@ -171,7 +171,7 @@ const SITE_CONFIG = {
     // Photos
     photos: {
         quote: "PhotoQuote.jpg",
-        profile: "Nomis Sophie Cercle Enchanté 2025.jpeg"
+        profile: "sophie-profile-2025.jpeg"
     },
 
     // Newsletter (intégrée au footer)
