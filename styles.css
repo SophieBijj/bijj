@@ -424,8 +424,38 @@ body {
 /* ===== PHILOSOPHIE ===== */
 .philosophie {
     padding: 100px 40px;
-    text-align: center;
     background: var(--blanc);
+}
+
+.philosophie-content {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.philosophie-photo {
+    flex-shrink: 0;
+}
+
+.philosophie-photo img {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(184, 92, 122, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.philosophie-photo img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(184, 92, 122, 0.25);
+}
+
+.philosophie-text {
+    flex: 1;
+    text-align: left;
 }
 
 .philosophie h2 {
@@ -438,8 +468,6 @@ body {
 .philosophie p {
     font-size: 22px;
     color: #718096;
-    max-width: 800px;
-    margin: 0 auto;
     line-height: 1.7;
 }
 
@@ -1067,13 +1095,28 @@ body {
     .philosophie {
         padding: 60px 24px;
     }
-    
+
+    .philosophie-content {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .philosophie-photo img {
+        width: 220px;
+        height: 220px;
+    }
+
+    .philosophie-text {
+        text-align: center;
+    }
+
     .philosophie h2 {
         font-size: 32px;
         margin-bottom: 20px;
         line-height: 1.4;
     }
-    
+
     .philosophie p {
         font-size: 20px;
         line-height: 1.6;
@@ -1261,10 +1304,15 @@ body {
         min-height: 56px;
     }
     
+    .philosophie-photo img {
+        width: 180px;
+        height: 180px;
+    }
+
     .philosophie h2 {
         font-size: 28px;
     }
-    
+
     .philosophie p {
         font-size: 18px;
     }
