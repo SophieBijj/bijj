@@ -70,9 +70,9 @@ const SITE_CONFIG = {
             pdfLien: "BIJJ_Spectacles.pdf",
             pdfTexte: "📄 Télécharger le catalogue PDF",
             temoignage: {
-                texte: "Sophie Bijjani sang for Rush Creek Lodge through this past summer, and she was both a joy to listen to, and a joy to work with. She is professional, punctual, and to top it all off, an amazing musician and singer to boot.",
-                auteur: "Rush Creek Lodge",
-                titre: "Yosemite, California"
+                texte: "Sophie Bijjani [...] was both a joy to listen to, and a joy to work with. [...] an amazing musician and singer.",
+                auteur: "Bethany Kindiger",
+                titre: "Manager at Rush Creek Lodge, California"
             }
         },
         {
@@ -119,8 +119,8 @@ const SITE_CONFIG = {
             ],
             temoignage: {
                 texte: "Je me sens inspiré par l'assertivité de Sophie et sa capacité à tenir le gouvernail avec cœur quel que soit le stress du moment.",
-                auteur: "Participant",
-                titre: "Festival du Cercle Enchanté"
+                auteur: "Pierre",
+                titre: "Participant au Festival du Cercle Enchanté"
             }
         }
     ],
@@ -157,14 +157,14 @@ const SITE_CONFIG = {
     // Témoignages
     temoignages: [
         {
-            texte: "Sophie Bijjani sang for Rush Creek Lodge through this past summer, and she was both a joy to listen to, and a joy to work with. She is professional, punctual, and to top it all off, an amazing musician and singer to boot.",
-            auteur: "Rush Creek Lodge",
-            titre: "Yosemite, California"
+            texte: "Sophie Bijjani [...] was both a joy to listen to, and a joy to work with. [...] an amazing musician and singer.",
+            auteur: "Bethany Kindiger",
+            titre: "Manager at Rush Creek Lodge, California"
         },
         {
             texte: "Je me sens inspiré par l'assertivité de Sophie et sa capacité à tenir le gouvernail avec cœur quel que soit le stress du moment.",
-            auteur: "Participant",
-            titre: "Festival du Cercle Enchanté"
+            auteur: "Pierre",
+            titre: "Participant au Festival du Cercle Enchanté"
         }
     ],
 
