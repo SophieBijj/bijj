@@ -445,25 +445,65 @@ document.addEventListener('DOMContentLoaded', () => {
 // ===== NEWSLETTER FORM =====
 function initNewsletterForm() {
     const form = document.querySelector('form[name="newsletter"]');
-    const successMessage = document.getElementById('newsletterSuccess');
-    const noteMessage = document.getElementById('newsletterNote');
 
     if (form) {
-        form.addEventListener('submit', (e) => {
-            // Netlify gère la soumission, on ajoute juste un feedback visuel
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
             const submitButton = form.querySelector('button[type="submit"]');
-            if (submitButton) {
-                submitButton.textContent = 'Envoi...';
-                submitButton.disabled = true;
+            const emailInput = form.querySelector('input[name="email"]');
+            const originalButtonText = submitButton.textContent;
+
+            // Feedback visuel
+            submitButton.textContent = 'Envoi...';
+            submitButton.disabled = true;
+
+            // Préparer les données du formulaire
+            const formData = new FormData(form);
+
+            try {
+                // Soumettre à Netlify
+                const response = await fetch('/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams(formData).toString()
+                });
+
+                if (response.ok) {
+                    // Succès : afficher le popup
+                    showNewsletterPopup();
+                    // Réinitialiser le formulaire
+                    emailInput.value = '';
+                } else {
+                    // Erreur
+                    alert('Une erreur est survenue. Veuillez réessayer.');
+                }
+            } catch (error) {
+                console.error('Erreur:', error);
+                alert('Une erreur est survenue. Veuillez réessayer.');
+            } finally {
+                // Réactiver le bouton
+                submitButton.textContent = originalButtonText;
+                submitButton.disabled = false;
             }
         });
+    }
+}
 
-        // Afficher le message de succès si on revient de la page de confirmation
-        const urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.get('success') === 'true') {
-            if (noteMessage) noteMessage.style.display = 'none';
-            if (successMessage) successMessage.style.display = 'block';
-            form.style.display = 'none';
-        }
+function showNewsletterPopup() {
+    const popup = document.getElementById('newsletterPopup');
+    if (popup) {
+        popup.classList.add('active');
+        // Fermer automatiquement après 3 secondes
+        setTimeout(() => {
+            closeNewsletterPopup();
+        }, 3000);
+    }
+}
+
+function closeNewsletterPopup() {
+    const popup = document.getElementById('newsletterPopup');
+    if (popup) {
+        popup.classList.remove('active');
     }
 }

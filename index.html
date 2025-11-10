@@ -102,15 +102,23 @@
                 <button type="submit">S'abonner</button>
             </form>
             <p class="newsletter-note" id="newsletterNote">📌</p>
-            <p class="newsletter-success" id="newsletterSuccess" style="display: none;">✅ Merci! Vous êtes inscrit(e) à la newsletter.</p>
         </div>
-        
+
         <div class="footer-content">
             <div class="footer-social" id="footerSocial"></div>
             <p id="footerCredit"></p>
             <p id="footerCopyright"></p>
         </div>
     </footer>
+
+    <!-- Popup Newsletter -->
+    <div class="newsletter-popup" id="newsletterPopup">
+        <div class="newsletter-popup-content">
+            <div class="newsletter-popup-close" onclick="closeNewsletterPopup()">✕</div>
+            <div class="newsletter-popup-icon">✅</div>
+            <h3>Bien reçu! On se tient au jus :)</h3>
+        </div>
+    </div>
 
     <script src="config.js"></script>
     <script src="app.js"></script>
