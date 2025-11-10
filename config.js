@@ -176,7 +176,7 @@ const SITE_CONFIG = {
     // Newsletter (intégrée au footer)
     newsletter: {
         titre: "Oyé!",
-        description: "Tu pourrais faire partie des premières personnes que j’informe des nouvelles initiatives qui germent de mon côté, et ce, jusqu’à trois fois par année. C’est risqué! "
+        description: "Veux-tu faire partie des premières personnes que j’informe des initiatives qui germent de mon côté?"
     },
 
     // Liens
