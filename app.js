@@ -441,12 +441,16 @@ function initFooter() {
 // ===== SCROLL BEHAVIOR =====
 function initScrollBehavior() {
     const header = document.getElementById('header');
-    
+
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
+        if (window.scrollY > 50) {
             header.classList.add('scrolled');
-        } else if (animationComplete) {
+            header.classList.remove('animation-complete');
+        } else {
             header.classList.remove('scrolled');
+            if (animationComplete) {
+                header.classList.add('animation-complete');
+            }
         }
     });
 }
