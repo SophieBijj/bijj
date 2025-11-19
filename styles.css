@@ -1097,7 +1097,7 @@ body {
 }
 
 .newsletter-bird {
-    margin-top: 0;
+    margin-top: 5px;
     margin-bottom: 8px;
     animation: floatBird 3s ease-in-out infinite;
 }
@@ -1150,7 +1150,7 @@ body {
 .footer-love {
     font-size: 14px;
     color: #94a3b8;
-    margin: 0 !important;
+    margin: 4px 0 0 0 !important;
     padding: 0 !important;
     font-style: italic;
     line-height: 1;
