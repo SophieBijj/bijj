@@ -39,6 +39,8 @@ body {
     z-index: 1000;
     border-bottom: none;
     transition: all 0.4s ease;
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
 .header.scrolled {
@@ -62,11 +64,15 @@ body {
     text-transform: uppercase;
     letter-spacing: 1.5px;
     display: inline-block;
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
 .logo span {
     display: inline-block;
     transition: transform 0.3s ease;
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
 .logo .j-gold {
@@ -84,6 +90,8 @@ body {
     display: flex;
     align-items: center;
     gap: 35px;
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
 .nav-link {
@@ -93,6 +101,8 @@ body {
     text-decoration: none;
     transition: color 0.3s ease;
     position: relative;
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
 .nav-link::after {
@@ -121,6 +131,8 @@ body {
     margin-left: 10px;
     padding-left: 25px;
     border-left: 1px solid rgba(236, 236, 236, 0.2);
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
 .header-social a {
@@ -129,6 +141,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
 .header-social a:hover {
@@ -1134,8 +1148,9 @@ body {
     font-size: 14px;
     color: #94a3b8;
     margin: 0;
+    padding: 0;
     font-style: italic;
-    line-height: 1.2;
+    line-height: 1;
 }
 
 .footer-divider {
@@ -1148,9 +1163,9 @@ body {
 .footer-copyright {
     font-size: 13px;
     color: #94a3b8;
-    margin-top: 10px;
-    margin-bottom: 0;
-    line-height: 1.2;
+    margin: 10px 0 0 0;
+    padding: 0;
+    line-height: 1;
 }
 
 /* ===== RESPONSIVE - MOBILE ===== */
