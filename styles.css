@@ -988,12 +988,12 @@ body {
     color: var(--gris-perle);
     margin-bottom: 0;
     font-style: normal;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .testimonial-title {
     color: #94a3b8;
-    font-size: 12px;
+    font-size: 13px;
     font-style: normal;
     margin-top: 1px;
     line-height: 1.2;
@@ -1079,7 +1079,7 @@ body {
 }
 
 .newsletter-bird {
-    margin-top: 6px;
+    margin-top: 0;
     margin-bottom: 8px;
     animation: floatBird 3s ease-in-out infinite;
 }
@@ -1132,7 +1132,7 @@ body {
 .footer-love {
     font-size: 14px;
     color: #94a3b8;
-    margin: 10px 0 0;
+    margin: 0;
     font-style: italic;
 }
 
@@ -1146,7 +1146,7 @@ body {
 .footer-copyright {
     font-size: 13px;
     color: #94a3b8;
-    margin-top: 0;
+    margin-top: 10px;
     margin-bottom: 0;
     line-height: 1.6;
 }
