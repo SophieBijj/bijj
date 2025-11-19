@@ -986,7 +986,7 @@ body {
 .testimonial-author {
     font-weight: 600;
     color: var(--gris-perle);
-    margin-bottom: 3px;
+    margin-bottom: 0;
     font-style: normal;
     font-size: 15px;
 }
@@ -1077,8 +1077,8 @@ body {
 }
 
 .newsletter-bird {
-    margin-top: 20px;
-    margin-bottom: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     animation: floatBird 3s ease-in-out infinite;
 }
 
@@ -1130,7 +1130,7 @@ body {
 .footer-love {
     font-size: 14px;
     color: #94a3b8;
-    margin: 8px 0;
+    margin: 12px 0 6px;
     font-style: italic;
 }
 
@@ -1141,18 +1141,11 @@ body {
     margin: 10px auto;
 }
 
-.footer-signature {
-    font-size: 15px;
-    color: var(--gris-perle);
-    margin: 12px 0;
-    font-weight: 500;
-}
-
 .footer-copyright {
     font-size: 13px;
     color: #94a3b8;
-    margin-top: 8px;
-    padding-bottom: 10px;
+    margin-top: 6px;
+    margin-bottom: 0;
 }
 
 /* ===== RESPONSIVE - MOBILE ===== */
