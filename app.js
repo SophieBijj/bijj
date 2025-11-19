@@ -60,54 +60,17 @@ function initHero() {
 function initScrollHijacking() {
     const exprimeContainer = document.querySelector('.line-exprime');
     const letterSpans = exprimeContainer.querySelectorAll('.letter');
-    let currentIndex = 0;
 
-    // Bloquer le scroll dès le chargement
-    document.body.style.overflow = 'hidden';
+    // Afficher immédiatement toutes les lettres sans animation
+    letterSpans.forEach(span => {
+        span.classList.add('visible');
+    });
 
-    // Attendre 0.6 seconde puis démarrer "exprime"
-    setTimeout(() => {
-        startAnimation();
-    }, 600);
-
-    function setupScrollBlocker() {
-        function handleWheelOrTouch(e) {
-            if (!animationComplete) {
-                e.preventDefault();
-            }
-        }
-
-        window.addEventListener('wheel', handleWheelOrTouch, { passive: false });
-        window.addEventListener('touchmove', handleWheelOrTouch, { passive: false });
-        window.addEventListener('keydown', (e) => {
-            if (!animationComplete && [32, 33, 34, 35, 36, 37, 38, 39, 40].includes(e.keyCode)) {
-                e.preventDefault();
-            }
-        }, { passive: false });
-    }
-
-    function startAnimation() {
-        if (animationTriggered) return;
-        
-        animationTriggered = true;
-        setupScrollBlocker();
-        
-        typeNextLetter();
-    }
-
-    function typeNextLetter() {
-        if (currentIndex < letterSpans.length) {
-            letterSpans[currentIndex].classList.add('visible');
-            currentIndex++;
-            setTimeout(typeNextLetter, 80);
-        } else {
-            setTimeout(() => {
-                animationComplete = true;
-                document.body.style.overflow = 'auto';
-                document.getElementById('header').classList.add('animation-complete');
-            }, 200);
-        }
-    }
+    // Marquer l'animation comme complète immédiatement
+    animationComplete = true;
+    animationTriggered = true;
+    document.body.style.overflow = 'auto';
+    document.getElementById('header').classList.add('animation-complete');
 }
 
 // ===== PHILOSOPHIE =====
@@ -283,17 +246,17 @@ function initCTACollaboration() {
 // ===== TÉMOIGNAGES =====
 function initTestimonials() {
     const container = document.getElementById('temoignagesContainer');
-    
+
     SITE_CONFIG.temoignages.forEach((temoignage, index) => {
         const div = document.createElement('div');
         div.className = index === 0 ? 'testimonial testimonial-left' : 'testimonial testimonial-right';
-        
+
         div.innerHTML = `
             <p class="testimonial-text">${temoignage.texte}</p>
-            <p class="testimonial-author">${temoignage.auteur}</p>
-            <p class="testimonial-title">${temoignage.titre}</p>
+            <div class="testimonial-author">${temoignage.auteur}</div>
+            <div class="testimonial-title">${temoignage.titre}</div>
         `;
-        
+
         container.appendChild(div);
     });
 }
