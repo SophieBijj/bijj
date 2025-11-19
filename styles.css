@@ -34,8 +34,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(45, 45, 58, 0.7);
-    backdrop-filter: blur(5px);
+    background: transparent;
+    backdrop-filter: none;
     z-index: 1000;
     border-bottom: none;
     opacity: 1 !important;
@@ -52,7 +52,6 @@ body {
 .header.animation-complete {
     background: transparent;
     backdrop-filter: none;
-    transition: all 0.4s ease;
 }
 
 .logo {
@@ -1131,7 +1130,7 @@ body {
     display: flex;
     gap: 20px;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 40px;
     margin-bottom: 10px;
 }
 
@@ -1151,10 +1150,11 @@ body {
 .footer-love {
     font-size: 14px;
     color: #94a3b8;
-    margin: 0;
-    padding: 0;
+    margin: 0 !important;
+    padding: 0 !important;
     font-style: italic;
     line-height: 1;
+    display: block;
 }
 
 .footer-divider {
@@ -1167,9 +1167,10 @@ body {
 .footer-copyright {
     font-size: 13px;
     color: #94a3b8;
-    margin: 0;
-    padding: 0;
+    margin: 0 !important;
+    padding: 0 !important;
     line-height: 1;
+    display: block;
 }
 
 /* ===== RESPONSIVE - MOBILE ===== */
