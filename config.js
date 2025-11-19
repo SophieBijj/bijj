@@ -13,7 +13,7 @@ const SITE_CONFIG = {
     // Philosophie (nouvelle section après hero)
     philosophie: {
         titre: "Créatrice d'espaces authentiques",
-        texte: "Je crée des espaces où les voix se rencontrent, où l'authenticité est au cœur de l'expérience. Que ce soit sur scène, en cercle ou en accompagnement individuel, je m'adapte à votre vision pour créer des moments d'expression et de connexion."
+        texte: "Sophie crée des espaces où les voix se rencontrent, où l'authenticité est au cœur de l'expérience. Que ce soit sur scène, en cercle ou en accompagnement individuel, elle s'adapte à votre vision pour créer des moments d'expression et de connexion."
     },
 
     // Mes Univers (remplace "activités")
@@ -23,7 +23,7 @@ const SITE_CONFIG = {
             symbole: "🎤",
             titre: "Au Micro",
             soustitre: "Spectacles • Conférences • Maître de cérémonie",
-            description: "Je porte l'énergie et guide l'expérience en spectacle ou pour animer votre évènement. ",
+            description: "Sophie porte l'énergie et guide l'expérience en spectacle ou pour animer votre évènement. ",
             sections: [
                 {
                     categorie: "En spectacle",
@@ -40,12 +40,12 @@ const SITE_CONFIG = {
                         },
                         {
                             titre: "Rouge Somptueux : Compositions ༄",
-                            description: "Plongée intime et poétique dans mes compositions originales qui explorent les nuances de l'expérience humaine.",
+                            description: "Plongée intime et poétique dans ses compositions originales qui explorent les nuances de l'expérience humaine.",
                             meta: "Créations originales • Univers poétique • Concert intime"
                         },
                         {
                             titre: "Chœur ouvert : Chants de reliance ༅",
-                            description: "Chansons glanées au fil de mes voyages. Un moment de connexion collective où les voix se joignent.",
+                            description: "Chansons glanées au fil de ses voyages. Un moment de connexion collective où les voix se joignent.",
                             meta: "Expérience participative • Chants de différentes traditions • Cercles"
                         }
                     ]
@@ -80,7 +80,7 @@ const SITE_CONFIG = {
             symbole: "༅",
             titre: "Espaces de rencontre",
             soustitre: "Ateliers circlesong • Cercles de chant • Facilitation de groupe",
-            description: "J'offre un cadre sensible qui favorise l'émergence d'espaces d'exploration collective où chaque voix trouve sa place.",
+            description: "Sophie offre un cadre sensible qui favorise l'émergence d'espaces d'exploration collective où chaque voix trouve sa place.",
             sections: [
                 {
                     categorie: "Ateliers de groupe",
@@ -104,7 +104,7 @@ const SITE_CONFIG = {
             symbole: "❋",
             titre: "Accompagnement",
             soustitre: "Exploration vocale • Technique • Libération • Création",
-            description: "Je t'accompagne dans ton propre déploiement. Un espace privilégié pour explorer ta voix dans une approche holistique corps-cœur-esprit.",
+            description: "Sophie vous accompagne dans votre propre déploiement. Un espace privilégié pour explorer votre voix dans une approche holistique corps-cœur-esprit.",
             sections: [
                 {
                     categorie: "Accompagnement individuel",
@@ -126,7 +126,7 @@ const SITE_CONFIG = {
 
     // Musique (section intégrée)
     musique: {
-        titre: "Ma Musique",
+        titre: "Musique",
         spotifyAlbum: {
             titre: 'Album "Feu d\'grand vent"',
             id: "7a0fS2k5bagVzAGGyLxVNf"
@@ -135,7 +135,7 @@ const SITE_CONFIG = {
             {
                 id: "phUMrUfYd2c",
                 titre: "Composition originale",
-                description: "Découvrez mes créations musicales originales"
+                description: "Découvrez ses créations musicales originales"
             },
             {
                 id: "RRzKRhQC1TA",
@@ -149,7 +149,7 @@ const SITE_CONFIG = {
     // CTA Collaboration
     ctaCollaboration: {
         titre: "L'inspiration vient en jouant!",
-        description: "La nature de mon travail est de m'adapter à vos besoins. Conférence inspirante ? Spectacle sur mesure ? Atelier de cohésion d'équipe ?  Discutons de ce qui résonne pour vous, que vous ayez une vision claire ou simplement une étincelle d'idée.",
+        description: "La nature de son travail est de s'adapter à vos besoins. Conférence inspirante ? Spectacle sur mesure ? Atelier de cohésion d'équipe ? Discutons de ce qui résonne pour vous, que vous ayez une vision claire ou simplement une étincelle d'idée.",
         boutonTexte: "Parlons-en!"
     },
 
@@ -176,7 +176,7 @@ const SITE_CONFIG = {
     // Newsletter (intégrée au footer)
     newsletter: {
         titre: "Oyé!",
-        description: "Veux-tu faire partie des premières personnes que j’informe des initiatives qui germent de mon côté?"
+        description: "Voulez-vous faire partie des premières personnes que Sophie informe des initiatives qui germent de son côté?"
     },
 
     // Liens
