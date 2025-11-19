@@ -433,6 +433,15 @@ function initFooter() {
             </a>
         `;
     }
+
+    // Click sur l'oiseau pour scroll to top
+    const newsletterBird = document.getElementById('newsletterBird');
+    if (newsletterBird) {
+        newsletterBird.style.cursor = 'pointer';
+        newsletterBird.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
 }
 
 // ===== SCROLL BEHAVIOR =====
