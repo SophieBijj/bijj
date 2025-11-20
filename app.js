@@ -275,44 +275,76 @@ function initMusique() {
     const spotifyEmbed = document.getElementById('spotifyEmbed');
     spotifyEmbed.src = `https://open.spotify.com/embed/album/${SITE_CONFIG.musique.spotifyAlbum.id}?utm_source=generator`;
 
-    // Video Carousel
+    // Video Carousel avec thumbnails visibles
     const videoCarousel = document.getElementById('videoCarousel');
     SITE_CONFIG.musique.videos.forEach((video, index) => {
         const videoSlide = document.createElement('div');
-        videoSlide.className = `video-slide ${index === 0 ? 'active' : ''}`;
+        videoSlide.className = 'video-slide';
         videoSlide.innerHTML = `
+            <img
+                src="https://img.youtube.com/vi/${video.id}/maxresdefault.jpg"
+                alt="Video thumbnail"
+                class="video-thumbnail"
+                onclick="goToVideo(${index})">
             <iframe
                 src="https://www.youtube.com/embed/${video.id}"
                 title="Video YouTube"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
+                allowfullscreen
+                class="video-iframe">
             </iframe>
         `;
         videoCarousel.appendChild(videoSlide);
     });
+
+    updateCarousel();
 
     // YouTube CTA
     document.getElementById('youtubeLink').textContent = SITE_CONFIG.musique.ctaYoutube;
     document.getElementById('youtubeLink').href = SITE_CONFIG.liens.youtube;
 }
 
+function updateCarousel() {
+    const slides = document.querySelectorAll('.video-slide');
+    const carousel = document.getElementById('videoCarousel');
+
+    slides.forEach((slide, index) => {
+        slide.classList.remove('active', 'prev', 'next');
+
+        if (index === currentVideoIndex) {
+            slide.classList.add('active');
+        } else if (index === (currentVideoIndex - 1 + slides.length) % slides.length) {
+            slide.classList.add('prev');
+        } else if (index === (currentVideoIndex + 1) % slides.length) {
+            slide.classList.add('next');
+        }
+    });
+
+    // Calculer le décalage pour centrer la vidéo active
+    const offset = -currentVideoIndex * 100;
+    carousel.style.transform = `translateX(calc(${offset}% + ${currentVideoIndex * 0}px))`;
+}
+
 function nextVideo() {
     const slides = document.querySelectorAll('.video-slide');
     if (slides.length === 0) return;
 
-    slides[currentVideoIndex].classList.remove('active');
     currentVideoIndex = (currentVideoIndex + 1) % slides.length;
-    slides[currentVideoIndex].classList.add('active');
+    updateCarousel();
 }
 
 function prevVideo() {
     const slides = document.querySelectorAll('.video-slide');
     if (slides.length === 0) return;
 
-    slides[currentVideoIndex].classList.remove('active');
     currentVideoIndex = (currentVideoIndex - 1 + slides.length) % slides.length;
-    slides[currentVideoIndex].classList.add('active');
+    updateCarousel();
+}
+
+function goToVideo(index) {
+    currentVideoIndex = index;
+    updateCarousel();
 }
 
 // ===== CTA COLLABORATION =====

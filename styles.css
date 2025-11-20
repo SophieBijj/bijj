@@ -858,33 +858,77 @@ body {
 /* Video Carousel */
 .video-carousel-container {
     position: relative;
-    max-width: 900px;
+    max-width: 1100px;
     margin: 50px auto;
+    overflow: hidden;
+    padding: 0 100px;
 }
 
 .video-carousel {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    gap: 30px;
+    align-items: center;
 }
 
 .video-slide {
-    display: none;
-    width: 100%;
+    flex: 0 0 100%;
+    position: relative;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0.3;
+    transform: scale(0.75);
+    pointer-events: none;
 }
 
 .video-slide.active {
-    display: block;
-    animation: fadeIn 0.5s ease;
+    opacity: 1;
+    transform: scale(1);
+    z-index: 10;
+    pointer-events: auto;
 }
 
-.video-slide iframe {
+.video-slide.prev,
+.video-slide.next {
+    opacity: 0.5;
+    transform: scale(0.8);
+    pointer-events: auto;
+}
+
+.video-thumbnail {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.video-slide.prev .video-thumbnail,
+.video-slide.next .video-thumbnail {
+    display: block;
+}
+
+.video-slide.active .video-thumbnail {
+    display: none;
+}
+
+.video-thumbnail:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(184, 92, 122, 0.4);
+}
+
+.video-iframe {
+    display: none;
     width: 100%;
     height: 500px;
     border: none;
     border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.video-slide.active .video-iframe {
+    display: block;
 }
 
 @keyframes fadeIn {
@@ -900,33 +944,34 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(45, 45, 58, 0.85);
+    background: rgba(45, 45, 58, 0.9);
     color: var(--gris-perle);
     border: none;
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
-    font-size: 36px;
+    font-size: 40px;
     cursor: pointer;
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 10;
+    z-index: 100;
     backdrop-filter: blur(10px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
 
 .carousel-btn:hover {
     background: var(--rose-froid);
-    transform: translateY(-50%) scale(1.1);
+    transform: translateY(-50%) scale(1.15);
 }
 
 .carousel-prev {
-    left: -25px;
+    left: 20px;
 }
 
 .carousel-next {
-    right: -25px;
+    right: 20px;
 }
 
 .platform-links {
@@ -1421,16 +1466,35 @@ body {
     .video-carousel-container {
         max-width: 100%;
         margin: 40px 0;
+        padding: 0 60px;
     }
 
-    .video-slide iframe {
-        height: 280px;
+    .video-carousel {
+        gap: 15px;
+    }
+
+    .video-slide {
+        transform: scale(0.65);
+    }
+
+    .video-slide.active {
+        transform: scale(0.95);
+    }
+
+    .video-slide.prev,
+    .video-slide.next {
+        transform: scale(0.7);
+    }
+
+    .video-thumbnail,
+    .video-iframe {
+        height: 250px;
     }
 
     .carousel-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 28px;
+        width: 45px;
+        height: 45px;
+        font-size: 32px;
     }
 
     .carousel-prev {
@@ -1554,7 +1618,7 @@ body {
     .line-inspire {
         font-size: 56px;
     }
-    
+
     .line-exprime {
         font-size: 56px;
         margin-left: 16px;
@@ -1572,18 +1636,41 @@ body {
     .biographie p {
         font-size: 17px;
     }
-    
+
     .mes-univers h2 {
         font-size: 30px;
     }
-    
+
     .cta-collaboration h2,
     .musique-section h2 {
         font-size: 30px;
     }
-    
+
     .menu-nav a {
         font-size: 32px;
+    }
+
+    .video-carousel-container {
+        padding: 0 50px;
+    }
+
+    .video-thumbnail,
+    .video-iframe {
+        height: 200px;
+    }
+
+    .carousel-btn {
+        width: 38px;
+        height: 38px;
+        font-size: 28px;
+    }
+
+    .carousel-prev {
+        left: 8px;
+    }
+
+    .carousel-next {
+        right: 8px;
     }
 }
 
