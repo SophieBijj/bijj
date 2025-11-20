@@ -1200,8 +1200,9 @@ body {
         min-height: 100vh;
         padding: 80px 24px 60px;
         align-items: center;
+        background-image: url('portrait.jpeg');
         background-attachment: scroll;
-        background-position: left center;
+        background-position: center center;
         background-size: cover;
     }
     
@@ -1241,9 +1242,8 @@ body {
         text-align: center;
     }
 
-    .philosophie-photo img {
-        width: 300px;
-        height: 300px;
+    .philosophie-photo {
+        display: none;
     }
 
     .philosophie-text {
@@ -1441,11 +1441,6 @@ body {
         font-size: 56px;
         margin-left: 16px;
         min-height: 56px;
-    }
-    
-    .philosophie-photo img {
-        width: 260px;
-        height: 260px;
     }
 
     .philosophie h2 {
