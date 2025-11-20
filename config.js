@@ -134,18 +134,11 @@ const SITE_CONFIG = {
             id: "7a0fS2k5bagVzAGGyLxVNf"
         },
         videos: [
-            {
-                id: "phUMrUfYd2c",
-                titre: "Composition originale",
-                description: "Découvrez mes créations musicales originales"
-            },
-            {
-                id: "RRzKRhQC1TA",
-                titre: "Reprise revisitée",
-                description: "Grands classiques, version Bijj"
-            }
+            { id: "phUMrUfYd2c" },
+            { id: "RRzKRhQC1TA" },
+            { id: "dQw4w9WgXcQ" }  // Exemple - remplacer par vos vraies vidéos
         ],
-        ctaYoutube: "Découvrir plus sur YouTube"
+        ctaYoutube: "+ sur YouTube"
     },
 
     // CTA Collaboration
