@@ -1176,16 +1176,16 @@ body {
 /* ===== RESPONSIVE - MOBILE ===== */
 @media (max-width: 768px) {
     .header {
-        padding: 24px 24px;
+        padding: 28px 24px;
     }
 
     .header.scrolled {
-        padding: 18px 24px;
+        padding: 20px 24px;
     }
 
     .logo {
-        font-size: 24px;
-        letter-spacing: 1px;
+        font-size: 28px;
+        letter-spacing: 1.5px;
     }
 
     .header-nav {
@@ -1198,10 +1198,10 @@ body {
     
     .hero {
         min-height: 100vh;
-        padding: 100px 24px 40px;
-        align-items: flex-end;
+        padding: 80px 24px 60px;
+        align-items: center;
         background-attachment: scroll;
-        background-position: right center;
+        background-position: left center;
         background-size: cover;
     }
     
