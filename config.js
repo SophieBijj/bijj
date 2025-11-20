@@ -135,8 +135,8 @@ const SITE_CONFIG = {
         },
         videos: [
             { id: "phUMrUfYd2c" },
-            { id: "RRzKRhQC1TA" },
-            { id: "G7eTt8gkWjg" }  // Feu d'grand vent
+            { id: "G7eTt8gkWjg" },  // Feu d'grand vent - au centre
+            { id: "RRzKRhQC1TA" }
         ],
         ctaYoutube: "+ sur YouTube"
     },
