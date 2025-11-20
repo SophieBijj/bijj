@@ -322,8 +322,11 @@ function updateCarousel() {
     });
 
     // Calculer le décalage pour centrer la vidéo active
-    const offset = -currentVideoIndex * 100;
-    carousel.style.transform = `translateX(calc(${offset}% + ${currentVideoIndex * 0}px))`;
+    // Avec slides de 70% + gap de 30px, on calcule: (70% + gap) * index
+    const slideWidth = 70; // pourcentage
+    const gapSize = 30; // pixels
+    const offset = currentVideoIndex * (slideWidth + 5); // 5% approximatif pour le gap
+    carousel.style.transform = `translateX(calc(-${offset}% + 15%))`;
 }
 
 function nextVideo() {

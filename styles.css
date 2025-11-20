@@ -859,10 +859,10 @@ body {
 /* Video Carousel */
 .video-carousel-container {
     position: relative;
-    max-width: 1100px;
+    max-width: 900px;
     margin: 50px auto;
-    overflow: hidden;
-    padding: 0 100px;
+    overflow: visible;
+    padding: 0 20px;
 }
 
 .video-carousel {
@@ -873,7 +873,7 @@ body {
 }
 
 .video-slide {
-    flex: 0 0 100%;
+    flex: 0 0 70%;
     position: relative;
     transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     opacity: 0.2;
@@ -970,11 +970,11 @@ body {
 }
 
 .carousel-prev {
-    left: 20px;
+    left: -70px;
 }
 
 .carousel-next {
-    right: 20px;
+    right: -70px;
 }
 
 .platform-links {
@@ -1469,20 +1469,22 @@ body {
     .video-carousel-container {
         max-width: 100%;
         margin: 40px 0;
-        padding: 0 60px;
+        padding: 0 10px;
+        overflow: visible;
     }
 
     .video-carousel {
-        gap: 15px;
+        gap: 20px;
     }
 
     .video-slide {
-        transform: scale(0.6);
-        opacity: 0.15;
+        flex: 0 0 75%;
+        transform: scale(0.65);
+        opacity: 0.2;
     }
 
     .video-slide.active {
-        transform: scale(0.95);
+        transform: scale(1);
         opacity: 1;
     }
 
@@ -1504,11 +1506,11 @@ body {
     }
 
     .carousel-prev {
-        left: 10px;
+        left: 5px;
     }
 
     .carousel-next {
-        right: 10px;
+        right: 5px;
     }
 
     .youtube-cta {
@@ -1657,7 +1659,12 @@ body {
     }
 
     .video-carousel-container {
-        padding: 0 50px;
+        padding: 0 5px;
+        overflow: visible;
+    }
+
+    .video-slide {
+        flex: 0 0 80%;
     }
 
     .video-thumbnail,
