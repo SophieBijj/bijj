@@ -1200,9 +1200,9 @@ body {
         min-height: 100vh;
         padding: 80px 24px 60px;
         align-items: center;
-        background-image: url('portrait.jpeg');
+        background-image: url('mobile_header.jpg');
         background-attachment: scroll;
-        background-position: center center;
+        background-position: right top;
         background-size: cover;
     }
     
