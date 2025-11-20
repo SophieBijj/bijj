@@ -134,9 +134,9 @@ const SITE_CONFIG = {
             id: "7a0fS2k5bagVzAGGyLxVNf"
         },
         videos: [
-            { id: "G7eTt8gkWjg" },
-            { id: "phUMrUfYd2c" },  // Au centre
-            { id: "RRzKRhQC1TA" }
+            { id: "G7eTt8gkWjg", titre: "Feu d'grand vent" },
+            { id: "phUMrUfYd2c", titre: "Oasis" },  // Au centre
+            { id: "RRzKRhQC1TA", titre: "L'Appel" }
         ]
     },
 

@@ -281,6 +281,10 @@ function initMusique() {
         const videoSlide = document.createElement('div');
         videoSlide.className = 'video-slide';
         videoSlide.innerHTML = `
+            <div class="video-title-container">
+                <h3 class="video-title">${video.titre}</h3>
+                <a href="https://www.youtube.com/watch?v=${video.id}" target="_blank" class="video-more">...</a>
+            </div>
             <img
                 src="https://img.youtube.com/vi/${video.id}/maxresdefault.jpg"
                 alt="Video thumbnail"

@@ -918,6 +918,56 @@ body {
     pointer-events: auto;
 }
 
+.video-title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.video-title {
+    font-size: 58px;
+    color: var(--texte);
+    font-weight: 600;
+    margin: 0;
+    text-align: center;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.video-slide.prev .video-title,
+.video-slide.next .video-title {
+    opacity: 0.2;
+    font-size: 40px;
+}
+
+.video-slide.active .video-title {
+    opacity: 1;
+}
+
+.video-more {
+    font-size: 48px;
+    color: var(--rose-froid);
+    text-decoration: none;
+    font-weight: 300;
+    letter-spacing: -4px;
+    transition: all 0.3s ease;
+    line-height: 1;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.video-slide.active .video-more {
+    opacity: 1;
+    visibility: visible;
+}
+
+.video-more:hover {
+    color: var(--gris-anthracite);
+    transform: translateX(5px);
+}
+
 .video-thumbnail {
     width: 100%;
     aspect-ratio: 16 / 9;
@@ -1487,7 +1537,21 @@ body {
         font-size: 48px;
         letter-spacing: -3px;
     }
-    
+
+    .video-title {
+        font-size: 42px;
+    }
+
+    .video-slide.prev .video-title,
+    .video-slide.next .video-title {
+        font-size: 28px;
+    }
+
+    .video-more {
+        font-size: 38px;
+        letter-spacing: -3px;
+    }
+
     .spotify-embed {
         padding: 30px 24px;
         margin: 30px 0;
@@ -1691,6 +1755,20 @@ body {
 
     .watch-more {
         font-size: 40px;
+        letter-spacing: -2px;
+    }
+
+    .video-title {
+        font-size: 34px;
+    }
+
+    .video-slide.prev .video-title,
+    .video-slide.next .video-title {
+        font-size: 22px;
+    }
+
+    .video-more {
+        font-size: 32px;
         letter-spacing: -2px;
     }
 
