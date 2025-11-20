@@ -299,10 +299,6 @@ function initMusique() {
     });
 
     updateCarousel();
-
-    // YouTube CTA
-    document.getElementById('youtubeLink').textContent = SITE_CONFIG.musique.ctaYoutube;
-    document.getElementById('youtubeLink').href = SITE_CONFIG.liens.youtube;
 }
 
 function updateCarousel() {
