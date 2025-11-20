@@ -890,7 +890,7 @@ body {
 
 .video-slide.prev,
 .video-slide.next {
-    opacity: 0.8;
+    opacity: 0.6;
     transform: scale(0.85);
     pointer-events: auto;
 }
@@ -903,7 +903,7 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    filter: grayscale(70%) brightness(0.8);
+    filter: grayscale(90%) brightness(0.7);
 }
 
 .video-slide.prev .video-thumbnail,
@@ -918,7 +918,7 @@ body {
 .video-thumbnail:hover {
     transform: scale(1.05);
     box-shadow: 0 15px 40px rgba(184, 92, 122, 0.4);
-    filter: grayscale(30%) brightness(1);
+    filter: grayscale(50%) brightness(0.9);
 }
 
 .video-iframe {
@@ -1491,7 +1491,7 @@ body {
     .video-slide.prev,
     .video-slide.next {
         transform: scale(0.75);
-        opacity: 0.7;
+        opacity: 0.5;
     }
 
     .video-thumbnail,
