@@ -265,38 +265,54 @@ function toggleUnivers(universId) {
 }
 
 // ===== MUSIQUE =====
+let currentVideoIndex = 0;
+
 function initMusique() {
     document.getElementById('musiquetitre').textContent = SITE_CONFIG.musique.titre;
     document.getElementById('spotifyTitre').textContent = SITE_CONFIG.musique.spotifyAlbum.titre;
-    
+
     // Spotify embed
     const spotifyEmbed = document.getElementById('spotifyEmbed');
     spotifyEmbed.src = `https://open.spotify.com/embed/album/${SITE_CONFIG.musique.spotifyAlbum.id}?utm_source=generator`;
-    
-    // Videos
-    const videoGrid = document.getElementById('videoGrid');
-    SITE_CONFIG.musique.videos.forEach(video => {
-        const videoItem = document.createElement('div');
-        videoItem.className = 'video-item';
-        videoItem.innerHTML = `
-            <iframe 
-                src="https://www.youtube.com/embed/${video.id}" 
-                title="${video.titre}"
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+
+    // Video Carousel
+    const videoCarousel = document.getElementById('videoCarousel');
+    SITE_CONFIG.musique.videos.forEach((video, index) => {
+        const videoSlide = document.createElement('div');
+        videoSlide.className = `video-slide ${index === 0 ? 'active' : ''}`;
+        videoSlide.innerHTML = `
+            <iframe
+                src="https://www.youtube.com/embed/${video.id}"
+                title="Video YouTube"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen>
             </iframe>
-            <div class="video-info">
-                <h3>${video.titre}</h3>
-                <p>${video.description}</p>
-            </div>
         `;
-        videoGrid.appendChild(videoItem);
+        videoCarousel.appendChild(videoSlide);
     });
-    
+
     // YouTube CTA
     document.getElementById('youtubeLink').textContent = SITE_CONFIG.musique.ctaYoutube;
     document.getElementById('youtubeLink').href = SITE_CONFIG.liens.youtube;
+}
+
+function nextVideo() {
+    const slides = document.querySelectorAll('.video-slide');
+    if (slides.length === 0) return;
+
+    slides[currentVideoIndex].classList.remove('active');
+    currentVideoIndex = (currentVideoIndex + 1) % slides.length;
+    slides[currentVideoIndex].classList.add('active');
+}
+
+function prevVideo() {
+    const slides = document.querySelectorAll('.video-slide');
+    if (slides.length === 0) return;
+
+    slides[currentVideoIndex].classList.remove('active');
+    currentVideoIndex = (currentVideoIndex - 1 + slides.length) % slides.length;
+    slides[currentVideoIndex].classList.add('active');
 }
 
 // ===== CTA COLLABORATION =====
