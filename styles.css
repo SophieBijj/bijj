@@ -897,7 +897,7 @@ body {
 
 .video-thumbnail {
     width: 100%;
-    height: 500px;
+    aspect-ratio: 16 / 9;
     object-fit: cover;
     border-radius: 12px;
     cursor: pointer;
@@ -924,7 +924,7 @@ body {
 .video-iframe {
     display: none;
     width: 100%;
-    height: 500px;
+    aspect-ratio: 16 / 9;
     border: none;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
@@ -1496,7 +1496,7 @@ body {
 
     .video-thumbnail,
     .video-iframe {
-        height: 250px;
+        aspect-ratio: 16 / 9;
     }
 
     .carousel-btn {
@@ -1669,7 +1669,7 @@ body {
 
     .video-thumbnail,
     .video-iframe {
-        height: 200px;
+        aspect-ratio: 16 / 9;
     }
 
     .carousel-btn {
