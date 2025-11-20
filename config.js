@@ -134,11 +134,10 @@ const SITE_CONFIG = {
             id: "7a0fS2k5bagVzAGGyLxVNf"
         },
         videos: [
-            { id: "phUMrUfYd2c" },
-            { id: "G7eTt8gkWjg" },  // Feu d'grand vent - au centre
+            { id: "G7eTt8gkWjg" },
+            { id: "phUMrUfYd2c" },  // Au centre
             { id: "RRzKRhQC1TA" }
-        ],
-        ctaYoutube: "+ sur YouTube"
+        ]
     },
 
     // CTA Collaboration
