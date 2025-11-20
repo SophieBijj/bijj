@@ -3,7 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sophie Bijjani - Inspire ༅ Exprime</title>
+    <title>Sophie Bijjani - Artiste Multidisciplinaire | Inspire ༅ Exprime</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Sophie Bijjani, artiste multidisciplinaire originaire de l'Outaouais. Chanteuse jazz, facilitatrice de Circlesong et créatrice d'espaces où la musique sert de pont entre les êtres.">
+    <meta name="keywords" content="Sophie Bijjani, artiste multidisciplinaire, chanteuse jazz, Circlesong, improvisation vocale, musique, Outaouais, Chenilleville, Oui Dentelle">
+    <meta name="author" content="Sophie Bijjani">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sophiebijjani.com/">
+    <meta property="og:title" content="Sophie Bijjani - Artiste Multidisciplinaire">
+    <meta property="og:description" content="Artiste multidisciplinaire originaire de l'Outaouais, Sophie Bijjani façonne des univers où la musique sert de pont entre les êtres.">
+    <meta property="og:image" content="https://sophiebijjani.com/portrait.jpeg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://sophiebijjani.com/">
+    <meta property="twitter:title" content="Sophie Bijjani - Artiste Multidisciplinaire">
+    <meta property="twitter:description" content="Artiste multidisciplinaire originaire de l'Outaouais, Sophie Bijjani façonne des univers où la musique sert de pont entre les êtres.">
+    <meta property="twitter:image" content="https://sophiebijjani.com/portrait.jpeg">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Sophie Bijjani",
+      "url": "https://sophiebijjani.com",
+      "image": "https://sophiebijjani.com/portrait.jpeg",
+      "jobTitle": "Artiste Multidisciplinaire",
+      "description": "Artiste multidisciplinaire originaire de l'Outaouais, Sophie Bijjani façonne des univers où la musique sert de pont entre les êtres. Formée en chant jazz au Cégep Saint-Laurent.",
+      "sameAs": [
+        "https://www.instagram.com/sophiebijj",
+        "https://www.youtube.com/c/SophieBijjani",
+        "https://open.spotify.com/artist/2gWI0fgWg1LXt6S2y0LZMu"
+      ],
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Cégep Saint-Laurent"
+      },
+      "nationality": {
+        "@type": "Country",
+        "name": "Canada"
+      }
+    }
+    </script>
+
     <link rel="icon" type="image/png" href="Favicon32.png">
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
@@ -39,16 +85,22 @@
         </div>
     </section>
 
-    <!-- 2. PHILOSOPHIE -->
-    <section class="philosophie" id="philosophie">
+    <!-- 2. BIOGRAPHIE -->
+    <section class="biographie" id="biographie">
         <div class="container">
-            <div class="philosophie-content">
-                <div class="philosophie-photo">
+            <div class="biographie-content">
+                <div class="biographie-photo">
                     <img src="portrait.jpeg" alt="Sophie Bijjani">
                 </div>
-                <div class="philosophie-text">
-                    <h2 id="philosophieTitre"></h2>
-                    <p id="philosophieTexte"></p>
+                <div class="biographie-text">
+                    <h2 id="biographieNom"></h2>
+                    <h3 id="biographieTitre"></h3>
+                    <p id="biographieTexteResume" class="bio-resume"></p>
+                    <div id="biographieTexteFull" class="bio-full"></div>
+                    <button class="bio-toggle" id="bioToggle" onclick="toggleBio()">
+                        <span class="bio-toggle-text">Lire la suite</span>
+                        <span class="bio-toggle-icon">+</span>
+                    </button>
                 </div>
             </div>
         </div>
