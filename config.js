@@ -136,7 +136,7 @@ const SITE_CONFIG = {
         videos: [
             { id: "phUMrUfYd2c" },
             { id: "RRzKRhQC1TA" },
-            { id: "dQw4w9WgXcQ" }  // Exemple - remplacer par vos vraies vidéos
+            { id: "G7eTt8gkWjg" }  // Feu d'grand vent
         ],
         ctaYoutube: "+ sur YouTube"
     },
