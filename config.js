@@ -10,10 +10,12 @@ const SITE_CONFIG = {
         mot2: "exprime"
     },
 
-    // Philosophie (nouvelle section après hero)
-    philosophie: {
-        titre: "Créatrice d'espaces authentiques",
-        texte: "Je crée des espaces où les voix se rencontrent, où l'authenticité est au cœur de l'expérience. Que ce soit sur scène, en cercle ou en accompagnement individuel, je m'adapte à votre vision pour créer des moments d'expression et de connexion."
+    // Biographie (nouvelle section après hero)
+    biographie: {
+        nom: "Sophie Bijjani",
+        titre: "Biographie",
+        texte: "Artiste multidisciplinaire originaire de l'Outaouais, Sophie Bijjani façonne des univers où la musique sert de pont entre les êtres. Formée en chant jazz au Cégep Saint-Laurent, elle plonge ensuite corps et cœur dans diverses pratiques d'improvisation : Circlesong, Contact Improvisation et approches somatiques. Portée par ses racines libanaises et une curiosité pour l'ailleurs, elle voyage et se forme sur plusieurs territoires — France, Colombie, États-Unis, Colombie-Britannique — en  explorant le terrain des mots, de la musique et du mouvement. Ses créations dévoilent une vision intuitive et lumineuse, entre vulnérabilité, quête identitaire et transcendance. En 2024, elle débute l'écriture du conte Chenilleville. Une première adaptation scénique prend forme lors de la résidence 3e Oeil en novembre 2025. En parallèle, elle débute le projet musical Oui Dentelle avec l'auteur-compositeur-interprète Maxime Galand.",
+        texteResume: "Artiste multidisciplinaire originaire de l'Outaouais, Sophie Bijjani façonne des univers où la musique sert de pont entre les êtres."
     },
 
     // Mes Univers (remplace "activités")

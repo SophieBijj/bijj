@@ -491,13 +491,13 @@ body {
     padding: 0 40px;
 }
 
-/* ===== PHILOSOPHIE ===== */
-.philosophie {
+/* ===== BIOGRAPHIE ===== */
+.biographie {
     padding: 100px 40px;
     background: var(--gris-anthracite);
 }
 
-.philosophie-content {
+.biographie-content {
     display: flex;
     align-items: center;
     gap: 60px;
@@ -506,12 +506,12 @@ body {
     flex-direction: row-reverse;
 }
 
-.philosophie-photo {
+.biographie-photo {
     flex-shrink: 0;
     position: relative;
 }
 
-.philosophie-photo::before {
+.biographie-photo::before {
     content: '';
     position: absolute;
     top: 50%;
@@ -528,7 +528,7 @@ body {
     pointer-events: none;
 }
 
-.philosophie-photo img {
+.biographie-photo img {
     width: 280px;
     height: 280px;
     border-radius: 12px;
@@ -539,27 +539,83 @@ body {
     z-index: 1;
 }
 
-.philosophie-photo img:hover {
+.biographie-photo img:hover {
     transform: scale(1.05);
     box-shadow: 0 15px 40px rgba(184, 92, 122, 0.6);
 }
 
-.philosophie-text {
+.biographie-text {
     flex: 1;
     text-align: left;
 }
 
-.philosophie h2 {
-    font-size: 42px;
+.biographie h2 {
+    font-size: 52px;
     color: var(--gris-perle);
-    margin-bottom: 30px;
-    line-height: 1.3;
+    margin-bottom: 10px;
+    line-height: 1.2;
+    font-weight: 600;
 }
 
-.philosophie p {
-    font-size: 22px;
+.biographie h3 {
+    font-size: 24px;
+    color: var(--rose-froid);
+    margin-bottom: 25px;
+    line-height: 1.3;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.biographie p {
+    font-size: 20px;
     color: #e2e8f0;
     line-height: 1.7;
+}
+
+.bio-resume {
+    margin-bottom: 20px;
+}
+
+.bio-full {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 20px;
+    color: #e2e8f0;
+    line-height: 1.7;
+}
+
+.bio-full.open {
+    max-height: 1000px;
+    margin-bottom: 20px;
+}
+
+.bio-toggle {
+    padding: 12px 30px;
+    background: var(--rose-froid);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Source Serif 4', Georgia, serif;
+}
+
+.bio-toggle:hover {
+    background: var(--gris-perle);
+    color: var(--gris-anthracite);
+    transform: translateY(-2px);
+}
+
+.bio-toggle-icon {
+    font-size: 24px;
+    font-weight: 300;
 }
 
 /* ===== MES UNIVERS ===== */
@@ -1232,33 +1288,43 @@ body {
         -webkit-text-fill-color: var(--gris-perle);
     }
     
-    .philosophie {
+    .biographie {
         padding: 60px 24px;
     }
 
-    .philosophie-content {
+    .biographie-content {
         flex-direction: column;
         gap: 30px;
         text-align: center;
     }
 
-    .philosophie-photo {
+    .biographie-photo {
         display: none;
     }
 
-    .philosophie-text {
+    .biographie-text {
         text-align: center;
     }
 
-    .philosophie h2 {
-        font-size: 32px;
-        margin-bottom: 20px;
-        line-height: 1.4;
+    .biographie h2 {
+        font-size: 40px;
+        margin-bottom: 12px;
+        line-height: 1.3;
     }
 
-    .philosophie p {
-        font-size: 20px;
+    .biographie h3 {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .biographie p {
+        font-size: 18px;
         line-height: 1.6;
+    }
+
+    .bio-toggle {
+        padding: 12px 28px;
+        font-size: 15px;
     }
     
     .container {
@@ -1443,12 +1509,16 @@ body {
         min-height: 56px;
     }
 
-    .philosophie h2 {
-        font-size: 28px;
+    .biographie h2 {
+        font-size: 34px;
     }
 
-    .philosophie p {
-        font-size: 18px;
+    .biographie h3 {
+        font-size: 16px;
+    }
+
+    .biographie p {
+        font-size: 17px;
     }
     
     .mes-univers h2 {

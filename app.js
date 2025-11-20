@@ -7,7 +7,7 @@ let animationComplete = false;
 // ===== INITIALISATION =====
 document.addEventListener('DOMContentLoaded', () => {
     initHero();
-    initPhilosophie();
+    initBiographie();
     initUniversGrid();
     initMusique();
     initCTACollaboration();
@@ -113,10 +113,34 @@ function initScrollHijacking() {
     }
 }
 
-// ===== PHILOSOPHIE =====
-function initPhilosophie() {
-    document.getElementById('philosophieTitre').textContent = SITE_CONFIG.philosophie.titre;
-    document.getElementById('philosophieTexte').textContent = SITE_CONFIG.philosophie.texte;
+// ===== BIOGRAPHIE =====
+function initBiographie() {
+    document.getElementById('biographieNom').textContent = SITE_CONFIG.biographie.nom;
+    document.getElementById('biographieTitre').textContent = SITE_CONFIG.biographie.titre;
+    document.getElementById('biographieTexteResume').textContent = SITE_CONFIG.biographie.texteResume;
+    document.getElementById('biographieTexteFull').textContent = SITE_CONFIG.biographie.texte;
+}
+
+function toggleBio() {
+    const fullText = document.getElementById('biographieTexteFull');
+    const resume = document.getElementById('biographieTexteResume');
+    const button = document.getElementById('bioToggle');
+    const icon = button.querySelector('.bio-toggle-icon');
+    const text = button.querySelector('.bio-toggle-text');
+
+    const isOpen = fullText.classList.contains('open');
+
+    if (isOpen) {
+        fullText.classList.remove('open');
+        resume.style.display = 'block';
+        icon.textContent = '+';
+        text.textContent = 'Lire la suite';
+    } else {
+        fullText.classList.add('open');
+        resume.style.display = 'none';
+        icon.textContent = '−';
+        text.textContent = 'Réduire';
+    }
 }
 
 // ===== MES UNIVERS =====
