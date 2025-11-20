@@ -1201,7 +1201,7 @@ body {
         padding: 100px 24px 40px;
         align-items: flex-end;
         background-attachment: scroll;
-        background-position: center center;
+        background-position: 65% center;
         background-size: cover;
     }
     
@@ -1218,16 +1218,17 @@ body {
     .line-exprime {
         font-size: 64px;
         margin-left: 20px;
-        margin-top: 5px;
+        margin-top: -5px;
         min-height: 64px;
     }
-    
+
     .line-inspire .i-inspire {
-        -webkit-text-stroke: 1.5px var(--texte);
+        -webkit-text-stroke: 1.5px var(--gris-perle);
     }
-    
+
     .letter.i-exprime {
-        -webkit-text-stroke: 1.5px var(--rose-froid);
+        color: var(--gris-perle);
+        -webkit-text-fill-color: var(--gris-perle);
     }
     
     .philosophie {
@@ -1241,8 +1242,8 @@ body {
     }
 
     .philosophie-photo img {
-        width: 220px;
-        height: 220px;
+        width: 260px;
+        height: 260px;
     }
 
     .philosophie-text {
@@ -1443,8 +1444,8 @@ body {
     }
     
     .philosophie-photo img {
-        width: 180px;
-        height: 180px;
+        width: 220px;
+        height: 220px;
     }
 
     .philosophie h2 {
