@@ -265,7 +265,7 @@ function toggleUnivers(universId) {
 }
 
 // ===== MUSIQUE =====
-let currentVideoIndex = 0;
+let currentVideoIndex = 1; // Démarre sur la vidéo 1 (index 1) pour voir les deux autres de chaque côté
 
 function initMusique() {
     document.getElementById('musiquetitre').textContent = SITE_CONFIG.musique.titre;
