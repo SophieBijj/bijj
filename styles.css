@@ -10,6 +10,7 @@
     --texte: #2d2d3a;
 }
 
+
 * {
     margin: 0;
     padding: 0;
@@ -310,7 +311,7 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
-    background-image: url('mobile_header.jpeg');
+    background-image: url('mobile_header.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
