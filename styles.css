@@ -313,7 +313,7 @@ body {
     position: relative;
     background-image: url('mobile_header.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: right top;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-color: var(--gris-anthracite);
