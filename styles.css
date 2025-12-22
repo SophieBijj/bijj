@@ -623,6 +623,10 @@ body {
 .mes-univers {
     padding: 100px 40px;
     background: var(--blanc);
+    background-image: url('univers_background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .mes-univers h2 {
