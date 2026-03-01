@@ -10,10 +10,12 @@ const SITE_CONFIG = {
         mot2: "exprime"
     },
 
-    // Philosophie (nouvelle section après hero)
-    philosophie: {
-        titre: "Créatrice d'espaces authentiques",
-        texte: "Je crée des espaces où les voix se rencontrent, où l'authenticité est au cœur de l'expérience. Que ce soit sur scène, en cercle ou en accompagnement individuel, je m'adapte à votre vision pour créer des moments d'expression et de connexion."
+    // Biographie (nouvelle section après hero)
+    biographie: {
+        nom: "Sophie Bijjani",
+        titre: "Biographie",
+        texte: "Artiste multidisciplinaire originaire de l'Outaouais, Sophie Bijjani façonne des univers où la musique sert de pont entre les êtres. Formée en chant jazz au Cégep Saint-Laurent, elle plonge ensuite corps et cœur dans diverses pratiques d'improvisation : Circlesong, Contact Improvisation et approches somatiques. Portée par ses racines libanaises et une curiosité pour l'ailleurs, elle voyage et se forme sur plusieurs territoires — France, Colombie, États-Unis, Colombie-Britannique — en  explorant le terrain des mots, de la musique et du mouvement. Ses créations dévoilent une vision intuitive et lumineuse, entre vulnérabilité, quête identitaire et transcendance. En 2024, elle débute l'écriture du conte Chenilleville. Une première adaptation scénique prend forme lors de la résidence 3e Oeil en novembre 2025. En parallèle, elle débute le projet musical Oui Dentelle avec l'auteur-compositeur-interprète Maxime Galand.",
+        texteResume: "Artiste multidisciplinaire originaire de l'Outaouais, Sophie Bijjani façonne des univers où la musique sert de pont entre les êtres."
     },
 
     // Mes Univers (remplace "activités")
@@ -70,9 +72,9 @@ const SITE_CONFIG = {
             pdfLien: "BIJJ_Spectacles.pdf",
             pdfTexte: "📄 Télécharger le catalogue PDF",
             temoignage: {
-                texte: "Sophie Bijjani sang for Rush Creek Lodge through this past summer, and she was both a joy to listen to, and a joy to work with. She is professional, punctual, and to top it all off, an amazing musician and singer to boot.",
-                auteur: "Rush Creek Lodge",
-                titre: "Yosemite, California"
+                texte: "Sophie Bijjani [...] was both a joy to listen to, and a joy to work with. [...] an amazing musician and singer.",
+                auteur: "Bethany Kindiger",
+                titre: "Manager at Rush Creek Lodge, California"
             }
         },
         {
@@ -118,9 +120,8 @@ const SITE_CONFIG = {
                 }
             ],
             temoignage: {
-                texte: "Je me sens inspiré par l'assertivité de Sophie et sa capacité à tenir le gouvernail avec cœur quel que soit le stress du moment.",
-                auteur: "Participant",
-                titre: "Festival du Cercle Enchanté"
+                texte: "Notre session m'a fait prendre conscience de l'importance de la détente dans le travail de la voix, et m'a fait résonner des zones que je n'avais pas l'habitude de sentir. Sophie m'a aidée à conscientiser des espaces de résonance nouveaux chez moi. C'est une très bonne pédagogue.",
+                auteur: "Patricia"
             }
         }
     ],
@@ -133,18 +134,10 @@ const SITE_CONFIG = {
             id: "7a0fS2k5bagVzAGGyLxVNf"
         },
         videos: [
-            {
-                id: "phUMrUfYd2c",
-                titre: "Composition originale",
-                description: "Découvrez mes créations musicales originales"
-            },
-            {
-                id: "RRzKRhQC1TA",
-                titre: "Reprise revisitée",
-                description: "Grands classiques, version Bijj"
-            }
-        ],
-        ctaYoutube: "Découvrir plus sur YouTube"
+            { id: "G7eTt8gkWjg" },
+            { id: "phUMrUfYd2c" },  // Au centre
+            { id: "RRzKRhQC1TA" }
+        ]
     },
 
     // CTA Collaboration
@@ -157,26 +150,27 @@ const SITE_CONFIG = {
     // Témoignages
     temoignages: [
         {
-            texte: "Sophie Bijjani sang for Rush Creek Lodge through this past summer, and she was both a joy to listen to, and a joy to work with. She is professional, punctual, and to top it all off, an amazing musician and singer to boot.",
-            auteur: "Rush Creek Lodge",
-            titre: "Yosemite, California"
+            texte: "Sophie Bijjani [...] was both a joy to listen to, and a joy to work with. [...] an amazing musician and singer.",
+            auteur: "Bethany Kindiger",
+            titre: "Manager at Rush Creek Lodge, California"
         },
         {
             texte: "Je me sens inspiré par l'assertivité de Sophie et sa capacité à tenir le gouvernail avec cœur quel que soit le stress du moment.",
-            auteur: "Participant",
-            titre: "Festival du Cercle Enchanté"
+            auteur: "Pierre",
+            titre: "Participant au Festival du Cercle Enchanté"
         }
     ],
 
     // Photos
     photos: {
-        quote: "PhotoQuote.jpg"
+        quote: "PhotoQuote.jpg",
+        profile: "sophie-profile-2025.jpeg"
     },
 
     // Newsletter (intégrée au footer)
     newsletter: {
-        titre: "Zone de risque!",
-        description: "Tu pourrais faire partie des premières personnes que j’informe des nouvelles initiatives qui germent de mon côté, et ce, jusqu’à trois fois par année. C’est risqué! "
+        titre: "Oyé!",
+        description: "Veux-tu faire partie des premières personnes que j’informe des initiatives qui germent de mon côté?"
     },
 
     // Liens
