@@ -15,7 +15,7 @@ const SITE_CONFIG = {
         nom: "Sophie Bijjani",
         titre: "Biographie",
         texte: "Artiste multidisciplinaire originaire de l'Outaouais, Sophie Bijjani façonne des univers où la musique sert de pont entre les êtres. Formée en chant jazz au Cégep Saint-Laurent, elle plonge ensuite corps et cœur dans diverses pratiques d'improvisation : Circlesong, Contact Improvisation et approches somatiques. Portée par ses racines libanaises et une curiosité pour l'ailleurs, elle voyage et se forme sur plusieurs territoires — France, Colombie, États-Unis, Colombie-Britannique — en  explorant le terrain des mots, de la musique et du mouvement. Ses créations dévoilent une vision intuitive et lumineuse, entre vulnérabilité, quête identitaire et transcendance. En 2024, elle débute l'écriture du conte Chenilleville. Une première adaptation scénique prend forme lors de la résidence 3e Oeil en novembre 2025. En parallèle, elle débute le projet musical Oui Dentelle avec l'auteur-compositeur-interprète Maxime Galand.",
-        texteResume: "Artiste multidisciplinaire originaire de l'Outaouais, Sophie Bijjani façonne des univers où la musique sert de pont entre les êtres."
+        texteResume: "Un élément déclencheur. Passeuse de permission — d'oser, de jouer, de se montrer — dans la rencontre avec soi et avec l'autre."
     },
 
     // Mes Univers (remplace "activités")
@@ -25,7 +25,7 @@ const SITE_CONFIG = {
             symbole: "🎤",
             titre: "Au Micro",
             soustitre: "Spectacles • Conférences • Maître de cérémonie",
-            description: "Je porte l'énergie et guide l'expérience en spectacle ou pour animer votre évènement. ",
+            description: "Je porte l'énergie et tiens le fil d'un événement — en spectacle, en animation ou en prise de parole. Je lis la salle et crée les conditions pour que quelque chose de vrai se passe.",
             sections: [
                 {
                     categorie: "En spectacle",
@@ -80,9 +80,9 @@ const SITE_CONFIG = {
         {
             id: "espaces-rencontre",
             symbole: "༅",
-            titre: "Espaces de rencontre",
+            titre: "En cercle",
             soustitre: "Ateliers circlesong • Cercles de chant • Facilitation de groupe",
-            description: "J'offre un cadre sensible qui favorise l'émergence d'espaces d'exploration collective où chaque voix trouve sa place.",
+            description: "J'ouvre la permission de jouer avec la voix et le corps — collectivement. Des espaces où les gens se découvrent autrement, ensemble.",
             sections: [
                 {
                     categorie: "Ateliers de groupe",
@@ -104,9 +104,9 @@ const SITE_CONFIG = {
         {
             id: "accompagnement",
             symbole: "❋",
-            titre: "Accompagnement",
+            titre: "En tête-à-tête",
             soustitre: "Exploration vocale • Technique • Libération • Création",
-            description: "Je t'accompagne dans ton propre déploiement. Un espace privilégié pour explorer ta voix dans une approche holistique corps-cœur-esprit.",
+            description: "Un espace privé pour aller chercher ce qui est vrai en toi — à travers la voix, le corps et le jeu. Pour les praticiens et artistes qui veulent approfondir leur pratique.",
             sections: [
                 {
                     categorie: "Accompagnement individuel",
@@ -142,8 +142,8 @@ const SITE_CONFIG = {
 
     // CTA Collaboration
     ctaCollaboration: {
-        titre: "L'inspiration vient en jouant!",
-        description: "La nature de mon travail est de m'adapter à vos besoins. Conférence inspirante ? Spectacle sur mesure ? Atelier de cohésion d'équipe ?  Discutons de ce qui résonne pour vous, que vous ayez une vision claire ou simplement une étincelle d'idée.",
+        titre: "Vous avez un cadre. Je m'occupe de ce qui fait vibrer.",
+        description: "Vous organisez une retraite, un festival, un événement — vous avez un thème, une vision, mais vous cherchez ce qui va faire que ça vibre vraiment. Écrivez-moi. Je travaille en français et en anglais.",
         boutonTexte: "Parlons-en!"
     },
 
@@ -170,7 +170,7 @@ const SITE_CONFIG = {
     // Newsletter (intégrée au footer)
     newsletter: {
         titre: "Oyé!",
-        description: "Veux-tu faire partie des premières personnes que j’informe des initiatives qui germent de mon côté?"
+        description: "Veux-tu faire partie des premières personnes que j'informe des initiatives qui germent de mon côté?"
     },
 
     // Liens
