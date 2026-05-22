@@ -161,7 +161,7 @@ p:last-child { margin-bottom: 0; }
 }
 
 .header.scrolled {
-    background: var(--overlay-cobalt-heavy);
+    background: rgba(91, 114, 196, 0.97);
     box-shadow: 0 2px 16px var(--overlay-dark);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
@@ -187,7 +187,7 @@ p:last-child { margin-bottom: 0; }
 
 .header-nav .nav-link {
     font-family: var(--font-ui);
-    font-size: 1.05rem;
+    font-size: 1.2rem;
     font-weight: 500;
     color: var(--blanc);
     letter-spacing: 0.03em;
@@ -235,7 +235,7 @@ p:last-child { margin-bottom: 0; }
     position: fixed;
     inset: 0;
     z-index: 1000;
-    background: var(--anthracite);
+    background: var(--color-cobalt);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -402,7 +402,7 @@ p:last-child { margin-bottom: 0; }
 
 /* ===== PAGE HERO (title bar, no photo) ===== */
 .page-hero {
-    background: var(--bg-dark);
+    background: var(--color-periwinkle);
     padding: 5.5rem 48px 2.5rem;
     text-align: center;
 }
@@ -460,7 +460,7 @@ p:last-child { margin-bottom: 0; }
 
 /* ===== FOOTER ===== */
 .footer {
-    background: var(--anthracite);
+    background: var(--color-periwinkle);
     color: var(--text-on-dark-body);
     padding: 4rem 0 2.5rem;
 }
@@ -656,9 +656,9 @@ p:last-child { margin-bottom: 0; }
     min-height: 100vh;
     display: flex;
     align-items: flex-end;
-    justify-content: center;
+    justify-content: flex-end;
     overflow: hidden;
-    background: var(--anthracite);
+    background: var(--color-cobalt);
 }
 
 .hero-bg {
@@ -674,10 +674,10 @@ p:last-child { margin-bottom: 0; }
     position: absolute;
     inset: 0;
     background: linear-gradient(
-        to bottom,
-        var(--overlay-cobalt-mid) 0%,
-        var(--overlay-cobalt-lo)  50%,
-        var(--overlay-cobalt-hi)  100%
+        to right,
+        rgba(43, 61, 158, 0.15) 0%,
+        rgba(43, 61, 158, 0.55) 55%,
+        rgba(43, 61, 158, 0.82) 100%
     );
     z-index: 1;
 }
@@ -686,7 +686,8 @@ p:last-child { margin-bottom: 0; }
     position: relative;
     z-index: 2;
     text-align: center;
-    padding: 0 24px 9rem;
+    padding: 0 6rem 9rem 24px;
+    max-width: 640px;
 }
 
 /* Animation wrapper */
@@ -752,8 +753,7 @@ p:last-child { margin-bottom: 0; }
 .hero-tagline {
     position: absolute;
     bottom: 2.5rem;
-    left: 50%;
-    transform: translateX(-50%);
+    right: 6.5rem;
     z-index: 3;
     white-space: nowrap;
     font-family: var(--font-ui);
@@ -1179,7 +1179,7 @@ p:last-child { margin-bottom: 0; }
 
 /* ===== DISCIPLINES (éthos) ===== */
 .disciplines-section {
-    background: var(--bg-dark);
+    background: var(--color-blush);
     padding: 4rem 0;
 }
 
@@ -1208,21 +1208,21 @@ p:last-child { margin-bottom: 0; }
     font-family: var(--font-ui);
     font-size: 0.88rem;
     font-weight: 500;
-    color: var(--text-on-dark-body);
-    background: var(--surface-on-dark);
-    border: 1.5px solid var(--border-on-dark-soft);
+    color: var(--color-cobalt);
+    background: var(--blanc);
+    border: 1.5px solid rgba(91, 114, 196, 0.3);
     border-radius: 100px;
     padding: 0.4em 1.2em;
     transition: background var(--transition), border-color var(--transition);
 }
 
 .disciplines-tags span:hover {
-    background: rgba(125, 191, 176, 0.15);
+    background: rgba(125, 191, 176, 0.2);
     border-color: var(--color-mint);
 }
 
 .cta-section {
-    background: var(--anthracite);
+    background: var(--color-periwinkle);
     padding: 4.5rem 0;
     text-align: center;
 }
@@ -1396,14 +1396,13 @@ p:last-child { margin-bottom: 0; }
 }
 
 .conf-section {
-    background: var(--anthracite);
+    background: var(--color-blush);
     padding: 5rem 0;
-    color: var(--blanc);
 }
 
 .conf-section h2 {
     text-align: center;
-    color: var(--blanc);
+    color: var(--color-cobalt);
     margin-bottom: 3rem;
 }
 
@@ -1414,8 +1413,8 @@ p:last-child { margin-bottom: 0; }
 }
 
 .conf-item {
-    background: var(--surface-on-dark);
-    border: 1px solid var(--border-periwinkle-mid);
+    background: var(--blanc);
+    border: 1.5px solid rgba(91, 114, 196, 0.2);
     border-radius: 8px;
     padding: 2rem 1.4rem;
     text-align: center;
@@ -1424,13 +1423,13 @@ p:last-child { margin-bottom: 0; }
 .conf-item h3 {
     font-family: var(--font-title);
     font-size: 1.3rem;
-    color: var(--blanc);
+    color: var(--color-cobalt);
     margin-bottom: 0.4rem;
 }
 
 .conf-item p {
     font-size: 0.9rem;
-    color: var(--text-on-dark-sub);
+    color: var(--text-body);
     margin: 0;
 }
 
