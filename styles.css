@@ -202,6 +202,23 @@ p:last-child { margin-bottom: 0; }
     color: var(--periwinkle);
 }
 
+.header-social {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.header-social a {
+    color: var(--text-on-dark-mid);
+    display: flex;
+    align-items: center;
+    transition: color var(--transition);
+}
+
+.header-social a:hover {
+    color: var(--blanc);
+}
+
 .mobile-menu-toggle {
     display: none;
     background: none;
@@ -747,26 +764,34 @@ p:last-child { margin-bottom: 0; }
     text-transform: uppercase;
 }
 
+/* ===== HERO PORTRAIT ===== */
+.hero-portrait-wrap {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+
+.hero-portrait-img {
+    width: 210px;
+    height: 275px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 160px 160px 0 0;
+    display: block;
+}
+
 /* ===== INTRO SECTION (landing, éditorial) ===== */
 .intro-section {
     background: var(--color-blush);
-    padding: 7rem 0;
+    padding: 5rem 0 6rem;
 }
 
 .intro-inner {
-    display: grid;
-    grid-template-columns: 260px 1fr;
-    gap: 5rem;
-    align-items: center;
-}
-
-.intro-portrait {
-    width: 260px;
-    height: 340px;
-    object-fit: cover;
-    object-position: top;
-    border-radius: 140px 140px 120px 120px;
-    box-shadow: 0 16px 56px var(--overlay-dark);
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .intro-quote {
@@ -1103,6 +1128,50 @@ p:last-child { margin-bottom: 0; }
 .value-card p {
     font-size: 0.96rem;
     color: var(--text-body);
+}
+
+/* ===== DISCIPLINES (éthos) ===== */
+.disciplines-section {
+    background: var(--bg-dark);
+    padding: 4rem 0;
+}
+
+.disciplines-section .container {
+    text-align: center;
+}
+
+.disciplines-label {
+    font-family: var(--font-ui);
+    font-size: 0.76rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-mint);
+    margin-bottom: 1.6rem;
+}
+
+.disciplines-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    justify-content: center;
+}
+
+.disciplines-tags span {
+    font-family: var(--font-ui);
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--text-on-dark-body);
+    background: var(--surface-on-dark);
+    border: 1.5px solid var(--border-on-dark-soft);
+    border-radius: 100px;
+    padding: 0.4em 1.2em;
+    transition: background var(--transition), border-color var(--transition);
+}
+
+.disciplines-tags span:hover {
+    background: rgba(125, 191, 176, 0.15);
+    border-color: var(--color-mint);
 }
 
 .cta-section {
@@ -1470,6 +1539,7 @@ p:last-child { margin-bottom: 0; }
     /* Header */
     .header { padding: 0 24px; }
     .header-nav { display: none; }
+    .header-social { display: none; }
     .mobile-menu-toggle { display: block; }
 
     /* Page hero */
@@ -1483,17 +1553,7 @@ p:last-child { margin-bottom: 0; }
     .streaming-links { flex-direction: column; align-items: center; }
 
     /* Index */
-    .intro-inner {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-        text-align: center;
-    }
-
-    .intro-portrait {
-        width: 180px;
-        height: 240px;
-        margin: 0 auto;
-    }
+    .hero-portrait-img { width: 160px; height: 210px; }
 
     .wid-item {
         grid-template-columns: 14px 1fr auto;
