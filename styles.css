@@ -750,7 +750,12 @@ p:last-child { margin-bottom: 0; }
 }
 
 .hero-tagline {
-    margin-top: 2rem;
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    white-space: nowrap;
     font-family: var(--font-ui);
     font-size: clamp(0.85rem, 2vw, 1.05rem);
     font-weight: 300;
@@ -949,6 +954,32 @@ p:last-child { margin-bottom: 0; }
     object-fit: cover;
     aspect-ratio: 4 / 3;
     box-shadow: 0 8px 32px var(--shadow-periwinkle-sm);
+}
+
+/* ===== PAGE INTRO (shared 2-col pattern: title + text / photo) ===== */
+.page-intro {
+    padding: 5rem 0;
+    background: var(--blanc);
+}
+
+.page-intro .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.page-intro-text h2 { margin-bottom: 1.2rem; }
+.page-intro-text p  { font-size: 1.05rem; color: var(--text-body); }
+
+.page-intro-photo img {
+    width: 100%;
+    border-radius: var(--radius);
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    object-position: top center;
+    box-shadow: 0 8px 32px var(--shadow-periwinkle-sm);
+    display: block;
 }
 
 .photo-credit-inline {
@@ -1601,6 +1632,10 @@ p:last-child { margin-bottom: 0; }
     .facil-intro-inner { padding: 0 24px; }
     .spectacles-grid { grid-template-columns: 1fr; }
     .conf-grid { grid-template-columns: 1fr; gap: 1rem; }
+
+    /* Shared page-intro */
+    .page-intro .container { grid-template-columns: 1fr; gap: 2rem; }
+    .cs-intro .container   { grid-template-columns: 1fr; gap: 2.5rem; }
 
     /* Contact */
     .contact-inner { padding: 0 24px; }
