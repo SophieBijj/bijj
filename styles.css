@@ -187,10 +187,10 @@ p:last-child { margin-bottom: 0; }
 
 .header-nav .nav-link {
     font-family: var(--font-ui);
-    font-size: 0.9rem;
-    font-weight: 400;
+    font-size: 1rem;
+    font-weight: 500;
     color: var(--blanc);
-    letter-spacing: 0.04em;
+    letter-spacing: 0.03em;
     text-transform: uppercase;
     opacity: 0.88;
     transition: opacity var(--transition), color var(--transition);
@@ -400,38 +400,33 @@ p:last-child { margin-bottom: 0; }
     color: var(--blanc);
 }
 
-/* ===== PAGE HERO ===== */
+/* ===== PAGE HERO (title bar, no photo) ===== */
 .page-hero {
-    position: relative;
-    min-height: 52vh;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    padding: 7rem 48px 4rem;
-    background: var(--anthracite);
-    overflow: hidden;
+    background: var(--bg-dark);
+    padding: 5.5rem 48px 2.5rem;
     text-align: center;
 }
 
-.page-hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: var(--overlay-cobalt);
-    z-index: 1;
+.page-hero::before { display: none; }
+
+.page-hero-bg { display: none; }
+
+.page-hero-content { position: static; }
+
+/* Photo banner (replaces photo heroes in page content) */
+.page-photo-banner {
+    width: 100%;
+    max-height: 400px;
+    overflow: hidden;
+    line-height: 0;
 }
 
-.page-hero-bg {
-    position: absolute;
-    inset: 0;
-    background-size: cover;
-    background-position: center;
-    z-index: 0;
-}
-
-.page-hero-content {
-    position: relative;
-    z-index: 2;
+.page-photo-banner img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
 }
 
 .page-hero h1 {
@@ -669,9 +664,9 @@ p:last-child { margin-bottom: 0; }
 .hero-bg {
     position: absolute;
     inset: 0;
-    background-image: url('PhotoLanding.jpg');
+    background-image: url('portrait.jpeg');
     background-size: cover;
-    background-position: center top;
+    background-position: top center;
     z-index: 0;
 }
 
@@ -764,22 +759,27 @@ p:last-child { margin-bottom: 0; }
     text-transform: uppercase;
 }
 
-/* ===== HERO PORTRAIT ===== */
-.hero-portrait-wrap {
+/* ===== HERO SOCIAL (vertical, landing only) ===== */
+.hero-social-vertical {
     position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: 3rem;
+    right: 3rem;
     z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.3rem;
 }
 
-.hero-portrait-img {
-    width: 210px;
-    height: 275px;
-    object-fit: cover;
-    object-position: top;
-    border-radius: 160px 160px 0 0;
-    display: block;
+.hero-social-vertical a {
+    color: var(--text-on-dark-sub);
+    display: flex;
+    align-items: center;
+    transition: color var(--transition);
+}
+
+.hero-social-vertical a:hover {
+    color: var(--blanc);
 }
 
 /* ===== INTRO SECTION (landing, éditorial) ===== */
@@ -789,9 +789,25 @@ p:last-child { margin-bottom: 0; }
 }
 
 .intro-inner {
-    max-width: 640px;
-    margin: 0 auto;
-    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.intro-photo-img {
+    width: 100%;
+    border-radius: var(--radius);
+    aspect-ratio: 4/3;
+    object-fit: cover;
+}
+
+.photo-credit-inline {
+    margin-top: 0.5rem;
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    letter-spacing: 0.02em;
 }
 
 .intro-quote {
@@ -1553,7 +1569,12 @@ p:last-child { margin-bottom: 0; }
     .streaming-links { flex-direction: column; align-items: center; }
 
     /* Index */
-    .hero-portrait-img { width: 160px; height: 210px; }
+    .hero-social-vertical { display: none; }
+
+    .intro-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
 
     .wid-item {
         grid-template-columns: 14px 1fr auto;
