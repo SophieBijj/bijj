@@ -1,12 +1,11 @@
 /* ===== STYLES DU SITE SOPHIE BIJJANI - VERSION RÉORGANISÉE ===== */
 
-@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
-
 :root {
     --gris-anthracite: #2d2d3a;
-    --rose-froid: #b85c7a;
+    --periwinkle: #7B8EC8;
     --gris-perle: #ececec;
     --blanc: #ffffff;
+    --jaune-pale: #FEFBEF;
     --texte: #2d2d3a;
 }
 
@@ -80,7 +79,7 @@ body {
 }
 
 .logo .j-gold {
-    color: var(--rose-froid);
+    color: var(--periwinkle);
     font-weight: 700;
 }
 
@@ -115,12 +114,12 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--rose-froid);
+    background: var(--periwinkle);
     transition: width 0.3s ease;
 }
 
 .nav-link:hover {
-    color: var(--rose-froid);
+    color: var(--periwinkle);
     transition: color 0.3s ease;
 }
 
@@ -149,7 +148,7 @@ body {
 }
 
 .header-social a:hover {
-    color: var(--rose-froid);
+    color: var(--periwinkle);
     transform: translateY(-2px);
     transition: all 0.3s ease;
 }
@@ -204,7 +203,7 @@ body {
 
 .menu-close:hover {
     transform: rotate(90deg);
-    color: var(--rose-froid);
+    color: var(--periwinkle);
 }
 
 .menu-content {
@@ -256,11 +255,11 @@ body {
     font-size: 36px;
     opacity: 0;
     transition: opacity 0.3s ease, transform 0.3s ease;
-    color: var(--rose-froid);
+    color: var(--periwinkle);
 }
 
 .menu-nav a:hover {
-    color: var(--rose-froid);
+    color: var(--periwinkle);
 }
 
 .menu-nav a:hover::after {
@@ -299,8 +298,8 @@ body {
 }
 
 .menu-social a:hover {
-    border-color: var(--rose-froid);
-    color: var(--rose-froid);
+    border-color: var(--periwinkle);
+    color: var(--periwinkle);
     transform: translateY(-3px);
 }
 
@@ -522,8 +521,8 @@ body {
     height: 350px;
     border-radius: 12px;
     background: radial-gradient(circle,
-        rgba(184, 92, 122, 0.15) 0%,
-        rgba(184, 92, 122, 0.1) 40%,
+        rgba(123, 142, 200, 0.15) 0%,
+        rgba(123, 142, 200, 0.1) 40%,
         rgba(45, 45, 58, 0) 70%);
     z-index: 0;
     pointer-events: none;
@@ -534,7 +533,7 @@ body {
     height: 280px;
     border-radius: 12px;
     object-fit: cover;
-    box-shadow: 0 10px 30px rgba(184, 92, 122, 0.4);
+    box-shadow: 0 10px 30px rgba(123, 142, 200, 0.4);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     z-index: 1;
@@ -542,7 +541,7 @@ body {
 
 .biographie-photo img:hover {
     transform: scale(1.05);
-    box-shadow: 0 15px 40px rgba(184, 92, 122, 0.6);
+    box-shadow: 0 15px 40px rgba(123, 142, 200, 0.6);
 }
 
 .biographie-text {
@@ -560,7 +559,7 @@ body {
 
 .biographie h3 {
     font-size: 24px;
-    color: var(--rose-froid);
+    color: var(--periwinkle);
     margin-bottom: 25px;
     line-height: 1.3;
     font-weight: 400;
@@ -594,7 +593,7 @@ body {
 
 .bio-toggle {
     padding: 12px 30px;
-    background: var(--rose-froid);
+    background: var(--periwinkle);
     color: white;
     border: none;
     border-radius: 8px;
@@ -622,11 +621,7 @@ body {
 /* ===== MES UNIVERS ===== */
 .mes-univers {
     padding: 100px 40px;
-    background: var(--blanc);
-    background-image: url('');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: var(--jaune-pale);
 }
 
 .mes-univers h2 {
@@ -650,13 +645,13 @@ body {
     padding: 40px;
     box-shadow: 0 4px 20px rgba(45, 45, 58, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid rgba(184, 92, 122, 0.1);
+    border: 1px solid rgba(123, 142, 200, 0.1);
 }
 
 .univers-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(184, 92, 122, 0.15);
-    border-color: rgba(184, 92, 122, 0.2);
+    box-shadow: 0 8px 30px rgba(123, 142, 200, 0.15);
+    border-color: rgba(123, 142, 200, 0.2);
 }
 
 .univers-card-header {
@@ -692,7 +687,7 @@ body {
 .univers-toggle {
     width: 100%;
     padding: 15px 30px;
-    background: var(--rose-froid);
+    background: var(--periwinkle);
     color: white;
     border: none;
     border-radius: 8px;
@@ -734,7 +729,7 @@ body {
 
 .univers-section h4 {
     font-size: 24px;
-    color: var(--rose-froid);
+    color: var(--periwinkle);
     margin-bottom: 15px;
     font-weight: 600;
 }
@@ -757,7 +752,7 @@ body {
     content: '༅';
     position: absolute;
     left: 0;
-    color: var(--rose-froid);
+    color: var(--periwinkle);
     font-size: 20px;
 }
 
@@ -794,7 +789,7 @@ body {
 .pdf-download {
     display: inline-block;
     padding: 12px 24px;
-    background: var(--rose-froid);
+    background: var(--periwinkle);
     color: white;
     text-decoration: none;
     border-radius: 8px;
@@ -814,7 +809,7 @@ body {
     padding: 25px;
     border-radius: 8px;
     margin-top: 25px;
-    border-left: 3px solid var(--rose-froid);
+    border-left: 3px solid var(--periwinkle);
 }
 
 .univers-temoignage .temoignage-text {
@@ -921,7 +916,7 @@ body {
 
 .video-thumbnail:hover {
     transform: scale(1.05);
-    box-shadow: 0 15px 40px rgba(184, 92, 122, 0.4);
+    box-shadow: 0 15px 40px rgba(123, 142, 200, 0.4);
 }
 
 .video-iframe {
@@ -968,7 +963,7 @@ body {
 }
 
 .carousel-btn:hover {
-    background: var(--rose-froid);
+    background: var(--periwinkle);
     transform: translateY(-50%) scale(1.15);
 }
 
@@ -993,7 +988,7 @@ body {
     align-items: center;
     gap: 10px;
     padding: 15px 30px;
-    background: var(--rose-froid);
+    background: var(--periwinkle);
     color: white;
     text-decoration: none;
     border-radius: 8px;
@@ -1017,20 +1012,20 @@ body {
     gap: 10px;
     padding: 16px 40px;
     background: transparent;
-    color: var(--rose-froid);
+    color: var(--periwinkle);
     text-decoration: none;
     border-radius: 8px;
     font-weight: 600;
     font-size: 18px;
     transition: all 0.3s ease;
-    border: 2px solid var(--rose-froid);
+    border: 2px solid var(--periwinkle);
 }
 
 .youtube-cta a:hover {
-    background: var(--rose-froid);
+    background: var(--periwinkle);
     color: white;
     transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(184, 92, 122, 0.3);
+    box-shadow: 0 10px 25px rgba(123, 142, 200, 0.3);
 }
 
 /* ===== CTA COLLABORATION & TESTIMONIALS ===== */
@@ -1080,23 +1075,23 @@ body {
 .cta-primary {
     display: inline-block;
     padding: 18px 40px;
-    background: var(--rose-froid);
+    background: var(--periwinkle);
     color: var(--blanc);
     text-decoration: none;
     border-radius: 8px;
     font-weight: 600;
     font-size: 18px;
     transition: all 0.3s ease;
-    border: 2px solid var(--rose-froid);
+    border: 2px solid var(--periwinkle);
     margin-bottom: 80px;
 }
 
 .cta-primary:hover {
     background: transparent;
-    color: var(--rose-froid);
-    border-color: var(--rose-froid);
+    color: var(--periwinkle);
+    border-color: var(--periwinkle);
     transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(184, 92, 122, 0.4);
+    box-shadow: 0 10px 30px rgba(123, 142, 200, 0.4);
 }
 
 /* Testimonials dans CTA */
@@ -1124,7 +1119,7 @@ body {
     padding: 24px;
     background: rgba(45, 45, 58, 0.85);
     border-radius: 12px;
-    border-left: 4px solid var(--rose-froid);
+    border-left: 4px solid var(--periwinkle);
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     position: relative;
     backdrop-filter: blur(10px);
@@ -1136,7 +1131,7 @@ body {
     top: -8px;
     left: 18px;
     font-size: 50px;
-    color: rgba(184, 92, 122, 0.3);
+    color: rgba(123, 142, 200, 0.3);
     font-family: 'Source Serif 4', Georgia, serif;
 }
 
@@ -1200,7 +1195,7 @@ body {
 .newsletter-form input {
     flex: 1;
     padding: 15px 20px;
-    border: 2px solid rgba(184, 92, 122, 0.3);
+    border: 2px solid rgba(123, 142, 200, 0.3);
     border-radius: 8px;
     font-size: 16px;
     font-family: 'Source Serif 4', Georgia, serif;
@@ -1211,7 +1206,7 @@ body {
 
 .newsletter-form input:focus {
     outline: none;
-    border-color: var(--rose-froid);
+    border-color: var(--periwinkle);
     background: rgba(255, 255, 255, 0.15);
 }
 
@@ -1221,7 +1216,7 @@ body {
 
 .newsletter-form button {
     padding: 15px 35px;
-    background: var(--rose-froid);
+    background: var(--periwinkle);
     color: white;
     border: none;
     border-radius: 8px;
@@ -1292,7 +1287,7 @@ body {
 }
 
 .footer-social a:hover {
-    color: var(--rose-froid);
+    color: var(--periwinkle);
     transform: translateY(-2px);
 }
 
@@ -1344,7 +1339,7 @@ body {
 .footer-divider {
     width: 60px;
     height: 1px;
-    background: rgba(184, 92, 122, 0.3);
+    background: rgba(123, 142, 200, 0.3);
     margin: 8px auto;
 }
 
@@ -1355,6 +1350,13 @@ body {
     padding: 0 !important;
     line-height: 1;
     display: block;
+}
+
+/* Desktop: utilise l'image haute résolution */
+@media (min-width: 769px) {
+    .hero {
+        background-image: url('header.jpeg');
+    }
 }
 
 /* ===== RESPONSIVE - MOBILE ===== */

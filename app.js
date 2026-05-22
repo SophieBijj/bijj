@@ -1,7 +1,6 @@
 // ===== APP.JS - SOPHIE BIJJANI SITE =====
 
 // État global
-let animationTriggered = false;
 let animationComplete = false;
 
 // ===== INITIALISATION =====
@@ -56,48 +55,18 @@ function initHero() {
     initScrollHijacking();
 }
 
-// ===== ANIMATION AUTOMATIQUE AVEC SCROLL HIJACKING =====
+// ===== ANIMATION AUTOMATIQUE =====
 function initScrollHijacking() {
     const exprimeContainer = document.querySelector('.line-exprime');
     const letterSpans = exprimeContainer.querySelectorAll('.letter');
     let currentIndex = 0;
 
-    // Rendre le header visible immédiatement (pas d'animation de menu)
     const header = document.getElementById('header');
     header.classList.add('animation-complete');
 
-    // Bloquer le scroll dès le chargement
-    document.body.style.overflow = 'hidden';
-
-    // Attendre 0.6 seconde puis démarrer "exprime"
     setTimeout(() => {
-        startAnimation();
-    }, 600);
-
-    function setupScrollBlocker() {
-        function handleWheelOrTouch(e) {
-            if (!animationComplete) {
-                e.preventDefault();
-            }
-        }
-
-        window.addEventListener('wheel', handleWheelOrTouch, { passive: false });
-        window.addEventListener('touchmove', handleWheelOrTouch, { passive: false });
-        window.addEventListener('keydown', (e) => {
-            if (!animationComplete && [32, 33, 34, 35, 36, 37, 38, 39, 40].includes(e.keyCode)) {
-                e.preventDefault();
-            }
-        }, { passive: false });
-    }
-
-    function startAnimation() {
-        if (animationTriggered) return;
-
-        animationTriggered = true;
-        setupScrollBlocker();
-
         typeNextLetter();
-    }
+    }, 600);
 
     function typeNextLetter() {
         if (currentIndex < letterSpans.length) {
@@ -105,10 +74,7 @@ function initScrollHijacking() {
             currentIndex++;
             setTimeout(typeNextLetter, 80);
         } else {
-            setTimeout(() => {
-                animationComplete = true;
-                document.body.style.overflow = 'auto';
-            }, 200);
+            animationComplete = true;
         }
     }
 }
