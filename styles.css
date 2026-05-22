@@ -5,13 +5,36 @@
 
 /* ===== GOOGLE FONTS are loaded in each HTML head ===== */
 
-/* ===== CSS VARIABLES ===== */
+/* ===== CSS VARIABLES — Cool Summer ===== */
 :root {
-    --anthracite:   #2d2d3a;
-    --periwinkle:   #7B8EC8;
-    --jaune-pale:   #FEFBEF;
-    --gris-perle:   #ececec;
-    --blanc:        #ffffff;
+    /* Palette */
+    --color-rose:       #EE7090;
+    --color-mint:       #7DBFB0;
+    --color-periwinkle: #5B72C4;
+    --color-cobalt:     #2B3D9E;
+    --color-blush:      #EBE3DF;
+
+    /* Text */
+    --text-primary:     #2B3D9E;
+    --text-body:        #3A3A4A;
+    --text-muted:       #7A7A8A;
+    --text-on-dark:     #EBE3DF;
+
+    /* Backgrounds */
+    --bg-light:         #F7F4F2;
+    --bg-mid:           #5B72C4;
+    --bg-dark:          #2B3D9E;
+
+    /* Borders */
+    --border-light:     rgba(43, 61, 158, 0.15);
+    --border-mid:       rgba(43, 61, 158, 0.3);
+
+    /* Legacy aliases (keep for existing references) */
+    --anthracite:       #2B3D9E;
+    --periwinkle:       #5B72C4;
+    --jaune-pale:       #EBE3DF;
+    --gris-perle:       #D5CFC9;
+    --blanc:            #ffffff;
 
     --font-title:   'Fraunces', Georgia, serif;
     --font-body:    'Source Serif 4', Georgia, serif;
@@ -19,7 +42,7 @@
 
     --transition:   0.25s ease;
     --radius:       10px;
-    --shadow:       0 4px 24px rgba(0,0,0,0.08);
+    --shadow:       0 4px 24px rgba(43, 61, 158, 0.1);
 }
 
 /* ===== RESET ===== */
@@ -37,7 +60,7 @@ body {
     font-family: var(--font-body);
     font-size: 17px;
     line-height: 1.72;
-    color: var(--anthracite);
+    color: var(--text-body);
     background: var(--blanc);
     overflow-x: hidden;
 }
@@ -62,6 +85,7 @@ h1, h2, h3, h4 {
     font-family: var(--font-title);
     line-height: 1.2;
     font-weight: 700;
+    color: var(--text-primary);
 }
 
 h1 { font-size: clamp(2.4rem, 5.5vw, 4.2rem); }
@@ -94,7 +118,7 @@ p:last-child { margin-bottom: 0; }
 }
 
 .header.scrolled {
-    background: rgba(45, 45, 58, 0.96);
+    background: rgba(43, 61, 158, 0.96);
     box-shadow: 0 2px 16px rgba(0,0,0,0.25);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
@@ -240,9 +264,9 @@ p:last-child { margin-bottom: 0; }
 }
 
 .btn-primary:hover {
-    background: #697fc0;
-    border-color: #697fc0;
-    box-shadow: 0 4px 16px rgba(123,142,200,0.35);
+    background: #4A5FB5;
+    border-color: #4A5FB5;
+    box-shadow: 0 4px 16px rgba(91,114,196,0.35);
 }
 
 .btn-outline {
@@ -279,11 +303,11 @@ p:last-child { margin-bottom: 0; }
 
 .card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 32px rgba(123,142,200,0.18);
+    box-shadow: 0 8px 32px rgba(91,114,196,0.18);
 }
 
 .card h3 { color: var(--anthracite); }
-.card p  { color: #4a4a5a; font-size: 0.96rem; }
+.card p  { color: var(--text-body); font-size: 0.96rem; }
 
 /* ===== TESTIMONIAL ===== */
 .testimonial {
@@ -333,7 +357,7 @@ p:last-child { margin-bottom: 0; }
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(45, 45, 58, 0.58);
+    background: rgba(43, 61, 158, 0.58);
     z-index: 1;
 }
 
@@ -447,7 +471,7 @@ p:last-child { margin-bottom: 0; }
     white-space: nowrap;
 }
 
-.footer-form button:hover { background: #697fc0; }
+.footer-form button:hover { background: #4A5FB5; }
 
 .footer-social {
     display: flex;
@@ -548,7 +572,7 @@ p:last-child { margin-bottom: 0; }
     right: 18px;
     font-size: 1.2rem;
     cursor: pointer;
-    color: #999;
+    color: var(--text-muted);
     line-height: 1;
     transition: color var(--transition);
 }
@@ -596,9 +620,9 @@ p:last-child { margin-bottom: 0; }
     inset: 0;
     background: linear-gradient(
         to bottom,
-        rgba(45,45,58,0.62) 0%,
-        rgba(45,45,58,0.38) 50%,
-        rgba(45,45,58,0.78) 100%
+        rgba(43,61,158,0.62) 0%,
+        rgba(43,61,158,0.38) 50%,
+        rgba(43,61,158,0.78) 100%
     );
     z-index: 1;
 }
@@ -699,7 +723,7 @@ p:last-child { margin-bottom: 0; }
     height: 240px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid rgba(123,142,200,0.5);
+    border: 3px solid rgba(91,114,196,0.5);
     box-shadow: 0 8px 32px rgba(0,0,0,0.35);
     margin: 0 auto;
 }
@@ -747,7 +771,7 @@ p:last-child { margin-bottom: 0; }
 
 .overview-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 10px 32px rgba(123,142,200,0.2);
+    box-shadow: 0 10px 32px rgba(91,114,196,0.2);
 }
 
 .overview-card .card-icon {
@@ -797,7 +821,7 @@ p:last-child { margin-bottom: 0; }
 
 .cs-intro-text p {
     font-size: 1.05rem;
-    color: #3a3a4a;
+    color: var(--text-body);
 }
 
 .video-label {
@@ -844,7 +868,7 @@ p:last-child { margin-bottom: 0; }
 .videos-duo {
     background: var(--jaune-pale);
     padding: 5rem 0;
-    border-top: 1px solid rgba(123,142,200,0.15);
+    border-top: 1px solid rgba(91,114,196,0.15);
 }
 
 .videos-duo .container {
@@ -879,7 +903,7 @@ p:last-child { margin-bottom: 0; }
 
 .where-item {
     background: rgba(255,255,255,0.07);
-    border: 1px solid rgba(123,142,200,0.3);
+    border: 1px solid rgba(91,114,196,0.3);
     border-radius: 8px;
     padding: 1.4rem 1.2rem;
     text-align: center;
@@ -948,7 +972,7 @@ p:last-child { margin-bottom: 0; }
     font-size: 1.05rem;
     line-height: 1.8;
     margin-bottom: 1.4em;
-    color: #2a2a38;
+    color: var(--text-body);
 }
 
 .values-section {
@@ -984,7 +1008,7 @@ p:last-child { margin-bottom: 0; }
 
 .value-card p {
     font-size: 0.96rem;
-    color: #4a4a5a;
+    color: var(--text-body);
 }
 
 .cta-section {
@@ -1158,7 +1182,7 @@ p:last-child { margin-bottom: 0; }
 
 .spectacle-card p {
     font-size: 0.94rem;
-    color: #4a4a5a;
+    color: var(--text-body);
 }
 
 .conf-section {
@@ -1181,7 +1205,7 @@ p:last-child { margin-bottom: 0; }
 
 .conf-item {
     background: rgba(255,255,255,0.07);
-    border: 1px solid rgba(123,142,200,0.3);
+    border: 1px solid rgba(91,114,196,0.3);
     border-radius: 8px;
     padding: 2rem 1.4rem;
     text-align: center;
@@ -1216,7 +1240,7 @@ p:last-child { margin-bottom: 0; }
     transition: color var(--transition);
 }
 
-.facil-pdf-cta .pdf-link:hover { color: #697fc0; }
+.facil-pdf-cta .pdf-link:hover { color: #4A5FB5; }
 
 
 /* ========================================
@@ -1237,7 +1261,7 @@ p:last-child { margin-bottom: 0; }
 .contact-inner .intro-text {
     font-size: 1.05rem;
     margin-bottom: 2.5rem;
-    color: #3a3a4a;
+    color: var(--text-body);
 }
 
 .contact-form {
@@ -1266,7 +1290,7 @@ p:last-child { margin-bottom: 0; }
 .form-group textarea {
     font-family: var(--font-body);
     font-size: 1rem;
-    color: var(--anthracite);
+    color: var(--text-body);
     background: var(--blanc);
     border: 1.5px solid var(--gris-perle);
     border-radius: 6px;
@@ -1280,7 +1304,7 @@ p:last-child { margin-bottom: 0; }
 .form-group select:focus,
 .form-group textarea:focus {
     border-color: var(--periwinkle);
-    box-shadow: 0 0 0 3px rgba(123,142,200,0.18);
+    box-shadow: 0 0 0 3px rgba(91,114,196,0.18);
 }
 
 .form-group textarea {
@@ -1299,7 +1323,7 @@ p:last-child { margin-bottom: 0; }
     border-top: 1px solid var(--gris-perle);
     font-family: var(--font-ui);
     font-size: 0.92rem;
-    color: #6a6a7a;
+    color: var(--text-muted);
 }
 
 .contact-email-alt a {
@@ -1308,7 +1332,7 @@ p:last-child { margin-bottom: 0; }
     transition: color var(--transition);
 }
 
-.contact-email-alt a:hover { color: #697fc0; }
+.contact-email-alt a:hover { color: #4A5FB5; }
 
 .social-section {
     background: var(--jaune-pale);
