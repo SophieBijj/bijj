@@ -9,212 +9,209 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;1,9..144,300&family=Outfit:wght@400;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Outfit', sans-serif; background: #f0f0f0; padding: 2rem; }
-  h1 { font-family: 'Fraunces', serif; font-size: 1.5rem; margin-bottom: 2rem; color: #333; }
-  h2 { font-family: 'Fraunces', serif; font-size: 1.1rem; margin-bottom: 1rem; color: #444; }
-  .palettes { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-bottom: 3rem; }
+  body { font-family: 'Outfit', sans-serif; background: #e8e8e8; padding: 2rem; }
+  h1 { font-family: 'Fraunces', serif; font-size: 1.4rem; margin-bottom: 0.4rem; color: #333; }
+  p.note { font-size: 0.8rem; color: #777; margin-bottom: 2rem; }
+  .palettes { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
 
-  /* ---- PALETTE CARD ---- */
-  .palette-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.1); }
-  .palette-card-header { padding: 1rem 1.2rem; background: #f9f9f9; border-bottom: 1px solid #eee; }
-  .palette-card-header strong { font-size: 0.95rem; }
-  .palette-card-header p { font-size: 0.78rem; color: #666; margin-top: 0.2rem; }
-  .swatches { display: flex; height: 60px; }
-  .swatch { flex: 1; }
-  .swatch-label { padding: 0.4rem 0.6rem; font-size: 0.7rem; color: #999; font-family: monospace; }
+  .palette-card { background: white; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 16px rgba(0,0,0,0.1); }
+  .palette-card-header { padding: 0.9rem 1.2rem 0.7rem; background: #fafafa; border-bottom: 1px solid #eee; }
+  .palette-card-header strong { font-size: 0.9rem; display: block; margin-bottom: 0.2rem; }
+  .palette-card-header p { font-size: 0.75rem; color: #888; }
+  .swatches { display: flex; height: 48px; }
+  .swatch { flex: 1; position: relative; }
+  .swatch-row { display: flex; padding: 0.3rem 0.5rem 0.5rem; gap: 0.8rem; flex-wrap: wrap; }
+  .swatch-label { font-size: 0.68rem; color: #aaa; font-family: monospace; }
 
-  /* ---- MINI MOCK ---- */
-  .mini-mock { font-family: 'Outfit', sans-serif; font-size: 0.78rem; }
-  .mock-header { height: 40px; display: flex; align-items: center; padding: 0 1rem; font-weight: 600; font-size: 0.8rem; }
-  .mock-hero { min-height: 80px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1rem; text-align: center; }
-  .mock-hero .title { font-family: 'Fraunces', serif; font-size: 1.5rem; line-height: 1; margin-bottom: 0.3rem; }
-  .mock-hero .sub { font-size: 0.75rem; opacity: 0.7; font-style: italic; }
+  /* MINI MOCK */
+  .mini-mock { font-size: 0.78rem; }
+  .mock-header { height: 36px; display: flex; align-items: center; padding: 0 1rem; font-weight: 600; font-size: 0.82rem; letter-spacing: 0.01em; }
+  .mock-hero { min-height: 90px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.2rem 1rem; text-align: center; }
+  .mock-title { font-family: 'Fraunces', serif; font-size: 1.8rem; line-height: 1; }
+  .mock-title-2 { font-family: 'Fraunces', serif; font-size: 1.8rem; font-style: italic; line-height: 1; margin-bottom: 0.4rem; }
+  .mock-sub { font-size: 0.7rem; opacity: 0.55; letter-spacing: 0.05em; }
   .mock-section { padding: 0.9rem 1rem; }
-  .mock-section h3 { font-family: 'Fraunces', serif; font-size: 0.9rem; margin-bottom: 0.4rem; }
-  .mock-section p { font-size: 0.72rem; line-height: 1.5; opacity: 0.8; }
-  .mock-card { border-radius: 6px; padding: 0.6rem 0.8rem; margin-top: 0.5rem; font-size: 0.72rem; }
-  .mock-btn { display: inline-block; margin-top: 0.6rem; padding: 0.35rem 0.8rem; border-radius: 20px; font-size: 0.72rem; font-weight: 600; }
-  .mock-footer { padding: 0.8rem 1rem; font-size: 0.7rem; text-align: center; opacity: 0.8; }
-  .divider { height: 1px; opacity: 0.15; }
+  .mock-section h3 { font-family: 'Fraunces', serif; font-size: 0.85rem; margin-bottom: 0.35rem; }
+  .mock-section p { font-size: 0.7rem; line-height: 1.5; opacity: 0.75; }
+  .mock-btn { display: inline-block; margin-top: 0.55rem; padding: 0.3rem 0.75rem; border-radius: 20px; font-size: 0.7rem; font-weight: 600; }
+  .mock-card { border-radius: 6px; padding: 0.55rem 0.7rem; margin-top: 0.45rem; font-size: 0.7rem; line-height: 1.4; }
+  .mock-footer { padding: 0.7rem 1rem; font-size: 0.68rem; text-align: center; }
 </style>
 </head>
 <body>
 
-<h1>Prévisualisation palettes — Sophie Bijjani</h1>
+<h1>Palettes — v2</h1>
+<p class="note">Gris pâle comme base · jaunes plus frais · anthracite au plus foncé (pas de noir)</p>
 
 <div class="palettes">
 
-  <!-- ===== PALETTE A: Beurre Doux ===== -->
+  <!-- A: Gris perle + citron très pâle -->
   <div class="palette-card">
     <div class="palette-card-header">
-      <strong>A — Beurre Doux</strong>
-      <p>Jaune beurre chaud · pervenche · fond crème · foncé sobre</p>
+      <strong>A — Gris Perle + Citron Givré</strong>
+      <p>Base gris très pâle · jaune-citron discret · pervenche</p>
     </div>
     <div class="swatches">
-      <div class="swatch" style="background:#F5E6A8"></div>
-      <div class="swatch" style="background:#FEFBEF"></div>
-      <div class="swatch" style="background:#7B8EC8"></div>
-      <div class="swatch" style="background:#2d2d3a"></div>
-      <div class="swatch" style="background:#ffffff"></div>
+      <div class="swatch" style="background:#F3F3F1;"></div>
+      <div class="swatch" style="background:#F0EEC8;"></div>
+      <div class="swatch" style="background:#7B8EC8;"></div>
+      <div class="swatch" style="background:#3A3A4A;"></div>
+      <div class="swatch" style="background:#ffffff;"></div>
     </div>
-    <div style="display:flex; gap:0.3rem; padding:0.3rem 0.6rem 0.6rem;">
-      <span class="swatch-label">#F5E6A8</span>
-      <span class="swatch-label">#FEFBEF</span>
-      <span class="swatch-label">#7B8EC8</span>
-      <span class="swatch-label">#2d2d3a</span>
+    <div class="swatch-row">
+      <span class="swatch-label">#F3F3F1 base</span>
+      <span class="swatch-label">#F0EEC8 jaune</span>
+      <span class="swatch-label">#7B8EC8 pervenche</span>
+      <span class="swatch-label">#3A3A4A foncé</span>
     </div>
     <div class="mini-mock">
-      <div class="mock-header" style="background:#2d2d3a; color:#FEFBEF;">Sophie Bi<span style="color:#7B8EC8">jj</span>ani</div>
-      <div class="mock-hero" style="background:#FEFBEF; color:#2d2d3a;">
-        <div class="title">Inspire</div>
-        <div class="title" style="font-style:italic; color:#7B8EC8">exprime</div>
-        <div class="sub">Artiste multidisciplinaire · Montréal</div>
+      <div class="mock-header" style="background:#3A3A4A; color:#F3F3F1;">Sophie Bi<span style="color:#7B8EC8;">jj</span>ani</div>
+      <div class="mock-hero" style="background:#F3F3F1; color:#3A3A4A;">
+        <div class="mock-title">Inspire</div>
+        <div class="mock-title-2" style="color:#7B8EC8;">exprime</div>
+        <div class="mock-sub">Artiste multidisciplinaire · Montréal</div>
       </div>
-      <div class="mock-section" style="background:#ffffff; color:#2d2d3a;">
+      <div class="mock-section" style="background:#ffffff; color:#3A3A4A;">
         <h3>Circlesong</h3>
-        <p>Une pratique de chant collectif improvisé, portée par l'écoute et la présence.</p>
+        <p>Une pratique de chant collectif improvisé, portée par l'écoute.</p>
         <span class="mock-btn" style="background:#7B8EC8; color:#fff;">Découvrir →</span>
       </div>
-      <div class="divider" style="background:#2d2d3a;"></div>
-      <div class="mock-section" style="background:#F5E6A8; color:#2d2d3a;">
+      <div class="mock-section" style="background:#F0EEC8; color:#3A3A4A;">
         <h3>Ce que je propose</h3>
         <div class="mock-card" style="background:#fff; border-left:3px solid #7B8EC8;">
           <strong>Spectacles & MC</strong><br>Je porte l'énergie d'un événement.
         </div>
       </div>
-      <div class="mock-footer" style="background:#2d2d3a; color:#FEFBEF;">© 2025 Sophie Bijjani</div>
+      <div class="mock-footer" style="background:#3A3A4A; color:#F3F3F1;">© 2025 Sophie Bijjani · Inspire ༅ Exprime</div>
     </div>
   </div>
 
-  <!-- ===== PALETTE B: Citron Givré ===== -->
+  <!-- B: Gris clair + jaune très pâle quasi-blanc -->
   <div class="palette-card">
     <div class="palette-card-header">
-      <strong>B — Citron Givré</strong>
-      <p>Jaune cool & muted (notes verdâtres) · pervenche · blanc</p>
+      <strong>B — Gris Clair + Jaune Effacé</strong>
+      <p>Base gris pâle · jaune ultra-discret · pervenche doux</p>
     </div>
     <div class="swatches">
-      <div class="swatch" style="background:#DDD9A4"></div>
-      <div class="swatch" style="background:#F4F2E8"></div>
-      <div class="swatch" style="background:#7B8EC8"></div>
-      <div class="swatch" style="background:#2d2d3a"></div>
-      <div class="swatch" style="background:#ffffff"></div>
+      <div class="swatch" style="background:#EFEFED;"></div>
+      <div class="swatch" style="background:#F7F5DF;"></div>
+      <div class="swatch" style="background:#8594C8;"></div>
+      <div class="swatch" style="background:#2d2d3a;"></div>
+      <div class="swatch" style="background:#ffffff;"></div>
     </div>
-    <div style="display:flex; gap:0.3rem; padding:0.3rem 0.6rem 0.6rem;">
-      <span class="swatch-label">#DDD9A4</span>
-      <span class="swatch-label">#F4F2E8</span>
-      <span class="swatch-label">#7B8EC8</span>
-      <span class="swatch-label">#2d2d3a</span>
+    <div class="swatch-row">
+      <span class="swatch-label">#EFEFED base</span>
+      <span class="swatch-label">#F7F5DF jaune</span>
+      <span class="swatch-label">#8594C8 pervenche</span>
+      <span class="swatch-label">#2d2d3a foncé</span>
     </div>
     <div class="mini-mock">
-      <div class="mock-header" style="background:#2d2d3a; color:#F4F2E8;">Sophie Bi<span style="color:#7B8EC8">jj</span>ani</div>
-      <div class="mock-hero" style="background:#F4F2E8; color:#2d2d3a;">
-        <div class="title">Inspire</div>
-        <div class="title" style="font-style:italic; color:#7B8EC8">exprime</div>
-        <div class="sub">Artiste multidisciplinaire · Montréal</div>
+      <div class="mock-header" style="background:#2d2d3a; color:#EFEFED;">Sophie Bi<span style="color:#8594C8;">jj</span>ani</div>
+      <div class="mock-hero" style="background:#EFEFED; color:#2d2d3a;">
+        <div class="mock-title">Inspire</div>
+        <div class="mock-title-2" style="color:#8594C8;">exprime</div>
+        <div class="mock-sub">Artiste multidisciplinaire · Montréal</div>
       </div>
       <div class="mock-section" style="background:#ffffff; color:#2d2d3a;">
         <h3>Circlesong</h3>
-        <p>Une pratique de chant collectif improvisé, portée par l'écoute et la présence.</p>
+        <p>Une pratique de chant collectif improvisé, portée par l'écoute.</p>
+        <span class="mock-btn" style="background:#8594C8; color:#fff;">Découvrir →</span>
+      </div>
+      <div class="mock-section" style="background:#F7F5DF; color:#2d2d3a;">
+        <h3>Ce que je propose</h3>
+        <div class="mock-card" style="background:#fff; border-left:3px solid #8594C8;">
+          <strong>Spectacles & MC</strong><br>Je porte l'énergie d'un événement.
+        </div>
+      </div>
+      <div class="mock-footer" style="background:#2d2d3a; color:#EFEFED;">© 2025 Sophie Bijjani · Inspire ༅ Exprime</div>
+    </div>
+  </div>
+
+  <!-- C: Presque blanc + jaune vif pâle + pervenche saturé -->
+  <div class="palette-card">
+    <div class="palette-card-header">
+      <strong>C — Blanc Gris + Jaune Vif Pâle</strong>
+      <p>Base quasi-blanche · jaune plus vif mais très léger · pervenche plus saturé</p>
+    </div>
+    <div class="swatches">
+      <div class="swatch" style="background:#F5F5F3;"></div>
+      <div class="swatch" style="background:#F4F1AF;"></div>
+      <div class="swatch" style="background:#6B7EC0;"></div>
+      <div class="swatch" style="background:#2d2d3a;"></div>
+      <div class="swatch" style="background:#ffffff;"></div>
+    </div>
+    <div class="swatch-row">
+      <span class="swatch-label">#F5F5F3 base</span>
+      <span class="swatch-label">#F4F1AF jaune</span>
+      <span class="swatch-label">#6B7EC0 pervenche</span>
+      <span class="swatch-label">#2d2d3a foncé</span>
+    </div>
+    <div class="mini-mock">
+      <div class="mock-header" style="background:#2d2d3a; color:#F5F5F3;">Sophie Bi<span style="color:#6B7EC0;">jj</span>ani</div>
+      <div class="mock-hero" style="background:#F5F5F3; color:#2d2d3a;">
+        <div class="mock-title">Inspire</div>
+        <div class="mock-title-2" style="color:#6B7EC0;">exprime</div>
+        <div class="mock-sub">Artiste multidisciplinaire · Montréal</div>
+      </div>
+      <div class="mock-section" style="background:#ffffff; color:#2d2d3a;">
+        <h3>Circlesong</h3>
+        <p>Une pratique de chant collectif improvisé, portée par l'écoute.</p>
+        <span class="mock-btn" style="background:#6B7EC0; color:#fff;">Découvrir →</span>
+      </div>
+      <div class="mock-section" style="background:#F4F1AF; color:#2d2d3a;">
+        <h3>Ce que je propose</h3>
+        <div class="mock-card" style="background:#fff; border-left:3px solid #6B7EC0;">
+          <strong>Spectacles & MC</strong><br>Je porte l'énergie d'un événement.
+        </div>
+      </div>
+      <div class="mock-footer" style="background:#2d2d3a; color:#F5F5F3;">© 2025 Sophie Bijjani · Inspire ༅ Exprime</div>
+    </div>
+  </div>
+
+  <!-- D: Gris bleuté + jaune très clair neutre -->
+  <div class="palette-card">
+    <div class="palette-card-header">
+      <strong>D — Gris Bleuté + Jaune Neutre</strong>
+      <p>Base gris avec sous-ton bleu · jaune neutre léger · pervenche unifié</p>
+    </div>
+    <div class="swatches">
+      <div class="swatch" style="background:#EEEEF2;"></div>
+      <div class="swatch" style="background:#F2EFC4;"></div>
+      <div class="swatch" style="background:#7B8EC8;"></div>
+      <div class="swatch" style="background:#33334A;"></div>
+      <div class="swatch" style="background:#ffffff;"></div>
+    </div>
+    <div class="swatch-row">
+      <span class="swatch-label">#EEEEF2 base</span>
+      <span class="swatch-label">#F2EFC4 jaune</span>
+      <span class="swatch-label">#7B8EC8 pervenche</span>
+      <span class="swatch-label">#33334A foncé</span>
+    </div>
+    <div class="mini-mock">
+      <div class="mock-header" style="background:#33334A; color:#EEEEF2;">Sophie Bi<span style="color:#7B8EC8;">jj</span>ani</div>
+      <div class="mock-hero" style="background:#EEEEF2; color:#33334A;">
+        <div class="mock-title">Inspire</div>
+        <div class="mock-title-2" style="color:#7B8EC8;">exprime</div>
+        <div class="mock-sub">Artiste multidisciplinaire · Montréal</div>
+      </div>
+      <div class="mock-section" style="background:#ffffff; color:#33334A;">
+        <h3>Circlesong</h3>
+        <p>Une pratique de chant collectif improvisé, portée par l'écoute.</p>
         <span class="mock-btn" style="background:#7B8EC8; color:#fff;">Découvrir →</span>
       </div>
-      <div class="divider" style="background:#2d2d3a;"></div>
-      <div class="mock-section" style="background:#DDD9A4; color:#2d2d3a;">
+      <div class="mock-section" style="background:#F2EFC4; color:#33334A;">
         <h3>Ce que je propose</h3>
         <div class="mock-card" style="background:#fff; border-left:3px solid #7B8EC8;">
           <strong>Spectacles & MC</strong><br>Je porte l'énergie d'un événement.
         </div>
       </div>
-      <div class="mock-footer" style="background:#2d2d3a; color:#F4F2E8;">© 2025 Sophie Bijjani</div>
-    </div>
-  </div>
-
-  <!-- ===== PALETTE C: Poire & Pervenche ===== -->
-  <div class="palette-card">
-    <div class="palette-card-header">
-      <strong>C — Poire & Pervenche</strong>
-      <p>Jaune très soft neutralisé · fond blanc · pervenche lumineux</p>
-    </div>
-    <div class="swatches">
-      <div class="swatch" style="background:#EAE4B8"></div>
-      <div class="swatch" style="background:#FAFAF5"></div>
-      <div class="swatch" style="background:#8B9DD4"></div>
-      <div class="swatch" style="background:#2d2d3a"></div>
-      <div class="swatch" style="background:#ffffff"></div>
-    </div>
-    <div style="display:flex; gap:0.3rem; padding:0.3rem 0.6rem 0.6rem;">
-      <span class="swatch-label">#EAE4B8</span>
-      <span class="swatch-label">#FAFAF5</span>
-      <span class="swatch-label">#8B9DD4</span>
-      <span class="swatch-label">#2d2d3a</span>
-    </div>
-    <div class="mini-mock">
-      <div class="mock-header" style="background:#2d2d3a; color:#FAFAF5;">Sophie Bi<span style="color:#8B9DD4">jj</span>ani</div>
-      <div class="mock-hero" style="background:#FAFAF5; color:#2d2d3a;">
-        <div class="title">Inspire</div>
-        <div class="title" style="font-style:italic; color:#8B9DD4">exprime</div>
-        <div class="sub">Artiste multidisciplinaire · Montréal</div>
-      </div>
-      <div class="mock-section" style="background:#ffffff; color:#2d2d3a;">
-        <h3>Circlesong</h3>
-        <p>Une pratique de chant collectif improvisé, portée par l'écoute et la présence.</p>
-        <span class="mock-btn" style="background:#8B9DD4; color:#fff;">Découvrir →</span>
-      </div>
-      <div class="divider" style="background:#2d2d3a;"></div>
-      <div class="mock-section" style="background:#EAE4B8; color:#2d2d3a;">
-        <h3>Ce que je propose</h3>
-        <div class="mock-card" style="background:#fff; border-left:3px solid #8B9DD4;">
-          <strong>Spectacles & MC</strong><br>Je porte l'énergie d'un événement.
-        </div>
-      </div>
-      <div class="mock-footer" style="background:#2d2d3a; color:#FAFAF5;">© 2025 Sophie Bijjani</div>
-    </div>
-  </div>
-
-  <!-- ===== PALETTE D: Sable & Ciel ===== -->
-  <div class="palette-card">
-    <div class="palette-card-header">
-      <strong>D — Sable & Ciel</strong>
-      <p>Jaune sable neutralisé · pervenche pâle comme section · foncé warm</p>
-    </div>
-    <div class="swatches">
-      <div class="swatch" style="background:#E8DFA8"></div>
-      <div class="swatch" style="background:#EEF1FA"></div>
-      <div class="swatch" style="background:#7B8EC8"></div>
-      <div class="swatch" style="background:#2d2d3a"></div>
-      <div class="swatch" style="background:#ffffff"></div>
-    </div>
-    <div style="display:flex; gap:0.3rem; padding:0.3rem 0.6rem 0.6rem;">
-      <span class="swatch-label">#E8DFA8</span>
-      <span class="swatch-label">#EEF1FA</span>
-      <span class="swatch-label">#7B8EC8</span>
-      <span class="swatch-label">#2d2d3a</span>
-    </div>
-    <div class="mini-mock">
-      <div class="mock-header" style="background:#2d2d3a; color:#ffffff;">Sophie Bi<span style="color:#7B8EC8">jj</span>ani</div>
-      <div class="mock-hero" style="background:#EEF1FA; color:#2d2d3a;">
-        <div class="title">Inspire</div>
-        <div class="title" style="font-style:italic; color:#7B8EC8">exprime</div>
-        <div class="sub">Artiste multidisciplinaire · Montréal</div>
-      </div>
-      <div class="mock-section" style="background:#ffffff; color:#2d2d3a;">
-        <h3>Circlesong</h3>
-        <p>Une pratique de chant collectif improvisé, portée par l'écoute et la présence.</p>
-        <span class="mock-btn" style="background:#7B8EC8; color:#fff;">Découvrir →</span>
-      </div>
-      <div class="divider" style="background:#2d2d3a;"></div>
-      <div class="mock-section" style="background:#E8DFA8; color:#2d2d3a;">
-        <h3>Ce que je propose</h3>
-        <div class="mock-card" style="background:#fff; border-left:3px solid #7B8EC8;">
-          <strong>Spectacles & MC</strong><br>Je porte l'énergie d'un événement.
-        </div>
-      </div>
-      <div class="mock-footer" style="background:#2d2d3a; color:#ffffff;">© 2025 Sophie Bijjani</div>
+      <div class="mock-footer" style="background:#33334A; color:#EEEEF2;">© 2025 Sophie Bijjani · Inspire ༅ Exprime</div>
     </div>
   </div>
 
 </div>
 
-<p style="font-size:0.8rem; color:#888; margin-top: 1rem;">Note: Ces maquettes sont des aperçus miniatures — les vraies pages seraient plus aérées avec plus d'espace entre les sections.</p>
+<p style="font-size:0.75rem; color:#aaa; margin-top:1.5rem;">Les maquettes sont minuscules — en vrai les sections seraient bien plus aérées.</p>
 
 </body>
 </html>
