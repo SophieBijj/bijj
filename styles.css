@@ -1600,6 +1600,9 @@ p:last-child { margin-bottom: 0; }
 
     /* Index */
     .hero-social-vertical { display: none; }
+    .hero { justify-content: center; }
+    .hero-content { padding: 0 24px 6rem; max-width: 100%; }
+    .hero-tagline { right: auto; left: 50%; transform: translateX(-50%); }
 
     .intro-inner {
         grid-template-columns: 1fr;
