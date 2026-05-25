@@ -161,7 +161,7 @@ p:last-child { margin-bottom: 0; }
     white-space: nowrap;
 }
 
-.logo .j-accent { color: var(--color-rose); }
+.logo .j-accent { color: var(--color-mint); }
 
 .header-nav { display: flex; gap: 2rem; }
 
@@ -344,7 +344,7 @@ p:last-child { margin-bottom: 0; }
 
 /* ===== TESTIMONIAL ===== */
 .testimonial {
-    background: var(--color-rose);
+    background: var(--color-mint);
     color: var(--color-navy);
     padding: 4rem 0;
 }
