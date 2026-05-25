@@ -104,7 +104,7 @@ body {
     font-size: 17px;
     line-height: 1.72;
     color: var(--text-body);
-    background: var(--blanc);
+    background: var(--color-blush);
     overflow-x: hidden;
 }
 
@@ -353,8 +353,8 @@ p:last-child { margin-bottom: 0; }
 
 /* ===== CARD ===== */
 .card {
-    background: var(--blanc);
-    border: 1.5px solid var(--periwinkle);
+    background: rgba(91, 114, 196, 0.07);
+    border: 1.5px solid var(--border-periwinkle-lo);
     border-radius: var(--radius);
     padding: 2rem 1.75rem;
     box-shadow: var(--shadow);
@@ -848,7 +848,7 @@ p:last-child { margin-bottom: 0; }
 
 /* ===== CE QUE JE FAIS (liste éditoriale) ===== */
 .what-i-do {
-    background: var(--blanc);
+    background: var(--color-blush);
     padding: 5rem 0 4rem;
 }
 
@@ -929,7 +929,8 @@ p:last-child { margin-bottom: 0; }
 
 .cs-intro {
     padding: 5rem 0;
-    background: var(--blanc);
+    background: var(--color-periwinkle);
+    color: var(--text-on-dark-body);
 }
 
 .cs-intro .container {
@@ -941,11 +942,12 @@ p:last-child { margin-bottom: 0; }
 
 .cs-intro-text h2 {
     margin-bottom: 1.2rem;
+    color: var(--blanc);
 }
 
 .cs-intro-text p {
     font-size: 1.05rem;
-    color: var(--text-body);
+    color: var(--text-on-dark-body);
 }
 
 .cs-session-photo {
@@ -959,7 +961,8 @@ p:last-child { margin-bottom: 0; }
 /* ===== PAGE INTRO (shared 2-col pattern: title + text / photo) ===== */
 .page-intro {
     padding: 5rem 0;
-    background: var(--blanc);
+    background: var(--color-periwinkle);
+    color: var(--text-on-dark-body);
 }
 
 .page-intro .container {
@@ -969,8 +972,8 @@ p:last-child { margin-bottom: 0; }
     align-items: start;
 }
 
-.page-intro-text h2 { margin-bottom: 1.2rem; }
-.page-intro-text p  { font-size: 1.05rem; color: var(--text-body); }
+.page-intro-text h2 { margin-bottom: 1.2rem; color: var(--blanc); }
+.page-intro-text p  { font-size: 1.05rem; color: var(--text-on-dark-body); }
 
 .page-intro-photo img {
     width: 100%;
@@ -1080,7 +1083,7 @@ p:last-child { margin-bottom: 0; }
 }
 
 .offres-section {
-    background: var(--blanc);
+    background: var(--color-blush);
     padding: 5rem 0;
 }
 
@@ -1158,10 +1161,10 @@ p:last-child { margin-bottom: 0; }
 }
 
 .value-card {
-    background: var(--blanc);
+    background: rgba(91, 114, 196, 0.07);
     border-radius: var(--radius);
     padding: 2rem 1.5rem;
-    border-left: 4px solid var(--periwinkle);
+    border-left: 4px solid var(--color-periwinkle);
     box-shadow: var(--shadow);
 }
 
@@ -1209,8 +1212,8 @@ p:last-child { margin-bottom: 0; }
     font-size: 0.88rem;
     font-weight: 500;
     color: var(--color-cobalt);
-    background: var(--blanc);
-    border: 1.5px solid rgba(91, 114, 196, 0.3);
+    background: rgba(91, 114, 196, 0.10);
+    border: 1.5px solid rgba(91, 114, 196, 0.25);
     border-radius: 100px;
     padding: 0.4em 1.2em;
     transition: background var(--transition), border-color var(--transition);
@@ -1244,7 +1247,7 @@ p:last-child { margin-bottom: 0; }
    ======================================== */
 
 .videos-section {
-    background: var(--blanc);
+    background: var(--color-blush);
     padding: 5rem 0;
 }
 
@@ -1270,7 +1273,7 @@ p:last-child { margin-bottom: 0; }
 }
 
 .spotify-block {
-    background: var(--jaune-pale);
+    background: var(--color-blush);
     padding: 5rem 0;
     text-align: center;
 }
@@ -1288,7 +1291,7 @@ p:last-child { margin-bottom: 0; }
 }
 
 .streaming-section {
-    background: var(--blanc);
+    background: var(--color-blush);
     padding: 4rem 0;
     text-align: center;
 }
@@ -1310,9 +1313,20 @@ p:last-child { margin-bottom: 0; }
    FACILITATION-SPECIFIC STYLES
    ======================================== */
 
-.facil-intro {
-    background: var(--blanc);
-    padding: 5.5rem 0;
+.facil-mc-section {
+    background: var(--color-blush);
+    padding: 4rem 0;
+}
+
+.facil-mc-section h2 {
+    margin-bottom: 1rem;
+}
+
+.facil-mc-section p {
+    font-size: 1.05rem;
+    color: var(--text-body);
+    margin-bottom: 1.4rem;
+    max-width: 680px;
 }
 
 .facil-intro-inner {
@@ -1348,7 +1362,7 @@ p:last-child { margin-bottom: 0; }
 }
 
 .spectacles-section {
-    background: var(--jaune-pale);
+    background: var(--color-blush);
     padding: 5rem 0;
 }
 
@@ -1364,8 +1378,8 @@ p:last-child { margin-bottom: 0; }
 }
 
 .spectacle-card {
-    background: var(--blanc);
-    border: 1.5px solid var(--periwinkle);
+    background: rgba(91, 114, 196, 0.07);
+    border: 1.5px solid var(--border-periwinkle-lo);
     border-radius: var(--radius);
     padding: 1.8rem 1.5rem;
     box-shadow: var(--shadow);
@@ -1413,8 +1427,8 @@ p:last-child { margin-bottom: 0; }
 }
 
 .conf-item {
-    background: var(--blanc);
-    border: 1.5px solid rgba(91, 114, 196, 0.2);
+    background: rgba(91, 114, 196, 0.07);
+    border: 1.5px solid var(--border-periwinkle-lo);
     border-radius: 8px;
     padding: 2rem 1.4rem;
     text-align: center;
@@ -1434,7 +1448,7 @@ p:last-child { margin-bottom: 0; }
 }
 
 .facil-pdf-cta {
-    background: var(--blanc);
+    background: var(--color-blush);
     padding: 3rem 0;
     text-align: center;
 }
@@ -1457,7 +1471,7 @@ p:last-child { margin-bottom: 0; }
    ======================================== */
 
 .contact-section {
-    background: var(--blanc);
+    background: var(--color-blush);
     padding: 5.5rem 0;
 }
 
@@ -1500,8 +1514,8 @@ p:last-child { margin-bottom: 0; }
     font-family: var(--font-body);
     font-size: 1rem;
     color: var(--text-body);
-    background: var(--blanc);
-    border: 1.5px solid var(--gris-perle);
+    background: rgba(91, 114, 196, 0.05);
+    border: 1.5px solid var(--border-periwinkle-lo);
     border-radius: 6px;
     padding: 0.7em 0.9em;
     outline: none;
