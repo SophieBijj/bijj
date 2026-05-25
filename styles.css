@@ -376,8 +376,8 @@ p:last-child { margin-bottom: 0; }
 /* ===== PAGE HERO (full photo, inner pages) ===== */
 .page-hero {
     position: relative;
-    height: 70vh;
-    min-height: 480px;
+    height: 100vh;
+    min-height: 600px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1527,7 +1527,7 @@ p:last-child { margin-bottom: 0; }
     .header-social { display: none; }
     .mobile-menu-toggle { display: block; }
 
-    .page-hero { height: 55vh; min-height: 380px; }
+    .page-hero { height: 100vh; min-height: 500px; }
     .page-hero-content { padding: 80px 24px 0; }
 
     .footer-inner { padding: 0 24px; }
