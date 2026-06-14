@@ -1546,7 +1546,7 @@ p:last-child { margin-bottom: 0; }
 
     .hero-social-vertical { display: none; }
     .hero { justify-content: center; }
-    .hero-content { padding: 0 24px 8rem; max-width: 100%; }
+    .hero-content { padding: 0 24px 12rem; max-width: 100%; }
     .hero-tagline { right: auto; left: 50%; transform: translateX(-50%); }
 
     .intro-inner { grid-template-columns: 1fr; gap: 2rem; }
@@ -1588,7 +1588,7 @@ p:last-child { margin-bottom: 0; }
    ======================================== */
 
 @media (max-width: 480px) {
-    .hero-content { padding: 0 16px; }
+    .hero-content { padding: 0 16px 12rem; }
     .line-inspire { font-size: clamp(3rem, 18vw, 5rem); }
     .line-exprime { font-size: clamp(1.6rem, 10vw, 2.5rem); }
 
