@@ -411,7 +411,7 @@ p:last-child { margin-bottom: 0; }
     position: relative;
     z-index: 2;
     text-align: right;
-    padding: 0 6rem 7rem 24px;
+    padding: 0 6rem 3rem 24px;
 }
 
 .page-photo-banner {
