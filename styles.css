@@ -1358,6 +1358,11 @@ p:last-child { margin-bottom: 0; }
     color: var(--text-body);
 }
 
+.spectacles-cta {
+    text-align: center;
+    margin-top: 3rem;
+}
+
 .conf-section {
     background: var(--color-navy-surface);
     padding: 5rem 0;
