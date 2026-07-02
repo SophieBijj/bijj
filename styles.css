@@ -1023,6 +1023,13 @@ p:last-child { margin-bottom: 0; }
     font-weight: 400;
 }
 
+.where-section .offres-grid { margin-bottom: 4rem; }
+
+.where-cta {
+    text-align: center;
+    margin-top: 3rem;
+}
+
 .offres-section {
     background: var(--color-navy);
     padding: 5rem 0;
