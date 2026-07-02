@@ -1308,7 +1308,15 @@ p:last-child { margin-bottom: 0; }
 
 .spectacles-section h2 {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.spectacles-intro {
+    max-width: 640px;
+    margin: 0 auto 3rem;
+    text-align: center;
+    font-size: 1.05rem;
+    color: var(--text-body);
 }
 
 .spectacles-grid {
