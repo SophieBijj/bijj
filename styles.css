@@ -1391,6 +1391,11 @@ p:last-child { margin-bottom: 0; }
     margin: 2rem 0;
 }
 
+.atelier-list-inner {
+    max-width: 780px;
+    margin: 0 auto;
+}
+
 .conf-item {
     background: var(--color-navy-mid);
     border: 1.5px solid var(--border-periwinkle-lo);
