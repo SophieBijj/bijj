@@ -994,14 +994,14 @@ p:last-child { margin-bottom: 0; }
 }
 
 .where-section {
-    background: var(--color-periwinkle);
+    background: var(--color-navy);
     padding: 5rem 0;
-    color: var(--text-on-dark-body);
+    color: var(--text-body);
 }
 
 .where-section h2 {
     text-align: center;
-    color: var(--color-blush);
+    color: var(--text-primary);
     margin-bottom: 3rem;
 }
 
@@ -1012,8 +1012,8 @@ p:last-child { margin-bottom: 0; }
 }
 
 .where-item {
-    background: var(--color-navy);
-    border: 1px solid rgba(17, 27, 46, 0.15);
+    background: var(--color-navy-surface);
+    border: 1.5px solid var(--border-periwinkle-lo);
     border-radius: 8px;
     padding: 1.4rem 1.2rem;
     text-align: center;
@@ -1385,6 +1385,10 @@ p:last-child { margin-bottom: 0; }
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
+}
+
+.facil-mc-section .conf-grid {
+    margin: 2rem 0;
 }
 
 .conf-item {
