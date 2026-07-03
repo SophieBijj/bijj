@@ -994,14 +994,14 @@ p:last-child { margin-bottom: 0; }
 }
 
 .where-section {
-    background: var(--color-mint);
+    background: var(--color-periwinkle);
     padding: 5rem 0;
-    color: var(--color-navy);
+    color: var(--text-on-dark-body);
 }
 
 .where-section h2 {
     text-align: center;
-    color: var(--color-navy);
+    color: var(--color-blush);
     margin-bottom: 3rem;
 }
 
