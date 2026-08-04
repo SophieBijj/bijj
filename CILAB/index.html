@@ -6,62 +6,49 @@
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,700;0,900;1,400&amp;family=Anton&amp;display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Alegreya', serif; }
+    body { font-family: 'Alegreya', serif; background: #3d2a6b; }
     .cilab-title { font-family: 'Anton', sans-serif; }
     .lang-en { display: none; }
     .lang-en.lang-visible { display: revert; }
   </style>
  </head>
- <body class="w-full min-h-screen" style="background: rgb(61, 42, 107);"><!-- Language Toggle --> <button id="lang-toggle" class="fixed top-4 right-4 z-50 px-4 py-2 rounded-full text-sm font-bold shadow-lg transition-all" style="background:#3d2a6b;color:#fff;"> ENG </button> <!-- Hero -->
-  <header class="relative w-full" style="min-height: calc(70 * min(var(--vh, 1vh), 1vh));">
-   <img class="absolute inset-0 w-full h-full object-cover" style="object-position:center center;" loading="lazy" src="CILAB_bg.png" alt="Danseur·euses en contact improvisation, recherche en mouvement">
-   <div class="absolute inset-0 bg-gradient-to-b from-[#e3ddf5]/10 via-[#3d2a6b]/40 to-[#2a1d4d]/90"></div>
-   <div class="relative z-10 flex flex-col items-center justify-center text-center px-6 py-16" style="min-height: calc(70 * min(var(--vh, 1vh), 1vh));">
-    <h1 class="cilab-title tracking-wider" style="color: rgb(255, 255, 255); font-size: 88px; line-height: 0.95;">RESEARCH<br>LAB</h1>
-    <div class="mt-4 px-5 py-2 rounded" style="background: rgb(255, 255, 255, 0.15); border: 1px solid rgba(255,255,255,0.4);">
-     <span class="font-bold uppercase tracking-wide lang-fr" style="color: #fff; font-size: 14px;">Une investigation en contact improvisation</span>
-     <span class="font-bold uppercase tracking-wide lang-en" style="color: #fff; font-size: 14px;">An investigation into contact improv</span>
-    </div>
-    <div class="mt-6 px-8 py-3 border-2 border-white" style="background: rgb(255, 255, 255);">
-     <span class="text-2xl font-bold lang-fr" style="color: rgb(61, 42, 107); font-size: 22px;">Mardis 17h–20h</span>
-     <span class="text-2xl font-bold lang-en" style="color: rgb(61, 42, 107); font-size: 22px;">Tuesdays 5–8 PM</span>
-    </div>
-    <p class="mt-6 font-bold" style="color: rgb(230, 224, 245); font-size: 18px;">White Wall Studio</p>
-    <p class="italic" style="color: rgb(210, 200, 240); font-size: 16px;">4532 Av. Laval, Montréal, QC</p>
-    <p class="mt-8 italic text-xl lang-fr" style="color: rgb(230, 224, 245); font-size: 20px;">Saison automnale — 8 septembre au 17 novembre</p>
-    <p class="mt-8 italic text-xl lang-en" style="color: rgb(230, 224, 245); font-size: 20px;">Fall season — September 8th to November 17th</p>
+ <body class="w-full min-h-screen"><!-- Language Toggle --> <button id="lang-toggle" class="fixed top-4 right-4 z-50 px-4 py-2 rounded-full text-sm font-bold shadow-lg transition-all" style="background:#f5a623;color:#3d2a6b;"> ENG </button> <!-- Hero -->
+  <header class="relative w-full flex items-center justify-center text-center px-6" style="min-height: 80vh;">
+   <img class="absolute inset-0 w-full h-full object-cover" style="object-position:center 30%;" loading="lazy" src="CILAB_bg.png" alt="Danseur·euses en contact improvisation, recherche en mouvement">
+   <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(61,42,107,0.25), rgba(61,42,107,0.55) 60%, rgba(42,29,77,0.9));"></div>
+   <div class="relative z-10 py-16">
+    <h1 class="cilab-title tracking-wider" style="color: #fff; font-size: 84px; line-height: 0.95;">RESEARCH<br>LAB</h1>
+    <p class="mt-5 lang-fr" style="color: #f5c876; font-size: 17px;">Une investigation en contact improvisation</p>
+    <p class="mt-5 lang-en" style="color: #f5c876; font-size: 17px;">An investigation into contact improv</p>
+    <p class="mt-8 lang-fr" style="color: #fff; font-size: 22px;">Mardis 17h–20h · White Wall Studio</p>
+    <p class="mt-8 lang-en" style="color: #fff; font-size: 22px;">Tuesdays 5–8 PM · White Wall Studio</p>
+    <p class="italic lang-fr" style="color: rgb(220, 212, 245); font-size: 15px;">4532 Av. Laval, Montréal, QC — 8 septembre au 17 novembre</p>
+    <p class="italic lang-en" style="color: rgb(220, 212, 245); font-size: 15px;">4532 Av. Laval, Montréal, QC — September 8th to November 17th</p>
    </div>
-  </header><!-- About -->
+  </header><!-- Info -->
   <section class="w-full px-6 py-16" style="background: #e3ddf5; color: #3d2a6b;">
-   <div class="max-w-3xl mx-auto text-center">
-    <p class="mb-3 lang-fr" style="color: rgb(90, 70, 140); font-size: 18px;">Espace de recherche en mouvement animé par</p>
-    <p class="mb-3 lang-en" style="color: rgb(90, 70, 140); font-size: 18px;">Movement research space held by</p>
-    <h2 class="font-bold uppercase mb-8" style="color: rgb(61, 42, 107); font-size: 26px;">Andrea Muñiz · Sophie Bijjani · Victoria Hill</h2>
-    <p class="lang-fr" style="color: rgb(70, 55, 110); font-size: 17px;">recherche horizontalisée, espace, investigation, curiosité intentionnelle, concentration, patience</p>
-    <p class="lang-en" style="color: rgb(70, 55, 110); font-size: 17px;">horizontalized research, space, investigation, intentional curiosity, focus, patience</p>
-    <p class="mt-8 italic" style="color: rgb(90, 70, 140); font-size: 18px;">Let's get nerdy together :)</p>
-   </div>
-  </section><!-- Registration & Pricing -->
-  <section class="w-full px-6 py-16" style="background: #2a1d4d; color: #fff;">
-   <div class="max-w-3xl mx-auto text-center">
-    <h2 class="mb-3 lang-fr" style="color: rgb(255, 255, 255); font-weight: 700; font-size: 30px;">Inscription &amp; tarifs</h2>
-    <h2 class="mb-3 lang-en" style="color: rgb(255, 255, 255); font-weight: 700; font-size: 30px;">Registration &amp; pricing</h2>
-    <p class="mb-8 text-3xl font-bold" style="color: #f5a623; font-size: 34px;">
-     <span class="lang-fr">À partir de 22 $ / laboratoire</span>
-     <span class="lang-en">Starting at $22 / lab</span>
-    </p>
-    <p class="lang-fr" style="color: rgb(220, 212, 245); font-size: 17px;">Questions / pour vous inscrire : <a href="mailto:victoriaemiliehill@gmail.com" class="underline">victoriaemiliehill@gmail.com</a></p>
-    <p class="lang-en" style="color: rgb(220, 212, 245); font-size: 17px;">Questions / to register: <a href="mailto:victoriaemiliehill@gmail.com" class="underline">victoriaemiliehill@gmail.com</a></p>
-    <div class="mt-10 inline-block px-8 py-6 rounded-lg" style="background: #f5a623; color: #2a1d4d;">
-     <p class="font-bold lang-fr" style="font-size: 15px;">Code QR vers l'événement Facebook</p>
-     <p class="font-bold lang-en" style="font-size: 15px;">QR code to FB event</p>
+   <div class="max-w-2xl mx-auto text-center">
+    <p class="mb-2 lang-fr" style="color: rgb(90, 70, 140); font-size: 17px;">Espace de recherche en mouvement animé par</p>
+    <p class="mb-2 lang-en" style="color: rgb(90, 70, 140); font-size: 17px;">Movement research space held by</p>
+    <h2 class="font-bold uppercase mb-6" style="color: rgb(61, 42, 107); font-size: 24px;">Andrea Muñiz · Sophie Bijjani · Victoria Hill</h2>
+    <p class="lang-fr" style="color: rgb(70, 55, 110); font-size: 16px;">recherche horizontalisée, espace, investigation, curiosité intentionnelle, concentration, patience</p>
+    <p class="lang-en" style="color: rgb(70, 55, 110); font-size: 16px;">horizontalized research, space, investigation, intentional curiosity, focus, patience</p>
+    <p class="mt-6 italic mb-10" style="color: rgb(90, 70, 140); font-size: 17px;">Let's get nerdy together :)</p>
+
+    <div style="border-top: 1px solid rgba(61,42,107,0.2);" class="pt-10">
+     <p class="text-3xl font-bold" style="color: #b3781f; font-size: 30px;">
+      <span class="lang-fr">À partir de 22 $ / laboratoire</span>
+      <span class="lang-en">Starting at $22 / lab</span>
+     </p>
+     <p class="mt-4 lang-fr" style="color: rgb(70, 55, 110); font-size: 16px;">Questions / pour vous inscrire : <a href="mailto:victoriaemiliehill@gmail.com" class="underline">victoriaemiliehill@gmail.com</a></p>
+     <p class="mt-4 lang-en" style="color: rgb(70, 55, 110); font-size: 16px;">Questions / to register: <a href="mailto:victoriaemiliehill@gmail.com" class="underline">victoriaemiliehill@gmail.com</a></p>
+     <p class="mt-6 lang-fr" style="color: rgb(90, 70, 140); font-size: 14px;">Code QR vers l'événement Facebook — à venir</p>
+     <p class="mt-6 lang-en" style="color: rgb(90, 70, 140); font-size: 14px;">QR code to FB event — coming soon</p>
     </div>
+
+    <p class="mt-12" style="color: rgb(140, 120, 180); font-size: 14px;">www.bijj.ca/CILAB</p>
    </div>
-  </section><!-- Footer -->
-  <footer class="w-full px-6 py-10 text-center" style="background: #1e1438;">
-   <p class="lang-fr" style="color: rgb(180, 168, 220); font-size: 16px;">www.bijj.ca/CILAB</p>
-   <p class="lang-en" style="color: rgb(180, 168, 220); font-size: 16px;">www.bijj.ca/CILAB</p>
-  </footer>
+  </section>
   <script>
     let currentLang = 'fr';
     const toggle = document.getElementById('lang-toggle');
