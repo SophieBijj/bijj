@@ -15,3 +15,18 @@
   from = "/SPARK"
   to = "/SPARK/index.html"
   status = 200
+
+[[redirects]]
+  from = "/CILAB"
+  to = "/CILAB/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/cilab"
+  to = "/CILAB/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/cilab/"
+  to = "/CILAB/index.html"
+  status = 200
