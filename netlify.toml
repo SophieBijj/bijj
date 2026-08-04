@@ -1,2 +1,17 @@
 [build]
   publish = "."
+
+[[redirects]]
+  from = "/spark"
+  to = "/SPARK/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/spark/"
+  to = "/SPARK/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/SPARK"
+  to = "/SPARK/index.html"
+  status = 200
