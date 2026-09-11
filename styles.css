@@ -1376,7 +1376,13 @@ p:last-child { margin-bottom: 0; }
 
 .calendar-section {
     background: var(--color-navy);
-    padding: 2rem 0 5rem;
+    padding: 5rem 0;
+}
+
+.calendar-section-title {
+    text-align: center;
+    color: var(--color-blush);
+    margin-bottom: 3rem;
 }
 
 .calendar-category {
