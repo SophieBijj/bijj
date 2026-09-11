@@ -1376,7 +1376,18 @@ p:last-child { margin-bottom: 0; }
 
 .calendar-section {
     background: var(--color-navy);
-    padding: 5rem 0;
+    padding: calc(80px + 5rem) 0 5rem;
+}
+
+.calendar-title {
+    font-family: var(--font-title);
+    font-size: clamp(4rem, 12vw, 9rem);
+    font-weight: 800;
+    font-optical-sizing: auto;
+    color: var(--color-blush);
+    letter-spacing: -0.01em;
+    text-align: center;
+    margin-bottom: 1rem;
 }
 
 .calendar-section-title {
@@ -1415,6 +1426,18 @@ p:last-child { margin-bottom: 0; }
     font-family: var(--font-title);
     color: var(--text-primary);
     margin-bottom: 0.3rem;
+}
+
+.calendar-event h3 a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color var(--transition), color var(--transition);
+}
+
+.calendar-event h3 a:hover {
+    color: var(--color-mint);
+    border-color: var(--color-mint);
 }
 
 .calendar-event .calendar-event-subtitle {
@@ -1704,6 +1727,7 @@ p:last-child { margin-bottom: 0; }
     .wid-arrow { font-size: 1.2rem; }
 
     .page-hero h1 { font-size: clamp(3rem, 18vw, 5rem); }
+    .calendar-title { font-size: clamp(3rem, 18vw, 5rem); }
 
     .cs-journey-inner { padding: 0 24px; }
     .footer-sponsors { gap: 1.2rem; }
