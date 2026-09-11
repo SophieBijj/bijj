@@ -1370,6 +1370,74 @@ p:last-child { margin-bottom: 0; }
     margin-top: 3rem;
 }
 
+/* ========================================
+   CALENDRIER-SPECIFIC STYLES
+   ======================================== */
+
+.calendar-section {
+    background: var(--color-navy);
+    padding: 2rem 0 5rem;
+}
+
+.calendar-category {
+    max-width: 760px;
+    margin: 0 auto 4rem;
+}
+
+.calendar-category:last-child { margin-bottom: 0; }
+
+.calendar-category-title {
+    color: var(--color-blush);
+    border-bottom: 1.5px solid var(--border-periwinkle-lo);
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+
+.calendar-event { padding: 0.5rem 0; }
+
+.calendar-event .calendar-event-tags {
+    font-family: var(--font-ui);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-mint);
+    margin-bottom: 0.6rem;
+}
+
+.calendar-event h3 {
+    font-family: var(--font-title);
+    color: var(--text-primary);
+    margin-bottom: 0.3rem;
+}
+
+.calendar-event .calendar-event-subtitle {
+    font-style: italic;
+    color: var(--text-muted);
+    margin-bottom: 0.6rem;
+}
+
+.calendar-event .calendar-event-location {
+    font-size: 0.94rem;
+    color: var(--text-body);
+    margin-bottom: 0;
+}
+
+.calendar-event .calendar-event-rsvp {
+    font-size: 0.94rem;
+    color: var(--text-body);
+    margin-top: 0.4rem;
+    margin-bottom: 0;
+}
+
+.calendar-event .calendar-event-rsvp a { color: var(--color-mint); }
+
+.calendar-divider {
+    height: 1px;
+    background: var(--border-periwinkle-lo);
+    margin: 1.75rem 0;
+}
+
 .conf-section {
     background: var(--color-navy-surface);
     padding: 5rem 0;
