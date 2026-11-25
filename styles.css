@@ -1972,3 +1972,9 @@ body:not(:has(.hero, .page-hero)) .header .mobile-menu-toggle { color: var(--ink
     .services-cards { padding: 3.5rem 0; }
 }
 @media (max-width: 480px) { .sc-grid { grid-template-columns: 1fr; } }
+.sc-grid { grid-template-columns: repeat(3, 1fr); max-width: 980px; margin: 0 auto; }
+.sc-links { margin-top: auto; display: flex; gap: 1.2rem; flex-wrap: wrap; }
+.sc-links .sc-link { margin-top: 0; }
+.sc-links .sc-link:hover { text-decoration: underline; }
+@media (max-width: 1000px) { .sc-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .sc-grid { grid-template-columns: 1fr; } }
