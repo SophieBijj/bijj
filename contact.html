@@ -22,11 +22,18 @@
     <header class="header" id="header">
         <a href="index.html" class="logo">Sophie Bi<span class="j-accent">j</span>jani</a>
         <nav class="header-nav">
-            <a href="circlesong.html" class="nav-link">Circlesong</a>
-            <a href="ethos.html" class="nav-link">Éthos</a>
+            <div class="nav-dropdown">
+                <button type="button" class="nav-link nav-dropdown-toggle" aria-haspopup="true">Services <span class="nav-caret">▾</span></button>
+                <div class="nav-dropdown-menu">
+                    <a href="accompagnement.html">Accompagnement individuel</a>
+                    <a href="circlesong.html">Sessions de groupe</a>
+                    <a href="facilitation.html#mc">Maître de cérémonie</a>
+                    <a href="facilitation.html">Facilitation</a>
+                </div>
+            </div>
             <a href="musique.html" class="nav-link">Musique</a>
-            <a href="facilitation.html" class="nav-link">Facilitation</a>
             <a href="calendrier.html" class="nav-link">Calendrier</a>
+            <a href="ethos.html" class="nav-link">À propos</a>
             <a href="contact.html" class="nav-link">Contact</a>
         </nav>
         <button class="mobile-menu-toggle" onclick="openMenu()">☰</button>
@@ -36,11 +43,14 @@
     <div class="menu-overlay" id="menuOverlay">
         <div class="menu-close" onclick="closeMenu()">✕</div>
         <ul class="menu-nav">
-            <li><a href="circlesong.html" onclick="closeMenu()">Circlesong</a></li>
-            <li><a href="ethos.html" onclick="closeMenu()">Éthos</a></li>
+            <li class="menu-group-label">Services</li>
+            <li class="menu-sub"><a href="accompagnement.html" onclick="closeMenu()">Accompagnement individuel</a></li>
+            <li class="menu-sub"><a href="circlesong.html" onclick="closeMenu()">Sessions de groupe</a></li>
+            <li class="menu-sub"><a href="facilitation.html#mc" onclick="closeMenu()">Maître de cérémonie</a></li>
+            <li class="menu-sub"><a href="facilitation.html" onclick="closeMenu()">Facilitation</a></li>
             <li><a href="musique.html" onclick="closeMenu()">Musique</a></li>
-            <li><a href="facilitation.html" onclick="closeMenu()">Facilitation</a></li>
             <li><a href="calendrier.html" onclick="closeMenu()">Calendrier</a></li>
+            <li><a href="ethos.html" onclick="closeMenu()">À propos</a></li>
             <li><a href="contact.html" onclick="closeMenu()">Contact</a></li>
         </ul>
         <div class="menu-social">

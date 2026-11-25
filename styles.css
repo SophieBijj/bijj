@@ -163,7 +163,7 @@ p:last-child { margin-bottom: 0; }
 
 .logo .j-accent { color: var(--color-mint); }
 
-.header-nav { display: flex; gap: 2rem; }
+.header-nav { display: flex; gap: 1.6rem; }
 
 .header-nav .nav-link {
     font-family: var(--font-ui);
@@ -172,6 +172,7 @@ p:last-child { margin-bottom: 0; }
     color: var(--color-blush);
     letter-spacing: 0.03em;
     text-transform: uppercase;
+    white-space: nowrap;
     opacity: 0.85;
     transition: opacity var(--transition), color var(--transition);
 }
@@ -653,9 +654,9 @@ p:last-child { margin-bottom: 0; }
 .hero-bg {
     position: absolute;
     inset: 0;
-    background-image: url('portrait.jpeg');
+    background-image: url('landing-simon-cavalier-060.jpg');
     background-size: cover;
-    background-position: top center;
+    background-position: 50% 25%;
     z-index: 0;
 }
 
@@ -1734,3 +1735,177 @@ p:last-child { margin-bottom: 0; }
     .footer-sponsors { gap: 1.2rem; }
     .footer-sponsors img { height: 28px; }
 }
+
+
+/* ===== BOOKING MODAL (accompagnement) ===== */
+.booking-modal {
+    position: fixed; inset: 0; z-index: 2000;
+    background: rgba(var(--navy-rgb), 0.85);
+    display: none; align-items: center; justify-content: center;
+    padding: 1.5rem; overflow-y: auto;
+}
+.booking-modal.open { display: flex; }
+.booking-modal-content {
+    position: relative; width: 100%; max-width: 520px;
+    background: var(--color-navy-surface);
+    border-radius: var(--radius); padding: 2.2rem 2rem;
+    box-shadow: var(--shadow); margin: auto;
+}
+.booking-close { position: absolute; top: 1rem; right: 1.2rem; cursor: pointer; color: var(--text-muted); font-size: 1.2rem; }
+.booking-modal-content h3 { font-family: var(--font-title); font-size: 1.6rem; margin-bottom: 0.6rem; color: var(--text-primary); }
+.booking-price { font-family: var(--font-ui); font-weight: 600; color: var(--color-rose); margin-bottom: 0.6rem; }
+.booking-note { font-size: 0.95rem; color: var(--text-body); margin-bottom: 1.4rem; }
+
+@media (max-width: 1200px) and (min-width: 769px) {
+    .header-nav { gap: 1.1rem; }
+    .header-nav .nav-link { font-size: 0.95rem; }
+}
+@media (max-width: 1080px) and (min-width: 769px) {
+    .header-nav { gap: 0.9rem; }
+    .header-nav .nav-link { font-size: 0.85rem; }
+}
+.page-hero--long h1 { font-size: clamp(3rem, 8vw, 7.5rem); }
+
+
+/* ===================================================
+   SERVICES DROPDOWN
+   =================================================== */
+.header-nav { align-items: center; }
+.nav-dropdown { position: relative; }
+.nav-dropdown-toggle { background: none; border: none; cursor: pointer; padding: 0; }
+.nav-caret { font-size: 0.7em; margin-left: 0.15em; }
+.nav-dropdown-menu {
+    position: absolute; top: 100%; left: -1rem;
+    min-width: 250px; padding: 0.6rem 0; margin-top: 0.4rem;
+    background: var(--light-bg);
+    border-radius: 8px;
+    box-shadow: 0 8px 28px rgba(42, 45, 77, 0.18);
+    opacity: 0; visibility: hidden; transform: translateY(-4px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+}
+.nav-dropdown-menu::before { content: ''; position: absolute; top: -0.6rem; left: 0; right: 0; height: 0.6rem; }
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+.nav-dropdown-menu a {
+    display: block; padding: 0.55rem 1.2rem;
+    font-family: var(--font-ui); font-size: 0.95rem; font-weight: 500;
+    color: var(--ink); white-space: nowrap;
+}
+.nav-dropdown-menu a:hover { background: var(--light-bg-2); color: var(--color-periwinkle); }
+
+.menu-nav .menu-group-label {
+    font-family: var(--font-ui); font-size: 0.8rem; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-periwinkle);
+    margin-bottom: -0.8rem;
+}
+.menu-nav .menu-sub a { font-size: clamp(1.3rem, 4.5vw, 1.8rem); font-weight: 500; }
+.menu-nav .menu-sub:last-of-type { margin-bottom: 0.6rem; }
+
+
+/* ===================================================
+   LIGHT THEME — gris perle, bleu encre, pervenche
+   (overrides the dark navy theme above)
+   =================================================== */
+:root {
+    --ink:          #2a2d4d;
+    --ink-dim:      #5b5e7c;
+    --light-bg:     #ebe7e1;
+    --light-bg-2:   #e1dcd4;
+    --light-bg-3:   #d9d3ca;
+
+    --color-navy:         #ebe7e1;
+    --color-navy-surface: #e1dcd4;
+    --color-navy-mid:     #d9d3ca;
+
+    --text-primary: #2a2d4d;
+    --text-body:    rgba(42, 45, 77, 0.86);
+    --text-muted:   rgba(42, 45, 77, 0.58);
+
+    --surface-on-dark:     rgba(42, 45, 77, 0.04);
+    --border-on-dark:      rgba(42, 45, 77, 0.18);
+    --border-on-dark-soft: rgba(42, 45, 77, 0.09);
+    --input-bg-on-dark:    rgba(42, 45, 77, 0.03);
+
+    --shadow: 0 4px 18px rgba(42, 45, 77, 0.08);
+    --bg-light: #e1dcd4;
+    --bg-dark:  #ebe7e1;
+}
+
+/* Heroes keep a dark veil so titles stay readable on photos */
+.hero, .page-hero { background: #2a2d4d; }
+
+/* Header: light text over the photo, ink once scrolled */
+.header.scrolled {
+    background: rgba(235, 231, 225, 0.96);
+    box-shadow: 0 2px 16px rgba(42, 45, 77, 0.12);
+}
+.header.scrolled .logo,
+.header.scrolled .nav-link,
+.header.scrolled .mobile-menu-toggle { color: var(--ink); }
+.header-nav .nav-link:hover,
+.header-nav .nav-link.active { color: var(--color-periwinkle); }
+.header:not(.scrolled) .header-nav .nav-link:hover { color: #cdd1f2; }
+
+/* Mobile menu */
+.menu-overlay { background: var(--light-bg); }
+.menu-close, .menu-nav li a { color: var(--ink); }
+.menu-social a { color: var(--ink-dim); }
+
+/* Buttons */
+.btn-primary { color: #fff; }
+.btn-outline { color: var(--ink); border-color: var(--color-periwinkle); }
+.btn-outline:hover { color: #fff; }
+.btn-outline-light { color: var(--color-periwinkle); border-color: var(--color-periwinkle); }
+.btn-outline-light:hover { background: var(--color-periwinkle); color: #fff; border-color: var(--color-periwinkle); }
+
+/* Former periwinkle bands become light, pervenche titles */
+.page-intro, .cs-intro { background: var(--light-bg); color: var(--text-body); }
+.page-intro-text h2, .cs-intro-text h2 { color: var(--color-periwinkle); }
+.page-intro-text p, .cs-intro-text p { color: var(--text-body); }
+.cta-section { background: var(--light-bg-2); }
+.cta-section h2 { color: var(--color-periwinkle); }
+.cta-section p { color: var(--text-body); }
+
+/* Content elements that were blush on navy */
+.text-link, .where-item, .disciplines-tags span,
+.calendar-section-title, .calendar-category-title,
+.form-group label { color: var(--ink); }
+.calendar-section .calendar-title { color: var(--ink); }
+.value-card, .card, .where-item, .spectacle-card, .conf-item { background: #f4f1ec; }
+.form-group input, .form-group select, .form-group textarea { background: #f7f4ef; color: var(--ink); }
+.testimonial, .testimonial blockquote, .testimonial blockquote cite { color: var(--ink); }
+
+/* Footer */
+.footer { background: var(--light-bg-2); color: var(--text-body); }
+.footer h3 { color: var(--ink); }
+.footer p { color: var(--text-body); }
+.footer-form input[type="text"], .footer-form input[type="email"] { color: var(--ink); background: #f7f4ef; }
+.footer-form input::placeholder { color: var(--text-muted); }
+.footer-form button { color: #fff; }
+.footer-social a { color: var(--ink-dim); }
+.footer-social a:hover { color: var(--color-periwinkle); }
+.footer-copy { color: var(--text-muted); }
+
+/* Popups */
+.newsletter-popup-content, .booking-modal-content { background: var(--light-bg); }
+.booking-modal { background: rgba(42, 45, 77, 0.6); }
+
+/* Accent: mint replaced by pervenche, readable on light */
+:root { --color-mint: #5a64b0; --mint-rgb: 90, 100, 176; }
+
+/* Pages without a photo hero (calendrier): ink header from the start */
+body:not(:has(.hero, .page-hero)) .header .logo,
+body:not(:has(.hero, .page-hero)) .header .nav-link,
+body:not(:has(.hero, .page-hero)) .header .mobile-menu-toggle { color: var(--ink); }
+
+/* Testimonial band: pale pervenche */
+.testimonial { background: #cdd1f2; }
+.testimonial blockquote { border-left-color: var(--color-periwinkle); }
+
+/* Sponsor logos are white files: darken them on the light footer */
+.footer-sponsors img { filter: brightness(0) saturate(100%); opacity: 0.55; }
+
+/* Mobile menu: tighter service sub-items */
+.menu-nav { gap: 1.2rem; }
+.footer-form input[type="text"]::placeholder,
+.footer-form input[type="email"]::placeholder { color: rgba(42, 45, 77, 0.5); }
