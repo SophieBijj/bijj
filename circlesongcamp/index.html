@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -908,9 +908,11 @@
       display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 2.2rem; color: #fbe1dc; }
     .organizers figcaption { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: var(--cream); margin-top: 0.7rem; }
     @media (max-width: 480px) { .organizers { gap: 0.7rem; } .org-ph span { font-size: 1.6rem; } }
+    /* Anglais désactivé pour l'instant : retirer cette ligne pour réafficher le bouton EN/FR */
+    .lang-toggle { display: none !important; }
   </style>
 </head>
-<body class="en">
+<body class="fr">
 
   <!-- ─────────────── NAVBAR ─────────────── -->
   <nav class="navbar">
@@ -966,12 +968,12 @@
 
     <div lang-content="en">
       <h2>Sing in circle.<br/><em>Listen together.</em></h2>
-      <p>Circlesong Camp is a gathering for voices of every kind, around circlesong and collective vocal improvisation, in the foothills of the Pyrenees. Someone steps into the center and offers a pattern, the circle answers, layers weave in, and a song is born that no one wrote. Each day leaves room for your own time to swim, hike, nap, eat, journal, connect. We will sing in the grass.</p>
+      <p>Circlesong Camp is a week of circlesong practice in the foothills of the Pyrenees. Twice a day we gather in circle to practice: someone steps into the center and offers a pattern, the circle answers, layers weave in, and a song is born that no one wrote. Once a day, a participant can offer a space of transmission. The rest of the time is yours to swim, hike, nap, eat, journal, connect. We will sing in the grass.</p>
     </div>
 
     <div lang-content="fr">
       <h2>Chanter en cercle.<br/><em>Écouter ensemble.</em></h2>
-      <p>Circlesong Camp est un regroupement pour toutes les voix, autour du circlesong et de l'improvisation vocale collective, au pied des Pyrénées. Une personne entre au centre et propose un motif, le cercle répond, les couches s'entrelacent et une chanson naît sans que personne l'ait écrite. L'horaire de chaque journée laisse du temps libre pour nager, randonner, faire la sieste... et chanter dans l'herbe!</p>
+      <p>Circlesong Camp est une semaine de pratique du circlesong, au pied des Pyrénées. Deux fois par jour, on se retrouve en cercle pour pratiquer : une personne entre au centre et propose un motif, le cercle répond, les couches s'entrelacent et une chanson naît sans que personne l'ait écrite. Une fois par jour, une personne participante peut proposer un espace de transmission. Le reste du temps est libre pour nager, randonner, faire la sieste... et chanter dans l'herbe!</p>
     </div>
 
     <div style="margin-top:2.5rem;">
@@ -981,10 +983,11 @@
       </div>
       <ul style="list-style:none; font-size:0.88rem; color:var(--cream-dim); line-height:2;">
         <li><span style="color:var(--sage); margin-right:0.5rem;">–</span><span lang-inline="en">Seven days in the Ariège countryside</span><span lang-inline="fr">Nature : Sept jours dans la campagne ariégeoise</span></li>
-        <li><span style="color:var(--sage); margin-right:0.5rem;">–</span><span lang-inline="en">Sing &amp; connect: circlesong workshops, open circles &amp; leading labs</span><span lang-inline="fr">Circlesong et pratiques connexes : ateliers, cercles ouverts et labos pour apprendre à mener</span></li>
+        <li><span style="color:var(--sage); margin-right:0.5rem;">–</span><span lang-inline="en">Practice: two circlesong circles a day</span><span lang-inline="fr">Pratique : deux cercles de circlesong par jour</span></li>
+        <li><span style="color:var(--sage); margin-right:0.5rem;">–</span><span lang-inline="en">Transmission: one space a day, offered by participants</span><span lang-inline="fr">Transmission : un espace par jour, proposé par les participant·es</span></li>
         <li><span style="color:var(--sage); margin-right:0.5rem;">–</span><span lang-inline="en">Evening campfire, song sharing &amp; swimming</span><span lang-inline="fr">Feu : Des soirées autour du feu où partager nos histoires et nos chansons</span></li>
         <li><span style="color:var(--sage); margin-right:0.5rem;">–</span><span lang-inline="en">Camping (BYO gear)</span><span lang-inline="fr">Camping : Apportez votre équipement</span></li>
-        <li><span style="color:var(--sage); margin-right:0.5rem;">–</span><span lang-inline="en">Open to all voices, no experience needed</span><span lang-inline="fr">Ouvert à toutes les voix, aucune expérience requise</span></li>
+        <li><span style="color:var(--sage); margin-right:0.5rem;">–</span><span lang-inline="en">Open to all voices</span><span lang-inline="fr">Ouvert à toutes les voix</span></li>
       </ul>
       <p style="margin-top:1.5rem; font-size:0.82rem;">
         <a href="what.html" style="color:var(--gold); text-decoration:underline; text-underline-offset:3px; letter-spacing:0.05em;">
@@ -1005,12 +1008,12 @@
 
       <div lang-content="en">
         <h2>Seven days,<br/><em>sing &amp; connect.</em></h2>
-        <p>Each day holds space for deep practice and deep rest: circles throughout the day, time to swim and wander, and evenings alive with song, offerings and fire.</p>
+        <p>Each day holds two practice circles and one space of transmission, with time to swim and wander, and evenings around the fire.</p>
       </div>
 
       <div lang-content="fr">
         <h2>Sept jours pour<br/><em>chanter &amp; se connecter.</em></h2>
-        <p>Chaque journée offre un espace dédié à la pratique et au repos. Il y a des cercles tout au long de la journée, du temps pour nager et profiter du site, ainsi que des soirées animées par le chant, des partages et un feu de camp.</p>
+        <p>Chaque journée comprend deux cercles de pratique et un espace de transmission, avec du temps pour nager et profiter du site, et des soirées autour du feu.</p>
       </div>
 
       <div class="sched">
@@ -1042,52 +1045,52 @@
           <!-- DAY 1 -->
           <div class="ev logistics" style="grid-column:2;grid-row:28/40"><div class="et">16h – 19h</div><div class="en"><span class="len">Arrivals</span><span class="lfr">Arrivées</span></div></div>
           <div class="ev logistics" style="grid-column:2;grid-row:40/43"><div class="et">19h – 19h45</div><div class="en"><span class="len">Opening circle</span><span class="lfr">Cercle d'ouverture</span></div></div>
-          <div class="ev jam" style="grid-column:2;grid-row:43/48"><div class="et">19h45 – 21h</div><div class="en"><span class="len">Open circle</span><span class="lfr">Cercle ouvert</span></div></div>
+          <div class="ev jam" style="grid-column:2;grid-row:43/48"><div class="et">19h45 – 21h</div><div class="en"><span class="len">Practice</span><span class="lfr">Pratique</span></div></div>
           <div class="ev social" style="grid-column:2;grid-row:48/54"><div class="et">21h – 22h30</div><div class="en"><span class="len">Fireside songs</span><span class="lfr">Veillée au feu</span></div></div>
 
           <!-- DAY 2 -->
           <div class="ev logistics" style="grid-column:3;grid-row:2/3"><div class="en"><span class="len">Morning opening</span><span class="lfr">Ouverture du matin</span></div></div>
-          <div class="ev workshop" style="grid-column:3;grid-row:3/11"><div class="et">9h45 – 11h45</div><div class="en"><span class="len">Workshop</span><span class="lfr">Atelier</span></div></div>
+          <div class="ev workshop" style="grid-column:3;grid-row:3/11"><div class="et">9h45 – 11h45</div><div class="en"><span class="len">Practice</span><span class="lfr">Pratique</span></div></div>
           <div class="ev free" style="grid-column:3;grid-row:11/20"><div class="et">11h45 – 14h</div><div class="en"><span class="len">Lunch &amp; free time</span><span class="lfr">Repas &amp; temps libre</span></div></div>
-          <div class="ev workshop" style="grid-column:3;grid-row:20/28"><div class="et">14h – 16h</div><div class="en"><span class="len">Leading lab</span><span class="lfr">Labo pour mener</span></div></div>
+          <div class="ev workshop" style="grid-column:3;grid-row:20/28"><div class="et">14h – 16h</div><div class="en"><span class="len">Transmission</span><span class="lfr">Transmission</span></div></div>
           <div class="ev free" style="grid-column:3;grid-row:28/40"><div class="et">16h – 19h</div><div class="en"><span class="len">Dinner &amp; free time</span><span class="lfr">Repas &amp; temps libre</span></div></div>
-          <div class="ev jam" style="grid-column:3;grid-row:40/48"><div class="et">19h – 21h</div><div class="en"><span class="len">Open circle</span><span class="lfr">Cercle ouvert</span></div></div>
+          <div class="ev jam" style="grid-column:3;grid-row:40/48"><div class="et">19h – 21h</div><div class="en"><span class="len">Practice</span><span class="lfr">Pratique</span></div></div>
           <div class="ev social" style="grid-column:3;grid-row:48/54"><div class="et">21h – 22h30</div><div class="en"><span class="len">Fireside songs</span><span class="lfr">Veillée au feu</span></div></div>
 
           <!-- DAY 3 -->
           <div class="ev logistics" style="grid-column:4;grid-row:2/3"><div class="en"><span class="len">Morning opening</span><span class="lfr">Ouverture du matin</span></div></div>
-          <div class="ev workshop" style="grid-column:4;grid-row:3/11"><div class="et">9h45 – 11h45</div><div class="en"><span class="len">Workshop</span><span class="lfr">Atelier</span></div></div>
+          <div class="ev workshop" style="grid-column:4;grid-row:3/11"><div class="et">9h45 – 11h45</div><div class="en"><span class="len">Practice</span><span class="lfr">Pratique</span></div></div>
           <div class="ev free" style="grid-column:4;grid-row:11/20"><div class="et">11h45 – 14h</div><div class="en"><span class="len">Lunch &amp; free time</span><span class="lfr">Repas &amp; temps libre</span></div></div>
-          <div class="ev workshop" style="grid-column:4;grid-row:20/28"><div class="et">14h – 16h</div><div class="en"><span class="len">Workshop</span><span class="lfr">Atelier</span></div></div>
+          <div class="ev workshop" style="grid-column:4;grid-row:20/28"><div class="et">14h – 16h</div><div class="en"><span class="len">Transmission</span><span class="lfr">Transmission</span></div></div>
           <div class="ev free" style="grid-column:4;grid-row:28/40"><div class="et">16h – 19h</div><div class="en"><span class="len">Dinner &amp; free time</span><span class="lfr">Repas &amp; temps libre</span></div></div>
-          <div class="ev jam" style="grid-column:4;grid-row:40/48"><div class="et">19h – 21h</div><div class="en"><span class="len">Open circle</span><span class="lfr">Cercle ouvert</span></div></div>
+          <div class="ev jam" style="grid-column:4;grid-row:40/48"><div class="et">19h – 21h</div><div class="en"><span class="len">Practice</span><span class="lfr">Pratique</span></div></div>
           <div class="ev social" style="grid-column:4;grid-row:48/54"><div class="et">21h – 22h30</div><div class="en"><span class="len">Fireside songs</span><span class="lfr">Veillée au feu</span></div></div>
 
           <!-- DAY 4 -->
           <div class="ev logistics" style="grid-column:5;grid-row:2/3"><div class="en"><span class="len">Morning opening</span><span class="lfr">Ouverture du matin</span></div></div>
-          <div class="ev workshop" style="grid-column:5;grid-row:3/11"><div class="et">9h45 – 11h45</div><div class="en"><span class="len">Workshop</span><span class="lfr">Atelier</span></div></div>
+          <div class="ev workshop" style="grid-column:5;grid-row:3/11"><div class="et">9h45 – 11h45</div><div class="en"><span class="len">Practice</span><span class="lfr">Pratique</span></div></div>
           <div class="ev free" style="grid-column:5;grid-row:11/20"><div class="et">11h45 – 14h</div><div class="en"><span class="len">Lunch &amp; free time</span><span class="lfr">Repas &amp; temps libre</span></div></div>
-          <div class="ev workshop" style="grid-column:5;grid-row:20/28"><div class="et">14h – 16h</div><div class="en"><span class="len">Leading lab</span><span class="lfr">Labo pour mener</span></div></div>
+          <div class="ev workshop" style="grid-column:5;grid-row:20/28"><div class="et">14h – 16h</div><div class="en"><span class="len">Transmission</span><span class="lfr">Transmission</span></div></div>
           <div class="ev free" style="grid-column:5;grid-row:28/40"><div class="et">16h – 19h</div><div class="en"><span class="len">Dinner &amp; free time</span><span class="lfr">Repas &amp; temps libre</span></div></div>
-          <div class="ev jam" style="grid-column:5;grid-row:40/48"><div class="et">19h – 21h</div><div class="en"><span class="len">Open circle</span><span class="lfr">Cercle ouvert</span></div></div>
+          <div class="ev jam" style="grid-column:5;grid-row:40/48"><div class="et">19h – 21h</div><div class="en"><span class="len">Practice</span><span class="lfr">Pratique</span></div></div>
           <div class="ev social" style="grid-column:5;grid-row:48/54"><div class="et">21h – 22h30</div><div class="en"><span class="len">Open mic night</span><span class="lfr">Soirée micro ouvert</span></div></div>
 
           <!-- DAY 5 -->
           <div class="ev logistics" style="grid-column:6;grid-row:2/3"><div class="en"><span class="len">Morning opening</span><span class="lfr">Ouverture du matin</span></div></div>
-          <div class="ev workshop" style="grid-column:6;grid-row:3/11"><div class="et">9h45 – 11h45</div><div class="en"><span class="len">Workshop</span><span class="lfr">Atelier</span></div></div>
+          <div class="ev workshop" style="grid-column:6;grid-row:3/11"><div class="et">9h45 – 11h45</div><div class="en"><span class="len">Practice</span><span class="lfr">Pratique</span></div></div>
           <div class="ev free" style="grid-column:6;grid-row:11/20"><div class="et">11h45 – 14h</div><div class="en"><span class="len">Lunch &amp; free time</span><span class="lfr">Repas &amp; temps libre</span></div></div>
-          <div class="ev workshop" style="grid-column:6;grid-row:20/28"><div class="et">14h – 16h</div><div class="en"><span class="len">Workshop</span><span class="lfr">Atelier</span></div></div>
+          <div class="ev workshop" style="grid-column:6;grid-row:20/28"><div class="et">14h – 16h</div><div class="en"><span class="len">Transmission</span><span class="lfr">Transmission</span></div></div>
           <div class="ev free" style="grid-column:6;grid-row:28/40"><div class="et">16h – 19h</div><div class="en"><span class="len">Dinner &amp; free time</span><span class="lfr">Repas &amp; temps libre</span></div></div>
-          <div class="ev jam" style="grid-column:6;grid-row:40/48"><div class="et">19h – 21h</div><div class="en"><span class="len">Open circle</span><span class="lfr">Cercle ouvert</span></div></div>
+          <div class="ev jam" style="grid-column:6;grid-row:40/48"><div class="et">19h – 21h</div><div class="en"><span class="len">Practice</span><span class="lfr">Pratique</span></div></div>
           <div class="ev social" style="grid-column:6;grid-row:48/54"><div class="et">21h – 22h30</div><div class="en"><span class="len">Fireside songs</span><span class="lfr">Veillée au feu</span></div></div>
 
           <!-- DAY 6 -->
           <div class="ev logistics" style="grid-column:7;grid-row:2/3"><div class="en"><span class="len">Morning opening</span><span class="lfr">Ouverture du matin</span></div></div>
-          <div class="ev workshop" style="grid-column:7;grid-row:3/11"><div class="et">9h45 – 11h45</div><div class="en"><span class="len">Workshop</span><span class="lfr">Atelier</span></div></div>
+          <div class="ev workshop" style="grid-column:7;grid-row:3/11"><div class="et">9h45 – 11h45</div><div class="en"><span class="len">Practice</span><span class="lfr">Pratique</span></div></div>
           <div class="ev free" style="grid-column:7;grid-row:11/20"><div class="et">11h45 – 14h</div><div class="en"><span class="len">Lunch &amp; free time</span><span class="lfr">Repas &amp; temps libre</span></div></div>
-          <div class="ev workshop" style="grid-column:7;grid-row:20/28"><div class="et">14h – 16h</div><div class="en"><span class="len">Leading lab</span><span class="lfr">Labo pour mener</span></div></div>
+          <div class="ev workshop" style="grid-column:7;grid-row:20/28"><div class="et">14h – 16h</div><div class="en"><span class="len">Transmission</span><span class="lfr">Transmission</span></div></div>
           <div class="ev free" style="grid-column:7;grid-row:28/40"><div class="et">16h – 19h</div><div class="en"><span class="len">Dinner &amp; free time</span><span class="lfr">Repas &amp; temps libre</span></div></div>
-          <div class="ev jam" style="grid-column:7;grid-row:40/48"><div class="et">19h – 21h</div><div class="en"><span class="len">Open circle</span><span class="lfr">Cercle ouvert</span></div></div>
+          <div class="ev jam" style="grid-column:7;grid-row:40/48"><div class="et">19h – 21h</div><div class="en"><span class="len">Practice</span><span class="lfr">Pratique</span></div></div>
           <div class="ev social" style="grid-column:7;grid-row:48/54"><div class="et">21h – 22h30</div><div class="en"><span class="len">Fireside songs</span><span class="lfr">Veillée au feu</span></div></div>
 
           <!-- DAY 7 -->
@@ -1100,67 +1103,21 @@
     </section>
   </div>
 
-  <!-- ─────────────── WORKSHOP DESCRIPTIONS ─────────────── -->
+  <!-- ─────────────── TRANSMISSION ─────────────── -->
   <section>
     <div class="section-label">
-      <span lang-inline="en">Workshops</span>
-      <span lang-inline="fr">Ateliers</span>
+      <span lang-inline="en">Transmission</span>
+      <span lang-inline="fr">Transmission</span>
     </div>
 
     <div lang-content="en">
-      <h2>Workshop<br/><em>descriptions.</em></h2>
-      <p>Here's what each session holds. Tap any workshop to expand it.</p>
+      <h2>Spaces of<br/><em>transmission.</em></h2>
+      <p>Once a day, a participant can offer a space of transmission: a song, a technique, a game, a body and voice practice, or anything they want to share with the circle. If you feel like offering one, tell us in the form below.</p>
     </div>
 
     <div lang-content="fr">
-      <h2>Descriptions<br/><em>des ateliers.</em></h2>
-      <p>Voici ce que chaque atelier vous réserve. Cliquez sur un atelier pour le déplier.</p>
-    </div>
-
-    <div class="workshop-list">
-
-      <details class="workshop">
-        <summary>
-          <div class="workshop-heading">
-            <span class="workshop-title"><span lang-inline="en">Wavelength Poetry</span><span lang-inline="fr">Poésie des Ondes</span></span>
-            <span class="workshop-by">Sophie Bijjani</span>
-          </div>
-          <span class="workshop-icon"><span class="workshop-icon-closed">+</span><span class="workshop-icon-open">–</span></span>
-        </summary>
-        <div class="workshop-body">
-          <div lang-content="en"><p>Through Circlesong and poetic expression, we will give voice, through sound, words and melodies, to the symphony that lives within us. This is a space to reveal our individual voices within the group, to co-create from our respective universes, and to sound our dreams to life with our voices.</p></div>
-          <div lang-content="fr"><p>À travers la Circlesong et l'expression poétique, nous mettrons en sons, en mots et en mélodies la symphonie qui vit en nous. C'est un espace pour révéler sa voix au sein du groupe, co-créer à partir de nos univers respectifs et faire vibrer nos cordes vocales et nos rêves.</p></div>
-        </div>
-      </details>
-
-      <details class="workshop">
-        <summary>
-          <div class="workshop-heading">
-            <span class="workshop-title"><span lang-inline="en">Leading lab</span><span lang-inline="fr">Labo pour mener</span></span>
-            <span class="workshop-by"><span lang-inline="en">Facilitator to be announced</span><span lang-inline="fr">Facilitateur·ice à confirmer</span></span>
-          </div>
-          <span class="workshop-icon"><span class="workshop-icon-closed">+</span><span class="workshop-icon-open">–</span></span>
-        </summary>
-        <div class="workshop-body">
-          <div lang-content="en"><p>Description coming soon.</p></div>
-          <div lang-content="fr"><p>Description à venir.</p></div>
-        </div>
-      </details>
-
-      <details class="workshop">
-        <summary>
-          <div class="workshop-heading">
-            <span class="workshop-title"><span lang-inline="en">Workshop to be announced</span><span lang-inline="fr">Atelier à confirmer</span></span>
-            <span class="workshop-by"><span lang-inline="en">Facilitator to be announced</span><span lang-inline="fr">Facilitateur·ice à confirmer</span></span>
-          </div>
-          <span class="workshop-icon"><span class="workshop-icon-closed">+</span><span class="workshop-icon-open">–</span></span>
-        </summary>
-        <div class="workshop-body">
-          <div lang-content="en"><p>Description coming soon.</p></div>
-          <div lang-content="fr"><p>Description à venir.</p></div>
-        </div>
-      </details>
-
+      <h2>Espaces<br/><em>de transmission.</em></h2>
+      <p>Une fois par jour, une personne participante peut proposer un espace de transmission : un chant, une technique, un jeu, une pratique corps-voix, ou tout ce qu'elle a envie de partager avec le cercle. Si vous avez envie d'en proposer un, dites-le-nous dans le formulaire plus bas.</p>
     </div>
   </section>
 
@@ -1349,7 +1306,7 @@
     let savedLang = null;
     try { savedLang = localStorage.getItem('csc-lang'); } catch (e) {}
     const browserLang = navigator.language.startsWith('fr') ? 'fr' : 'en';
-    setLang(savedLang || browserLang);
+    setLang('fr'); // Anglais désactivé pour l'instant. Pour le réactiver : setLang(savedLang || 'fr');
 
     // Registration open switch: set FORM_URL and LAUNCH (UTC) when ready
     const FORM_URL = '';
