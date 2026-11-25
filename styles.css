@@ -1978,3 +1978,4 @@ body:not(:has(.hero, .page-hero)) .header .mobile-menu-toggle { color: var(--ink
 .sc-links .sc-link:hover { text-decoration: underline; }
 @media (max-width: 1000px) { .sc-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 640px) { .sc-grid { grid-template-columns: 1fr; } }
+.intro-section { background: var(--light-bg); }
