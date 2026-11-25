@@ -1986,3 +1986,6 @@ body:not(:has(.hero, .page-hero)) .header .mobile-menu-toggle { color: var(--ink
 .booking-go { display: inline-block; margin: 0.4rem 0 1.2rem; }
 .booking-alt { font-size: 0.9rem; color: var(--text-muted); margin: 0; }
 .booking-alt a { color: var(--color-periwinkle); border-bottom: 1px solid currentColor; }
+.book-row { margin-top: 1.8rem; display: flex; flex-direction: column; align-items: flex-start; gap: 0.7rem; }
+.cta-section .book-row { align-items: center; }
+.cta-section { background: var(--light-bg); }

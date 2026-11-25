@@ -82,6 +82,10 @@
                 <h2>Accompagnement vocal</h2>
                 <p>Séances individuelles à Montréal (Studio Cosmos) et en ligne.</p>
                 <p>Que ta voix soit encore à découvrir ou que tu la connaisses déjà, on part de là où tu es. Après une séance, tu repars avec plus de possibilités dans ta voix et plus de confiance pour t'en servir.</p>
+                <div class="book-row">
+                    <a href="https://calendar.app.google/urZhjA4dgKPruKDo8" target="_blank" rel="noopener" class="btn btn-primary">Réserver un accompagnement →</a>
+                    <p class="booking-alt">Une question avant de réserver? <a href="contact.html">Écris-moi</a>.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -163,28 +167,13 @@
         <div class="container">
             <h2>Séance individuelle</h2>
             <p>1 h 30, en studio ou en ligne.</p>
-            <button type="button" class="btn btn-outline-light" onclick="openBooking()">Réserver une séance →</button>
+            <div class="book-row">
+                    <a href="https://calendar.app.google/urZhjA4dgKPruKDo8" target="_blank" rel="noopener" class="btn btn-primary">Réserver un accompagnement →</a>
+                    <p class="booking-alt">Une question avant de réserver? <a href="contact.html">Écris-moi</a>.</p>
+                </div>
         </div>
     </section>
 
-    <!-- BOOKING MODAL -->
-    <div class="booking-modal" id="bookingModal" onclick="if(event.target===this)closeBooking()">
-        <div class="booking-modal-content">
-            <div class="booking-close" onclick="closeBooking()">✕</div>
-            <h3>Réserver une séance</h3>
-            <p class="booking-price">Séance individuelle · 1 h 30 · 90 $</p>
-            <p class="booking-note">En studio (Studio Cosmos, Montréal) ou en ligne. Choisis directement un moment dans mon agenda.</p>
-            <a href="https://calendar.app.google/urZhjA4dgKPruKDo8" target="_blank" rel="noopener" class="btn btn-primary booking-go">Réserver un accompagnement →</a>
-            <p class="booking-alt">Une question avant de réserver? <a href="contact.html">Écris-moi</a>.</p>
-        </div>
-    </div>
-
-    <script>
-    function openBooking(){document.getElementById('bookingModal').classList.add('open');document.body.style.overflow='hidden';}
-    function closeBooking(){document.getElementById('bookingModal').classList.remove('open');document.body.style.overflow='';}
-    if(location.hash==='#reserver'){openBooking();}
-    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeBooking();});
-    </script>
 
     <!-- FOOTER -->
     <footer class="footer">
