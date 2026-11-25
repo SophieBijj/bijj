@@ -1909,3 +1909,66 @@ body:not(:has(.hero, .page-hero)) .header .mobile-menu-toggle { color: var(--ink
 .menu-nav { gap: 1.2rem; }
 .footer-form input[type="text"]::placeholder,
 .footer-form input[type="email"]::placeholder { color: rgba(42, 45, 77, 0.5); }
+
+
+/* ===================================================
+   SIZING (desktop -10 %) + shorter heroes
+   =================================================== */
+@media (min-width: 769px) {
+    html { font-size: 90%; }
+    body { font-size: 15.5px; }
+}
+.hero { min-height: 86vh; min-height: 86svh; }
+.page-hero { height: 72vh; height: 72svh; min-height: 460px; }
+
+/* ===================================================
+   HOME: hero pitch, service cards, testimonials, news
+   =================================================== */
+.hero-content { padding-bottom: 4.5rem; max-width: 600px; }
+.hero-pitch {
+    font-family: var(--font-ui); font-weight: 300;
+    font-size: 1.15rem; line-height: 1.5;
+    color: var(--color-blush); margin: 1.4rem auto 1.6rem; max-width: 30ch;
+}
+.hero-ctas { display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap; }
+.btn-hero-ghost { color: var(--color-blush); border: 1.5px solid rgba(235, 227, 223, 0.7); background: transparent; }
+.btn-hero-ghost:hover { background: rgba(235, 227, 223, 0.15); border-color: var(--color-blush); }
+
+.services-cards { background: var(--light-bg); padding: 5rem 0; }
+.services-cards h2 { text-align: center; margin-bottom: 2.5rem; }
+.sc-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.4rem; }
+.sc-card {
+    background: #f4f1ec; border-radius: var(--radius); overflow: hidden;
+    box-shadow: var(--shadow); display: flex; flex-direction: column;
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+.sc-card:hover { transform: translateY(-3px); box-shadow: 0 10px 26px rgba(42, 45, 77, 0.14); }
+.sc-card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.sc-body { padding: 1.2rem 1.2rem 1.4rem; display: flex; flex-direction: column; flex: 1; }
+.sc-body h3 { font-size: 1.25rem; margin-bottom: 0.4rem; }
+.sc-body p { font-size: 0.95rem; color: var(--text-body); margin-bottom: 0.8rem; }
+.sc-link { margin-top: auto; font-family: var(--font-ui); font-weight: 600; font-size: 0.9rem; color: var(--color-periwinkle); }
+
+.home-testimonials { background: #cdd1f2; padding: 4rem 0; }
+.ht-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+.home-testimonials blockquote {
+    font-family: var(--font-title); font-style: italic; font-size: 1.15rem; line-height: 1.55;
+    color: var(--ink); border-left: 3px solid var(--color-periwinkle); padding-left: 1.4rem; margin: 0;
+}
+.home-testimonials cite {
+    display: block; margin-top: 0.9rem; font-family: var(--font-ui); font-style: normal;
+    font-size: 0.8rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-dim);
+}
+
+.home-news { background: var(--light-bg); padding: 4rem 0; text-align: center; }
+.home-news h2 { color: var(--color-periwinkle); margin-bottom: 0.6rem; }
+.home-news p { max-width: 520px; margin: 0 auto 1.6rem; }
+
+@media (max-width: 1000px) { .sc-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 768px) {
+    .hero-content { padding: 0 24px 4rem; }
+    .hero-pitch { font-size: 1.05rem; }
+    .ht-grid { grid-template-columns: 1fr; }
+    .services-cards { padding: 3.5rem 0; }
+}
+@media (max-width: 480px) { .sc-grid { grid-template-columns: 1fr; } }
