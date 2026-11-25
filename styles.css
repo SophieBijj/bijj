@@ -1983,3 +1983,6 @@ body:not(:has(.hero, .page-hero)) .header .mobile-menu-toggle { color: var(--ink
 .home-testimonials blockquote { font-size: 1.02rem; }
 .testimonial blockquote + blockquote { margin-top: 1.5rem; }
 @media (max-width: 900px) { .ht-grid { grid-template-columns: 1fr; } }
+.booking-go { display: inline-block; margin: 0.4rem 0 1.2rem; }
+.booking-alt { font-size: 0.9rem; color: var(--text-muted); margin: 0; }
+.booking-alt a { color: var(--color-periwinkle); border-bottom: 1px solid currentColor; }

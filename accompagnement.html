@@ -173,30 +173,9 @@
             <div class="booking-close" onclick="closeBooking()">✕</div>
             <h3>Réserver une séance</h3>
             <p class="booking-price">Séance individuelle · 1 h 30 · 90 $</p>
-            <p class="booking-note">En studio (Studios Fenlab, Montréal) ou en ligne. Écris-moi tes disponibilités, je te réponds pour fixer un moment.</p>
-            <form class="contact-form" action="https://formspree.io/f/mkoebklk" method="POST">
-                <input type="hidden" name="_subject" value="Réservation : accompagnement vocal">
-                <div class="form-group">
-                    <label for="book-name">Nom</label>
-                    <input type="text" id="book-name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="book-email">Courriel</label>
-                    <input type="email" id="book-email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="book-format">Format</label>
-                    <select id="book-format" name="format">
-                        <option>En studio</option>
-                        <option>En ligne</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="book-message">Ce qui t'amène, tes disponibilités</label>
-                    <textarea id="book-message" name="message" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Envoyer →</button>
-            </form>
+            <p class="booking-note">En studio (Studios Fenlab, Montréal) ou en ligne. Choisis directement un moment dans mon agenda.</p>
+            <a href="https://calendar.app.google/urZhjA4dgKPruKDo8" target="_blank" rel="noopener" class="btn btn-primary booking-go">Choisir un moment →</a>
+            <p class="booking-alt">Une question avant de réserver? <a href="contact.html">Écris-moi</a>.</p>
         </div>
     </div>
 
