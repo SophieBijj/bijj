@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Équipe · Circlesong Camp · Dun, Ariège · 9–15 août 2027</title>
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://bijj.ca/circlesongcamp/team.html" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #ebe7e1;
+      --bg2: #e1dcd4;
+      --cream: #2a2d4d;
+      --cream-dim: #5b5e7c;
+      --gold: #b8605a;
+      --terra: #5a64b0;
+      --sage: #6c77c6;
+      --sage-dim: #cdd1f2;
+      --divider: rgba(108,119,198,0.28);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--cream);
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+        /* ── NAVBAR ── */
+    .navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 99;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      height: 54px;
+      background: rgba(235,231,225,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--divider);
+    }
+
+    .navbar-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--cream);
+      text-decoration: none;
+      white-space: nowrap;
+      letter-spacing: 0.03em;
+    }
+    .navbar-brand em { font-style: italic; color: var(--gold); }
+
+    .navbar-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.2rem;
+      list-style: none;
+      flex: 1;
+    }
+
+    .navbar-links a {
+      color: var(--cream-dim);
+      text-decoration: none;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.4rem 0.7rem;
+      border-radius: 2px;
+      transition: color 0.2s;
+      white-space: nowrap;
+    }
+
+    .navbar-links a:hover { color: var(--cream); }
+
+    .navbar-links a.cta {
+      border: 1px solid rgba(184,96,90,0.5);
+      color: var(--gold);
+    }
+    .navbar-links a.cta:hover { background: var(--gold); color: var(--bg); }
+    /* ── DROPDOWN ── */
+    .nav-dropdown { position: relative; }
+    .nav-dropdown > a::after { content: ' ▾'; }
+    .nav-dropdown-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(242,239,234,0.99);
+      border: 1px solid var(--divider);
+      border-radius: 2px;
+      min-width: 190px;
+      list-style: none;
+      padding: 0.4rem 0;
+      z-index: 200;
+    }
+    .nav-dropdown:hover .nav-dropdown-menu,
+    .nav-dropdown.open .nav-dropdown-menu { display: block; }
+    .nav-dropdown-menu li a {
+      display: block;
+      padding: 0.45rem 1.1rem;
+      font-size: 0.66rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--cream-dim);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .nav-dropdown-menu li a:hover { color: var(--cream); }
+
+
+    .nav-cta-item { display: none; }
+    .navbar-right { display: flex; align-items: center; gap: 0.5rem; flex-shrink: 0; }
+    .navbar-cta { border: 1px solid rgba(184,96,90,0.5); color: var(--gold); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.4rem 0.9rem; border-radius: 2px; text-decoration: none; transition: all 0.2s; white-space: nowrap; }
+    .navbar-cta:hover { background: var(--gold); color: var(--bg); }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--cream);
+      cursor: pointer;
+      font-size: 1.2rem;
+      padding: 0.3rem;
+    }
+
+    @media (max-width: 760px) {
+      .navbar-links { display: none; }
+      .navbar-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 54px; left: 0; right: 0;
+        background: rgba(235,231,225,0.98);
+        padding: 1rem;
+        gap: 0.2rem;
+        border-bottom: 1px solid var(--divider);
+      }
+      .nav-toggle { display: block; }
+      .nav-cta-item { display: list-item; }
+      .navbar-cta { display: none; }
+    }
+
+        /* ── LANG ── */
+    .lang-toggle {
+      display: flex;
+      background: rgba(235,231,225,0.85);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--divider);
+      border-radius: 2px;
+      overflow: hidden;
+      flex-shrink: 0;
+      margin-left: 0.75rem;
+    }
+    .lang-toggle button {
+      background: none;
+      border: none;
+      color: var(--cream-dim);
+      font-family: 'Jost', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.45rem 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .lang-toggle button.active { background: var(--sage-dim); color: var(--cream); }
+    .lang-toggle button:hover:not(.active) { color: var(--cream); }
+
+    [lang-content] { display: none; }
+    body.en [lang-content="en"] { display: block; }
+    body.fr [lang-content="fr"] { display: block; }
+    body.en [lang-inline="fr"] { display: none; }
+    body.fr [lang-inline="en"] { display: none; }
+    [lang-inline] { display: inline; }
+
+    /* ── PAGE HEADER ── */
+    .page-header {
+      padding: 9rem 2rem 4rem;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 1.8rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--divider);
+    }
+
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.1;
+      margin-bottom: 1.6rem;
+    }
+    h2 em { font-style: italic; color: var(--gold); }
+
+    p {
+      font-size: 1rem;
+      color: var(--cream-dim);
+      max-width: 620px;
+      margin-bottom: 1.2rem;
+    }
+
+    /* ── TEAM CARDS ── */
+    .team-list {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 2rem 5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    .member {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 2rem;
+      border: 1px solid var(--divider);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .member img {
+      width: 100%;
+      height: 100%;
+      min-height: 240px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .member-bio {
+      padding: 2rem;
+    }
+
+    .member-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: 0.2rem;
+    }
+
+    .member-role {
+      font-size: 0.75rem;
+      color: var(--sage);
+      letter-spacing: 0.08em;
+      margin-bottom: 1.2rem;
+    }
+
+    .member-bio p em { color: var(--sage); }
+
+    .member-bio p {
+      font-size: 0.86rem;
+      line-height: 1.75;
+      max-width: none;
+    }
+
+    @media (max-width: 640px) {
+      .member { grid-template-columns: 1fr; }
+      .member img { min-height: 260px; max-height: 360px; }
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 3rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      border-top: 1px solid var(--divider);
+      font-size: 0.75rem;
+      color: var(--sage-dim);
+      letter-spacing: 0.1em;
+    }
+
+    .footer-social {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1.2rem;
+    }
+
+    .footer-social a {
+      display: inline-flex;
+      color: var(--sage-dim);
+      transition: color 0.2s;
+    }
+
+    .footer-social a:hover {
+      color: var(--gold);
+    }
+
+    .footer-social svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    @media (max-width: 760px) {
+      .footer-social svg {
+        width: 28px;
+        height: 28px;
+      }
+    }
+  
+    /* ── CAMP CIRCLESONG THEME OVERRIDES ── */
+    body { font-weight: 400; }
+    .hero { background-color: #8f9be0; background-image: radial-gradient(ellipse 70% 60% at 50% 110%, #f2b8b0 0%, rgba(242,184,176,0) 70%), linear-gradient(180deg, #7c88d4 0%, #9aa5e6 100%); }
+    .hero::after { width: 520px; height: 520px; box-shadow: 0 0 0 1px rgba(247,244,239,0.35), 0 0 0 70px rgba(247,244,239,0.07), 0 0 0 71px rgba(247,244,239,0.22), 0 0 0 150px rgba(247,244,239,0.05), 0 0 0 151px rgba(247,244,239,0.16), 0 0 0 240px rgba(247,244,239,0.03); }
+    .hero h1 em, .hero-date { color: #fbe1dc; }
+    .hero-date { border-color: rgba(251,225,220,0.75); }
+    footer, .footer-social a { color: var(--cream-dim); }
+    .lang-toggle button.active { color: #2a2d4d; }
+    .navbar-links a.cta:hover, .navbar-cta:hover, .submit-btn:hover { color: #fff; }
+  
+    /* photo placeholder */
+    .member-ph { min-height: 240px; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.6rem;
+      background: radial-gradient(circle at 50% 120%, #f2b8b0 0%, rgba(242,184,176,0) 60%), linear-gradient(180deg, #7c88d4, #9aa5e6); color: #f7f4ef; }
+    .member-ph .ini { width: 110px; height: 110px; border-radius: 50%; border: 1px solid rgba(247,244,239,0.6); box-shadow: 0 0 0 18px rgba(247,244,239,0.08), 0 0 0 19px rgba(247,244,239,0.25);
+      display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 2.6rem; font-style: italic; color: #fbe1dc; }
+    .member-ph .lbl { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.85; margin-top: 1.4rem; }
+  </style>
+</head>
+<body class="en">
+
+  <!-- ─────────────── NAVBAR ─────────────── -->
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">Circlesong <em>Camp</em></a>
+    <ul class="navbar-links" id="navbar-links">
+      <li><a href="index.html#schedule"><span lang-inline="en">Schedule</span><span lang-inline="fr">Horaire</span></a></li>
+      <li><a href="team.html"><span lang-inline="en">Team</span><span lang-inline="fr">Équipe</span></a></li>
+      <li><a href="what.html"><span lang-inline="en">What to Expect</span><span lang-inline="fr">À quoi s'attendre</span></a></li>
+      <li><a href="pricing.html"><span lang-inline="en">Pricing</span><span lang-inline="fr">Tarifs</span></a></li>
+      <li class="nav-dropdown">
+        <a href="#" class="nav-dropdown-toggle"><span lang-inline="en">More Info</span><span lang-inline="fr">Plus d'infos</span></a>
+        <ul class="nav-dropdown-menu">
+          <li><a href="packing.html"><span lang-inline="en">Packing List</span><span lang-inline="fr">Liste d'équipement</span></a></li>
+          <li><a href="code.html"><span lang-inline="en">Code of Conduct</span><span lang-inline="fr">Code de conduite</span></a></li>
+          <li><a href="maps.html"><span lang-inline="en">Maps</span><span lang-inline="fr">Cartes</span></a></li>
+        </ul>
+      </li>
+      <li class="nav-cta-item"><a href="index.html#contact" class="cta"><span lang-inline="en">Register</span><span lang-inline="fr">S'inscrire</span></a></li>
+    </ul>
+    <div class="navbar-right">
+      <a href="index.html#contact" class="navbar-cta"><span lang-inline="en">Register</span><span lang-inline="fr">S'inscrire</span></a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">☰</button>
+      <div class="lang-toggle" role="navigation" aria-label="Language">
+        <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
+        <button id="btn-fr" onclick="setLang('fr')">FR</button>
+      </div>
+    </div>
+  </nav>
+
+
+
+  <!-- ─────────────── PAGE HEADER ─────────────── -->
+  <div class="page-header">
+    <div class="section-label">
+      <span lang-inline="en">The team</span>
+      <span lang-inline="fr">L'équipe</span>
+    </div>
+
+    <div lang-content="en">
+      <h2>Meet<br/><em>the team.</em></h2>
+      <p>Circlesong Camp is organized by Sophie Bijjani and Marie Durand.</p>
+    </div>
+
+    <div lang-content="fr">
+      <h2>Rencontrez<br/><em>l'équipe.</em></h2>
+      <p>Circlesong Camp est organisé par Sophie Bijjani et Marie Durand.</p>
+    </div>
+  </div>
+
+  <!-- ─────────────── TEAM ─────────────── -->
+  <div class="team-list">
+
+    <div class="member">
+      <img src="sophie.jpg" alt="Sophie Bijjani" />
+      <div class="member-bio">
+        <div class="member-name">Sophie Bijjani</div>
+        <div class="member-role"><span lang-inline="en">Organizer · Facilitator</span><span lang-inline="fr">Organisatrice · Facilitatrice</span></div>
+        <div lang-content="en"><p>Sophie Bijjani (she/her) is an artist and facilitator returning to her homeland of Quebec after ten years of nomadic living, now based in Montreal (Tiohtià:ke). It was in France that the practices defining her work today found her: circlesong, contact improvisation, alternative communities. Each one asking how humans can focus their energy and attention toward something co-created and expansive. Trained in jazz voice and body music, she returns to Montreal's CI community with an appetite for detail and a long inquiry into transparent and nonviolent communication. She is drawn to rivers, especially those that can be swum in (even better if drinkable), and to practices that bring the body into aliveness, from cold plunges to shared voice. <em>Sidequest: with conviction and curiosity, to understand how to be happy without needing to be right.</em></p></div>
+        <div lang-content="fr"><p>Sophie Bijjani (she/her) est une artiste et facilitatrice qui retourne dans sa terre natale du Québec après dix ans de vie nomade, maintenant basée à Montréal (Tiohtià:ke). C'est en France que les pratiques qui définissent son travail aujourd'hui l'ont trouvée : le chant en cercle, le contact improvisation, les communautés alternatives. Chacune interrogeant la façon dont les humains rassemblent leur énergie et leur attention vers quelque chose de co-créé, ancré dans le présent. Formée en voix jazz et en body music, elle revient à la communauté CI de Montréal avec l'appétit d'une chercheuse pour le détail et une longue investigation dans la communication transparente et non-violente. Elle est attirée par les rivières, surtout celles où l'on peut nager (encore mieux si elles sont potables), et par les pratiques qui ramènent le corps à la vivacité, des bains froids au chant partagé. Son travail interroge comment nous, les humains, pouvons nous rassembler de manière à créer des systèmes expansifs, redéfinissant le collectif comme une tapisserie d'expressions individuelles cherchant activement l'alignement et la vérité au sein du tout. <em>Quête secondaire : avec conviction et curiosité, comprendre comment être heureuse sans avoir besoin d'avoir raison.</em></p></div>
+      </div>
+    </div>
+
+    <div class="member">
+      <!-- PHOTO: replace this div with <img src="marie.jpg" alt="Marie Durand" /> -->
+      <div class="member-ph" role="img" aria-label="Marie Durand">
+        <div class="ini">MD</div>
+        <div class="lbl"><span lang-inline="en">Photo coming soon</span><span lang-inline="fr">Photo à venir</span></div>
+      </div>
+      <div class="member-bio">
+        <div class="member-name">Marie Durand</div>
+        <div class="member-role"><span lang-inline="en">Organizer</span><span lang-inline="fr">Organisatrice</span></div>
+        <div lang-content="en"><p>Bio coming soon.</p></div>
+        <div lang-content="fr"><p>Bio à venir.</p></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ─────────────── FOOTER ─────────────── -->
+  <footer>
+    <p>Circlesong Camp · <span lang-inline="en">August 9–15, 2027</span><span lang-inline="fr">9–15 août 2027</span> · Dun, Ariège · France · <a href="https://bijj.ca" style="color:inherit;">bijj.ca</a></p>
+  </footer>
+
+  <script>
+    function setLang(lang) {
+      document.body.className = lang;
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
+      try { localStorage.setItem('csc-lang', lang); } catch (e) {}
+    }
+    let savedLang = null;
+    try { savedLang = localStorage.getItem('csc-lang'); } catch (e) {}
+    setLang(savedLang || (navigator.language.startsWith('fr') ? 'fr' : 'en'));
+
+    document.getElementById('nav-toggle').addEventListener('click', () => {
+      document.getElementById('navbar-links').classList.toggle('open');
+    });
+    document.querySelectorAll('.navbar-links a').forEach(a => {
+      a.addEventListener('click', () => document.getElementById('navbar-links').classList.remove('open'));
+    });
+    document.querySelectorAll('.nav-dropdown-toggle').forEach(toggle => {
+      toggle.addEventListener('click', function (e) {
+        if (window.innerWidth > 760) { e.preventDefault(); this.closest('.nav-dropdown').classList.toggle('open'); }
+      });
+    });
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('.nav-dropdown')) document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
+    });
+  </script>
+</body>
+</html>

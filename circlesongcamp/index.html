@@ -897,6 +897,17 @@
     footer, .footer-social a { color: var(--cream-dim); }
     .lang-toggle button.active { color: #2a2d4d; }
     .navbar-links a.cta:hover, .navbar-cta:hover, .submit-btn:hover { color: #fff; }
+
+    /* organizers */
+    .organizers { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.2rem; max-width: 620px; margin: 2rem auto 0; }
+    .organizers figure { margin: 0; }
+    .organizers img, .org-ph { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; border-radius: 3px; }
+    .org-ph { display: flex; align-items: center; justify-content: center;
+      background: radial-gradient(circle at 50% 120%, #f2b8b0 0%, rgba(242,184,176,0) 60%), linear-gradient(180deg, #7c88d4, #9aa5e6); }
+    .org-ph span { width: 42%; aspect-ratio: 1; border-radius: 50%; border: 1px solid rgba(247,244,239,0.6); box-shadow: 0 0 0 14px rgba(247,244,239,0.08), 0 0 0 15px rgba(247,244,239,0.25);
+      display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 2.2rem; color: #fbe1dc; }
+    .organizers figcaption { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: var(--cream); margin-top: 0.7rem; }
+    @media (max-width: 480px) { .organizers { gap: 0.7rem; } .org-ph span { font-size: 1.6rem; } }
   </style>
 </head>
 <body class="en">
@@ -1291,12 +1302,20 @@
   <!-- ─────────────── CLOSING ─────────────── -->
   <section style="text-align:center; padding: 5rem 2rem;">
     <div class="section-label" style="justify-content:center;">
-      <span lang-inline="en">Your organizer</span>
-      <span lang-inline="fr">Votre organisatrice</span>
+      <span lang-inline="en">Your organizers</span>
+      <span lang-inline="fr">Vos organisatrices</span>
     </div>
 
-    <div style="width:100%; max-width:380px; margin:2rem auto; border-radius:3px; overflow:hidden;">
-      <img src="sophie.jpg" alt="Sophie Bijjani" style="width:100%; object-fit:cover; display:block;" />
+    <div class="organizers">
+      <figure>
+        <img src="sophie.jpg" alt="Sophie Bijjani" />
+        <figcaption>Sophie Bijjani</figcaption>
+      </figure>
+      <figure>
+        <!-- PHOTO: replace this div with <img src="marie.jpg" alt="Marie Durand" /> -->
+        <div class="org-ph" role="img" aria-label="Marie Durand"><span>MD</span></div>
+        <figcaption>Marie Durand</figcaption>
+      </figure>
     </div>
 
     <h2 style="margin-top:2rem;">
@@ -1304,8 +1323,13 @@
       <span lang-inline="fr">À bientôt dans le cercle.</span>
     </h2>
     <p style="margin: 1rem auto; max-width:480px; text-align:center;">
-      <span lang-inline="en">With love, Sophie</span>
-      <span lang-inline="fr">Avec amour, Sophie</span>
+      <span lang-inline="en">With love, Sophie &amp; Marie</span>
+      <span lang-inline="fr">Avec amour, Sophie &amp; Marie</span>
+    </p>
+    <p style="margin: 0 auto; text-align:center; font-size:0.82rem;">
+      <a href="team.html" style="color:var(--gold); text-decoration:underline; text-underline-offset:3px;">
+        <span lang-inline="en">Meet the team →</span><span lang-inline="fr">Rencontrer l'équipe →</span>
+      </a>
     </p>
   </section>
 
