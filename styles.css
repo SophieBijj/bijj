@@ -1979,3 +1979,7 @@ body:not(:has(.hero, .page-hero)) .header .mobile-menu-toggle { color: var(--ink
 @media (max-width: 1000px) { .sc-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 640px) { .sc-grid { grid-template-columns: 1fr; } }
 .intro-section { background: var(--light-bg); }
+.ht-grid { grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.home-testimonials blockquote { font-size: 1.02rem; }
+.testimonial blockquote + blockquote { margin-top: 1.5rem; }
+@media (max-width: 900px) { .ht-grid { grid-template-columns: 1fr; } }
