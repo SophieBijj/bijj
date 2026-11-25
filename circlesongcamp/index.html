@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Circlesong Camp · Improvisation vocale collective · Dun, Ariège · 9–15 août 2027</title>
+  <meta name="description" content="Rassemblement de 7 jours en camping autour du circlesong et de l'improvisation vocale collective à Dun, Ariège, France. 9–15 août 2027. / A 7-day camping gathering around circlesong and collective vocal improvisation in Dun, Ariège, France. August 9–15, 2027." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://bijj.ca/circlesongcamp/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Circlesong Camp" />
+  <meta property="og:title" content="Circlesong Camp · Improvisation vocale collective · Dun, Ariège · 9–15 août 2027" />
+  <meta property="og:description" content="Rassemblement de 7 jours en camping autour du circlesong et de l'improvisation vocale collective à Dun, Ariège, France. 9–15 août 2027. / A 7-day camping gathering around circlesong and collective vocal improvisation in Dun, Ariège, France. August 9–15, 2027." />
+  <meta property="og:url" content="https://bijj.ca/circlesongcamp/" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:locale:alternate" content="en_GB" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+
+<style>
+        :root {
+      --bg: #ebe7e1;
+      --bg2: #e1dcd4;
+      --cream: #2a2d4d;
+      --cream-dim: #5b5e7c;
+      --gold: #b8605a;
+      --terra: #5a64b0;
+      --sage: #6c77c6;
+      --sage-dim: #cdd1f2;
+      --divider: rgba(108,119,198,0.28);
+      --form-bg: rgba(255,255,255,0.55);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--cream);
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+        /* ── NAVBAR ── */
+    .navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 99;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      height: 54px;
+      background: rgba(235,231,225,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--divider);
+    }
+
+    .navbar-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--cream);
+      text-decoration: none;
+      white-space: nowrap;
+      letter-spacing: 0.03em;
+    }
+    .navbar-brand em { font-style: italic; color: var(--gold); }
+
+    .navbar-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.2rem;
+      list-style: none;
+      flex: 1;
+    }
+
+    .navbar-links a {
+      color: var(--cream-dim);
+      text-decoration: none;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.4rem 0.7rem;
+      border-radius: 2px;
+      transition: color 0.2s;
+      white-space: nowrap;
+    }
+
+    .navbar-links a:hover { color: var(--cream); }
+
+    .navbar-links a.cta {
+      border: 1px solid rgba(184,96,90,0.5);
+      color: var(--gold);
+    }
+    .navbar-links a.cta:hover { background: var(--gold); color: var(--bg); }
+    /* ── DROPDOWN ── */
+    .nav-dropdown { position: relative; }
+    .nav-dropdown > a::after { content: ' ▾'; }
+    .nav-dropdown-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(242,239,234,0.99);
+      border: 1px solid var(--divider);
+      border-radius: 2px;
+      min-width: 190px;
+      list-style: none;
+      padding: 0.4rem 0;
+      z-index: 200;
+    }
+    .nav-dropdown:hover .nav-dropdown-menu,
+    .nav-dropdown.open .nav-dropdown-menu { display: block; }
+    .nav-dropdown-menu li a {
+      display: block;
+      padding: 0.45rem 1.1rem;
+      font-size: 0.66rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--cream-dim);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .nav-dropdown-menu li a:hover { color: var(--cream); }
+
+
+    .nav-cta-item { display: none; }
+    .navbar-right { display: flex; align-items: center; gap: 0.5rem; flex-shrink: 0; }
+    .navbar-cta { border: 1px solid rgba(184,96,90,0.5); color: var(--gold); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.4rem 0.9rem; border-radius: 2px; text-decoration: none; transition: all 0.2s; white-space: nowrap; }
+    .navbar-cta:hover { background: var(--gold); color: var(--bg); }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--cream);
+      cursor: pointer;
+      font-size: 1.2rem;
+      padding: 0.3rem;
+    }
+
+    @media (max-width: 760px) {
+      .navbar-links { display: none; }
+      .navbar-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 54px; left: 0; right: 0;
+        background: rgba(235,231,225,0.98);
+        padding: 1rem;
+        gap: 0.2rem;
+        border-bottom: 1px solid var(--divider);
+      }
+      .nav-toggle { display: block; }
+      .nav-cta-item { display: list-item; }
+      .navbar-cta { display: none; }
+    }
+
+        /* ── LANG ── */
+    .lang-toggle {
+      display: flex;
+      background: rgba(235,231,225,0.85);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--divider);
+      border-radius: 2px;
+      overflow: hidden;
+      flex-shrink: 0;
+      margin-left: 0.75rem;
+    }
+    .lang-toggle button {
+      background: none;
+      border: none;
+      color: var(--cream-dim);
+      font-family: 'Jost', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.45rem 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .lang-toggle button.active { background: var(--sage-dim); color: var(--cream); }
+    .lang-toggle button:hover:not(.active) { color: var(--cream); }
+
+    [lang-content] { display: none; }
+    body.en [lang-content="en"] { display: block; }
+    body.fr [lang-content="fr"] { display: block; }
+    body.en [lang-inline="fr"] { display: none; }
+    body.fr [lang-inline="en"] { display: none; }
+    [lang-inline] { display: inline; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 7rem 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+      
+      background-size: cover;
+      background-position: center 40%;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom, rgba(60,68,140,0.25) 0%, rgba(60,68,140,0) 40%, rgba(60,68,140,0.35) 100%),
+        radial-gradient(ellipse 60% 50% at 50% 50%, rgba(246,205,199,0.25) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* organic texture rings */
+    .hero::after {
+      content: '';
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow:
+        0 0 0 80px rgba(245,242,238,0.04),
+        0 0 0 160px rgba(245,242,238,0.025),
+        0 0 0 260px rgba(245,242,238,0.01);
+      pointer-events: none;
+    }
+
+    .hero-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #e4e6fa;
+      margin-bottom: 2rem;
+      animation: fadeUp 1s ease both;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(3.2rem, 10vw, 8rem);
+      line-height: 0.95;
+      letter-spacing: -0.01em;
+      color: #f7f4ef;
+      margin-bottom: 1.8rem;
+      animation: fadeUp 1s 0.15s ease both;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-style: italic;
+      font-size: clamp(1.05rem, 2.5vw, 1.45rem);
+      color: #eceaf8;
+      max-width: 540px;
+      margin-bottom: 2.8rem;
+      animation: fadeUp 1s 0.28s ease both;
+    }
+
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      animation: fadeUp 1s 0.4s ease both;
+    }
+
+    .pill {
+      display: inline-block;
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 2px;
+      padding: 0.5rem 1.1rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(247,244,239,0.9);
+    }
+
+    .pill.date {
+      border-color: rgba(246,205,199,0.7);
+      color: #f6cdc7;
+    }
+
+    /* ── SECTIONS ── */
+    section {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+
+    .section-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 1.8rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--divider);
+    }
+
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.1;
+      margin-bottom: 1.6rem;
+    }
+
+    h2 em { font-style: italic; color: var(--gold); }
+
+    p {
+      font-size: 1rem;
+      color: var(--cream-dim);
+      max-width: 620px;
+      margin-bottom: 1.2rem;
+    }
+
+    /* ── WHAT ── */
+    .what-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      margin-top: 3rem;
+      border: 1px solid var(--divider);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .what-item {
+      padding: 2rem;
+      border-right: 1px solid var(--divider);
+      border-bottom: 1px solid var(--divider);
+    }
+
+    .what-item:nth-child(even) { border-right: none; }
+    .what-item:nth-last-child(-n+2) { border-bottom: none; }
+
+    .what-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      font-weight: 300;
+      color: var(--sage-dim);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .what-item h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      font-size: 1.15rem;
+      margin-bottom: 0.5rem;
+      color: var(--cream);
+    }
+
+    .what-item p {
+      font-size: 0.88rem;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* ── SCHEDULE PREVIEW ── */
+    .schedule-bg {
+      background: var(--bg2);
+      border-top: 1px solid var(--divider);
+      border-bottom: 1px solid var(--divider);
+    }
+
+    /* ── SCHEDULE PREVIEW OVERLAY ──
+       To publish the full schedule: remove class "schedule-preview" from the div below the TUESDAY comment.
+    ── */
+    .sched-wrap {
+      position: relative;
+    }
+    .sched-wrap.schedule-preview .cal {
+      filter: blur(4px);
+      pointer-events: none;
+      user-select: none;
+    }
+    .sched-coming {
+      display: none;
+      position: absolute;
+      inset: 0;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.6rem;
+      text-align: center;
+      z-index: 2;
+    }
+    .schedule-preview .sched-coming { display: flex; }
+    .sched-coming-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 300;
+      color: var(--cream);
+      letter-spacing: 0.04em;
+    }
+    .sched-coming-title em { font-style: italic; color: var(--gold); }
+    .sched-coming-sub {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--sage);
+    }
+
+    .days {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 0;
+      margin-top: 2.5rem;
+      border: 1px solid var(--divider);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .day {
+      padding: 1.8rem 1.5rem;
+      border-right: 1px solid var(--divider);
+    }
+    .day:last-child { border-right: none; }
+
+    .day-label {
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--terra);
+      margin-bottom: 0.8rem;
+    }
+
+    .day h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: 0.8rem;
+    }
+
+    .day ul {
+      list-style: none;
+      font-size: 0.82rem;
+      color: var(--cream-dim);
+      line-height: 1.9;
+    }
+
+    .day ul li::before {
+      content: '–';
+      color: var(--sage);
+      margin-right: 0.5rem;
+    }
+
+    /* ── FACILITATORS ── */
+    .facilitators-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1px;
+      margin-top: 2.5rem;
+      background: var(--divider);
+      border: 1px solid var(--divider);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .facilitator {
+      flex: 1 1 200px;
+      background: var(--bg);
+      padding: 1.8rem 1.5rem;
+    }
+
+    .facilitator-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: 0.3rem;
+    }
+
+    .facilitator-role {
+      font-size: 0.75rem;
+      color: var(--sage);
+      letter-spacing: 0.08em;
+    }
+
+    /* ── COST ── */
+    .cost-table {
+      margin-top: 2.5rem;
+      border: 1px solid var(--divider);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .cost-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.1rem 1.8rem;
+      border-bottom: 1px solid var(--divider);
+      gap: 2rem;
+    }
+
+    .cost-row:last-child { border-bottom: none; }
+
+    .cost-row.header {
+      background: var(--sage-dim);
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--cream-dim);
+    }
+
+    .cost-tier {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--cream);
+    }
+
+    .cost-desc {
+      font-size: 0.8rem;
+      color: var(--cream-dim);
+      flex: 1;
+      text-align: center;
+    }
+
+    .cost-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--gold);
+      white-space: nowrap;
+    }
+
+    .cost-note {
+      margin-top: 1.2rem;
+      font-size: 0.82rem;
+      color: var(--cream-dim);
+      font-style: italic;
+    }
+
+    /* ── INCLUDED ── */
+    .included-list {
+      margin-top: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .tag {
+      display: inline-block;
+      border: 1px solid var(--divider);
+      border-radius: 2px;
+      padding: 0.4rem 0.9rem;
+      font-size: 0.78rem;
+      color: var(--cream-dim);
+      letter-spacing: 0.05em;
+    }
+
+    /* ── FORM ── */
+    .form-section {
+      background: var(--bg2);
+      border-top: 1px solid var(--divider);
+      border-bottom: 1px solid var(--divider);
+    }
+
+    form {
+      margin-top: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    label {
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--sage);
+    }
+
+    input, textarea, select {
+      background: var(--form-bg);
+      border: 1px solid var(--divider);
+      border-radius: 2px;
+      padding: 0.85rem 1rem;
+      color: var(--cream);
+      font-family: 'Jost', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 300;
+      outline: none;
+      transition: border-color 0.2s;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    input::placeholder, textarea::placeholder {
+      color: rgba(91,94,124,0.4);
+    }
+
+    input:focus, textarea:focus, select:focus {
+      border-color: var(--sage);
+    }
+
+    select option {
+      background: #f2efea;
+      color: var(--cream);
+    }
+
+    textarea { resize: vertical; min-height: 90px; }
+
+    .submit-btn {
+      align-self: flex-start;
+      background: none;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-family: 'Jost', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 0.9rem 2.2rem;
+      cursor: pointer;
+      border-radius: 2px;
+      transition: all 0.2s;
+      margin-top: 0.5rem;
+    }
+
+    .submit-btn:hover {
+      background: var(--gold);
+      color: var(--bg);
+    }
+
+    .form-note {
+      font-size: 0.78rem;
+      color: var(--sage);
+      font-style: italic;
+      opacity: 0.7;
+    }
+
+    .success-msg {
+      display: none;
+      padding: 1.5rem;
+      border: 1px solid var(--sage);
+      border-radius: 2px;
+      color: var(--sage);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 3rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      border-top: 1px solid var(--divider);
+      font-size: 0.75rem;
+      color: var(--sage-dim);
+      letter-spacing: 0.1em;
+    }
+
+    .footer-social {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1.2rem;
+    }
+
+    .footer-social a {
+      display: inline-flex;
+      color: var(--sage-dim);
+      transition: color 0.2s;
+    }
+
+    .footer-social a:hover {
+      color: var(--gold);
+    }
+
+    .footer-social svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    @media (max-width: 760px) {
+      .footer-social svg {
+        width: 28px;
+        height: 28px;
+      }
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      .what-grid { grid-template-columns: 1fr; }
+      .what-item:nth-child(even) { border-right: none; }
+      .what-item:nth-last-child(-n+2) { border-bottom: 1px solid var(--divider); }
+      .what-item:last-child { border-bottom: none; }
+
+      .days { grid-template-columns: 1fr 1fr; }
+      .day { border-right: none; border-bottom: 1px solid var(--divider); }
+      .day:last-child { border-bottom: none; }
+
+      .form-row { grid-template-columns: 1fr; }
+
+      .cost-row { flex-wrap: wrap; gap: 0.3rem; }
+      .cost-desc { text-align: left; }
+    }
+
+    /* ── SCHEDULE GRID ── */
+    .sched { overflow-x: auto; padding: 2rem 0 0; }
+    .cal {
+      display: grid;
+      grid-template-columns: 28px repeat(7, minmax(0, 1fr));
+      grid-template-rows: 46px repeat(54, 18px);
+      column-gap: 6px;
+      row-gap: 0;
+      min-width: 720px;
+    }
+    .cal .dh {
+      font-size: 0.58rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--cream-dim);
+      padding-bottom: 4px;
+      border-bottom: 1px solid var(--divider);
+    }
+    .cal .dd {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: var(--cream);
+      line-height: 1.2;
+      margin-top: 3px;
+    }
+    .cal .tl {
+      font-size: 0.48rem;
+      color: rgba(108,119,198,0.35);
+      text-align: right;
+      padding-right: 4px;
+      padding-top: 1px;
+      border-top: 0.5px solid rgba(108,119,198,0.08);
+      line-height: 1;
+    }
+    .cal .ev {
+      border-radius: 2px;
+      padding: 3px 5px;
+      overflow: hidden;
+      margin: 1px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .cal .ev .et {
+      font-size: 0.5rem;
+      line-height: 1.2;
+      margin-bottom: 1px;
+      letter-spacing: 0.02em;
+      opacity: 0.75;
+    }
+    .cal .ev .en { font-size: 0.78rem; font-weight: 500; line-height: 1.3; }
+    .cal .ev.logistics { background: rgba(108,119,198,0.18); }
+    .cal .ev.logistics .en, .cal .ev.logistics .et { color: #4f5aa6; }
+    .cal .ev.workshop { background: rgba(184,96,90,0.15); }
+    .cal .ev.workshop .en, .cal .ev.workshop .et { color: #b8605a; }
+    .cal .ev.jam { background: rgba(90,100,176,0.22); }
+    .cal .ev.jam .en, .cal .ev.jam .et { color: #5a64b0; }
+    .cal .ev.social { background: rgba(42,45,77,0.09); }
+    .cal .ev.social .en, .cal .ev.social .et { color: var(--cream-dim); }
+    .cal .ev.free { border: 0.5px dashed var(--divider); background: transparent; }
+    .cal .ev.free .en { color: rgba(91,94,124,0.55); font-style: italic; font-weight: 300; }
+    .cal .ev.free .et { color: rgba(91,94,124,0.35); }
+
+    /* ── WORKSHOP DESCRIPTIONS ── */
+    .workshop-list {
+      margin-top: 2.5rem;
+      border: 1px solid var(--divider);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .workshop { border-bottom: 1px solid var(--divider); background: var(--bg2); }
+    .workshop:last-child { border-bottom: none; }
+    .workshop summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 1.2rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .workshop summary::-webkit-details-marker { display: none; }
+    .workshop-heading { display: flex; flex-direction: column; gap: 0.2rem; }
+    .workshop-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--cream);
+    }
+    .workshop-by {
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      color: var(--sage);
+    }
+    .workshop-icon {
+      font-size: 1.2rem;
+      font-weight: 300;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+    .workshop[open] .workshop-icon-open { display: inline; }
+    .workshop[open] .workshop-icon-closed { display: none; }
+    .workshop-icon-open { display: none; }
+    .workshop-body {
+      padding: 0 1.5rem 1.6rem;
+      font-size: 0.86rem;
+      color: var(--cream-dim);
+      line-height: 1.8;
+    }
+    .workshop-body p { max-width: none; margin-bottom: 1rem; }
+    .workshop-body p:last-child { margin-bottom: 0; }
+    .workshop-body ul { margin: 0.6rem 0 1.1rem 1.2rem; padding: 0; }
+    .workshop-body li { margin-bottom: 0.35rem; }
+    .workshop-body .ws-note { color: var(--sage); font-style: italic; }
+
+    /* ── HERO DATE ── */
+    .hero-date {
+      font-family: 'Jost', sans-serif;
+      font-size: clamp(1rem, 2.5vw, 1.4rem);
+      font-weight: 300;
+      color: var(--gold);
+      border: 1px solid rgba(184,96,90,0.6);
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      padding: 0.4rem 2.4rem;
+      border-radius: 2px;
+      margin-top: 1.5rem;
+      animation: fadeUp 1s 0.5s ease both;
+    }
+
+    .len, .lfr { display: none; }
+    body.en .len { display: inline; }
+    body.fr .lfr { display: inline; }
+  
+    /* ── CAMP CIRCLESONG THEME OVERRIDES ── */
+    body { font-weight: 400; }
+    .hero { background-color: #8f9be0; background-image: radial-gradient(ellipse 70% 60% at 50% 110%, #f2b8b0 0%, rgba(242,184,176,0) 70%), linear-gradient(180deg, #7c88d4 0%, #9aa5e6 100%); }
+    .hero::after { width: 520px; height: 520px; box-shadow: 0 0 0 1px rgba(247,244,239,0.35), 0 0 0 70px rgba(247,244,239,0.07), 0 0 0 71px rgba(247,244,239,0.22), 0 0 0 150px rgba(247,244,239,0.05), 0 0 0 151px rgba(247,244,239,0.16), 0 0 0 240px rgba(247,244,239,0.03); }
+    .hero h1 em, .hero-date { color: #fbe1dc; }
+    .hero-date { border-color: rgba(251,225,220,0.75); }
+    footer, .footer-social a { color: var(--cream-dim); }
+    .lang-toggle button.active { color: #2a2d4d; }
+    .navbar-links a.cta:hover, .navbar-cta:hover, .submit-btn:hover { color: #fff; }
+  </style>
+</head>
+<body class="en">
+
+  <!-- ─────────────── NAVBAR ─────────────── -->
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">Circlesong <em>Camp</em></a>
+    <ul class="navbar-links" id="navbar-links">
+      <li><a href="#schedule"><span lang-inline="en">Schedule</span><span lang-inline="fr">Horaire</span></a></li>
+      <li><a href="team.html"><span lang-inline="en">Team</span><span lang-inline="fr">Équipe</span></a></li>
+      <li><a href="what.html"><span lang-inline="en">What to Expect</span><span lang-inline="fr">À quoi s'attendre</span></a></li>
+      <li><a href="pricing.html"><span lang-inline="en">Pricing</span><span lang-inline="fr">Tarifs</span></a></li>
+      <li class="nav-dropdown">
+        <a href="#" class="nav-dropdown-toggle"><span lang-inline="en">More Info</span><span lang-inline="fr">Plus d'infos</span></a>
+        <ul class="nav-dropdown-menu">
+          <li><a href="packing.html"><span lang-inline="en">Packing List</span><span lang-inline="fr">Liste d'équipement</span></a></li>
+          <li><a href="code.html"><span lang-inline="en">Code of Conduct</span><span lang-inline="fr">Code de conduite</span></a></li>
+          <li><a href="maps.html"><span lang-inline="en">Maps</span><span lang-inline="fr">Cartes</span></a></li>
+        </ul>
+      </li>
+      <li class="nav-cta-item"><a href="#contact" class="cta"><span lang-inline="en">Register</span><span lang-inline="fr">S'inscrire</span></a></li>
+    </ul>
+    <div class="navbar-right">
+      <a href="#contact" class="navbar-cta"><span lang-inline="en">Register</span><span lang-inline="fr">S'inscrire</span></a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">☰</button>
+      <div class="lang-toggle" role="navigation" aria-label="Language">
+        <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
+        <button id="btn-fr" onclick="setLang('fr')">FR</button>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ─────────────── HERO ─────────────── -->
+  <header class="hero">
+    <div class="hero-label" style="margin-bottom:2rem; animation: fadeUp 1s ease both;">
+      Dun · Ariège · France
+    </div>
+
+    <h1>Circlesong<br/><em>Camp</em></h1>
+
+    <p class="hero-tagline">
+      <span lang-inline="en">Gathering voices around collective vocal improvisation</span>
+      <span lang-inline="fr">Un rassemblement de voix autour de l'improvisation vocale collective</span>
+    </p>
+
+    <div class="hero-date"><span lang-inline="en">August 9–15, 2027</span><span lang-inline="fr">9–15 août 2027</span></div>
+  </header>
+
+  <!-- ─────────────── WHAT IT IS ─────────────── -->
+  <section id="what">
+    <div class="section-label">
+      <span lang-inline="en">The gathering</span>
+      <span lang-inline="fr">Le regroupement</span>
+    </div>
+
+    <div lang-content="en">
+      <h2>Sing in circle.<br/><em>Listen together.</em></h2>
+      <p>Circlesong Camp is a gathering for voices of every kind, around circlesong and collective vocal improvisation, in the foothills of the Pyrenees. Someone steps into the center and offers a pattern, the circle answers, layers weave in, and a song is born that no one wrote. Each day leaves room for your own time to swim, hike, nap, eat, journal, connect. We will sing in the grass.</p>
+    </div>
+
+    <div lang-content="fr">
+      <h2>Chanter en cercle.<br/><em>Écouter ensemble.</em></h2>
+      <p>Circlesong Camp est un regroupement pour toutes les voix, autour du circlesong et de l'improvisation vocale collective, au pied des Pyrénées. Une personne entre au centre et propose un motif, le cercle répond, les couches s'entrelacent et une chanson naît sans que personne l'ait écrite. L'horaire de chaque journée laisse du temps libre pour nager, randonner, faire la sieste... et chanter dans l'herbe!</p>
+    </div>
+
+    <div style="margin-top:2.5rem;">
+      <div class="section-label" style="margin-bottom:1rem;">
+        <span lang-inline="en">The experience includes</span>
+        <span lang-inline="fr">L'expérience en résumé</span>
+      </div>
+      <ul style="list-style:none; font-size:0.88rem; color:var(--cream-dim); line-height:2;">
+        <li><span style="color:var(--sage); margin-right:0.5rem;">–</span><span lang-inline="en">Seven days in the Ariège countryside</span><span lang-inline="fr">Nature : Sept jours dans la campagne ariégeoise</span></li>
+        <li><span style="color:var(--sage); margin-right:0.5rem;">–</span><span lang-inline="en">Sing &amp; connect: circlesong workshops, open circles &amp; leading labs</span><span lang-inline="fr">Circlesong et pratiques connexes : ateliers, cercles ouverts et labos pour apprendre à mener</span></li>
+        <li><span style="color:var(--sage); margin-right:0.5rem;">–</span><span lang-inline="en">Evening campfire, song sharing &amp; swimming</span><span lang-inline="fr">Feu : Des soirées autour du feu où partager nos histoires et nos chansons</span></li>
+        <li><span style="color:var(--sage); margin-right:0.5rem;">–</span><span lang-inline="en">Camping (BYO gear)</span><span lang-inline="fr">Camping : Apportez votre équipement</span></li>
+        <li><span style="color:var(--sage); margin-right:0.5rem;">–</span><span lang-inline="en">Open to all voices, no experience needed</span><span lang-inline="fr">Ouvert à toutes les voix, aucune expérience requise</span></li>
+      </ul>
+      <p style="margin-top:1.5rem; font-size:0.82rem;">
+        <a href="what.html" style="color:var(--gold); text-decoration:underline; text-underline-offset:3px; letter-spacing:0.05em;">
+          <span lang-inline="en">What to expect, what to bring, what's on site →</span>
+          <span lang-inline="fr">À quoi s'attendre, quoi apporter, sur place →</span>
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ─────────────── SCHEDULE ─────────────── -->
+  <div id="schedule" class="schedule-bg">
+    <section>
+      <div class="section-label">
+        <span lang-inline="en">Schedule</span>
+        <span lang-inline="fr">Horaire</span>
+      </div>
+
+      <div lang-content="en">
+        <h2>Seven days,<br/><em>sing &amp; connect.</em></h2>
+        <p>Each day holds space for deep practice and deep rest: circles throughout the day, time to swim and wander, and evenings alive with song, offerings and fire.</p>
+      </div>
+
+      <div lang-content="fr">
+        <h2>Sept jours pour<br/><em>chanter &amp; se connecter.</em></h2>
+        <p>Chaque journée offre un espace dédié à la pratique et au repos. Il y a des cercles tout au long de la journée, du temps pour nager et profiter du site, ainsi que des soirées animées par le chant, des partages et un feu de camp.</p>
+      </div>
+
+      <div class="sched">
+        <!-- To publish the full schedule: remove class "schedule-preview" below -->
+        <div class="sched-wrap schedule-preview">
+        <div class="sched-coming">
+          <div class="sched-coming-title"><span class="len">Schedule <em>coming soon</em></span><span class="lfr">Horaire <em>à venir</em></span></div>
+          <div class="sched-coming-sub"><span class="len">Stay tuned</span><span class="lfr">Restez à l'écoute</span></div>
+        </div>
+        <div class="cal">
+
+          <div style="grid-column:1;grid-row:1"></div>
+          <div class="dh" style="grid-column:2;grid-row:1"><span class="len">Mon</span><span class="lfr">Lun</span><div class="dd"><span class="len">Aug 9</span><span class="lfr">9 août</span></div></div>
+          <div class="dh" style="grid-column:3;grid-row:1"><span class="len">Tue</span><span class="lfr">Mar</span><div class="dd"><span class="len">Aug 10</span><span class="lfr">10 août</span></div></div>
+          <div class="dh" style="grid-column:4;grid-row:1"><span class="len">Wed</span><span class="lfr">Mer</span><div class="dd"><span class="len">Aug 11</span><span class="lfr">11 août</span></div></div>
+          <div class="dh" style="grid-column:5;grid-row:1"><span class="len">Thu</span><span class="lfr">Jeu</span><div class="dd"><span class="len">Aug 12</span><span class="lfr">12 août</span></div></div>
+          <div class="dh" style="grid-column:6;grid-row:1"><span class="len">Fri</span><span class="lfr">Ven</span><div class="dd"><span class="len">Aug 13</span><span class="lfr">13 août</span></div></div>
+          <div class="dh" style="grid-column:7;grid-row:1"><span class="len">Sat</span><span class="lfr">Sam</span><div class="dd"><span class="len">Aug 14</span><span class="lfr">14 août</span></div></div>
+          <div class="dh" style="grid-column:8;grid-row:1"><span class="len">Sun</span><span class="lfr">Dim</span><div class="dd"><span class="len">Aug 15</span><span class="lfr">15 août</span></div></div>
+          <div class="tl" style="grid-column:1;grid-row:2">9h30</div>
+          <div class="tl" style="grid-column:1;grid-row:4">10h</div>
+          <div class="tl" style="grid-column:1;grid-row:12">12h</div>
+          <div class="tl" style="grid-column:1;grid-row:20">14h</div>
+          <div class="tl" style="grid-column:1;grid-row:28">16h</div>
+          <div class="tl" style="grid-column:1;grid-row:36">18h</div>
+          <div class="tl" style="grid-column:1;grid-row:44">20h</div>
+          <div class="tl" style="grid-column:1;grid-row:52">22h</div>
+
+          <!-- DAY 1 -->
+          <div class="ev logistics" style="grid-column:2;grid-row:28/40"><div class="et">16h – 19h</div><div class="en"><span class="len">Arrivals</span><span class="lfr">Arrivées</span></div></div>
+          <div class="ev logistics" style="grid-column:2;grid-row:40/43"><div class="et">19h – 19h45</div><div class="en"><span class="len">Opening circle</span><span class="lfr">Cercle d'ouverture</span></div></div>
+          <div class="ev jam" style="grid-column:2;grid-row:43/48"><div class="et">19h45 – 21h</div><div class="en"><span class="len">Open circle</span><span class="lfr">Cercle ouvert</span></div></div>
+          <div class="ev social" style="grid-column:2;grid-row:48/54"><div class="et">21h – 22h30</div><div class="en"><span class="len">Fireside songs</span><span class="lfr">Veillée au feu</span></div></div>
+
+          <!-- DAY 2 -->
+          <div class="ev logistics" style="grid-column:3;grid-row:2/3"><div class="en"><span class="len">Morning opening</span><span class="lfr">Ouverture du matin</span></div></div>
+          <div class="ev workshop" style="grid-column:3;grid-row:3/11"><div class="et">9h45 – 11h45</div><div class="en"><span class="len">Workshop</span><span class="lfr">Atelier</span></div></div>
+          <div class="ev free" style="grid-column:3;grid-row:11/20"><div class="et">11h45 – 14h</div><div class="en"><span class="len">Lunch &amp; free time</span><span class="lfr">Repas &amp; temps libre</span></div></div>
+          <div class="ev workshop" style="grid-column:3;grid-row:20/28"><div class="et">14h – 16h</div><div class="en"><span class="len">Leading lab</span><span class="lfr">Labo pour mener</span></div></div>
+          <div class="ev free" style="grid-column:3;grid-row:28/40"><div class="et">16h – 19h</div><div class="en"><span class="len">Dinner &amp; free time</span><span class="lfr">Repas &amp; temps libre</span></div></div>
+          <div class="ev jam" style="grid-column:3;grid-row:40/48"><div class="et">19h – 21h</div><div class="en"><span class="len">Open circle</span><span class="lfr">Cercle ouvert</span></div></div>
+          <div class="ev social" style="grid-column:3;grid-row:48/54"><div class="et">21h – 22h30</div><div class="en"><span class="len">Fireside songs</span><span class="lfr">Veillée au feu</span></div></div>
+
+          <!-- DAY 3 -->
+          <div class="ev logistics" style="grid-column:4;grid-row:2/3"><div class="en"><span class="len">Morning opening</span><span class="lfr">Ouverture du matin</span></div></div>
+          <div class="ev workshop" style="grid-column:4;grid-row:3/11"><div class="et">9h45 – 11h45</div><div class="en"><span class="len">Workshop</span><span class="lfr">Atelier</span></div></div>
+          <div class="ev free" style="grid-column:4;grid-row:11/20"><div class="et">11h45 – 14h</div><div class="en"><span class="len">Lunch &amp; free time</span><span class="lfr">Repas &amp; temps libre</span></div></div>
+          <div class="ev workshop" style="grid-column:4;grid-row:20/28"><div class="et">14h – 16h</div><div class="en"><span class="len">Workshop</span><span class="lfr">Atelier</span></div></div>
+          <div class="ev free" style="grid-column:4;grid-row:28/40"><div class="et">16h – 19h</div><div class="en"><span class="len">Dinner &amp; free time</span><span class="lfr">Repas &amp; temps libre</span></div></div>
+          <div class="ev jam" style="grid-column:4;grid-row:40/48"><div class="et">19h – 21h</div><div class="en"><span class="len">Open circle</span><span class="lfr">Cercle ouvert</span></div></div>
+          <div class="ev social" style="grid-column:4;grid-row:48/54"><div class="et">21h – 22h30</div><div class="en"><span class="len">Fireside songs</span><span class="lfr">Veillée au feu</span></div></div>
+
+          <!-- DAY 4 -->
+          <div class="ev logistics" style="grid-column:5;grid-row:2/3"><div class="en"><span class="len">Morning opening</span><span class="lfr">Ouverture du matin</span></div></div>
+          <div class="ev workshop" style="grid-column:5;grid-row:3/11"><div class="et">9h45 – 11h45</div><div class="en"><span class="len">Workshop</span><span class="lfr">Atelier</span></div></div>
+          <div class="ev free" style="grid-column:5;grid-row:11/20"><div class="et">11h45 – 14h</div><div class="en"><span class="len">Lunch &amp; free time</span><span class="lfr">Repas &amp; temps libre</span></div></div>
+          <div class="ev workshop" style="grid-column:5;grid-row:20/28"><div class="et">14h – 16h</div><div class="en"><span class="len">Leading lab</span><span class="lfr">Labo pour mener</span></div></div>
+          <div class="ev free" style="grid-column:5;grid-row:28/40"><div class="et">16h – 19h</div><div class="en"><span class="len">Dinner &amp; free time</span><span class="lfr">Repas &amp; temps libre</span></div></div>
+          <div class="ev jam" style="grid-column:5;grid-row:40/48"><div class="et">19h – 21h</div><div class="en"><span class="len">Open circle</span><span class="lfr">Cercle ouvert</span></div></div>
+          <div class="ev social" style="grid-column:5;grid-row:48/54"><div class="et">21h – 22h30</div><div class="en"><span class="len">Open mic night</span><span class="lfr">Soirée micro ouvert</span></div></div>
+
+          <!-- DAY 5 -->
+          <div class="ev logistics" style="grid-column:6;grid-row:2/3"><div class="en"><span class="len">Morning opening</span><span class="lfr">Ouverture du matin</span></div></div>
+          <div class="ev workshop" style="grid-column:6;grid-row:3/11"><div class="et">9h45 – 11h45</div><div class="en"><span class="len">Workshop</span><span class="lfr">Atelier</span></div></div>
+          <div class="ev free" style="grid-column:6;grid-row:11/20"><div class="et">11h45 – 14h</div><div class="en"><span class="len">Lunch &amp; free time</span><span class="lfr">Repas &amp; temps libre</span></div></div>
+          <div class="ev workshop" style="grid-column:6;grid-row:20/28"><div class="et">14h – 16h</div><div class="en"><span class="len">Workshop</span><span class="lfr">Atelier</span></div></div>
+          <div class="ev free" style="grid-column:6;grid-row:28/40"><div class="et">16h – 19h</div><div class="en"><span class="len">Dinner &amp; free time</span><span class="lfr">Repas &amp; temps libre</span></div></div>
+          <div class="ev jam" style="grid-column:6;grid-row:40/48"><div class="et">19h – 21h</div><div class="en"><span class="len">Open circle</span><span class="lfr">Cercle ouvert</span></div></div>
+          <div class="ev social" style="grid-column:6;grid-row:48/54"><div class="et">21h – 22h30</div><div class="en"><span class="len">Fireside songs</span><span class="lfr">Veillée au feu</span></div></div>
+
+          <!-- DAY 6 -->
+          <div class="ev logistics" style="grid-column:7;grid-row:2/3"><div class="en"><span class="len">Morning opening</span><span class="lfr">Ouverture du matin</span></div></div>
+          <div class="ev workshop" style="grid-column:7;grid-row:3/11"><div class="et">9h45 – 11h45</div><div class="en"><span class="len">Workshop</span><span class="lfr">Atelier</span></div></div>
+          <div class="ev free" style="grid-column:7;grid-row:11/20"><div class="et">11h45 – 14h</div><div class="en"><span class="len">Lunch &amp; free time</span><span class="lfr">Repas &amp; temps libre</span></div></div>
+          <div class="ev workshop" style="grid-column:7;grid-row:20/28"><div class="et">14h – 16h</div><div class="en"><span class="len">Leading lab</span><span class="lfr">Labo pour mener</span></div></div>
+          <div class="ev free" style="grid-column:7;grid-row:28/40"><div class="et">16h – 19h</div><div class="en"><span class="len">Dinner &amp; free time</span><span class="lfr">Repas &amp; temps libre</span></div></div>
+          <div class="ev jam" style="grid-column:7;grid-row:40/48"><div class="et">19h – 21h</div><div class="en"><span class="len">Open circle</span><span class="lfr">Cercle ouvert</span></div></div>
+          <div class="ev social" style="grid-column:7;grid-row:48/54"><div class="et">21h – 22h30</div><div class="en"><span class="len">Fireside songs</span><span class="lfr">Veillée au feu</span></div></div>
+
+          <!-- DAY 7 -->
+          <div class="ev logistics" style="grid-column:8;grid-row:2/6"><div class="et">9h30 – 10h30</div><div class="en"><span class="len">Closing circle &amp; goodbyes</span><span class="lfr">Cercle de clôture &amp; au revoir</span></div></div>
+          <div class="ev logistics" style="grid-column:8;grid-row:8/12"><div class="et">11h</div><div class="en"><span class="len">Departure</span><span class="lfr">Départ</span></div></div>
+
+        </div>
+        </div><!-- /sched-wrap -->
+      </div>
+    </section>
+  </div>
+
+  <!-- ─────────────── WORKSHOP DESCRIPTIONS ─────────────── -->
+  <section>
+    <div class="section-label">
+      <span lang-inline="en">Workshops</span>
+      <span lang-inline="fr">Ateliers</span>
+    </div>
+
+    <div lang-content="en">
+      <h2>Workshop<br/><em>descriptions.</em></h2>
+      <p>Here's what each session holds. Tap any workshop to expand it.</p>
+    </div>
+
+    <div lang-content="fr">
+      <h2>Descriptions<br/><em>des ateliers.</em></h2>
+      <p>Voici ce que chaque atelier vous réserve. Cliquez sur un atelier pour le déplier.</p>
+    </div>
+
+    <div class="workshop-list">
+
+      <details class="workshop">
+        <summary>
+          <div class="workshop-heading">
+            <span class="workshop-title"><span lang-inline="en">Wavelength Poetry</span><span lang-inline="fr">Poésie des Ondes</span></span>
+            <span class="workshop-by">Sophie Bijjani</span>
+          </div>
+          <span class="workshop-icon"><span class="workshop-icon-closed">+</span><span class="workshop-icon-open">–</span></span>
+        </summary>
+        <div class="workshop-body">
+          <div lang-content="en"><p>Through Circlesong and poetic expression, we will give voice, through sound, words and melodies, to the symphony that lives within us. This is a space to reveal our individual voices within the group, to co-create from our respective universes, and to sound our dreams to life with our voices.</p></div>
+          <div lang-content="fr"><p>À travers la Circlesong et l'expression poétique, nous mettrons en sons, en mots et en mélodies la symphonie qui vit en nous. C'est un espace pour révéler sa voix au sein du groupe, co-créer à partir de nos univers respectifs et faire vibrer nos cordes vocales et nos rêves.</p></div>
+        </div>
+      </details>
+
+      <details class="workshop">
+        <summary>
+          <div class="workshop-heading">
+            <span class="workshop-title"><span lang-inline="en">Leading lab</span><span lang-inline="fr">Labo pour mener</span></span>
+            <span class="workshop-by"><span lang-inline="en">Facilitator to be announced</span><span lang-inline="fr">Facilitateur·ice à confirmer</span></span>
+          </div>
+          <span class="workshop-icon"><span class="workshop-icon-closed">+</span><span class="workshop-icon-open">–</span></span>
+        </summary>
+        <div class="workshop-body">
+          <div lang-content="en"><p>Description coming soon.</p></div>
+          <div lang-content="fr"><p>Description à venir.</p></div>
+        </div>
+      </details>
+
+      <details class="workshop">
+        <summary>
+          <div class="workshop-heading">
+            <span class="workshop-title"><span lang-inline="en">Workshop to be announced</span><span lang-inline="fr">Atelier à confirmer</span></span>
+            <span class="workshop-by"><span lang-inline="en">Facilitator to be announced</span><span lang-inline="fr">Facilitateur·ice à confirmer</span></span>
+          </div>
+          <span class="workshop-icon"><span class="workshop-icon-closed">+</span><span class="workshop-icon-open">–</span></span>
+        </summary>
+        <div class="workshop-body">
+          <div lang-content="en"><p>Description coming soon.</p></div>
+          <div lang-content="fr"><p>Description à venir.</p></div>
+        </div>
+      </details>
+
+    </div>
+  </section>
+
+
+  <!-- ─────────────── LOCATION ─────────────── -->
+  <section>
+    <div class="section-label">
+      <span lang-inline="en">Location</span>
+      <span lang-inline="fr">Lieu</span>
+    </div>
+
+    <div lang-content="en">
+      <h2>Forest, water,<br/><em>open sky.</em></h2>
+      <p>We gather in Dun, a small village in Ariège, in the south of France, between the Pyrenees foothills and the plain. Exact site details will be shared with registered participants.</p>
+    </div>
+
+    <div lang-content="fr">
+      <h2>Forêt, plage,<br/><em>grands espaces.</em></h2>
+      <p>Nous nous retrouvons à Dun, un petit village de l'Ariège, dans le sud de la France, entre les contreforts des Pyrénées et la plaine. Les détails précis du site seront transmis aux personnes inscrites.</p>
+    </div>
+
+    <div style="margin-top:2rem; border-radius:2px; overflow:hidden; border:1px solid var(--divider);">
+      <iframe
+        src="https://maps.google.com/maps?q=Dun,+Ari%C3%A8ge,+France&output=embed&z=9"
+        width="100%" height="340" style="display:block; border:0; filter:grayscale(30%) contrast(1.05);"
+        allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+    <p style="margin-top:1.5rem; font-size:0.85rem;">
+      <span lang-inline="en">Rideshare details will be sent out in your welcome email.</span>
+      <span lang-inline="fr">Les détails de covoiturage seront envoyés dans votre courriel de bienvenue.</span>
+    </p>
+  </section>
+
+  <!-- ─────────────── COST ─────────────── -->
+  <span id="pricing"></span>
+  <section>
+    <div class="section-label">
+      <span lang-inline="en">Pricing</span>
+      <span lang-inline="fr">Tarifs</span>
+    </div>
+
+    <div lang-content="en">
+      <h2>Cost<br/><em>to attend.</em></h2>
+      <p>We offer a sliding scale and early-bird options to make this gathering both accessible and financially sustainable. We trust you to choose the price that fits your means. If you can commit early, it makes a real difference for us as organizers. The costs of this event are allocated to paying facilitators, the venue and your organizers, as well as planting seeds for future events.</p>
+    </div>
+
+    <div lang-content="fr">
+      <h2>Coût<br/><em>de participation.</em></h2>
+      <p>Nous proposons un barème de prix variable et des options de réservation anticipée afin de rendre cette rencontre à la fois accessible et viable financièrement. Nous comptons sur vous pour choisir le prix qui correspond à vos moyens. Si vous pouvez vous engager tôt, cela fait une réelle différence pour l'organisation. Les recettes de cet événement serviront à rémunérer les facilitateur·ices, à couvrir les frais du site et l'organisation, ainsi qu'à soutenir la germination de futurs événements.</p>
+    </div>
+
+    <div style="margin-top:2rem;">
+      <a href="pricing.html" style="display:inline-block; border:1px solid var(--gold); color:var(--gold); font-family:'Jost',sans-serif; font-size:0.72rem; font-weight:400; letter-spacing:0.18em; text-transform:uppercase; padding:0.9rem 2.2rem; border-radius:2px; text-decoration:none; transition:all 0.2s;" onmouseover="this.style.background='var(--gold)';this.style.color='#fff';" onmouseout="this.style.background='';this.style.color='var(--gold)';">
+        <span lang-inline="en">See pricing options →</span>
+        <span lang-inline="fr">Voir les options de tarif →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ─────────────── INTEREST FORM ─────────────── -->
+  <div id="contact" class="form-section">
+    <section>
+      <div class="section-label">
+        <span lang-inline="en">Register</span>
+        <span lang-inline="fr">S'inscrire</span>
+      </div>
+
+      <!-- ── MAILING LIST (shown before LAUNCH) ── -->
+      <div id="mailing-section">
+        <div lang-content="en">
+          <h2>Registration opens<br/><em>soon.</em></h2>
+          <p>Leave your info below to be added to our mailing list and you'll be the first to know when registration goes live.</p>
+        </div>
+
+        <div lang-content="fr">
+          <h2>Les inscriptions ouvrent<br/><em>bientôt.</em></h2>
+          <p>Laissez vos coordonnées ci-dessous pour vous inscrire à notre liste de diffusion et vous serez les premiers informés dès l'ouverture des inscriptions.</p>
+        </div>
+
+        <form id="interest-form" action="https://formspree.io/f/FORMSPREE_ID" method="POST">
+          <div class="form-row">
+            <div class="field">
+              <label for="name">
+                <span lang-inline="en">Name</span>
+                <span lang-inline="fr">Nom</span>
+              </label>
+              <input type="text" id="name" name="name" placeholder="Your name / Votre nom" />
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required placeholder="your@email.com" />
+            </div>
+          </div>
+
+          <div class="field" style="margin-top:1rem;">
+            <label for="comments">
+              <span lang-inline="en">Comments / Questions <em style="font-style:normal; opacity:0.6;">(optional)</em></span>
+              <span lang-inline="fr">Commentaires / Questions <em style="font-style:normal; opacity:0.6;">(optionnel)</em></span>
+            </label>
+            <textarea id="comments" name="comments" placeholder="..."></textarea>
+          </div>
+
+          <input type="hidden" name="_subject" value="Circlesong Camp – Interest List" />
+
+          <button type="submit" class="submit-btn">
+            <span lang-inline="en">Join the mailing list →</span>
+            <span lang-inline="fr">Rejoindre la liste de diffusion →</span>
+          </button>
+        </form>
+
+        <div class="success-msg" id="success-msg">
+          <span lang-inline="en">You're on the list. See you in the circle.</span>
+          <span lang-inline="fr">Vous êtes sur la liste. À bientôt dans le cercle.</span>
+        </div>
+      </div>
+
+      <!-- ── REGISTRATION OPEN (shown from LAUNCH) ── -->
+      <div id="register-open-section" style="display:none;">
+        <div lang-content="en">
+          <h2>Registration<br/><em>is open.</em></h2>
+          <p>Secure your spot at Circlesong Camp, August 9–15, 2027 in Dun, Ariège.</p>
+        </div>
+        <div lang-content="fr">
+          <h2>Les inscriptions<br/><em>sont ouvertes.</em></h2>
+          <p>Réservez votre place à Circlesong Camp, du 9 au 15 août 2027 à Dun, en Ariège.</p>
+        </div>
+        <a id="register-link" href="#" target="_blank" rel="noopener" class="submit-btn" style="display:inline-block; text-decoration:none; margin-top:1.5rem; text-align:center;">
+          <span lang-inline="en">Register now →</span>
+          <span lang-inline="fr">S'inscrire maintenant →</span>
+        </a>
+      </div>
+
+    </section>
+  </div>
+
+
+  <!-- ─────────────── CLOSING ─────────────── -->
+  <section style="text-align:center; padding: 5rem 2rem;">
+    <div class="section-label" style="justify-content:center;">
+      <span lang-inline="en">Your organizer</span>
+      <span lang-inline="fr">Votre organisatrice</span>
+    </div>
+
+    <div style="width:100%; max-width:380px; margin:2rem auto; border-radius:3px; overflow:hidden;">
+      <img src="sophie.jpg" alt="Sophie Bijjani" style="width:100%; object-fit:cover; display:block;" />
+    </div>
+
+    <h2 style="margin-top:2rem;">
+      <span lang-inline="en">See you in the circle.</span>
+      <span lang-inline="fr">À bientôt dans le cercle.</span>
+    </h2>
+    <p style="margin: 1rem auto; max-width:480px; text-align:center;">
+      <span lang-inline="en">With love, Sophie</span>
+      <span lang-inline="fr">Avec amour, Sophie</span>
+    </p>
+  </section>
+
+  <!-- ─────────────── FOOTER ─────────────── -->
+  <footer>
+    <p>Circlesong Camp · <span lang-inline="en">August 9–15, 2027</span><span lang-inline="fr">9–15 août 2027</span> · Dun, Ariège · France · <a href="https://bijj.ca" style="color:inherit;">bijj.ca</a></p>
+  </footer>
+
+  <script>
+    function setLang(lang) {
+      document.body.className = lang;
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
+      try { localStorage.setItem('csc-lang', lang); } catch (e) {}
+    }
+
+    let savedLang = null;
+    try { savedLang = localStorage.getItem('csc-lang'); } catch (e) {}
+    const browserLang = navigator.language.startsWith('fr') ? 'fr' : 'en';
+    setLang(savedLang || browserLang);
+
+    // Registration open switch: set FORM_URL and LAUNCH (UTC) when ready
+    const FORM_URL = '';
+    const LAUNCH = null; // e.g. new Date('2027-03-01T22:00:00Z')
+    const isPreview = new URLSearchParams(location.search).get('preview') === 'registration';
+    const regOpen = isPreview || (LAUNCH && new Date() >= LAUNCH);
+
+    if (regOpen) {
+      document.getElementById('mailing-section').style.display = 'none';
+      document.getElementById('register-open-section').style.display = 'block';
+      document.getElementById('register-link').href = FORM_URL || '#';
+      document.querySelectorAll('a.navbar-cta, .nav-cta-item a.cta').forEach(a => {
+        a.href = FORM_URL || '#contact';
+        a.target = '_blank';
+        a.rel = 'noopener';
+      });
+    }
+
+    // Formspree AJAX submission
+    const form = document.getElementById('interest-form');
+    if (form) form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (form.action.includes('FORMSPREE_ID')) { // preview mode, no form ID yet
+        form.style.display = 'none';
+        document.getElementById('success-msg').style.display = 'block';
+        return;
+      }
+      const data = new FormData(form);
+      try {
+        const res = await fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
+        if (res.ok) {
+          form.style.display = 'none';
+          document.getElementById('success-msg').style.display = 'block';
+        }
+      } catch (err) {
+        form.submit();
+      }
+    });
+
+    // Hamburger menu
+    document.getElementById('nav-toggle').addEventListener('click', () => {
+      document.getElementById('navbar-links').classList.toggle('open');
+    });
+    document.querySelectorAll('.navbar-links a').forEach(a => {
+      a.addEventListener('click', () => document.getElementById('navbar-links').classList.remove('open'));
+    });
+
+    document.querySelectorAll('.nav-dropdown-toggle').forEach(toggle => {
+      toggle.addEventListener('click', function (e) {
+        if (window.innerWidth > 760) {
+          e.preventDefault();
+          this.closest('.nav-dropdown').classList.toggle('open');
+        }
+      });
+    });
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('.nav-dropdown')) {
+        document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
+      }
+    });
+  </script>
+</body>
+</html>
