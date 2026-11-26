@@ -1990,3 +1990,4 @@ body:not(:has(.hero, .page-hero)) .header .mobile-menu-toggle { color: var(--ink
 .cta-section .book-row { align-items: center; }
 .cta-section { background: var(--light-bg); }
 @media (max-width: 768px) { .page-hero.page-hero--long h1 { font-size: 10.5vw; } }
+.calendar-past-title { margin-top: 4rem; opacity: 0.6; }
