@@ -2006,3 +2006,29 @@ body:not(:has(.hero, .page-hero)) .header .mobile-menu-toggle { color: var(--ink
 .gl-close { top: 0.5rem; right: 1rem; font-size: 1.6rem; }
 .calendar-past-sub { max-width: 760px; margin: 0 auto 1rem; }
 .gallery-lightbox { z-index: 5000; }
+
+/* ===================================================
+   PALETTE v2 : blanc bouleau + bleu-gris foncé
+   =================================================== */
+:root {
+    --ink:        #33475b;
+    --ink-dim:    #5f7083;
+    --light-bg:   #f0efeb;
+    --light-bg-2: #e6e4df;
+    --light-bg-3: #dcd9d3;
+    --color-navy:         #f0efeb;
+    --color-navy-surface: #e6e4df;
+    --color-navy-mid:     #dcd9d3;
+    --text-primary: #33475b;
+    --text-body:    rgba(51, 71, 91, 0.88);
+    --text-muted:   rgba(51, 71, 91, 0.6);
+    --bg-light: #e6e4df;
+    --bg-dark:  #f0efeb;
+}
+.header.scrolled { background: rgba(240, 239, 235, 0.96); }
+.value-card, .card, .where-item, .spectacle-card, .conf-item, .sc-card { background: #f8f7f4; }
+.form-group input, .form-group select, .form-group textarea,
+.footer-form input[type="text"], .footer-form input[type="email"] { background: #fafaf8; }
+.footer-form input[type="text"]::placeholder,
+.footer-form input[type="email"]::placeholder { color: rgba(51, 71, 91, 0.5); }
+.hero, .page-hero { background: #33475b; }
