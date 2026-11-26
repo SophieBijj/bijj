@@ -2032,3 +2032,15 @@ body:not(:has(.hero, .page-hero)) .header .mobile-menu-toggle { color: var(--ink
 .footer-form input[type="text"]::placeholder,
 .footer-form input[type="email"]::placeholder { color: rgba(51, 71, 91, 0.5); }
 .hero, .page-hero { background: #33475b; }
+/* v2.1 : un peu plus gris */
+:root {
+    --ink: #3a4a5a; --ink-dim: #637282;
+    --light-bg: #ebebe8; --light-bg-2: #e1e0dc; --light-bg-3: #d7d6d1;
+    --color-navy: #ebebe8; --color-navy-surface: #e1e0dc; --color-navy-mid: #d7d6d1;
+    --text-primary: #3a4a5a;
+    --text-body: rgba(58, 74, 90, 0.9);
+    --text-muted: rgba(58, 74, 90, 0.62);
+    --bg-light: #e1e0dc; --bg-dark: #ebebe8;
+}
+.header.scrolled { background: rgba(235, 235, 232, 0.96); }
+.value-card, .card, .where-item, .spectacle-card, .conf-item, .sc-card { background: #f5f5f3; }
