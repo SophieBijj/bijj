@@ -57,29 +57,38 @@
         <div class="container">
 
             <h1 class="calendar-title">Calendrier</h1>
-            <h2 class="calendar-section-title">Novembre et décembre 2026</h2>
+            <h2 class="calendar-section-title">À venir</h2>
 
             <div class="calendar-category">
                 <h2 class="calendar-category-title">Voix</h2>
 
                 <div class="calendar-event">
+                    <p class="calendar-event-tags">Samedi 19 décembre · 17h à 20h</p>
+                    <h3>Au creux de la nuit</h3>
+                    <p class="calendar-event-subtitle">Deep in the Night · invoquer nos chants et semer nos rêves</p>
+                    <p class="calendar-event-location">Studio Cosmos, 1996 avenue Laurier Est, Montréal · 65 $ · 8 places max</p>
+                    <div class="calendar-event-gallery">
+                        <img src="events/au-creux-de-la-nuit-1.jpg" alt="Au creux de la nuit, visuel 1" loading="lazy" onclick="openGallery(this)">
+                        <img src="events/au-creux-de-la-nuit-2.jpg" alt="Au creux de la nuit, visuel 2" loading="lazy" onclick="openGallery(this)">
+                        <img src="events/au-creux-de-la-nuit-3.jpg" alt="Au creux de la nuit, visuel 3" loading="lazy" onclick="openGallery(this)">
+                        <img src="events/au-creux-de-la-nuit-4.jpg" alt="Au creux de la nuit, visuel 4" loading="lazy" onclick="openGallery(this)">
+                    </div>
+                    <p class="calendar-event-rsvp">Réserve ta place : <a href="mailto:bijj.inspire@gmail.com?subject=Au%20creux%20de%20la%20nuit">bijj.inspire@gmail.com</a></p>
+                </div>
+            </div>
+
+            <h2 class="calendar-section-title calendar-past-title">Événements passés</h2>
+
+            <div class="calendar-category calendar-past">
+                <h2 class="calendar-category-title">Novembre 2026</h2>
+                <div class="calendar-event">
                     <p class="calendar-event-tags">Lundi 23 novembre</p>
                     <h3>Flow musical</h3>
                     <p class="calendar-event-subtitle">Soirée de clôture de la série SPARK, automne 2026</p>
                 </div>
-
-                <div class="calendar-divider"></div>
-
-                <div class="calendar-event">
-                    <p class="calendar-event-tags">Samedi 19 décembre · 17h à 20h</p>
-                    <h3>Au creux de la nuit</h3>
-                    <p class="calendar-event-subtitle">Deep in the Night · soirée de voix au solstice</p>
-                    <p class="calendar-event-location">Studio Cosmos, 1996 avenue Laurier Est, Montréal · 8 places</p>
-                    <p class="calendar-event-rsvp">Inscriptions : <a href="mailto:bijj.inspire@gmail.com">bijj.inspire@gmail.com</a></p>
-                </div>
             </div>
 
-            <h2 class="calendar-section-title calendar-past-title">Septembre et octobre 2026</h2>
+            <p class="calendar-past-sub">Septembre et octobre 2026</p>
 
             <div class="calendar-category">
                 <h2 class="calendar-category-title">Voix</h2>
@@ -174,6 +183,20 @@
         </div>
     </div>
 
+    <div class="gallery-lightbox" id="galleryLightbox" onclick="closeGallery(event)">
+        <button type="button" class="gl-btn gl-prev" aria-label="Précédent">‹</button>
+        <img id="galleryImg" alt="">
+        <button type="button" class="gl-btn gl-next" aria-label="Suivant">›</button>
+        <button type="button" class="gl-btn gl-close" aria-label="Fermer">✕</button>
+    </div>
+    <script>
+    var glList=[],glIdx=0;
+    function openGallery(el){glList=[].slice.call(el.parentNode.querySelectorAll('img'));glIdx=glList.indexOf(el);showGallery();document.getElementById('galleryLightbox').classList.add('open');document.body.style.overflow='hidden';}
+    function showGallery(){var g=document.getElementById('galleryImg');g.src=glList[glIdx].src;g.alt=glList[glIdx].alt;}
+    function stepGallery(d){glIdx=(glIdx+d+glList.length)%glList.length;showGallery();}
+    function closeGallery(e){var t=e.target;if(t.classList.contains('gl-prev')){stepGallery(-1);return;}if(t.classList.contains('gl-next')){stepGallery(1);return;}if(t.id==='galleryImg'){stepGallery(1);return;}document.getElementById('galleryLightbox').classList.remove('open');document.body.style.overflow='';}
+    document.addEventListener('keydown',function(e){var lb=document.getElementById('galleryLightbox');if(!lb.classList.contains('open'))return;if(e.key==='Escape')closeGallery({target:lb});if(e.key==='ArrowRight')stepGallery(1);if(e.key==='ArrowLeft')stepGallery(-1);});
+    </script>
     <script src="common.js"></script>
 </body>
 </html>

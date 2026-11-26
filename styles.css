@@ -1991,3 +1991,18 @@ body:not(:has(.hero, .page-hero)) .header .mobile-menu-toggle { color: var(--ink
 .cta-section { background: var(--light-bg); }
 @media (max-width: 768px) { .page-hero.page-hero--long h1 { font-size: 10.5vw; } }
 .calendar-past-title { margin-top: 4rem; opacity: 0.6; }
+.calendar-past-sub { font-family: var(--font-ui); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin: 2.5rem 0 1rem; }
+.calendar-past .calendar-event, .calendar-past-title ~ .calendar-category .calendar-event { opacity: 0.75; }
+.calendar-event-gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.6rem; margin: 1rem 0 1.2rem; max-width: 640px; }
+.calendar-event-gallery img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 6px; cursor: zoom-in; box-shadow: var(--shadow); transition: transform 0.2s ease; }
+.calendar-event-gallery img:hover { transform: translateY(-2px); }
+@media (max-width: 520px) { .calendar-event-gallery { grid-template-columns: repeat(2, 1fr); } }
+.gallery-lightbox { position: fixed; inset: 0; z-index: 3000; background: rgba(20, 22, 38, 0.92); display: none; align-items: center; justify-content: center; }
+.gallery-lightbox.open { display: flex; }
+.gallery-lightbox img { max-width: 92vw; max-height: 88vh; border-radius: 6px; cursor: pointer; }
+.gl-btn { position: absolute; background: none; border: none; color: #ebe3df; font-size: 2.6rem; cursor: pointer; padding: 1rem; line-height: 1; }
+.gl-prev { left: 1vw; top: 50%; transform: translateY(-50%); }
+.gl-next { right: 1vw; top: 50%; transform: translateY(-50%); }
+.gl-close { top: 0.5rem; right: 1rem; font-size: 1.6rem; }
+.calendar-past-sub { max-width: 760px; margin: 0 auto 1rem; }
+.gallery-lightbox { z-index: 5000; }
